@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-user-list',
-    templateUrl: './user-list.component.html',
-    styleUrls: ['./user-list.component.scss']
+    selector: 'app-user',
+    templateUrl: './user.component.html',
+    styleUrls: ['./user.component.scss']
 })
 
-export class MyEpicComponent implements OnInit {
+export class UserComponent implements OnInit {
+user: any;
     constructor() {}
     ngOnInit(): void {}
+
+    delete(){}
 } 
