@@ -40,4 +40,8 @@ export class UserService {
 
   deleteUser(user: User): void {
   }
+
+  getUsers(): User[] {
+    return USER;
+  }
 }

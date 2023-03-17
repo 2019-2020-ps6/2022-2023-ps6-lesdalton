@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './users/user/user.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
+import { UserListComponent } from './users/user-list/user-list.component';
 
 
 
@@ -13,6 +14,7 @@ import { UserFormComponent } from './users/user-form/user-form.component';
     AppComponent,
     UserComponent,
     UserFormComponent,
+    UserListComponent,
 
   ],
   imports: [

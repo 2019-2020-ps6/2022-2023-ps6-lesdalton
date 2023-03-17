@@ -12,7 +12,8 @@ export class UserFormComponent {
   constructor() {
     this.userForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required)
+      lastName: new FormControl('', Validators.required),
+      id: new FormControl('',Validators.required)
     });
   }
 
