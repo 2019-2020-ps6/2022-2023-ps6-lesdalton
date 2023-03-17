@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { Quiz } from "../../../models/quiz.model";
 import {QuizService} from "../../../services/quiz-service";
 
@@ -25,6 +25,7 @@ export class QuizFormComponent {
       theme: this.quizForm.controls.theme.value// set the theme property
     }; // create a new Quiz instance
     this.quizService.addQuiz(quiz);
+    this.quizForm.reset();
     console.log(this.quizService.quizzes$.value)
   }
 }

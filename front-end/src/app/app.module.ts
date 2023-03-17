@@ -19,7 +19,7 @@ import {QuizListComponent} from "./quizzes/quiz-list/quiz-list.component";
     EditQuizComponent,
     QuizFormComponent,
     QuizComponent,
-    QuizListComponent
+    QuizListComponent,
   ],
   imports: [
     ReactiveFormsModule,

@@ -1,7 +1,7 @@
 <div class="card">
   <label>
     Quiz Name:
-    <input type="text" [formControl]="quizForm.controls.name">
+    <input type="text" [formControl]="quizForm.controls.name" ngModel required>
   </label>
 
   <label>
@@ -9,7 +9,7 @@
     <input type="text" [formControl]="quizForm.controls.theme">
   </label>
 
-  <button class="button-card" type="submit" (click)="onSubmit()">Submit</button>
+  <button type="submit" [ngClass]="{'button-card': quizForm.controls.name.valid, 'invalid-button-card': quizForm.controls.name.invalid}" (click)="onSubmit()" [disabled]="!quizForm.controls.name.value">Create Quiz</button>
 </div>
 
 
