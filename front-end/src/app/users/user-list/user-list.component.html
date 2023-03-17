@@ -1,9 +1,16 @@
 <app-user-form></app-user-form>
-<br><br>
-<div class="user-list">
-    <div class="user" *ngFor="let user of users">
-        {{user.firstName}}<br>
-        {{user.lastName}}<br>
-        {{user.id}}<br>
+<br>
+<div class="card">
+    <div class="user-list">
+      <div class="user" *ngFor="let user of users">
+        <h2>{{user.firstName}}&nbsp;{{user.lastName}}</h2>
+        First Name : {{user.firstName}}<br>
+        Last Name : {{user.lastName}}<br>
+        ID : {{user.id}}<br>
+      </div>
     </div>
-</div>
+    <button type="submit" class="button-card" (click)="ngOnInit">Set</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="submit" class="button-card" (click)="ngOnInit">Delete</button>
+  </div>
+  
