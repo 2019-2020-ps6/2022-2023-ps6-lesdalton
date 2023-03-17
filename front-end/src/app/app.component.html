@@ -1,6 +1,13 @@
-<div class="header">
-    MyApp
-
-    <a class="navigation" [routerLink]="['/quiz-list']">Quiz</a>
-    <a class="navigation" [routerLink]="['/user-list']">Users</a>
+<div class="main-content">
+  <div>
+    <app-header></app-header>
+  </div>
+  <nav *ngIf="router.url === '/'">
+  <div>
+    <button class="button-card>" ><a routerLink="/edit-quiz">Configuer un quiz</a></button>
+  </div>
+  </nav>
 </div>
+
+<router-outlet></router-outlet>
+

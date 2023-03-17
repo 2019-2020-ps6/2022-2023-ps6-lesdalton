@@ -1,0 +1,15 @@
+<div class="app-quiz-list">
+<ul>
+  <nav *ngIf="quizzes.length > 0">
+    <h2>Quizzes crées</h2>
+    <div *ngFor="let quiz of quizzes">
+      <div class="card">
+        <h3>Nom :{{ quiz.name }}</h3>
+        <h3>Thème: {{ quiz.theme }}</h3>
+        <button class="button-card" (click)="editQuiz(quiz)">Edit</button>
+        <button class="button-card" (click)="deleteQuiz(quiz)">Delete</button>
+      </div>
+    </div>
+  </nav>
+</ul>
+</div>
