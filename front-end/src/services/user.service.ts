@@ -30,25 +30,14 @@ export class UserService {
   }
 
   retrieveUsers(): void {
-    this.http.get<User[]>(this.userUrl).subscribe((userList) => {
-      this.users = userList;
-      this.users$.next(this.users);
-    });
   }
 
   addUser(user: User): void {
-    this.http.post<User>(this.userUrl, user, this.httpOptions).subscribe(() => this.retrieveUsers());
   }
 
   setSelectedUser(userId: string): void {
-    const urlWithId = this.userUrl + '/' + userId;
-    this.http.get<User>(urlWithId).subscribe((user) => {
-      this.userSelected$.next(user);
-    });
   }
 
   deleteUser(user: User): void {
-    const urlWithId = this.userUrl + '/' + user.id;
-    this.http.delete<User>(urlWithId, this.httpOptions).subscribe(() => this.retrieveUsers());
   }
 }

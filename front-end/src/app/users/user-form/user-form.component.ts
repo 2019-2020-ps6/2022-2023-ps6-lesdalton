@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+
 import { UserService } from '../../../services/user.service';
 import { User } from '../../../models/user.models';
 
@@ -25,7 +25,5 @@ export class UserFormComponent implements OnInit {
 
   addUser(): void {
     // We retrieve here the user object from the userForm and we cast the type "as User".
-    const userToCreate: User = this.userForm.getRawValue() as User;
-    this.userService.addUser(userToCreate);
   }
 }
