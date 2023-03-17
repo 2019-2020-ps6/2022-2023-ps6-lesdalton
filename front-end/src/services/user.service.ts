@@ -12,34 +12,25 @@ export class UserService {
   /*
    The list of user.
    */
-  private users: User[] = [];
+  private users: User[] = USER;
 
   /*
    Observable which contains the list of the user.
    */
   public users$: BehaviorSubject<User[]>= new BehaviorSubject(USER);
 
-  public userSelected$: Subject<User> = new Subject();
 
-  private userUrl = serverUrl + '/users';
-
-  private httpOptions = httpOptionsBase;
-
-  constructor(private http: HttpClient) {
-    this.retrieveUsers();
+  constructor(private http: HttpClient) { 
   }
 
-  retrieveUsers(): void {
-  }
+
 
   addUser(user: User): void {
   }
 
-  setSelectedUser(userId: string): void {
-  }
 
-  deleteUser(user: User): void {
-  }
+
+
 
   getUsers(): User[] {
     return USER;
