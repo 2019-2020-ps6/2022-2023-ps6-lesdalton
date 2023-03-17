@@ -10,6 +10,7 @@ import { UserService } from 'src/services/user.service';
 })
 export class UserFormComponent {
   public userForm: FormGroup;
+  public formControl: FormControl | undefined;
 
   /*constructor() {
     this.userForm = new FormGroup({
