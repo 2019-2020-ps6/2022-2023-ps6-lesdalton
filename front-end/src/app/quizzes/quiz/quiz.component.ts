@@ -4,10 +4,10 @@ import  { Quiz } from '../../../models/quiz.model'
 @Component({
   selector:'app-quiz',
   templateUrl:'quiz.component.html',
-  styleUrls:['quiz.component.css']
+  styleUrls:['quiz.component.scss']
 })
 
-export class QuizFormComponent implements OnInit{
+export class QuizComponent implements OnInit{
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }

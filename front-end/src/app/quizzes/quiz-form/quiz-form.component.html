@@ -1,3 +1,16 @@
-<div class="app-quiz-form">
-  
+<div class="card">
+  <label>
+    Quiz Name:
+    <input type="text" [formControl]="quizForm.controls.name">
+  </label>
+
+  <label>
+    Theme:
+    <input type="text" [formControl]="quizForm.controls.theme">
+  </label>
+
+  <button class="button-card" type="submit" (click)="onSubmit()">Submit</button>
 </div>
+
+
+

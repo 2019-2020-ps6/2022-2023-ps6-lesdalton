@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="93929443-17bd-4e0c-8b08-bd805ad3bdd0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/edit-quiz/edit-quiz.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/edit-quiz/edit-quiz.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-form/quiz-form.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-list/quiz-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-list/quiz-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz/quiz.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/styles/card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/styles/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-form/quiz-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/edit-quiz/edit-quiz.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-form/quiz-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-form/quiz-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-form/quiz-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-form/quiz-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz/quiz.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-list/quiz-list.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz/quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz/quiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz/quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz/quiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/services/quiz-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/quiz-service.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="SCSS File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2N3ayd2xVvFOfw7j1UVKa10ORIv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Abdel/OneDrive/Bureau/SI3/PS6/2022-2023-ps6-lesdalton&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Abdel\\OneDrive\\Bureau\\SI3\\PS6\\2022-2023-ps6-lesdalton\\front-end\\node_modules\\typescript\\lib&quot;,
+    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdel\OneDrive\Bureau\SI3\PS6\2022-2023-ps6-lesdalton\front-end\src\app\quizzes\quiz" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="93929443-17bd-4e0c-8b08-bd805ad3bdd0" name="Changes" comment="" />
+      <created>1678895476114</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678895476114</updated>
+      <workItem from="1678895477174" duration="26493000" />
+      <workItem from="1678955438924" duration="10333000" />
+      <workItem from="1679076838752" duration="4425000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

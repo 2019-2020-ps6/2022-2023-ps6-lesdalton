@@ -1,16 +1,30 @@
-import {Component,OnInit} from '@angular/core';
-import  { Quiz } from '../../../models/quiz.model'
+import { Component } from "@angular/core";
+import { FormControl, FormGroup } from "@angular/forms";
+import { Quiz } from "../../../models/quiz.model";
+import {QuizService} from "../../../services/quiz-service";
 
 @Component({
-  selector:'app-quiz-form',
-  templateUrl:'quiz-form.component.html',
-  styleUrls:['quiz-form.component.css']
+  selector: 'app-quiz-form',
+  templateUrl: 'quiz-form.component.html',
+  styleUrls:['quiz-form.component.scss']
 })
+export class QuizFormComponent {
+  private name:string = "";
+  private theme:string = "";
 
-export class QuizFormComponent implements OnInit{
-    ngOnInit(): void {
-        throw new Error('Method not implemented.');
-    }
-    constructor() {
-    }
+  quizForm = new FormGroup({
+    name: new FormControl(),
+    theme: new FormControl()
+  });
+
+  constructor(private quizService: QuizService) {}
+
+  onSubmit() {
+    const quiz:Quiz = {
+      name: this.quizForm.controls.name.value, // set the name property
+      theme: this.quizForm.controls.theme.value// set the theme property
+    }; // create a new Quiz instance
+    this.quizService.addQuiz(quiz);
+    console.log(this.quizService.quizzes$.value)
+  }
 }
