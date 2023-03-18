@@ -1,15 +1,17 @@
 <div class="card">
+  <h2>Ajouter un quiz</h2>
   <label>
-    Quiz Name:
+    Nom du quiz:
     <input type="text" [formControl]="quizForm.controls.name" ngModel required>
   </label>
 
   <label>
-    Theme:
+    Thème:
     <input type="text" [formControl]="quizForm.controls.theme">
   </label>
 
-  <button type="submit" [ngClass]="{'button-card': quizForm.controls.name.valid, 'invalid-button-card': quizForm.controls.name.invalid}" (click)="onSubmit()" [disabled]="!quizForm.controls.name.value">Create Quiz</button>
+  <button type="submit" [ngClass]="{'button-card': quizForm.controls.name.valid, 'invalid-button-card': quizForm.controls.name.invalid}" (click)="onSubmit()" [disabled]="!quizForm.controls.name.value">
+    Créer</button>
 </div>
 
 
