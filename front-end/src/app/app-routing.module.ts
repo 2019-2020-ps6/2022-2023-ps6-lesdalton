@@ -5,11 +5,15 @@ import { QuizComponent } from './quizzes/quiz/quiz.component';
 import {QuizFormComponent} from "./quizzes/quiz-form/quiz-form.component";
 
 
+
 const routes: Routes = [
   { path:'edit-quiz',component:EditQuizComponent},
   { path:'quiz',component:QuizComponent },
   { path:'quiz-form',component:QuizFormComponent }
 ];
+
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
