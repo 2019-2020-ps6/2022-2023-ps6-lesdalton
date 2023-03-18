@@ -1,0 +1,46 @@
+$header-height: 80px;
+$header-bg-color: #ffffff;
+$header-text-color: #333333;
+$header-nav-link-color: #666666;
+$header-nav-link-hover-color: #333333;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height;
+  background-color: $header-bg-color;
+  padding: 0 20px;
+
+  &__logo {
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      color: $header-text-color;
+    }
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-left: 20px;
+
+        a {
+          display: inline-block;
+          color: $header-nav-link-color;
+          text-decoration: none;
+          transition: color 0.2s ease-in-out;
+
+          &:hover {
+            color: $header-nav-link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}
