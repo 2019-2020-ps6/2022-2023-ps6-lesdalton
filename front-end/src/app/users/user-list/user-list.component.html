@@ -5,11 +5,14 @@
 <div class="user-list">
   <div class="user" *ngFor="let user of userList">
     <div class="card">
+      <div class="user-image">
+       <img src="../../../resources/blank-profile-picture-973460_960_720.jpg" >
+      </div>
       <h2>{{user.firstName}}  {{user.lastName}}</h2>
       First Name : {{user.firstName}}<br>
       Last Name : {{user.lastName}}<br>
-      ID : {{user.id}}<br>
-      <app-user [user]="user" (deleteUser)="deleteUser($event)"></app-user>
+      ID : {{user.id}}<br><br>
+      <button class="button-card" (click)="deleteUser(user)">Delete</button>
     </div>
   </div>
 </div>
