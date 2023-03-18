@@ -1,7 +1,6 @@
 <app-user-form></app-user-form>
 <br><br>
 <h2>Liste d'utilisateurs</h2>
-
 <div class="user-list">
   <div class="user" *ngFor="let user of userList">
     <div class="card">
@@ -12,6 +11,7 @@
       First Name : {{user.firstName}}<br>
       Last Name : {{user.lastName}}<br>
       ID : {{user.id}}<br><br>
+      <button class="button-card" (click)="updateUser(user)">Edit</button>
       <button class="button-card" (click)="deleteUser(user)">Delete</button>
     </div>
   </div>

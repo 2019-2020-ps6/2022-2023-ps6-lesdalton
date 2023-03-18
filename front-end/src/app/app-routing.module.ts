@@ -9,6 +9,7 @@ import {UserListComponent} from "./users/user-list/user-list.component";
 
 
 
+
 const routes: Routes = [
   { path:'edit-quiz',component:EditQuizComponent},
   { path:'quiz',component:QuizComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'user',component:UserComponent},
   {path: 'user-form',component:UserFormComponent},
   {path: 'user-list',component:UserListComponent},
+
 
 ];
 
