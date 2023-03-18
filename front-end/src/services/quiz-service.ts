@@ -26,4 +26,8 @@ export class QuizService {
     }
   }
 
+  updateQuiz(){
+    this.quizzes$.next(this.quizzes);
+  }
+
 }

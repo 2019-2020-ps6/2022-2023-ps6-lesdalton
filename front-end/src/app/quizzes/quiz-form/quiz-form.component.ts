@@ -9,8 +9,6 @@ import {QuizService} from "../../../services/quiz-service";
   styleUrls:['quiz-form.component.scss']
 })
 export class QuizFormComponent {
-  private name:string = "";
-  private theme:string = "";
 
   quizForm = new FormGroup({
     name: new FormControl(),
