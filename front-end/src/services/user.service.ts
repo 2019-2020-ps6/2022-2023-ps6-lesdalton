@@ -20,12 +20,23 @@ export class UserService {
   public users$: BehaviorSubject<User[]>= new BehaviorSubject(USER);
 
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
   }
 
 
 
   addUser(user: User): void {
+    this.users.push(user);
+    this.users$.next(this.users);
+  }
+
+  deleteUser(user: User): void {
+    const index=this.users.indexOf(user);
+    if(index!==-1){
+      this.users.splice(index,1);
+      this.users$.next(this.users);
+    }
+
   }
 
 

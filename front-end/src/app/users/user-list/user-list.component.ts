@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/models/user.models';
-import { UserService } from 'src/services/user.service';
-import { USER } from 'src/mocks/user-list.mock';
+
+import { User } from '../../../models/user.models';
+import { UserService } from '../../../services/user.service';
+import {USER} from "../../../mocks/user-list.mock";
 
 @Component({
   selector: 'app-user-list',
@@ -9,9 +10,20 @@ import { USER } from 'src/mocks/user-list.mock';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  users: User[] = USER;
 
-  constructor() {}
+  public userList: User[] = USER;
 
-  ngOnInit() {}
+  constructor(private userService: UserService) {
+    this.userService.users$.subscribe((users: User[]) => {
+      this.userList = users;
+    });
+  }
+
+  ngOnInit(): void {
+  }
+
+  deleteUser(user: User): void {
+    console.log('User deleted : ',user);
+    this.userService.deleteUser(user);
+  }
 }

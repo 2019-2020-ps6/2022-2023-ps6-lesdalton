@@ -10,15 +10,7 @@ import { UserService } from 'src/services/user.service';
 })
 export class UserFormComponent {
   public userForm: FormGroup;
-  public formControl: FormControl | undefined;
 
-  /*constructor() {
-    this.userForm = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      id: new FormControl('',Validators.required)
-    });
-  }*/
 
   constructor(public formBuilder: FormBuilder, public userService: UserService) {
     this.userForm = this.formBuilder.group({
