@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'user',component:UserComponent},
   {path: 'user-form',component:UserFormComponent},
   {path: 'user-list',component:UserListComponent},
+
   {path: "login", component: LoginComponent},
 
 

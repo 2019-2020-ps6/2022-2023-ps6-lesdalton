@@ -1,15 +1,23 @@
-<div class="card">
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" >
-      <br><br>
-    </div>
-    <div>
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" >
-    </div>
-    <br><br>
-    <button type="submit">Login</button>
-  </form>
+
+
+<div class="emailPass">
+  <label for="email">Email</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="email" id="email" name="email" >
+  <br><br>
 </div>
+<div class="emailPass">
+  <label for="password">Password</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="password" id="password" name="password" >
+</div>
+<br><br>
+<div class="buttons">
+<button class="button-card"><a routerLink="/">Se connecter</a></button>
+</div><br>
+<div class="NewAcc">
+  <a routerLink="/">Vous avez déjà un compte ? Inscrivez-vous</a>
+</div>
+
+
+
