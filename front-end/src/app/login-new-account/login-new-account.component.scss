@@ -1,0 +1,32 @@
+@import '../../styles/card';
+h1{
+  margin-left: 40%;
+}
+.emailPass{
+  margin-left: 35%;
+  width: 200px;
+  label{
+    font-size: 27px;
+  }
+  input{
+    width: 200%;
+  }
+}
+
+.buttons{
+
+
+  a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+  }
+  button {
+    background-color: #EF6D58;
+    color: #f2f2f2;
+    font-family: "Arial Black";
+    padding: 10px 20px;
+    width: 200%;
+    border-radius: 9%;
+  }
+}

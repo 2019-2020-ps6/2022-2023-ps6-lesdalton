@@ -7,6 +7,7 @@ import {UserComponent} from "./users/user/user.component";
 import {UserFormComponent} from "./users/user-form/user-form.component";
 import {UserListComponent} from "./users/user-list/user-list.component";
 import {LoginComponent} from "./login/login.component";
+import {LoginNewAccountComponent} from "./login-new-account/login-new-account.component";
 
 
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'user-list',component:UserListComponent},
 
   {path: "login", component: LoginComponent},
+  {path: "login-new-account", component: LoginNewAccountComponent}
 
 
 ];

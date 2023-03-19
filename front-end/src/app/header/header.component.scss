@@ -7,6 +7,7 @@
 
 .header__logo {
   margin-right: auto;
+  text-decoration: black;
 }
 
 .header__nav ul {
@@ -18,6 +19,7 @@
 
 .header__nav li {
   margin-left: 20px;
+  text-decoration: none;
 
 }
 
@@ -27,11 +29,13 @@
 }
 .button-card{
   font-size: large;
-  background: white;
+  background: #FEF7E5;
   border: 1px solid black;
+  margin-top: -4px;
 }
 
 a {
   text-decoration: none;
+  color: black;
 }
 
