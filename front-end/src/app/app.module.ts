@@ -19,6 +19,7 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { QuizCardComponent } from './quizzes/quiz-card/quiz-card.component';
 import { LoginComponent } from './login/login.component';
+import { ActionsComponent } from './actions/actions.component';
 
 
 
@@ -38,7 +39,7 @@ import { LoginComponent } from './login/login.component';
     UserListComponent,
     QuizCardComponent,
     LoginComponent,
-
+    ActionsComponent,
   ],
   imports: [
     ReactiveFormsModule,

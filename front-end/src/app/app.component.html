@@ -6,7 +6,7 @@
   </div>
   <nav *ngIf="router.url === '/'">
     <div class="container">
-        <img [src]="HomePagePic" >
+        <img [src]="HomePagePic" id="home-page">
         <div class="text-container">
           <div>PolyQuiz</div>
           <div>est là pour</div>
@@ -15,11 +15,7 @@
     </div>
     <div class="buttons">
       <br><br>
-      <button class="button-card>" ><a routerLink="/add-quiz">Configuer un quiz</a></button>
-      <br><br>
-      <button class="button-card>" ><a routerLink="/user-list">Gérer les utilisateurs</a></button>
-      <br><br>
-      <button class="button-card>" ><a routerLink="/login">Login</a></button>
+      <button class="button-card>" ><a routerLink="/login">Se connecter</a></button>
     </div>
 
   </nav>

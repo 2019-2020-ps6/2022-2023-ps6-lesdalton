@@ -25,7 +25,6 @@ html, body {
   button {
     background-color: #EF6D58;
     color: #f2f2f2;
-    font-family: "Arial Black";
     padding: 10px 20px;
     width: 300px;
     border-radius: 9%;
@@ -49,10 +48,13 @@ html, body {
     display: inline-block;
     vertical-align: middle;
     margin-bottom: 20px;
-    font-size: 150px;
+    font-size: 100px;
   }
   div {
     display: block;
+  }
+  #home-page {
+    margin-left: 200px;
   }
 }
 

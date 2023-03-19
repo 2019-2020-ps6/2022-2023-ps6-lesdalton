@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Login} from "../../models/login.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,9 @@ import {Login} from "../../models/login.model";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
-
+  constructor(public router:Router) {
+  }
   onSubmit() {
-
+    this.router.navigate(['/actions']);
   }
 }
