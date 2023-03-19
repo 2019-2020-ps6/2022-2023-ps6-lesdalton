@@ -5,11 +5,23 @@
     <app-header></app-header>
   </div>
   <nav *ngIf="router.url === '/'">
-    <div>
+    <div class="container">
+        <img [src]="HomePagePic" >
+        <div class="text-container">
+          <div>PolyQuiz</div>
+          <div>est là pour</div>
+          <div>T'AIDER</div>
+        </div>
+    </div>
+    <div class="buttons">
+      <br><br>
       <button class="button-card>" ><a routerLink="/add-quiz">Configuer un quiz</a></button>
       <br><br>
       <button class="button-card>" ><a routerLink="/user-list">Gérer les utilisateurs</a></button>
+      <br><br>
+      <button class="button-card>" ><a routerLink="/login">Login</a></button>
     </div>
+
   </nav>
 </div>
 <router-outlet></router-outlet>

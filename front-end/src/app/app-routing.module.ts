@@ -6,6 +6,7 @@ import {QuizFormComponent} from "./quizzes/quiz-form/quiz-form.component";
 import {UserComponent} from "./users/user/user.component";
 import {UserFormComponent} from "./users/user-form/user-form.component";
 import {UserListComponent} from "./users/user-list/user-list.component";
+import {LoginComponent} from "./login/login.component";
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'user',component:UserComponent},
   {path: 'user-form',component:UserFormComponent},
   {path: 'user-list',component:UserListComponent},
+  {path: "login", component: LoginComponent},
 
 
 ];

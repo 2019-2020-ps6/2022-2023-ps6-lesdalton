@@ -18,6 +18,8 @@ import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { QuizCardComponent } from './quizzes/quiz-card/quiz-card.component';
+import { LoginComponent } from './login/login.component';
+
 
 
 
@@ -34,10 +36,9 @@ import { QuizCardComponent } from './quizzes/quiz-card/quiz-card.component';
     UserComponent,
     UserFormComponent,
     UserListComponent,
-
-
-
     QuizCardComponent,
+    LoginComponent,
+
   ],
   imports: [
     ReactiveFormsModule,
