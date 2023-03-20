@@ -1,5 +1,18 @@
-<p>Nom : {{user.lastName}}</p>
-<p>Prénom : {{user.firstName}}</p>
-<p>Id : {{user.id}}</p>
+<h1> Modification du profil</h1>
+
+<div class="NomPre">
+  <label>Prénom</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
+  <br><br>
+  <label>Nom</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="lastName" id="lastName" name="lastName" [(ngModel)]="user.lastName">
+  <br><br>
+  <label>Information supplémentaire</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <textarea type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
+  <br><br>
+</div>
 
 
