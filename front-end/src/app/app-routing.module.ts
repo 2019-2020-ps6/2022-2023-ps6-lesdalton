@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'user-form',component:UserFormComponent},
   {path: 'user-list',component:UserListComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'actions', component:ActionsComponent}
+  {path: 'actions', component:ActionsComponent},
   {path: "login-new-account", component: LoginNewAccountComponent}
 
 
