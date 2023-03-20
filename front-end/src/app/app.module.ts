@@ -21,12 +21,7 @@ import { QuizCardComponent } from './quizzes/quiz-card/quiz-card.component';
 import { LoginComponent } from './login/login.component';
 import { ActionsComponent } from './actions/actions.component';
 import {LoginNewAccountComponent} from "./login-new-account/login-new-account.component";
-import { UserCardComponent } from './users/user-card/user-card.component';
-
-
-
-
-
+import {UserCardComponent} from "./users/user-card/user-card.component";
 
 @NgModule({
   declarations: [
@@ -44,7 +39,6 @@ import { UserCardComponent } from './users/user-card/user-card.component';
     ActionsComponent,
     LoginNewAccountComponent,
     UserCardComponent,
-
   ],
   imports: [
     ReactiveFormsModule,

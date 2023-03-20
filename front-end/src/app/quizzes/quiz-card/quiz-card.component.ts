@@ -31,4 +31,7 @@ export class QuizCardComponent {
   onDelete() {
     this.quizService.deleteQuiz(this.quiz);
   }
+  onConfigure(){
+
+  }
 }
