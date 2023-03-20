@@ -1,8 +1,6 @@
 @import "../styles/card";
 
-
-
-.navigation{
+.navigation {
   text-decoration: none;
 }
 
@@ -14,14 +12,15 @@
 html, body {
   background-color: #FEF7E5;
 }
-.buttons{
+.buttons {
   margin-left: 200px;
 
-  a{
+  a {
     text-decoration: none;
     color: white;
     text-align: center;
   }
+
   button {
     background-color: #EF6D58;
     color: #f2f2f2;
@@ -32,11 +31,10 @@ html, body {
 
 }
 
-
-
 .container {
   display: inline-block;
   margin-right: 3px;
+
   img {
     float: right;
     margin-right: 100px;
@@ -44,18 +42,22 @@ html, body {
     vertical-align: middle;
     width: 900px;
   }
+
   .text-container {
     display: inline-block;
     vertical-align: middle;
     margin-bottom: 20px;
     font-size: 100px;
+    width: 40%;
   }
+
   div {
     display: block;
   }
-  #home-page {
-    margin-left: 200px;
-  }
+}
+
+#home-page{
+  width: 50%;
 }
 
 
