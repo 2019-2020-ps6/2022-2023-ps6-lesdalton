@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuizCardComponent } from './quizzes/quiz-card/quiz-card.component';
 import { LoginComponent } from './login/login.component';
 import { ActionsComponent } from './actions/actions.component';
+import { LoginNewAccountComponent } from './login-new-account/login-new-account.component';
 
 
 
@@ -40,6 +41,8 @@ import { ActionsComponent } from './actions/actions.component';
     QuizCardComponent,
     LoginComponent,
     ActionsComponent,
+    LoginNewAccountComponent,
+
   ],
   imports: [
     ReactiveFormsModule,
