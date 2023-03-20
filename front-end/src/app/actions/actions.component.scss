@@ -1,1 +1,20 @@
 @import '../../styles/card.scss';
+
+.buttons{
+  margin-left: 35%;
+  margin-top: 10%;
+
+  a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+  }
+  button {
+    background-color: #EF6D58;
+    color: #f2f2f2;
+    font-family: "Arial Black";
+    padding: 10px 20px;
+    width: 40%;
+    border-radius: 9%;
+  }
+}

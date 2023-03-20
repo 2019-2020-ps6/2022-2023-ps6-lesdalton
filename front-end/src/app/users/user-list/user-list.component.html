@@ -11,8 +11,8 @@
       First Name : {{user.firstName}}<br>
       Last Name : {{user.lastName}}<br>
       ID : {{user.id}}<br><br>
-      <button class="button-card" (click)="updateUser(user)">Edit</button>
-      <button class="button-card" (click)="deleteUser(user)">Delete</button>
+      <a routerLink="['/user-card',id]"><button class="button-card" (click)="updateUser(user)">Modifier</button></a>
+      <button class="button-card" (click)="deleteUser(user)">Supprimer</button>
     </div>
   </div>
 </div>
