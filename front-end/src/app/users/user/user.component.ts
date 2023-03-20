@@ -9,13 +9,17 @@ import { User } from '../../../models/user.models';
 })
 export class UserComponent implements OnInit {
 
+
   @Input()
   user: User | undefined;
+
 
   @Output()
   deleteUser: EventEmitter<User> = new EventEmitter<User>();
 
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
