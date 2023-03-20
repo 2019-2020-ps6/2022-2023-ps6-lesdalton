@@ -21,6 +21,7 @@ import { QuizCardComponent } from './quizzes/quiz-card/quiz-card.component';
 import { LoginComponent } from './login/login.component';
 import { ActionsComponent } from './actions/actions.component';
 import {LoginNewAccountComponent} from "./login-new-account/login-new-account.component";
+import { UserCardComponent } from './users/user-card/user-card.component';
 
 
 
@@ -42,6 +43,7 @@ import {LoginNewAccountComponent} from "./login-new-account/login-new-account.co
     LoginComponent,
     ActionsComponent,
     LoginNewAccountComponent,
+    UserCardComponent,
 
   ],
   imports: [
