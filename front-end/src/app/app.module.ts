@@ -25,6 +25,7 @@ import { UserCardComponent } from './users/user-card/user-card.component';
 import { GameAnswerComponent } from './game-answer/game-answer.component';
 import {GameQuestionComponent} from "./game-question/game-question.component";
 import { UserConfigComponent } from './users/user-config/user-config.component';
+import { HorizontalGaugeComponent } from './horizontal-gauge/horizontal-gauge.component';
 
 
 
@@ -50,6 +51,7 @@ import { UserConfigComponent } from './users/user-config/user-config.component';
     GameAnswerComponent,
     GameQuestionComponent,
     UserConfigComponent,
+    HorizontalGaugeComponent,
 
 
   ],
