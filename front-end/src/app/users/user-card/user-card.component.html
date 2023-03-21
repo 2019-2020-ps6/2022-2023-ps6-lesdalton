@@ -1,18 +1,16 @@
 <h1> Modification du profil</h1>
 
 <div class="NomPre">
-  <label>Prénom</label>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label>Prénom</label><br>
   <input type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
   <br><br>
-  <label>Nom</label>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label>Nom</label><br>
   <input type="lastName" id="lastName" name="lastName" [(ngModel)]="user.lastName">
   <br><br>
-  <label>Information supplémentaire</label>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label>Information supplémentaire</label><br>
   <textarea type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
-  <br><br>
+  <br><br><br><br>
+  <button class="button-card" [routerLink]="['/user-config',user.id]">Configuration</button>
 </div>
 
 

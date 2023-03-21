@@ -24,6 +24,7 @@ import {LoginNewAccountComponent} from "./login-new-account/login-new-account.co
 import { UserCardComponent } from './users/user-card/user-card.component';
 import { GameAnswerComponent } from './game-answer/game-answer.component';
 import {GameQuestionComponent} from "./game-question/game-question.component";
+import { UserConfigComponent } from './users/user-config/user-config.component';
 
 
 
@@ -48,6 +49,7 @@ import {GameQuestionComponent} from "./game-question/game-question.component";
     UserCardComponent,
     GameAnswerComponent,
     GameQuestionComponent,
+    UserConfigComponent,
 
 
   ],
