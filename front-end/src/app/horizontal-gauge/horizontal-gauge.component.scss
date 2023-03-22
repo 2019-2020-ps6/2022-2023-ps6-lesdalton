@@ -3,6 +3,7 @@
   height: 20px;
   background-color: #ccc;
   position: relative;
+  border-radius: 10px;
 }
 .gauge-fill {
   height: 100%;
@@ -10,6 +11,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  border-radius: 10px;
 }
 .text{
   font-size: 16px;

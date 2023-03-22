@@ -17,9 +17,12 @@ export class HorizontalGaugeComponent {
   }
 
   changeFontSize() {
-    const textElement: HTMLElement = this.elementRef.nativeElement.querySelector('.text');
-    textElement.style.fontSize = this.value + 'px';
+    const textElements: NodeListOf<HTMLElement> = this.elementRef.nativeElement.querySelectorAll('.text');
+    textElements.forEach((element: HTMLElement) => {
+      element.style.fontSize = this.value + 'px';
+    });
   }
+
 
 
 }
