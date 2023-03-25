@@ -10,28 +10,26 @@ import {LoginComponent} from "./login/login.component";
 import {ActionsComponent} from "./actions/actions.component";
 import {LoginNewAccountComponent} from "./login-new-account/login-new-account.component";
 import {UserCardComponent} from "./users/user-card/user-card.component";
-import {UserConfigComponent} from "./users/user-config/user-config.component";
-import {QuizConfigComponent} from "./quizzes/quiz-config/quiz-config.component";
-import {QuizListComponent} from "./quizzes/quiz-list/quiz-list.component";
+import {GamePageComponent} from "./game-page/game-page.component"
+
 
 
 
 const routes: Routes = [
 
-  {path: 'select-quiz', component:QuizListComponent},
+
   { path:'add-quiz',component:AddQuizComponent},
   { path:'quiz',component:QuizComponent },
   { path:'quiz-form',component:QuizFormComponent },
+
   {path: 'user',component:UserComponent},
   {path: 'user-form',component:UserFormComponent},
   {path: 'user-list',component:UserListComponent},
-  {path: 'user-list/:id',component:UserComponent},
   {path: 'login', component: LoginComponent},
   {path: 'actions', component:ActionsComponent},
   {path: "login-new-account", component: LoginNewAccountComponent},
   {path: "user-card/:id",component: UserCardComponent},
-  {path: "user-config/:id",component: UserConfigComponent},
-  {path: "quiz-config/:id",component: QuizConfigComponent},
+
 
 ];
 
