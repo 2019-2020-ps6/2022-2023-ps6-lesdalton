@@ -1,0 +1,18 @@
+.theme-content {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: whitesmoke;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0.25rem 0.25rem 0.75rem rgb(0 0 0 / 0.1);
+  margin-top: 1rem;
+}

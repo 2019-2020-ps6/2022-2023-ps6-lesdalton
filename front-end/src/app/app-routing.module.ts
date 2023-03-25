@@ -11,12 +11,15 @@ import {ActionsComponent} from "./actions/actions.component";
 import {LoginNewAccountComponent} from "./login-new-account/login-new-account.component";
 import {UserCardComponent} from "./users/user-card/user-card.component";
 import {GamePageComponent} from "./game/game-page/game-page.component"
-
-
+import {GameSelectPlayerComponent} from "./game/game-select-player/game-select-player.component";
+import {GameSelectThemeComponent} from "./game/game-select-theme/game-select-theme.component";
 
 
 const routes: Routes = [
   { path:'game', component:GamePageComponent},
+  { path:'select-player', component:GameSelectPlayerComponent},
+  {path:'select-theme', component:GameSelectThemeComponent},
+
   { path:'add-quiz',component:AddQuizComponent},
   { path:'quiz',component:QuizComponent },
   { path:'quiz-form',component:QuizFormComponent },

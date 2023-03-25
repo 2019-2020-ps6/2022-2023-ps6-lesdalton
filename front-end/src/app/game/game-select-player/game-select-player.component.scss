@@ -1,0 +1,17 @@
+@import '../../../styles/card.scss';
+
+.user-list {
+  display: flex;
+}
+.button-card {
+  margin-right: 20px;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  width: 120px;
+  align-items: center;
+}

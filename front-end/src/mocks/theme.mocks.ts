@@ -2,10 +2,10 @@ import {Theme} from "../models/theme.models";
 
 export const ThemeMocks: Theme[] = [
   {
-    name:"history"
+    name:"Histoire"
   },
   {
-    name: "cinema"
+    name: "Cinéma"
   }
 ];
 
