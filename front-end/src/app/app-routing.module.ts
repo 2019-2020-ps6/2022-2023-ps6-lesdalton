@@ -12,14 +12,13 @@ import {LoginNewAccountComponent} from "./login-new-account/login-new-account.co
 import {UserCardComponent} from "./users/user-card/user-card.component";
 import {UserConfigComponent} from "./users/user-config/user-config.component";
 import {QuizConfigComponent} from "./quizzes/quiz-config/quiz-config.component";
-
-
+import {QuizListComponent} from "./quizzes/quiz-list/quiz-list.component";
 
 
 
 const routes: Routes = [
 
-
+  {path: 'select-quiz', component:QuizListComponent},
   { path:'add-quiz',component:AddQuizComponent},
   { path:'quiz',component:QuizComponent },
   { path:'quiz-form',component:QuizFormComponent },
