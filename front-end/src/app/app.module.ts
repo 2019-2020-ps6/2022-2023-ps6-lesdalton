@@ -22,12 +22,11 @@ import { LoginComponent } from './login/login.component';
 import { ActionsComponent } from './actions/actions.component';
 import {LoginNewAccountComponent} from "./login-new-account/login-new-account.component";
 import { UserCardComponent } from './users/user-card/user-card.component';
-import { GameAnswerComponent } from './game-answer/game-answer.component';
 import {GameQuestionComponent} from "./game-question/game-question.component";
 import { UserConfigComponent } from './users/user-config/user-config.component';
-
-
-
+import {QuizConfigComponent} from "./quizzes/quiz-config/quiz-config.component";
+import {GameAnswersComponent} from "./game-answer/game-answer.component";
+import {ThemeFormComponent} from "./quizzes/theme-form/theme-form.component";
 
 
 
@@ -47,11 +46,11 @@ import { UserConfigComponent } from './users/user-config/user-config.component';
     ActionsComponent,
     LoginNewAccountComponent,
     UserCardComponent,
-    GameAnswerComponent,
+    GameAnswersComponent,
     GameQuestionComponent,
     UserConfigComponent,
-
-
+    QuizConfigComponent,
+    ThemeFormComponent,
   ],
   imports: [
     ReactiveFormsModule,

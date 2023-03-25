@@ -4,7 +4,7 @@
     <h3>Thème: {{ quiz.theme }}</h3>
     <button class="button-card" (click)="onEdit()">Modifier</button>
     <button class="button-card" (click)="onDelete()">Supprimer</button>
-    <button class="button-card" (click)="onConfigure()">Configurer</button>
+    <button class="button-card" [routerLink]="['/quiz-config',quiz.id]">Configurer</button>
   </ng-container>
   <ng-container *ngIf="editMode">
     <form>

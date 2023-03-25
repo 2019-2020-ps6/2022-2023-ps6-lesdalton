@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./game-question.component.scss']
 })
 export class GameQuestionComponent {
-
+  constructor() {
+  }
 }

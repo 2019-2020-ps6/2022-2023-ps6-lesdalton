@@ -1,6 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Quiz } from '../../../models/quiz.model';
-import {QuizService} from "../../../services/quiz-service";
+import {QuizService} from "../../../services/quiz.service";
+import {ThemeService} from "../../../services/theme.service";
+import {Theme} from "../../../models/theme.models";
+
 
 @Component({
   selector: 'app-quiz-card',
@@ -9,8 +12,8 @@ import {QuizService} from "../../../services/quiz-service";
 })
 export class QuizCardComponent {
   @Input() quiz!: Quiz;
-
-  constructor(private quizService:QuizService) {
+  public themeList:Theme[] = this.themeService.themes;
+  constructor(private quizService:QuizService,private themeService:ThemeService) {
   }
 
   editMode = false;

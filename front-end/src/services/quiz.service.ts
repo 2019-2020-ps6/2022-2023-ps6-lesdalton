@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
 import { Quiz } from 'src/models/quiz.model';
 import { BehaviorSubject } from 'rxjs';
 
@@ -18,6 +17,7 @@ export class QuizService {
     this.quizzes$.next(this.quizzes);
   }
 
+
   deleteQuiz(quiz:Quiz){
     const index = this.quizzes.indexOf(quiz);
     if (index !== -1) {
@@ -28,6 +28,11 @@ export class QuizService {
 
   updateQuiz(){
     this.quizzes$.next(this.quizzes);
+  }
+
+  getQuizById(id: string): Quiz {
+    const quiz = this.quizzes.find(u => u.id === id)!;
+    return quiz;
   }
 
 }

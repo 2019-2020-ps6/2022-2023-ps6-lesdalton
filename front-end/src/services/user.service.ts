@@ -20,8 +20,6 @@ export class UserService {
    */
   public users$: BehaviorSubject<User[]> = new BehaviorSubject(USER);
 
-  constructor(private http: HttpClient, private router: Router) { }
-
   /*
    Adds a new user to the list of users.
    */

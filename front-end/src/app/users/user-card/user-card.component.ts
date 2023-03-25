@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {User} from "../../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../../services/user.service";
+import {Theme} from "../../../models/theme.models";
 
 @Component({
   selector: 'app-user-card',

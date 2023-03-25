@@ -1,7 +1,9 @@
 import { Component } from "@angular/core";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import { Quiz } from "../../../models/quiz.model";
-import {QuizService} from "../../../services/quiz-service";
+import {QuizService} from "../../../services/quiz.service";
+import {Theme} from "../../../models/theme.models";
+import {ThemeService} from "../../../services/theme.service";
 
 @Component({
   selector: 'app-quiz-form',
@@ -10,17 +12,21 @@ import {QuizService} from "../../../services/quiz-service";
 })
 export class QuizFormComponent {
 
+  public themeList:Theme[] = this.themeService.themes;
+
   quizForm = new FormGroup({
     name: new FormControl(),
-    theme: new FormControl()
+    theme: new FormControl(),
+    id: new FormControl()
   });
 
-  constructor(private quizService: QuizService) {}
+  constructor(private quizService: QuizService,private themeService: ThemeService) {}
 
   onSubmit() {
     const quiz:Quiz = {
       name: this.quizForm.controls.name.value, // set the name property
-      theme: this.quizForm.controls.theme.value// set the theme property
+      theme: this.quizForm.controls.theme.value,// set the theme property
+      id: this.quizForm.controls.id.value
     }; // create a new Quiz instance
     this.quizService.addQuiz(quiz);
     this.quizForm.reset();

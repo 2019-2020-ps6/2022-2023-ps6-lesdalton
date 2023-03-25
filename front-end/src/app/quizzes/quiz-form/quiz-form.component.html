@@ -7,7 +7,14 @@
 
   <label>
     Thème:
-    <input type="text" [formControl]="quizForm.controls.theme">
+    <select [formControl]="quizForm.controls.theme">
+      <option *ngFor="let theme of themeList" [value]="theme.name">{{ theme.name }}</option>
+    </select>
+  </label>
+
+  <label>
+    ID:
+    <input type="text" [formControl]="quizForm.controls.id">
   </label>
 
   <button type="submit" [ngClass]="{'button-card': quizForm.controls.name.valid, 'invalid-button-card': quizForm.controls.name.invalid}" (click)="onSubmit()" [disabled]="!quizForm.controls.name.value">

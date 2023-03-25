@@ -11,6 +11,7 @@ import {ActionsComponent} from "./actions/actions.component";
 import {LoginNewAccountComponent} from "./login-new-account/login-new-account.component";
 import {UserCardComponent} from "./users/user-card/user-card.component";
 import {UserConfigComponent} from "./users/user-config/user-config.component";
+import {QuizConfigComponent} from "./quizzes/quiz-config/quiz-config.component";
 
 
 
@@ -30,8 +31,8 @@ const routes: Routes = [
   {path: 'actions', component:ActionsComponent},
   {path: "login-new-account", component: LoginNewAccountComponent},
   {path: "user-card/:id",component: UserCardComponent},
-  {path: "user-config/:id",component: UserConfigComponent}
-
+  {path: "user-config/:id",component: UserConfigComponent},
+  {path: "quiz-config/:id",component: QuizConfigComponent},
 
 ];
 
