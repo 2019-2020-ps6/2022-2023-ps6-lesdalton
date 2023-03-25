@@ -40,12 +40,23 @@
     color: #f2f2f2;
     padding: 10px 20px;
     width: 300px;
-    border-radius: 9%;
+    border-radius: 10px;
+    font-size: 30px;
     margin-left: 90%;
   }
+}
+
+.gauge{
+  margin-top: -270px;
 }
 
 .container {
   display: flex;
   align-items: center;
 }
+
+.resize{
+  font-size: 30px;
+}
+
+

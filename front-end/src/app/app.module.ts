@@ -27,6 +27,10 @@ import { UserConfigComponent } from './users/user-config/user-config.component';
 import {QuizConfigComponent} from "./quizzes/quiz-config/quiz-config.component";
 import {GameAnswersComponent} from "./game-answer/game-answer.component";
 import {ThemeFormComponent} from "./quizzes/theme-form/theme-form.component";
+import { HorizontalGaugeComponent } from './horizontal-gauge/horizontal-gauge.component';
+
+
+
 
 
 
@@ -51,6 +55,9 @@ import {ThemeFormComponent} from "./quizzes/theme-form/theme-form.component";
     UserConfigComponent,
     QuizConfigComponent,
     ThemeFormComponent,
+    HorizontalGaugeComponent,
+
+
   ],
   imports: [
     ReactiveFormsModule,

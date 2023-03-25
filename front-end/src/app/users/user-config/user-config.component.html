@@ -1,24 +1,27 @@
-<div class="container">
-  <div class="rectangle">
-    <div class="NomPre">
-      <label>Prénom</label><br>
-      <input type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
+<div class="text">
+  <div class="container">
+    <div class="rectangle">
+      <div class="NomPre">
+        <label class="resize">Prénom</label><br>
+        <input type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
+        <br><br>
+        <label class="resize">Nom</label><br>
+        <input type="lastName" id="lastName" name="lastName" [(ngModel)]="user.lastName">
+        <br><br>
+        <label class="resize">Information supplémentaire</label><br>
+        <textarea type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
+      </div>
+    </div>
+    <div class="notRectangle">
+      <p class="resize">Configuration du profil</p>
+      <br>
+      <button class="button-card"><label class="resize">Notification</label></button>
       <br><br>
-      <label>Nom</label><br>
-      <input type="lastName" id="lastName" name="lastName" [(ngModel)]="user.lastName">
-      <br><br>
-      <label>Information supplémentaire</label><br>
-      <textarea type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
+      <label class="resize">Taille d'écriture : </label><br>
+      <input type="number"  [(ngModel)]="value" (input)="updateValue(); changeFontSize()" min="-50" max="50" class="gauge-input">
+      <br>
+      <label class="resize">Différence entre les lignes :</label><br><br>
+      <label class="resize">Contraste :</label><br><br>
     </div>
   </div>
-  <div class="notRectangle">
-    <p>Configuration du profil</p>
-    <br>
-    <button class="button-card">Notification</button>
-    <br><br>
-    <label>Taille d'écriture :</label><br><br>
-    <label>Différence entre les lignes :</label><br><br>
-    <label>Contraste :</label><br><br>
-  </div>
 </div>
-

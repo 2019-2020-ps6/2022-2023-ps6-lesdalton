@@ -6,5 +6,5 @@ export const USER: User[]=[
       lastName: 'Yager',
       firstName: 'Jacob',
       info: "DMLA"
-    }
+    },
 ]
