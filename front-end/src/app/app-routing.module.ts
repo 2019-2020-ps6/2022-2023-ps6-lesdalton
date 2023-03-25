@@ -16,8 +16,7 @@ import {GamePageComponent} from "./game-page/game-page.component"
 
 
 const routes: Routes = [
-
-
+  { path:'game', component:GamePageComponent},
   { path:'add-quiz',component:AddQuizComponent},
   { path:'quiz',component:QuizComponent },
   { path:'quiz-form',component:QuizFormComponent },
