@@ -25,6 +25,7 @@ import { UserCardComponent } from './users/user-card/user-card.component';
 import { GamePageComponent } from './game/game-page/game-page.component';
 import { GameQuestionComponent } from './game/game-question/game-question.component';
 import { GameAnswerComponent } from './game/game-answer/game-answer.component';
+import { GameSelectPlayerComponent } from './game/game-select-player/game-select-player.component';
 
 
 
@@ -50,6 +51,7 @@ import { GameAnswerComponent } from './game/game-answer/game-answer.component';
     GamePageComponent,
     GameQuestionComponent,
     GameAnswerComponent,
+    GameSelectPlayerComponent,
 
   ],
   imports: [
