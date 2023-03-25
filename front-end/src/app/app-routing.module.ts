@@ -10,7 +10,7 @@ import {LoginComponent} from "./login/login.component";
 import {ActionsComponent} from "./actions/actions.component";
 import {LoginNewAccountComponent} from "./login-new-account/login-new-account.component";
 import {UserCardComponent} from "./users/user-card/user-card.component";
-import {GamePageComponent} from "./game-page/game-page.component"
+import {GamePageComponent} from "./game/game-page/game-page.component"
 
 
 
