@@ -18,10 +18,15 @@
       <button class="button-card"><label class="resize">Notification</label></button>
       <br><br>
       <label class="resize">Taille d'écriture : </label><br>
+      <div class="gauge-container">
+        <div class="gauge-fill" [style.width.%]="value+50"></div>
+      </div>
       <input type="number"  [(ngModel)]="value" (input)="updateValue(); changeFontSize()" min="-50" max="50" class="gauge-input">
       <br>
       <label class="resize">Différence entre les lignes :</label><br><br>
       <label class="resize">Contraste :</label><br><br>
+      <button class="button-card" [routerLink]="['/user-card',user.id]"><label class="resize">Valider</label></button>
+      <button class="button-card"><label class="resize">Visualiser</label></button>
     </div>
   </div>
 </div>
