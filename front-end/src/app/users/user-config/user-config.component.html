@@ -11,7 +11,11 @@
         <label class="resize">Information supplémentaire</label><br>
         <textarea type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
       </div>
+      <div class="visualiser">
+        <button class="button-card"><label class="resize">Visualiser</label></button>
+      </div>
     </div>
+
     <div class="notRectangle">
       <p class="resize">Configuration du profil</p>
       <br>
@@ -25,8 +29,9 @@
       <br>
       <label class="resize">Différence entre les lignes :</label><br><br>
       <label class="resize">Contraste :</label><br><br>
+    </div>
+    <div class="valider">
       <button class="button-card" [routerLink]="['/user-card',user.id]"><label class="resize">Valider</label></button>
-      <button class="button-card"><label class="resize">Visualiser</label></button>
     </div>
   </div>
 </div>
