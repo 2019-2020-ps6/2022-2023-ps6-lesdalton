@@ -1,28 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { Quiz } from 'src/models/quiz.model';
-import {QuizService} from "../../../services/quiz.service";
+import { Component } from '@angular/core';
+import { Quiz } from '../../../models/quiz.model';
+import { QuizService } from '../../../services/quiz.service';
 
 @Component({
   selector: 'app-quiz-list',
   templateUrl: './quiz-list.component.html',
-  styleUrls: ['./quiz-list.component.scss']
+  styleUrls: ['./quiz-list.component.scss'],
 })
-export class QuizListComponent implements OnInit {
-  quizzes: Quiz[] = [];
+export class QuizListComponent {
+  public quizzes: Quiz[] = [];
 
   constructor(private quizService: QuizService) {}
 
-  ngOnInit(): void {
-    this.quizService.quizzes$.subscribe(quizzes => {
-      this.quizzes = quizzes;
-    });
+  ngOnInit() {
+    this.quizService.quizzes$.subscribe((quizzes) => (this.quizzes = quizzes));
   }
 
-  editQuiz(quiz: Quiz): void {
-
-  }
-
-  deleteQuiz(quiz: Quiz): void {
-    this.quizService.deleteQuiz(quiz);
+  onQuizChange(updatedQuiz: Quiz) {
+    const index = this.quizzes.findIndex((quiz) => quiz.id === updatedQuiz.id);
+    this.quizzes[index] = updatedQuiz; // update the quiz object with the emitted value
   }
 }

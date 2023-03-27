@@ -13,6 +13,7 @@ import {Theme} from "../../../models/theme.models";
 export class QuizCardComponent {
   @Input() quiz!: Quiz;
   public themeList:Theme[] = this.themeService.themes;
+  public newTheme:string = "a";
   constructor(private quizService:QuizService,private themeService:ThemeService) {
   }
 
@@ -27,7 +28,8 @@ export class QuizCardComponent {
   }
 
   onSave() {
-    this.quizService.updateQuiz()
+    console.log(this.quiz.theme);
+    this.quizService.updateQuiz();
     this.editMode = false;
   }
 

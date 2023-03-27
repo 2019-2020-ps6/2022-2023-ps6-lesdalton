@@ -10,9 +10,13 @@
     <form>
       <label for="name">Nom:</label>
       <input type="text" id="name" name="name" [(ngModel)]="quiz.name" required>
-
-      <label for="theme">Thème:</label>
-      <input type="text" id="theme" name="theme" [(ngModel)]="quiz.theme" required>
+      <label>
+        Thème
+      </label>
+        <select name="theme" [(ngModel)]="newTheme">
+          <option *ngFor="let theme of themeList" [value]="theme.name">{{ theme.name }}</option>
+        </select>
+      <div>{{newTheme}}</div>
 
       <button class="button-card" (click)="onSave()">Enregistrer</button>
       <button class="button-card" (click)="onCancel()">Annuler</button>

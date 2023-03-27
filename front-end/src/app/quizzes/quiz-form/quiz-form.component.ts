@@ -28,6 +28,7 @@ export class QuizFormComponent {
       theme: this.quizForm.controls.theme.value,// set the theme property
       id: this.quizForm.controls.id.value
     }; // create a new Quiz instance
+    console.log(this.quizForm.controls.theme.value)
     this.quizService.addQuiz(quiz);
     this.quizForm.reset();
     console.log(this.quizService.quizzes$.value)
