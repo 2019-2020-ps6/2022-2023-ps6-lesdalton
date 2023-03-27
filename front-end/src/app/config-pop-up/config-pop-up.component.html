@@ -1,17 +1,23 @@
+
+
 <div class="rectangle">
-  <p class="resize">Configuration du profil</p>
-  <br>
-  <button class="button-card"><label class="resize">Notification</label></button>
-  <br><br>
+  <button class="close">X</button><br><br><br>
   <label class="resize">Taille d'écriture : </label><br>
-
-  <br>
-  <label class="resize">Différence entre les lignes :</label><br><br>
-  <label class="resize">Contraste :</label><br><br>
-  <div class="valider">
-       <button class="button-card"><label class="resize">Valider</label></button>
+  <div class="gauge-container">
+    <div class="gauge-fill" [style.width.%]="value+50"></div>
   </div>
-
+  <input type="number"  [(ngModel)]="value" (input)="updateValue(); changeFontSize()" min="-50" max="50" class="gauge-input">
+  <br><br><br>
+  <label class="resize">Différence entre les lignes :</label>
+  <br><br><br><br><br><br>
+  <label class="resize">Contraste :</label>
+  <br><br><br><br><br><br>
 </div>
+<button class="button-card"><label class="valider">Valider</label></button>
+<div class="resize">
+  <app-game-page></app-game-page>
+</div>
+
+
 
 
