@@ -6,8 +6,6 @@ import {Router} from "@angular/router";
 import {USER} from "../../../mocks/user-list.mock";
 
 
-
-
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
