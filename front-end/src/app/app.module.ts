@@ -25,12 +25,14 @@ import { UserCardComponent } from './users/user-card/user-card.component';
 import { UserConfigComponent } from './users/user-config/user-config.component';
 import {QuizConfigComponent} from "./quizzes/quiz-config/quiz-config.component";
 import {ThemeFormComponent} from "./quizzes/theme-form/theme-form.component";
+
 import { HorizontalGaugeComponent } from './horizontal-gauge/horizontal-gauge.component';
 
 import { GamePageComponent } from './game/game-page/game-page.component';
 import { GameQuestionComponent } from './game/game-question/game-question.component';
 import { GameAnswerComponent } from './game/game-answer/game-answer.component';
 import { GameSelectPlayerComponent } from './game/game-select-player/game-select-player.component';
+import { GameSelectThemeComponent } from './game/game-select-theme/game-select-theme.component';
 
 
 
@@ -63,6 +65,7 @@ import { GameSelectPlayerComponent } from './game/game-select-player/game-select
     GameQuestionComponent,
     GameAnswerComponent,
     GameSelectPlayerComponent,
+    GameSelectThemeComponent,
 
   ],
   imports: [
