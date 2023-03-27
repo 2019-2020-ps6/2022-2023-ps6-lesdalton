@@ -1,5 +1,6 @@
 import {Theme} from "../models/theme.models";
-import {ThemeMocks} from "../mocks/theme.mocks";
+import {ThemeFormComponent} from "../app/quizzes/theme-form/theme-form.component";
+import {THEME_LIST} from "../mocks/theme.mocks";
 import {BehaviorSubject} from "rxjs";
 import {User} from "../models/user.models";
 import {USER} from "../mocks/user-list.mock";
@@ -8,8 +9,8 @@ import {Injectable} from "@angular/core";
   providedIn: 'root'
 })
 export class ThemeService{
-  themes:Theme[]=ThemeMocks;
-  public themes$: BehaviorSubject<Theme[]> = new BehaviorSubject(ThemeMocks);
+  themes:Theme[]=THEME_LIST;
+  public themes$: BehaviorSubject<Theme[]> = new BehaviorSubject(THEME_LIST);
   addTheme(name:string):void{
     this.themes.push({name:name});
     this.themes$.next(this.themes);
