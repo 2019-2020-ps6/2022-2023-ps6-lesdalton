@@ -1,5 +1,5 @@
 export interface Theme {
   name: string;
-  id: number;
+  id?: number;
   image?:string;
 }
