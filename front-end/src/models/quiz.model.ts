@@ -1,7 +1,9 @@
 import {Theme} from "./theme.models";
+import {Question} from "./question.model";
 
 export interface Quiz {
-  id:string;
+  id?: number;
   name:string;
-  theme?:string;
+  theme?:Theme;
+
 }

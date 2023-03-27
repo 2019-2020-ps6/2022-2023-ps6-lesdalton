@@ -1,11 +1,11 @@
-export interface Answer {
-    type?: string;
-    value: string;
-    isCorrect: boolean;
-}
+import {Answer} from './answer.models';
 
 export interface Question {
-    id: string;
-    label: string;
-    answers: Answer[];
+
+  text: string;
+  id: number;
+  answers: Answer[];
+  quizId?: number;
+  image?: string;
+  answersAreText: boolean;
 }
