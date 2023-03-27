@@ -45,10 +45,12 @@ export class UserConfigComponent {
     const newValue =  30*(this.value/100+1);
     console.log(newValue);
     button.style.fontSize = newValue + 'px';
-  }
-  onSaveConfig() {
-    localStorage.setItem('fontSize', this.fontSize.toString());
+    this.fontSize = button.style.fontSize;
   }
 
+  onSaveConfig(){
+    this.user.config.fontSize=this.fontSize;
+    this.userService.updateUser(this.user);
+  }
 
 }

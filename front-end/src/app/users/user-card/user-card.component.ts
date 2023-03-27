@@ -3,6 +3,7 @@ import {User} from "../../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../../services/user.service";
 import {Theme} from "../../../models/theme.models";
+import {config} from "rxjs";
 
 @Component({
   selector: 'app-user-card',
@@ -10,7 +11,7 @@ import {Theme} from "../../../models/theme.models";
   styleUrls: ['./user-card.component.scss']
 })
 export class UserCardComponent {
-  user: User = {id:'',firstName:'',lastName:''};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:"16px"}};
 
   constructor(private route: ActivatedRoute, private userService: UserService) {}
 

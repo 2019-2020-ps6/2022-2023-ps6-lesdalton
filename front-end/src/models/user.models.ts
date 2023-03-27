@@ -9,5 +9,5 @@ export interface User {
   lastName: string;
 
   info?: string;
-  config?:UserConfigModel;
+  config:UserConfigModel;
 }

@@ -5,6 +5,7 @@ export const USER: User[]=[
     id: '21',
     lastName: 'Yager',
     firstName: 'Jacob',
-    info: "DMLA"
+    info: "DMLA",
+    config:{fontSize:"30px"}
   },
 ]
