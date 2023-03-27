@@ -2,10 +2,10 @@
   <h2>Ajouter un thème</h2>
   <label>
     Nom du thème:
-    <input type="text" [formControl]="themeForm.controls.name" ngModel required>
+    <input type="text" [formControl]="themeForm.controls.name" required>
   </label>
 
-  <button type="submit" class="button-card" (click)="onSubmit()">
+  <button type="submit" [ngClass]="{'button-card': themeForm.controls.name.valid, 'invalid-button-card': themeForm.controls.name.invalid}" (click)="onSubmit()" [disabled]="!themeForm.controls.name.value">
     Créer</button>
 </div>
 

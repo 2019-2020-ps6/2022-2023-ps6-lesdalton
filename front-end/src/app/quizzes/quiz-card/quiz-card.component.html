@@ -13,10 +13,9 @@
       <label>
         Thème
       </label>
-        <select name="theme" [(ngModel)]="newTheme">
+        <select name="theme" [(ngModel)]="quiz.theme">
           <option *ngFor="let theme of themeList" [value]="theme.name">{{ theme.name }}</option>
         </select>
-      <div>{{newTheme}}</div>
 
       <button class="button-card" (click)="onSave()">Enregistrer</button>
       <button class="button-card" (click)="onCancel()">Annuler</button>
