@@ -2,6 +2,8 @@
 
 <div class="theme-content">
   <ul>
-    <li *ngFor="let theme of themeList">{{theme.name}}</li>
+    <li *ngFor="let theme of themeList">
+      <a [routerLink]="['/select-quiz', user.id, theme.name]">{{theme.name}}</a>
+    </li>
   </ul>
 </div>

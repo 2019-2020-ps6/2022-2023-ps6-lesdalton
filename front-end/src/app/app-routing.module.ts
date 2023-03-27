@@ -14,6 +14,7 @@ import {GamePageComponent} from "./game/game-page/game-page.component"
 import {GameSelectPlayerComponent} from "./game/game-select-player/game-select-player.component";
 import {GameSelectThemeComponent} from "./game/game-select-theme/game-select-theme.component";
 import {UserConfigComponent} from "./users/user-config/user-config.component";
+import {GameSelectQuizComponent} from "./game/game-select-quiz/game-select-quiz.component";
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path:'game', component:GamePageComponent},
   { path:'select-player', component:GameSelectPlayerComponent},
   {path:'select-theme/:id', component:GameSelectThemeComponent},
+  {path:'select-quiz/:id/:name', component:GameSelectQuizComponent},
 
 
   { path:'add-quiz',component:AddQuizComponent},
