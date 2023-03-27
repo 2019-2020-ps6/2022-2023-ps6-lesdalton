@@ -2,8 +2,9 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 
 import { User } from '../../../models/user.models';
 import { UserService } from '../../../services/user.service';
-import {USER} from "../../../mocks/user-list.mock";
 import {Router} from "@angular/router";
+import { PROFILE_LIST } from 'src/mocks/user-list.mock';
+import { Profile } from 'src/app/models/profile.models';
 
 
 
@@ -16,11 +17,11 @@ export class UserListComponent implements OnInit {
 
 
 
-  public userList: User[] = USER;
+  public userList: Profile[] = PROFILE_LIST;
 
   constructor(private userService: UserService, private router: Router) {
     this.userService.users$.subscribe((users: User[]) => {
-      this.userList = users;
+      this.Profile = users;
     });
   }
 
