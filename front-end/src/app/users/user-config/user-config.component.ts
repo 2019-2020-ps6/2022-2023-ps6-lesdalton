@@ -14,7 +14,9 @@ export class UserConfigComponent {
 
   @ViewChild('horizontalGauge') horizontalGauge!: HorizontalGaugeComponent;
 
-  user: User = {id:'',firstName:'',lastName:''};
+  fontSize:string='16px'
+
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:this.fontSize}};
 
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef) {}
 
@@ -44,5 +46,9 @@ export class UserConfigComponent {
     console.log(newValue);
     button.style.fontSize = newValue + 'px';
   }
+  onSaveConfig() {
+    localStorage.setItem('fontSize', this.fontSize.toString());
+  }
+
 
 }
