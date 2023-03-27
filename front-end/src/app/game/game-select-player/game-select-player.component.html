@@ -1,1 +1,13 @@
-<p>game-select-player works!</p>
+<h2 class="title">QUI VEUT JOUER ?</h2>
+
+<div class="user-list">
+  <div class="user" *ngFor="let user of userList" (click)="selectPlayer(user)">
+    <div class="card">
+      <div class="user-image">
+        <img src="../../../assets/resources/profilPIc.png" >
+      </div>
+
+      <h2>{{user.firstName}}  {{user.lastName}}</h2>
+    </div>
+  </div>
+</div>
