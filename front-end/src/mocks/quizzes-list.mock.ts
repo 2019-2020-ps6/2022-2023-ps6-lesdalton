@@ -15,5 +15,20 @@ export const QuizzesMocks: Quiz[] = [
     id:'3',
     name:"La Grece antique",
     theme:"Histoire",
+  },
+  {
+    id:'4',
+    name:"Acteurs célèbres",
+    theme:"Cinéma",
+  },
+  {
+    id:'5',
+    name:"Les réalisateurs célèbres",
+    theme:"Cinéma",
+  },
+  {
+    id:'6',
+    name:"Répliques cultes de films",
+    theme:"Cinéma",
   }
 ];

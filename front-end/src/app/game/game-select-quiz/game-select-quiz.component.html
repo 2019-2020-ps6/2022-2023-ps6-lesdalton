@@ -1,8 +1,8 @@
-<h2 class="title">Choisissez un Quiz</h2>
+<h2 class="title">{{theme.name}} / Choisissez un Quiz</h2>
 
 <div class="theme-content">
   <ul>
-    <li *ngFor="let quiz of QuizList"> {{quiz.name}}
+    <li *ngFor="let quiz of quizForTheme"> {{quiz.name}}
     </li>
   </ul>
 </div>
