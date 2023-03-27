@@ -27,7 +27,7 @@ export class QuizCardComponent {
   }
 
   onSave() {
-    this.quizService.updateQuiz()
+    this.quizService.updateQuiz();
     this.editMode = false;
   }
 

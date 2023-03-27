@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93929443-17bd-4e0c-8b08-bd805ad3bdd0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/login/login.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/mocks/user-list.mock.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/mocks/user-list.mock.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-card/quiz-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-card/quiz-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-card/quiz-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-card/quiz-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/theme-form/theme-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/theme-form/theme-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/styles/card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/styles/card.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +77,6 @@
       <workItem from="1678895477174" duration="26493000" />
       <workItem from="1678955438924" duration="10333000" />
       <workItem from="1679076838752" duration="4425000" />
-      <workItem from="1679579631266" duration="5964000" />
     </task>
     <servers />
   </component>
