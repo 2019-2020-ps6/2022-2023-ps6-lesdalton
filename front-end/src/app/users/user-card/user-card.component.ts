@@ -18,4 +18,8 @@ export class UserCardComponent {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.user = this.userService.getUserById(id);
   }
+
+  onSave(){
+    this.userService.updateUser(this.user);
+  }
 }

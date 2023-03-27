@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef} from '@angular/core';
 import {Login} from "../../models/login.model";
 import {Router} from "@angular/router";
 
@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(public router:Router) {
+  constructor(public router:Router,private elementRef: ElementRef) {
   }
   onSubmit() {
     this.router.navigate(['/actions']);

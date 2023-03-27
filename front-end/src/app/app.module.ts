@@ -22,11 +22,18 @@ import { LoginComponent } from './login/login.component';
 import { ActionsComponent } from './actions/actions.component';
 import {LoginNewAccountComponent} from "./login-new-account/login-new-account.component";
 import { UserCardComponent } from './users/user-card/user-card.component';
-import {GameQuestionComponent} from "./game-question/game-question.component";
 import { UserConfigComponent } from './users/user-config/user-config.component';
 import {QuizConfigComponent} from "./quizzes/quiz-config/quiz-config.component";
-import {GameAnswersComponent} from "./game-answer/game-answer.component";
 import {ThemeFormComponent} from "./quizzes/theme-form/theme-form.component";
+import { HorizontalGaugeComponent } from './horizontal-gauge/horizontal-gauge.component';
+
+import { GamePageComponent } from './game/game-page/game-page.component';
+import { GameQuestionComponent } from './game/game-question/game-question.component';
+import { GameAnswerComponent } from './game/game-answer/game-answer.component';
+import { GameSelectPlayerComponent } from './game/game-select-player/game-select-player.component';
+
+
+
 
 
 
@@ -46,11 +53,17 @@ import {ThemeFormComponent} from "./quizzes/theme-form/theme-form.component";
     ActionsComponent,
     LoginNewAccountComponent,
     UserCardComponent,
-    GameAnswersComponent,
     GameQuestionComponent,
     UserConfigComponent,
     QuizConfigComponent,
     ThemeFormComponent,
+    HorizontalGaugeComponent,
+
+    GamePageComponent,
+    GameQuestionComponent,
+    GameAnswerComponent,
+    GameSelectPlayerComponent,
+
   ],
   imports: [
     ReactiveFormsModule,
