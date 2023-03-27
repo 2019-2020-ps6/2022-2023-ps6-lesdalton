@@ -1,11 +1,19 @@
-import {Theme} from "../models/theme.models";
+import {Theme} from '../models/theme.models';
 
-export const ThemeMocks: Theme[] = [
-  {
-    name:"Histoire"
-  },
-  {
-    name: "Cinéma"
-  }
+export const THEME_LIST: Theme[] = [
+    {
+        id: 1,
+        name: 'SPORT'
+
+    },
+    {
+        id: 2,
+        name: 'Histoire'
+
+    },
+    {
+        id: 3,
+        name: 'Geographie'
+
+    }
 ];
-
