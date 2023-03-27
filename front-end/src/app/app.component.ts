@@ -13,6 +13,7 @@ export class AppComponent {
   public UserPic: string='./assets/resources/profil.jpg';
 
 
+
   constructor(public router: Router) {
 
   }
