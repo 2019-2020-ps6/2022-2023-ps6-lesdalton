@@ -33,6 +33,7 @@ import { GameQuestionComponent } from './game/game-question/game-question.compon
 import { GameAnswerComponent } from './game/game-answer/game-answer.component';
 import { GameSelectPlayerComponent } from './game/game-select-player/game-select-player.component';
 import { GameSelectThemeComponent } from './game/game-select-theme/game-select-theme.component';
+import { ConfigPopUpComponent } from './config-pop-up/config-pop-up.component';
 
 
 
@@ -66,6 +67,7 @@ import { GameSelectThemeComponent } from './game/game-select-theme/game-select-t
     GameAnswerComponent,
     GameSelectPlayerComponent,
     GameSelectThemeComponent,
+    ConfigPopUpComponent,
 
   ],
   imports: [
