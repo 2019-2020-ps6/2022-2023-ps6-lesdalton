@@ -1,10 +1,66 @@
+@import "../../styles/card";
+
 .rectangle {
-  width: 400px;
+  position: absolute;
+  width: 440px;
   height: 800px;
-  background-color: black;
+  background-color: #d9d9d9;
   margin-left: 75%;
   label{
-    color: white;
-
+    color: #000000;
   }
+  button{
+    position: absolute;
+    background-color: #EF6D58;
+    margin-top: 40%;
+    margin-left: 35%;
+    .valider{
+      color: white;
+      position: fixed;
+
+    }
+  }
+  .resize{
+    font-size: 26px;
+    margin-left: 2%;
+  }
+  .close{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: 1%;
+    margin-left: 90%;
+    background-color: red;
+    color: white;
+  }
+
+}
+
+.gauge-container {
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 30%;
+  width: 44%;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+.gauge-fill {
+  position: absolute;
+  height: 100%;
+  background-color: green;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+}
+input{
+  position: absolute;
+  margin-left: 30%;
+}
+
+button{
+  position: absolute;
+  margin-left: 85%;
+  margin-top: 40%;
 }

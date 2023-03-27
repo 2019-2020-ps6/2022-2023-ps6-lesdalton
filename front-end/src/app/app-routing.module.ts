@@ -40,7 +40,7 @@ const routes: Routes = [
   {path: "user-card/:id",component: UserCardComponent},
   {path: "user-config/:id", component: UserConfigComponent},
 
-  {path: "config-pop-up", component: ConfigPopUpComponent}
+  {path: "config-pop-up/:id", component: ConfigPopUpComponent}
 
 ];
 
