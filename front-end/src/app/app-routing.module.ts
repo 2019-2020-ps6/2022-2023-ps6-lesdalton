@@ -21,7 +21,8 @@ import {UserConfigComponent} from "./users/user-config/user-config.component";
 const routes: Routes = [
   { path:'game', component:GamePageComponent},
   { path:'select-player', component:GameSelectPlayerComponent},
-  {path:'select-theme', component:GameSelectThemeComponent},
+  {path:'select-theme/:id', component:GameSelectThemeComponent},
+
 
   { path:'add-quiz',component:AddQuizComponent},
   { path:'quiz',component:QuizComponent },
