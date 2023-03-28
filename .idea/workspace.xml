@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93929443-17bd-4e0c-8b08-bd805ad3bdd0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-card/user-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-card/user-card.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/mocks/user-list.mock.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/mocks/user-list.mock.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/models/user-config.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/models/user-config.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/config-pop-up/config-pop-up.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/config-pop-up/config-pop-up.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-form/user-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-form/user-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-list/user-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-list/user-list.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +75,7 @@
       <workItem from="1678895477174" duration="26493000" />
       <workItem from="1678955438924" duration="10333000" />
       <workItem from="1679076838752" duration="4425000" />
-      <workItem from="1680036255733" duration="1973000" />
+      <workItem from="1680036255733" duration="2415000" />
     </task>
     <servers />
   </component>

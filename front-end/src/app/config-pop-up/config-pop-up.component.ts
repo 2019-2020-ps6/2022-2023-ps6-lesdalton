@@ -2,6 +2,7 @@ import {Component, ElementRef} from '@angular/core';
 import {User} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../services/user.service";
+import {config} from "rxjs";
 
 @Component({
   selector: 'app-config-pop-up',
@@ -9,7 +10,7 @@ import {UserService} from "../../services/user.service";
   styleUrls: ['./config-pop-up.component.scss']
 })
 export class ConfigPopUpComponent {
-  user: User = {id:'',firstName:'',lastName:''};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16}};
 
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef) {}
 
