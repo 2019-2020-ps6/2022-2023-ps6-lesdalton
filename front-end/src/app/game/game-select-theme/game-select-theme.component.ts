@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ThemeMocks} from "../../../mocks/theme.mocks";
+import {THEME_LIST} from "../../../mocks/theme.mocks";
 import {User} from "../../../models/user.models";
 import {USER} from "../../../mocks/user-list.mock";
 import {Theme} from "../../../models/theme.models";
@@ -10,7 +10,7 @@ import {Theme} from "../../../models/theme.models";
   styleUrls: ['./game-select-theme.component.scss']
 })
 export class GameSelectThemeComponent implements OnInit{
-  themeList:Theme[] = ThemeMocks;
+  themeList:Theme[] = THEME_LIST;
 
   ngOnInit(): void {
   }
