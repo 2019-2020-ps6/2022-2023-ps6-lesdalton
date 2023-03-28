@@ -6,6 +6,6 @@ export const USER: User[]=[
     lastName: 'Yager',
     firstName: 'Jacob',
     info: "DMLA",
-    config:{fontSize:"30px"}
+    config:{fontSize:30}
   },
 ]

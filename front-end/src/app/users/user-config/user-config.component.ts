@@ -14,10 +14,9 @@ export class UserConfigComponent {
 
   @ViewChild('horizontalGauge') horizontalGauge!: HorizontalGaugeComponent;
 
-  fontSize:string='16px'
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:10}};
 
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:this.fontSize}};
-
+  fontSize:string = this.user.config.fontSize+'px';
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef) {}
 
   ngOnInit() {
@@ -25,31 +24,32 @@ export class UserConfigComponent {
     this.user = this.userService.getUserById(id);
   }
 
-  value = 0;
   updateValue() {
-    if (this.value < -50) {
-      this.value = -50;
-    } else if (this.value > 50) {
-      this.value = 50;
+    this.fontSize = this.user.config.fontSize+'px';
+    console.log(this.user.config.fontSize);
+    if (this.user.config.fontSize < 16) {
+      this.user.config.fontSize = 16;
+    } else if (this.user.config.fontSize > 30) {
+      this.user.config.fontSize = 30;
     }
   }
 
   changeFontSize() {
+    let value = this.user.config.fontSize;
+    console.log(value);
     const textElements: NodeListOf<HTMLElement> = this.elementRef.nativeElement.querySelectorAll('.resize');
     textElements.forEach((element: HTMLElement) => {
-      const newValue =  30*(this.value/100+1);
-      console.log(newValue);
-      element.style.fontSize = newValue + 'px';
+      element.style.fontSize = value + 'px';
     });
-    const button:HTMLElement = this.elementRef.nativeElement.querySelectorAll('.button-card');
-    const newValue =  30*(this.value/100+1);
+    const button:HTMLElement = this.elementRef.nativeElement.querySelector('.button-card');
+    const newValue =  30*(value/100+1);
     console.log(newValue);
-    button.style.fontSize = newValue + 'px';
-    this.fontSize = button.style.fontSize;
+    button.style.fontSize = value + 'px';
+    this.fontSize = this.user.config.fontSize+'px';
+    console.log(this.user.config.fontSize);
   }
 
   onSaveConfig(){
-    this.user.config.fontSize=this.fontSize;
     this.userService.updateUser(this.user);
   }
 

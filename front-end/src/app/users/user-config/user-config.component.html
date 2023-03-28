@@ -2,36 +2,36 @@
   <div class="container">
     <div class="rectangle">
       <div class="NomPre">
-        <label class="resize">Prénom</label><br>
-        <input type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
+        <label [style.font-size.px]="user.config.fontSize">Prénom</label><br>
+        <input [style.font-size.px]="user.config.fontSize" type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
         <br><br>
-        <label class="resize">Nom</label><br>
-        <input type="lastName" id="lastName" name="lastName" [(ngModel)]="user.lastName">
+        <label [style.font-size.px]="user.config.fontSize">Nom</label><br>
+        <input [style.font-size.px]="user.config.fontSize" type="lastName" id="lastName" name="lastName" [(ngModel)]="user.lastName">
         <br><br>
-        <label class="resize">Information supplémentaire</label><br>
-        <textarea type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
-      </div>
-      <div class="visualiser">
-        <button class="button-card" routerLink="/config-pop-up"><label class="resize">Visualiser</label></button>
+        <label [style.font-size.px]="user.config.fontSize">Information supplémentaire</label><br>
+        <textarea [style.font-size.px]="user.config.fontSize" type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
       </div>
     </div>
 
     <div class="notRectangle">
-      <p class="resize">Configuration du profil</p>
+      <p [style.font-size.px]="user.config.fontSize*1.2">Configuration du profil</p>
       <br>
-      <button class="button-card"><label class="resize">Notification</label></button>
+      <button class="button-card"><label [style.font-size.px]="user.config.fontSize">Notification</label></button>
       <br><br>
-      <label class="resize">Taille d'écriture : </label><br>
+      <label [style.font-size.px]="user.config.fontSize">Taille d'écriture : </label><br>
       <div class="gauge-container">
-        <div class="gauge-fill" [style.width.%]="value+50"></div>
+        <div class="gauge-fill" [style.width.%]="user.config.fontSize+50"></div>
       </div>
-      <input type="number"  [(ngModel)]="value" (input)="updateValue(); changeFontSize()" min="-50" max="50" class="gauge-input">
+      <input type="number"  [(ngModel)]="user.config.fontSize" (input)="updateValue(); changeFontSize()" min="16" max="30" class="gauge-input">
       <br>
-      <label class="resize">Différence entre les lignes :</label><br><br>
-      <label class="resize">Contraste :</label><br><br>
+      <label [style.font-size.px]="user.config.fontSize"> Différence entre les lignes :</label><br><br>
+      <label [style.font-size.px]="user.config.fontSize">Contraste :</label><br><br>
+      <div>
+      </div>
     </div>
     <div class="valider">
-      <button class="button-card" [routerLink]="['/user-card',user.id]" (click)="onSaveConfig()"><label class="resize">Valider</label></button>
+      <button class="button-card" id="visualiser" routerLink="/config-pop-up"><label [style.font-size.px]="user.config.fontSize">Visualiser</label></button>
+      <button class="button-card" [routerLink]="['/user-card',user.id]" (click)="onSaveConfig()"><label [style.font-size.px]="user.config.fontSize">Valider</label></button>
     </div>
   </div>
 </div>

@@ -1,3 +1,3 @@
 export interface UserConfigModel{
-  fontSize:string;
+  fontSize:number;
 }
