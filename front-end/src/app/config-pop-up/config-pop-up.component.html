@@ -4,9 +4,9 @@
   <button class="close">X</button><br><br><br>
   <label class="resize">Taille d'écriture : </label><br>
   <div class="gauge-container">
-    <div class="gauge-fill" [style.width.%]="value+50"></div>
+    <div class="gauge-fill" [style.width.%]="(user.config.fontSize-16)*100/14"></div>
   </div>
-  <input type="number"  [(ngModel)]="value" (input)="updateValue(); changeFontSize()" min="-50" max="50" class="gauge-input">
+  <input type="number"  [(ngModel)]="user.config.fontSize" (input)="updateValue(); changeFontSize()" min="16" max="30" class="gauge-input">
   <br><br><br>
   <label class="resize">Différence entre les lignes :</label>
   <br><br><br><br><br><br>
