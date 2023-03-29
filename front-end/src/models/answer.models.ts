@@ -1,9 +1,9 @@
 export interface Answer {
 
   id: number;
-  text?: string;
+  text: string;
   isCorrect: boolean;
   image?: string;
   questionId: number;
-  
+
 }
