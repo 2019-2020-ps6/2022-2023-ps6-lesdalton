@@ -20,9 +20,9 @@
       <br><br>
       <label [style.font-size.px]="user.config.fontSize">Taille d'écriture : </label><br>
       <div class="gauge-container">
-        <div class="gauge-fill" [style.width.%]="(user.config.fontSize-16)*100/14"></div>
+        <div class="gauge-fill" [style.width.%]="(user.config.fontSize-16)*100/19"></div>
       </div>
-      <input type="number"  [(ngModel)]="user.config.fontSize" (input)="updateValue(); changeFontSize()" min="16" max="30" class="gauge-input">
+      <input type="number"  [(ngModel)]="user.config.fontSize" (input)="updateValue(); changeFontSize()" min="16" max="35" class="gauge-input">
       <br>
       <label [style.font-size.px]="user.config.fontSize"> Différence entre les lignes :</label><br><br>
       <label [style.font-size.px]="user.config.fontSize">Contraste :</label><br><br>

@@ -2,7 +2,6 @@ import {Component, ElementRef} from '@angular/core';
 import {User} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../services/user.service";
-import {config} from "rxjs";
 
 @Component({
   selector: 'app-config-pop-up',
@@ -11,6 +10,8 @@ import {config} from "rxjs";
 })
 export class ConfigPopUpComponent {
   user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16}};
+  min:number=16;
+  max:number=35;
 
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef) {}
 
@@ -21,10 +22,10 @@ export class ConfigPopUpComponent {
 
   value = 0;
   updateValue() {
-    if (this.value < -50) {
-      this.value = -50;
-    } else if (this.value > 50) {
-      this.value = 50;
+    if (this.value < 16) {
+      this.value = 16;
+    } else if (this.value > 35) {
+      this.value = 35;
     }
   }
 
@@ -40,6 +41,4 @@ export class ConfigPopUpComponent {
     console.log(newValue);
     button.style.fontSize = newValue + 'px';
   }
-
-
 }

@@ -29,8 +29,8 @@ export class UserConfigComponent {
     console.log(this.user.config.fontSize);
     if (this.user.config.fontSize < 16) {
       this.user.config.fontSize = 16;
-    } else if (this.user.config.fontSize > 30) {
-      this.user.config.fontSize = 30;
+    } else if (this.user.config.fontSize > 35) {
+      this.user.config.fontSize = 35;
     }
   }
 
