@@ -3,11 +3,19 @@ import {Handicap} from '../models/handicap.models';
 
 export const QUIZ_LIST: Quiz[] = [
   {
-    id: 1,
-    name: 'football',
+    id: "1",
+    name: 'Football',
     theme: {
       id: 1,
-      name: 'SPORT'
+      name: 'Sport'
+    }
+  },
+  {
+    id: "2",
+    name: 'Histoire de France',
+    theme: {
+      id: 1,
+      name: 'Histoire'
     }
   }
 

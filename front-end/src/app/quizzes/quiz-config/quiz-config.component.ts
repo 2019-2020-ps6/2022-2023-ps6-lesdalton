@@ -12,7 +12,7 @@ import {Theme} from "../../../models/theme.models";
 })
 export class QuizConfigComponent {
 
-  quiz: Quiz = {id:'',name:'',theme:''};
+  quiz: Quiz = {id:'',name:'',theme:{name:"Sans Thème"}};
 
   constructor(private route:ActivatedRoute,private quizService:QuizService) {
   }

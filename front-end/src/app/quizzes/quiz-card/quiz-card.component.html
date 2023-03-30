@@ -1,7 +1,7 @@
 <div class="card">
   <ng-container *ngIf="!editMode">
     <h3>Nom :{{ quiz.name }}</h3>
-    <h3>Thème: {{ quiz.theme }}</h3>
+    <h3>Thème: {{ quiz.theme.name }}</h3>
     <button class="button-card" (click)="onEdit()">Modifier</button>
     <button class="button-card" (click)="onDelete()">Supprimer</button>
     <button class="button-card" [routerLink]="['/quiz-config',quiz.id]">Configurer</button>
@@ -13,7 +13,7 @@
       <label>
         Thème
       </label>
-        <select name="theme" [(ngModel)]="quiz.theme">
+        <select name="theme" [(ngModel)]="quiz.theme.name">
           <option *ngFor="let theme of themeList" [value]="theme.name">{{ theme.name }}</option>
         </select>
 

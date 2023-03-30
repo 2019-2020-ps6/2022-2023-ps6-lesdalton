@@ -25,7 +25,7 @@ export class QuizFormComponent {
   onSubmit() {
     const quiz:Quiz = {
       name: this.quizForm.controls.name.value, // set the name property
-      theme: this.quizForm.controls.theme.value,// set the theme property
+      theme: {name:this.quizForm.controls.theme.value},// set the theme property
       id: this.quizForm.controls.id.value
     }; // create a new Quiz instance
     console.log(this.quizForm.controls.theme.value)

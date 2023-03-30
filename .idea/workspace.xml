@@ -6,14 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="93929443-17bd-4e0c-8b08-bd805ad3bdd0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/config-pop-up/config-pop-up.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/config-pop-up/config-pop-up.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/config-pop-up/config-pop-up.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/config-pop-up/config-pop-up.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-answer/game-answer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-answer/game-answer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-answer/game-answer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-answer/game-answer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-question/game-question.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-question/game-question.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-question/game-question.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-question/game-question.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-card/quiz-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-card/quiz-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-config/quiz-config.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-config/quiz-config.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-form/quiz-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-form/quiz-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-list/quiz-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-list/quiz-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-list/quiz-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-list/quiz-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/mocks/quizzes-list.mock.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/mocks/quizzes-list.mock.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/mocks/theme.mocks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/mocks/theme.mocks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/models/quiz.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/models/quiz.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/services/quiz.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/quiz.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +82,8 @@
       <workItem from="1678895477174" duration="26493000" />
       <workItem from="1678955438924" duration="10333000" />
       <workItem from="1679076838752" duration="4425000" />
-      <workItem from="1680036255733" duration="4865000" />
+      <workItem from="1680036255733" duration="6411000" />
+      <workItem from="1680159343851" duration="1149000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Quiz } from '../../../models/quiz.model';
 import { QuizService } from '../../../services/quiz.service';
+import {QUIZ_LIST} from "../../../mocks/quizzes-list.mock";
 
 @Component({
   selector: 'app-quiz-list',
@@ -8,7 +9,7 @@ import { QuizService } from '../../../services/quiz.service';
   styleUrls: ['./quiz-list.component.scss'],
 })
 export class QuizListComponent {
-  public quizzes: Quiz[] = [];
+  public quizzes: Quiz[] = QUIZ_LIST;
 
   constructor(private quizService: QuizService) {}
 
