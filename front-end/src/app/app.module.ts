@@ -34,6 +34,8 @@ import { GameAnswerComponent } from './game/game-answer/game-answer.component';
 import { GameSelectPlayerComponent } from './game/game-select-player/game-select-player.component';
 import { GameSelectThemeComponent } from './game/game-select-theme/game-select-theme.component';
 import { ConfigPopUpComponent } from './config-pop-up/config-pop-up.component';
+import { PasswordComponent } from './password/password.component';
+import { PasswordQuizComponent } from './password-quiz/password-quiz.component';
 
 
 
@@ -68,6 +70,8 @@ import { ConfigPopUpComponent } from './config-pop-up/config-pop-up.component';
     GameSelectPlayerComponent,
     GameSelectThemeComponent,
     ConfigPopUpComponent,
+    PasswordComponent,
+    PasswordQuizComponent,
 
   ],
   imports: [

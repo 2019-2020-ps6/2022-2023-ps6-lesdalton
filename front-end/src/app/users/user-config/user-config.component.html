@@ -2,30 +2,35 @@
   <div class="container">
     <div class="rectangle">
       <div class="NomPre">
-        <label [style.font-size.px]="user.config.fontSize">Prénom</label><br>
-        <input [style.font-size.px]="user.config.fontSize" type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
+        <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">Prénom</label><br>
+        <input [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
         <br><br>
-        <label [style.font-size.px]="user.config.fontSize">Nom</label><br>
-        <input [style.font-size.px]="user.config.fontSize" type="lastName" id="lastName" name="lastName" [(ngModel)]="user.lastName">
+        <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">Nom</label><br>
+        <input [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" type="lastName" id="lastName" name="lastName" [(ngModel)]="user.lastName">
         <br><br>
-        <label [style.font-size.px]="user.config.fontSize">Information supplémentaire</label><br>
-        <textarea [style.font-size.px]="user.config.fontSize" type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
+        <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">Information supplémentaire</label><br>
+        <textarea [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
       </div>
     </div>
 
     <div class="notRectangle">
-      <p [style.font-size.px]="user.config.fontSize*1.2">Configuration du profil</p>
+      <p [style.font-size.px]="user.config.fontSize*1.2" [style.line-height.px]="user.config.lineHeight">Configuration du profil</p>
       <br>
-      <button class="button-card"><label [style.font-size.px]="user.config.fontSize">Notifications</label></button>
+      <button class="button-card"><label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">Notifications</label></button>
       <br><br>
-      <label [style.font-size.px]="user.config.fontSize">Taille d'écriture : </label><br>
+      <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">Taille d'écriture : </label><br>
       <div class="gauge-container">
         <div class="gauge-fill" [style.width.%]="(user.config.fontSize-16)*100/19"></div>
       </div>
       <input type="number"  [(ngModel)]="user.config.fontSize" (input)="updateValue(); changeFontSize()" min="16" max="35" class="gauge-input">
       <br>
-      <label [style.font-size.px]="user.config.fontSize"> Différence entre les lignes :</label><br><br>
-      <label [style.font-size.px]="user.config.fontSize">Contraste :</label><br><br>
+      <label [style.font-size.px]="user.config.fontSize"> Différence entre les lignes :</label>
+      <div class="gauge-container2">
+        <div class="gauge-fill2" [style.width.%]="(user.config.lineHeight-16)*100/44"></div>
+      </div>
+      <input type="number"  [(ngModel)]="user.config.lineHeight" (input)="updateValue(); changeLineHeight()" min="16" max="60" class="gauge-input">
+      <br>
+      <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">Contraste :</label><br><br>
       <div>
       </div>
     </div>

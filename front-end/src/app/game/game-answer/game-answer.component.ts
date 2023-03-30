@@ -9,7 +9,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./game-answer.component.scss']
 })
 export class GameAnswerComponent {
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16}};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5}};
 
   constructor(private userService: UserService,private route:ActivatedRoute) {
   }

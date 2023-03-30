@@ -11,7 +11,7 @@ import {config} from "rxjs";
   styleUrls: ['./user-card.component.scss']
 })
 export class UserCardComponent {
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16}};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5}};
 
   constructor(private route: ActivatedRoute, private userService: UserService) {}
 

@@ -15,6 +15,8 @@ import {GameSelectPlayerComponent} from "./game/game-select-player/game-select-p
 import {GameSelectThemeComponent} from "./game/game-select-theme/game-select-theme.component";
 import {UserConfigComponent} from "./users/user-config/user-config.component";
 import {ConfigPopUpComponent} from "./config-pop-up/config-pop-up.component";
+import {PasswordComponent} from "./password/password.component";
+import {PasswordQuizComponent} from "./password-quiz/password-quiz.component";
 
 
 
@@ -38,12 +40,11 @@ const routes: Routes = [
   {path: "user-card/:id",component: UserCardComponent},
   {path: "user-config/:id", component: UserConfigComponent},
 
-  {path: "config-pop-up/:id", component: ConfigPopUpComponent}
+  {path: "config-pop-up/:id", component: ConfigPopUpComponent},
+  {path:"password",component: PasswordComponent},
+  {path: "password-quiz",component:PasswordQuizComponent}
 
 ];
-
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
