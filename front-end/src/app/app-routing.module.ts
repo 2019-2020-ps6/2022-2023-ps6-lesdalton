@@ -19,8 +19,6 @@ import {PasswordComponent} from "./password/password.component";
 import {PasswordQuizComponent} from "./password-quiz/password-quiz.component";
 
 
-
-
 const routes: Routes = [
   { path:'game', component:GamePageComponent},
   { path:'select-player', component:GameSelectPlayerComponent},
