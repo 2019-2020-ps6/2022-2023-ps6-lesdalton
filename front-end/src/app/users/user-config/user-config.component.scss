@@ -122,3 +122,21 @@
 
 
 
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #4CAF50;
+  cursor: pointer;
+}
+
+
+input[type="range"]::-moz-range-track {
+  height: 10px;
+  background-color: #6e5555;
+  border-radius: 5px;
+}
+
+
+
+
