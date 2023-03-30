@@ -36,6 +36,9 @@ import { GameSelectThemeComponent } from './game/game-select-theme/game-select-t
 import { ConfigPopUpComponent } from './config-pop-up/config-pop-up.component';
 import { PasswordComponent } from './password/password.component';
 import { PasswordQuizComponent } from './password-quiz/password-quiz.component';
+import { ThemeQuizzesListComponent } from './themes/theme-quizzes-list/theme-quizzes-list.component';
+import { ThemeCardComponent } from './themes/theme-card/theme-card.component';
+import { ThemesListComponent } from './themes/themes-list/themes-list.component';
 
 
 
@@ -72,6 +75,9 @@ import { PasswordQuizComponent } from './password-quiz/password-quiz.component';
     ConfigPopUpComponent,
     PasswordComponent,
     PasswordQuizComponent,
+    ThemeQuizzesListComponent,
+    ThemeCardComponent,
+    ThemesListComponent,
 
   ],
   imports: [
