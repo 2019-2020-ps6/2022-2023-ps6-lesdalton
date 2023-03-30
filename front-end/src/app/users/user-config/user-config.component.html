@@ -22,13 +22,13 @@
       <div class="gauge-container">
         <div class="gauge-fill" [style.width.%]="(user.config.fontSize-16)*100/19"></div>
       </div>
-      <input type="number"  [(ngModel)]="user.config.fontSize" (input)="updateValue(); changeFontSize()" min="16" max="35" class="gauge-input">
+      <input type="range"  [(ngModel)]="user.config.fontSize" (input)="updateValue(); changeFontSize()" min="16" max="35" class="gauge-input">
       <br>
       <label [style.font-size.px]="user.config.fontSize"> Différence entre les lignes :</label>
       <div class="gauge-container2">
         <div class="gauge-fill2" [style.width.%]="(user.config.lineHeight-16)*100/44"></div>
       </div>
-      <input type="number"  [(ngModel)]="user.config.lineHeight" (input)="updateValue(); changeLineHeight()" min="16" max="60" class="gauge-input">
+      <input type="range"  [(ngModel)]="user.config.lineHeight" (input)="updateValue(); changeLineHeight()" min="16" max="60" class="gauge-input">
       <br>
       <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">Contraste :</label><br><br>
       <div>
