@@ -14,9 +14,10 @@ export class UserConfigComponent {
 
   @ViewChild('horizontalGauge') horizontalGauge!: HorizontalGaugeComponent;
 
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:10}};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:10,lineHeight:5}};
 
   fontSize:string = this.user.config.fontSize+'px';
+  lineHeight: string=this.user.config.lineHeight+'px';
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef) {}
 
   ngOnInit() {
@@ -26,27 +27,26 @@ export class UserConfigComponent {
 
   updateValue() {
     this.fontSize = this.user.config.fontSize+'px';
-    console.log(this.user.config.fontSize);
+    this.lineHeight=this.user.config.lineHeight+'px';
+    console.log("FontSize : ", this.user.config.fontSize, "lineHeight : " ,this.user.config.lineHeight);
     if (this.user.config.fontSize < 16) {
       this.user.config.fontSize = 16;
     } else if (this.user.config.fontSize > 35) {
       this.user.config.fontSize = 35;
     }
+    if (this.user.config.lineHeight< 0) {
+      this.user.config.lineHeight = 0;
+    } else if (this.user.config.lineHeight > 100) {
+      this.user.config.lineHeight = 100;
+    }
   }
 
   changeFontSize() {
-    let value = this.user.config.fontSize;
-    console.log(value);
-    const textElements: NodeListOf<HTMLElement> = this.elementRef.nativeElement.querySelectorAll('.resize');
-    textElements.forEach((element: HTMLElement) => {
-      element.style.fontSize = value + 'px';
-    });
-    const button:HTMLElement = this.elementRef.nativeElement.querySelector('.button-card');
-    const newValue =  30*(value/100+1);
-    console.log(newValue);
-    button.style.fontSize = value + 'px';
-    this.fontSize = this.user.config.fontSize+'px';
-    console.log(this.user.config.fontSize);
+
+  }
+
+  changeLineHeight(){
+
   }
 
   onSaveConfig(){

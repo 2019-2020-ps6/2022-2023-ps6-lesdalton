@@ -9,7 +9,7 @@ import {UserService} from "../../services/user.service";
   styleUrls: ['./config-pop-up.component.scss']
 })
 export class ConfigPopUpComponent {
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16}};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5}};
   min:number=16;
   max:number=35;
 

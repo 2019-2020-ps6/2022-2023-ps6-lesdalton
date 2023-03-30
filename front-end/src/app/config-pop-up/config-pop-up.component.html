@@ -2,19 +2,23 @@
 
 <div class="rectangle">
   <button class="close">X</button><br><br><br>
-  <label [style.font-size.px]="user.config.fontSize">Taille d'écriture : </label><br>
+  <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">Taille d'écriture : </label><br>
   <div class="gauge-container">
     <div class="gauge-fill" [style.width.%]="(this.user.config.fontSize-this.min)*100/(this.max-this.min)"></div>
   </div>
-  <input type="number"  [(ngModel)]="user.config.fontSize" (input)="updateValue(); changeFontSize()" min="{{min}}" max="{{max}}" class="gauge-input">
+  <input type="range"  [(ngModel)]="user.config.fontSize" (input)="updateValue(); changeFontSize()" min="{{min}}" max="{{max}}" class="gauge-input">
   <br><br><br>
-  <label [style.font-size.px]="user.config.fontSize">Différence entre les lignes :</label>
+  <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">Différence entre les lignes :</label><br>
+  <div class="gauge-container2">
+    <div class="gauge-fill2" [style.width.%]="(user.config.lineHeight-16)*100/44"></div>
+  </div>
+  <input type="range"  [(ngModel)]="user.config.lineHeight" (input)="updateValue();" min="16" max="60" class="gauge-input">
   <br><br><br><br><br><br>
-  <label [style.font-size.px]="user.config.fontSize">Contraste :</label>
+  <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">Contraste :</label>
   <br><br><br><br><br><br>
 </div>
 <button class="button-card" [routerLink]="['/user-config',user.id]"><label class="valider">Valider</label></button>
-<div [style.font-size.px]="user.config.fontSize">
+<div [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">
   <app-game-page></app-game-page>
 </div>
 
