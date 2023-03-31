@@ -40,6 +40,7 @@ import { ThemeQuizzesListComponent } from './themes/theme-quizzes-list/theme-qui
 import { ThemeCardComponent } from './themes/theme-card/theme-card.component';
 import { ThemesListComponent } from './themes/themes-list/themes-list.component';
 import { QuizGameComponent } from './game/quiz-game/quiz-game.component';
+import { QuizPlayComponent } from './quizzes/quiz-play/quiz-play.component';
 
 
 
@@ -80,6 +81,7 @@ import { QuizGameComponent } from './game/quiz-game/quiz-game.component';
     ThemeCardComponent,
     ThemesListComponent,
     QuizGameComponent,
+    QuizPlayComponent,
 
   ],
   imports: [

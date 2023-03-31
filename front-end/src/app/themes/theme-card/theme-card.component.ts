@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Quiz} from "../../../models/quiz.model";
 import {Theme} from "../../../models/theme.models";
+import {User} from "../../../models/user.models";
 
 
 @Component({
@@ -10,6 +11,9 @@ import {Theme} from "../../../models/theme.models";
 })
 export class ThemeCardComponent {
 
-  @Input() theme!:Theme;
+  public user:User={firstName:'',lastName:'',id:'0',config:{fontSize:16,lineHeight:10}};
+  @Input() theme!: Theme;
+  ngOnInit(){
 
+  }
 }

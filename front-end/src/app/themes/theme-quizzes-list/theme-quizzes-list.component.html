@@ -1,9 +1,8 @@
 <div class="app-quiz-list">
-  <ul>
-    <li *ngFor="let quiz of quizzes">
-      <ng-container *ngIf="quiz.theme.name===theme.name">
-        <app-quiz-card [quiz]="quiz"></app-quiz-card>
-      </ng-container>
-    </li>
-  </ul>
+    <ng-container *ngIf="getQuizzes().length==0">
+      <h2>Pas de quiz pour ce thème</h2>
+    </ng-container>
+    <div *ngFor="let quiz of getQuizzes()">
+        <app-quiz-play [quiz]="quiz"></app-quiz-play>
+    </div>
 </div>

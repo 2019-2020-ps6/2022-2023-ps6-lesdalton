@@ -9,7 +9,7 @@ import {Theme} from "../../../models/theme.models";
   templateUrl: './game-select-theme.component.html',
   styleUrls: ['./game-select-theme.component.scss']
 })
-export class GameSelectThemeComponent implements OnInit{
+export class GameSelectThemeComponent {
   themeList:Theme[] = THEME_LIST;
 
   ngOnInit(): void {
