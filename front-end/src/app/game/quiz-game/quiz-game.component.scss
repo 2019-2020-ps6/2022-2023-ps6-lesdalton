@@ -1,0 +1,16 @@
+@import '../../../styles/card.scss';
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes égales */
+  grid-gap: 10px; /* Espacement entre les éléments */
+}
+
+.answer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 10px solid #ef6d58;
+  border-radius: 5px;
+  text-align: center;
+}
+

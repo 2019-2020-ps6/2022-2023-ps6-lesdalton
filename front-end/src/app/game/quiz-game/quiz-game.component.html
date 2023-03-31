@@ -1,0 +1,11 @@
+<form>
+  <div *ngFor="let question of questionList">
+    <h3>{{ question.text }}</h3>
+    <div class="answers">
+      <div class="answer" *ngFor="let answer of question.answers">
+        {{answer.text}}
+      </div>
+    </div>
+
+  </div>
+</form>
