@@ -19,15 +19,15 @@ import {PasswordComponent} from "./password/password.component";
 import {PasswordQuizComponent} from "./password-quiz/password-quiz.component";
 import {ThemeQuizzesListComponent} from "./themes/theme-quizzes-list/theme-quizzes-list.component";
 import {QuizGameComponent} from "./game/quiz-game/quiz-game.component";
+import {ThemesListComponent} from "./themes/themes-list/themes-list.component";
 
 
 const routes: Routes = [
   { path:'game', component:GamePageComponent},
-  { path:'select-player', component:GameSelectPlayerComponent,children:[
-      {path:':id', component:GameSelectThemeComponent},
-      {path:'', component:GameSelectPlayerComponent},
-      {path:"theme-quizzes/:theme-name",component:ThemeQuizzesListComponent}
-    ]},
+  { path:'select-player', component:GameSelectPlayerComponent},
+  { path:'select-player/:id', component:GameSelectPlayerComponent},
+  { path:'select-player/:id/select-theme', component:ThemesListComponent},
+
 
   { path:'add-quiz',component:AddQuizComponent},
   { path:'quiz',component:QuizComponent },
