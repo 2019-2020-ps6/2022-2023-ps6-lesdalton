@@ -17,6 +17,7 @@ import {UserConfigComponent} from "./users/user-config/user-config.component";
 import {ConfigPopUpComponent} from "./config-pop-up/config-pop-up.component";
 import {PasswordComponent} from "./password/password.component";
 import {PasswordQuizComponent} from "./password-quiz/password-quiz.component";
+import {QuizGameComponent} from "./game/quiz-game/quiz-game.component";
 
 
 const routes: Routes = [
@@ -40,7 +41,8 @@ const routes: Routes = [
 
   {path: "config-pop-up/:id", component: ConfigPopUpComponent},
   {path:"password",component: PasswordComponent},
-  {path: "password-quiz",component:PasswordQuizComponent}
+  {path: "password-quiz",component:PasswordQuizComponent},
+  {path:"quiz-game",component: QuizGameComponent},
 
 ];
 

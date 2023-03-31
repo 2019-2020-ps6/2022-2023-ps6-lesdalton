@@ -39,6 +39,7 @@ import { PasswordQuizComponent } from './password-quiz/password-quiz.component';
 import { ThemeQuizzesListComponent } from './themes/theme-quizzes-list/theme-quizzes-list.component';
 import { ThemeCardComponent } from './themes/theme-card/theme-card.component';
 import { ThemesListComponent } from './themes/themes-list/themes-list.component';
+import { QuizGameComponent } from './game/quiz-game/quiz-game.component';
 
 
 
@@ -78,6 +79,7 @@ import { ThemesListComponent } from './themes/themes-list/themes-list.component'
     ThemeQuizzesListComponent,
     ThemeCardComponent,
     ThemesListComponent,
+    QuizGameComponent,
 
   ],
   imports: [
