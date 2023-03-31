@@ -4,9 +4,8 @@ import {Handicap} from '../models/handicap.models';
 export const QuizzesMocks: Quiz[] = [
   {
     id: '1',
-    name: 'football',
+    name: 'Football',
     theme: 'SPORT'
-
   },
   {
     id:'2',
