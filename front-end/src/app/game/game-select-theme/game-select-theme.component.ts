@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
-import {ThemeMocks} from "../../../mocks/theme.mocks";
+import {THEME_LIST} from "../../../mocks/theme.mocks";
 import {User} from "../../../models/user.models";
 import {USER} from "../../../mocks/user-list.mock";
 import {Theme} from "../../../models/theme.models";
@@ -12,7 +12,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./game-select-theme.component.scss']
 })
 export class GameSelectThemeComponent implements OnInit{
-  themeList:Theme[] = ThemeMocks;
+  themeList:Theme[] = THEME_LIST;
 
   user: User = {id:'',firstName:'',lastName:''};
 
