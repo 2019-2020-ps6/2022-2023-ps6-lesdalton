@@ -15,14 +15,25 @@ export class QuizGameComponent {
   currentQuestion: Question=QUESTION_LIST[this.currentQuestionIndex];
   showAnswer = false;
   answerMessage = "";
+  point=0;
 
   ngOnInit(): void {
     this.currentQuestion = this.questionList[this.currentQuestionIndex];
   }
 
+  answerColor(answer: Answer): string {
+    if(answer.isCorrect){
+      return "#ef6d58";
+    }
+    return "";
+  }
+
   onAnswerSelected(answer: Answer): void {
+    this.answerColor(answer)
     if (answer.isCorrect) {
       this.answerMessage = "Bonne réponse!";
+      this.point+=1;
+
     } else {
       this.answerMessage = "Mauvaise réponse.";
     }

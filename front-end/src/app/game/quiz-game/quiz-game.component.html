@@ -1,17 +1,17 @@
 <form>
   <div class="question" *ngFor="let question of questionList">
   <div>
+    <h3>Question : {{questionList.indexOf(question)+1}}/{{questionList.length}}</h3>
     <h3>{{question.text }}</h3>
     <div class="answers">
-      <div class="answer" *ngFor="let answer of question.answers" (click)="onAnswerSelected(answer)">
-        {{ answer.text }}
+      <div class="answer"  *ngFor="let answer of question.answers" (click)="onAnswerSelected(answer)">
+          {{ answer.text }}
       </div>
     </div>
-    <div *ngIf="showAnswer">
-      <p>{{ answerMessage }}</p>
-      <button (click)="nextQuestion()">Suivant</button>
+    <div class="points">
+      points : {{point}}
     </div>
-  </div>
+    </div>
   </div>
 </form>
 

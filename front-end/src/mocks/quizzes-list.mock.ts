@@ -1,5 +1,6 @@
 import {Quiz} from '../models/quiz.model';
 import {Handicap} from '../models/handicap.models';
+import {QUESTION_LIST} from "./question-list.mock";
 
 export const QUIZ_LIST: Quiz[] = [
   {
@@ -8,7 +9,8 @@ export const QUIZ_LIST: Quiz[] = [
     theme: {
       id: 1,
       name: 'Sport'
-    }
+    },
+    question: QUESTION_LIST,
   },
   {
     id: "2",

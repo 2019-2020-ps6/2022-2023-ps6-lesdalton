@@ -12,7 +12,7 @@ import {style} from "@angular/animations";
 })
 export class UserConfigComponent {
 
-  @ViewChild('horizontalGauge') horizontalGauge!: HorizontalGaugeComponent;
+
 
   user: User = {id:'',firstName:'',lastName:'',config:{fontSize:10,lineHeight:5}};
 
