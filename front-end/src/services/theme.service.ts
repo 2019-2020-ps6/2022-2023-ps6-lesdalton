@@ -15,4 +15,9 @@ export class ThemeService{
     this.themes.push({name:name});
     this.themes$.next(this.themes);
   }
+
+  getThemeByName(name: string): Theme {
+    const theme = this.themes.find(u => u.name === name)!;
+    return theme;
+  }
 }

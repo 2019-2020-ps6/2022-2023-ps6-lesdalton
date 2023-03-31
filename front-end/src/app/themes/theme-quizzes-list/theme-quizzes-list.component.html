@@ -1,7 +1,9 @@
 <div class="app-quiz-list">
   <ul>
-    <div *ngFor="let quiz of quizzes">
-      <app-quiz-card [quiz]="quiz"></app-quiz-card>
-    </div>
+    <li *ngFor="let quiz of quizzes">
+      <ng-container *ngIf="quiz.theme.name===theme.name">
+        <app-quiz-card [quiz]="quiz"></app-quiz-card>
+      </ng-container>
+    </li>
   </ul>
 </div>

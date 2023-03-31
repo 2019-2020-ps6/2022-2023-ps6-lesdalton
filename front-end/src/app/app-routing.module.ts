@@ -17,13 +17,15 @@ import {UserConfigComponent} from "./users/user-config/user-config.component";
 import {ConfigPopUpComponent} from "./config-pop-up/config-pop-up.component";
 import {PasswordComponent} from "./password/password.component";
 import {PasswordQuizComponent} from "./password-quiz/password-quiz.component";
-
+import {ThemeQuizzesListComponent} from "./themes/theme-quizzes-list/theme-quizzes-list.component";
 
 const routes: Routes = [
   { path:'game', component:GamePageComponent},
-  { path:'select-player', component:GameSelectPlayerComponent},
-  {path:'select-theme/:id', component:GameSelectThemeComponent},
-
+  { path:'select-player', component:GameSelectPlayerComponent,children:[
+      {path:':id', component:GameSelectThemeComponent},
+      {path:'', component:GameSelectPlayerComponent},
+      {path:"theme-quizzes/:theme-name",component:ThemeQuizzesListComponent}
+    ]},
 
   { path:'add-quiz',component:AddQuizComponent},
   { path:'quiz',component:QuizComponent },
@@ -40,7 +42,8 @@ const routes: Routes = [
 
   {path: "config-pop-up/:id", component: ConfigPopUpComponent},
   {path:"password",component: PasswordComponent},
-  {path: "password-quiz",component:PasswordQuizComponent}
+  {path: "password-quiz",component:PasswordQuizComponent},
+
 
 ];
 
