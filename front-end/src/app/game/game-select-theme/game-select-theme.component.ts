@@ -16,6 +16,7 @@ export class GameSelectThemeComponent implements OnInit{
 
   user: User = {id:'',firstName:'',lastName:''};
 
+
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef) {}
 
   ngOnInit() {

@@ -32,6 +32,12 @@ export class GameSelectQuizComponent {
     this.user = this.userService.getUserById(id);
     this.theme = this.themeService.getThemeByName(name);
     this.showQuiz(this.theme.name);
+
+    /*console.log("userInfo");
+    console.log(this.user);
+
+    console.log("themeInfo");
+    console.log(this.theme);*/
   }
 
 

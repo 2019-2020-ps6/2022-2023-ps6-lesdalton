@@ -25,7 +25,7 @@ const routes: Routes = [
   { path:'select-player', component:GameSelectPlayerComponent},
   {path:'select-theme/:id', component:GameSelectThemeComponent},
   {path:'select-quiz/:id/:name', component:GameSelectQuizComponent},
-
+  {path:'game/:id/:name/:quizid', component:GamePageComponent},
 
   { path:'add-quiz',component:AddQuizComponent},
   { path:'quiz',component:QuizComponent },

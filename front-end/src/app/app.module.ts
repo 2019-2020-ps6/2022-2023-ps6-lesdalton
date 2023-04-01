@@ -35,6 +35,7 @@ import { GameSelectPlayerComponent } from './game/game-select-player/game-select
 import { GameSelectThemeComponent } from './game/game-select-theme/game-select-theme.component';
 import { ConfigPopUpComponent } from './config-pop-up/config-pop-up.component';
 import { GameSelectQuizComponent } from './game/game-select-quiz/game-select-quiz.component';
+import { GameResultComponent } from './game/game-result/game-result.component';
 
 
 
@@ -70,6 +71,7 @@ import { GameSelectQuizComponent } from './game/game-select-quiz/game-select-qui
     GameSelectThemeComponent,
     GameSelectQuizComponent,
     ConfigPopUpComponent,
+    GameResultComponent,
 
   ],
   imports: [

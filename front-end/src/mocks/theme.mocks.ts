@@ -3,11 +3,11 @@ import {Theme} from '../models/theme.models';
 export const THEME_LIST: Theme[] = [
     {
       id:1,
-      name: 'SPORT'
+      name: 'Histoire'
     },
     {
       id:2,
-      name: 'Histoire'
+      name: 'SPORT'
     },
     {
       id:3,

@@ -1,17 +1,6 @@
 <div class="answers-container">
-  <button class="answerButton" type="button">
-    LES ARVERNES
-  </button>
 
-  <button class="answerButton" type="button">
-    LES ROMAINS
-  </button>
-
-  <button class="answerButton" type="button">
-    LES GRECS
-  </button>
-
-  <button class="answerButton" type="button">
-    LES CELTES
+  <button class="answerButton" type="button" *ngFor="let answer of currentQuestion?.answers" (click)="this.gameService.checkAnswer(answer)" >
+    {{ answer.text }}
   </button>
 </div>

@@ -31,7 +31,8 @@ export const QUESTION_LIST: Question[]=[
         isCorrect: false,
         questionId:1
       }
-    ]
+    ],
+    quizId:2,
   },
   {
     id: 2,
@@ -61,10 +62,11 @@ export const QUESTION_LIST: Question[]=[
         isCorrect: false,
         questionId: 2,
       }
-    ]
+    ],
+    quizId:2,
   },
   {
-    id: 2,
+    id: 3,
     text: 'Qui a été le premier roi de France ?',
     answers: [
       {
@@ -91,10 +93,11 @@ export const QUESTION_LIST: Question[]=[
         isCorrect: false,
         questionId: 3,
       }
-    ]
+    ],
+    quizId:2,
   },
   {
-    id: 3,
+    id: 4,
     text: 'En quelle année a eu lieu la prise de la Bastille ?',
     answers: [
       {
@@ -121,7 +124,8 @@ export const QUESTION_LIST: Question[]=[
         isCorrect: false,
         questionId: 4,
       }
-    ]
+    ],
+    quizId:2,
   }
 ];
 
