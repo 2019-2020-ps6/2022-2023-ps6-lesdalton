@@ -15,6 +15,7 @@ export class GameQuestionComponent {
   numberOfQuestions: number=0; // Déclaration de numberOfQuestions$ comme un Observable
   currentQuestionIndex:number=0;
   currentQuestion: Question | undefined;
+  playerScore:number=0;
 
 
 
@@ -23,10 +24,9 @@ export class GameQuestionComponent {
     this.gameService.numberOfQuestions$.subscribe((nbreQuestions:number) => {this.numberOfQuestions=nbreQuestions}); // Obtention de numberOfQuestions$ en tant qu'Observable
     this.gameService.currentQuestionIndex$.subscribe((indexQuestionEnCours:number) => {this.currentQuestionIndex=indexQuestionEnCours}); // Obtention de currentQuestionIndex$ en tant qu'Observable
     this.gameService.currentQuestion$.subscribe((QuestionEnCours:Question) => {this.currentQuestion=QuestionEnCours});
+    this.gameService.playerScore$.subscribe((score) => this.playerScore=score)
   }
-  ngOnInit() {
-    //console.log(this.numberOfQuestions);
-    //console.log(this.currentQuestion);
 
+  ngOnInit() {
   }
 }

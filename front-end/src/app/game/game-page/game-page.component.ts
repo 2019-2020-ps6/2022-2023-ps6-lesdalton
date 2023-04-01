@@ -38,8 +38,6 @@ export class GamePageComponent {
     //this.questionsOfQuiz= this.gameService.questionsByQuizId(quizId);
     this.gameService.startGame(quizId);
 
-    /*console.log("questionsInfo");
-    console.log(this.questionsOfQuiz);*/
 
 
   }

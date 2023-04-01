@@ -10,7 +10,6 @@ import {Router} from "@angular/router";
 })
 export class GameServiceService {
   questionsList:Question[] = QUESTION_LIST;
-  playerScore:number=0;
 
   public playerScore$:BehaviorSubject<number> = new BehaviorSubject<number>(0);
   public currentQuestionIndex$:BehaviorSubject<number> = new BehaviorSubject<number>(0);
@@ -64,8 +63,7 @@ export class GameServiceService {
     // Vérifier si la réponse est correcte ou non
     if (answer.isCorrect) {
       console.log("Bonne réponse !");
-      this.playerScore++;
-      this.playerScore$.next(this.playerScore);
+      this.playerScore$.next(this.playerScore$.value + 1);
       console.log("SCORE : "+this.playerScore$.value);
       // Mettre à jour le score, le temps restant, etc.
     } else {
