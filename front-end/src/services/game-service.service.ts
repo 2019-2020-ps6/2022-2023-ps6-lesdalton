@@ -3,6 +3,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import {Question} from "../models/question.model";
 import {QUESTION_LIST} from "../mocks/question-list.mock";
 import {Answer} from "../models/answer.models";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class GameServiceService {
 
   private questionsOfQuiz: Question[] = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   questionsByQuizId(id: string): Question[]{
     let questions:Question[] = [];
@@ -82,7 +83,12 @@ export class GameServiceService {
       this.currentQuestion$.next(QUESTION_LIST[this.currentQuestionIndex$.value]);
     }else {
       console.log("fin du quiz");
+      this.router.navigateByUrl('/result');
     }
+
+  }
+
+  resetGame(){
 
   }
 
