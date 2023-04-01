@@ -1,7 +1,7 @@
 import {Quiz} from '../models/quiz.model';
 import {Handicap} from '../models/handicap.models';
 
-export const QuizzesMocks: Quiz[] = [
+export const QUIZ_LIST: Quiz[] = [
   {
     id: '1',
     name: 'Football',

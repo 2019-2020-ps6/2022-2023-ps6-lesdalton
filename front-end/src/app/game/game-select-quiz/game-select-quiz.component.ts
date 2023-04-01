@@ -3,7 +3,7 @@ import {User} from "../../../models/user.models";
 import {USER} from "../../../mocks/user-list.mock";
 import {Theme} from "../../../models/theme.models";
 import {Quiz} from "../../../models/quiz.model";
-import {QuizzesMocks} from "../../../mocks/quizzes-list.mock";
+import {QUIZ_LIST} from "../../../mocks/quizzes-list.mock";
 import {THEME_LIST} from "../../../mocks/theme.mocks";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../../services/user.service";
@@ -18,7 +18,7 @@ import {ThemeService} from "../../../services/theme.service";
 
 
 export class GameSelectQuizComponent {
-  QuizList:Quiz[] = QuizzesMocks;
+  QuizList:Quiz[] = QUIZ_LIST;
   quizForTheme:Quiz[] = [];
 
   user: User = {id:'',firstName:'',lastName:''};
