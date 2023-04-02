@@ -3,7 +3,15 @@
 
   <p (click)="onQuestionClick()">{{currentQuestion?.text}}</p>
 
-  <app-game-answer></app-game-answer>
+    <app-game-answer></app-game-answer>
 
-  <p [style.font-size.px]="user.config.fontSize" >SCORE : {{playerScore}}</p>
+  <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" >SCORE : {{playerScore}}</p>
+
+  <div class="open-pop-up">
+    <button class="button-card" (click)="onPopClick()">Ajuster la page</button>
+  </div>
+
+  <div class="pop-up" *ngIf="isPopupOpen">
+    <app-pop-up (valider)="onValider()"></app-pop-up>
+  </div>
 </div>

@@ -43,6 +43,7 @@ import { QuizGameComponent } from './game/quiz-game/quiz-game.component';
 import { QuizPlayComponent } from './quizzes/quiz-play/quiz-play.component';
 import { GameSelectQuizComponent } from './game/game-select-quiz/game-select-quiz.component';
 import { GameResultComponent } from './game/game-result/game-result.component';
+import { PopUpComponent } from './pop-up/pop-up.component';
 
 
 
@@ -86,6 +87,7 @@ import { GameResultComponent } from './game/game-result/game-result.component';
     QuizGameComponent,
     QuizPlayComponent,
     GameResultComponent,
+    PopUpComponent,
 
   ],
   imports: [

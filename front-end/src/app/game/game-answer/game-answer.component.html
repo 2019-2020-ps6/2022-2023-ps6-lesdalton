@@ -1,6 +1,9 @@
-<div class="answers-container">
+<div [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">
+  <div class="answers-container">
 
-  <button class="answerButton" type="button" *ngFor="let answer of currentQuestion?.answers" (click)="this.gameService.checkAnswer(answer)" >
-    {{ answer.text }}
-  </button>
+    <button class="answerButton" type="button" *ngFor="let answer of currentQuestion?.answers" (click)="this.gameService.checkAnswer(answer)" >
+      {{ answer.text }}
+    </button>
+  </div>
+
 </div>
