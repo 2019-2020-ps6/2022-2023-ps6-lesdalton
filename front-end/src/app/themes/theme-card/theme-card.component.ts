@@ -2,6 +2,8 @@ import {Component, Input} from '@angular/core';
 import {Quiz} from "../../../models/quiz.model";
 import {Theme} from "../../../models/theme.models";
 import {User} from "../../../models/user.models";
+import {ActivatedRoute} from "@angular/router";
+import {UserService} from "../../../services/user.service";
 
 
 @Component({
@@ -11,9 +13,12 @@ import {User} from "../../../models/user.models";
 })
 export class ThemeCardComponent {
 
-  public user:User={firstName:'',lastName:'',id:'0',config:{fontSize:16,lineHeight:10}};
+  public user:User={firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10}};
   @Input() theme!: Theme;
-  ngOnInit(){
-
+  constructor(private route:ActivatedRoute,private userService:UserService) {
+  }
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id')!;
+    this.user = this.userService.getUserById(id);
   }
 }
