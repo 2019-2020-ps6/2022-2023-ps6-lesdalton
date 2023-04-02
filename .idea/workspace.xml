@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-question/game-question.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-question/game-question.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-select-theme/game-select-theme.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-select-theme/game-select-theme.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/themes/theme-card/theme-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/themes/theme-card/theme-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/themes/theme-card/theme-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/themes/theme-card/theme-card.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
