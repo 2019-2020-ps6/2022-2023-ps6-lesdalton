@@ -1,12 +1,9 @@
-<div class="question-container">
-   <h1 class="title">QUESTION {{currentQuestionIndex + 1}}/{{numberOfQuestions}}</h1>
+<div class="question-container" >
+  <h1 class="title">QUESTION {{currentQuestionIndex + 1}}/{{numberOfQuestions}}</h1>
 
-  <p *ngIf="currentQuestion">{{this.currentQuestion.text}}</p>
-  <!--<p>QUEL PEUPLE INVESTIT LE TERRITOIRE FRANçAIS AU 7 EME SIECLE AV. J-C</p>-->
+  <p (click)="onQuestionClick()">{{currentQuestion?.text}}</p>
 
   <app-game-answer></app-game-answer>
 
-  <p>SCORE : {{this.playerScore}}</p>
+  <p>SCORE : {{playerScore}}</p>
 </div>
-
-

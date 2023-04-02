@@ -14,7 +14,7 @@ import {ActivatedRoute} from "@angular/router";
 export class GameSelectThemeComponent {
   themeList:Theme[] = THEME_LIST;
 
-  user: User = {id:'',firstName:'',lastName:''};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20}};
 
 
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef) {}

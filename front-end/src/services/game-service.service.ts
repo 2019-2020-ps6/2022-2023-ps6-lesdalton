@@ -90,5 +90,11 @@ export class GameServiceService {
 
   }
 
+  setCurrentQuestionIndex(index: number) {
+    this.currentQuestionIndex$.next(index);
+    this.currentQuestion$.next(this.questionsOfQuiz[index]);
+  }
+
+
 
 }

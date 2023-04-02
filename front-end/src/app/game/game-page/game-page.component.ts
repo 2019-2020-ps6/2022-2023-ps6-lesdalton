@@ -15,10 +15,10 @@ import {GameServiceService} from "../../../services/game-service.service";
 })
 export class GamePageComponent {
 
-  user: User = {id:'',firstName:'',lastName:''};
+  user: User = {config: {fontSize:16,lineHeight:12}, id:'',firstName:'',lastName:''};
   theme:Theme = {name:'' };
 
-  quiz: Quiz = {id: '', name:''};
+  quiz: Quiz = {id: '', name:'',theme:{name:''}};
   questionsOfQuiz: Question[] = [];
 
   constructor(

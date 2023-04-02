@@ -21,7 +21,7 @@ export class GameSelectQuizComponent {
   QuizList:Quiz[] = QUIZ_LIST;
   quizForTheme:Quiz[] = [];
 
-  user: User = {id:'',firstName:'',lastName:''};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20}};
   theme:Theme = {name:'' };
 
   constructor(private route: ActivatedRoute, private userService: UserService, private themeService: ThemeService, private elementRef:ElementRef) {}
@@ -43,7 +43,7 @@ export class GameSelectQuizComponent {
 
   showQuiz(theme: string){
     for (const quiz of this.QuizList ){
-      if(quiz.theme==theme){
+      if(quiz.theme.name==theme){
         this.quizForTheme.push(quiz);
       }
     }

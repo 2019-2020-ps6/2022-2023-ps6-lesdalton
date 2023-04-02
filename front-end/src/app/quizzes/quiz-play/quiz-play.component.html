@@ -1,6 +1,6 @@
 <div class="card">
   <h3>Nom :{{ quiz.name }}</h3>
   <h3>Thème: {{ quiz.theme.name }}</h3>
-  <button class="button-card" routerLink="/quiz-game">Jouer</button>
+  <button class="button-card" [routerLink]="['/game', user.id, quiz.theme.name, quiz.id]">Jouer</button>
 </div>
 

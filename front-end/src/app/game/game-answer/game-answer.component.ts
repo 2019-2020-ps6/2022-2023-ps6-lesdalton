@@ -11,22 +11,20 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./game-answer.component.scss']
 })
 export class GameAnswerComponent {
-  numberOfQuestions: number=0; // Déclaration de numberOfQuestions$ comme un Observable
-  currentQuestionIndex:number=0;
+  numberOfQuestions: number = 0; // Déclaration de numberOfQuestions$ comme un Observable
+  currentQuestionIndex: number = 0;
   currentQuestion: Question | undefined;
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5}};
 
 
-  constructor(protected gameService: GameServiceService) {
+
+
+  constructor(protected gameService: GameServiceService,private userService: UserService,private route:ActivatedRoute) {
     this.gameService.numberOfQuestions$.subscribe((nbreQuestions:number) => {this.numberOfQuestions=nbreQuestions}); // Obtention de numberOfQuestions$ en tant qu'Observable
     this.gameService.currentQuestionIndex$.subscribe((indexQuestionEnCours:number) => {this.currentQuestionIndex=indexQuestionEnCours}); // Obtention de currentQuestionIndex$ en tant qu'Observable
     this.gameService.currentQuestion$.subscribe((QuestionEnCours:Question) => {this.currentQuestion=QuestionEnCours});
   }
 
-
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5}};
-
-  constructor(private userService: UserService,private route:ActivatedRoute) {
-  }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;

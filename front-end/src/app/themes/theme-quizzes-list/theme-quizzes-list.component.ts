@@ -24,7 +24,7 @@ export class ThemeQuizzesListComponent {
   getQuizzes(){
     let themeQuizzes:Quiz[]=[]
     this.quizzes.forEach((quiz) =>{
-      if(quiz.theme.name === this.theme.name){
+      if(quiz.theme?.name === this.theme.name){
         themeQuizzes.push(quiz);
       }
     })

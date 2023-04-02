@@ -13,7 +13,7 @@ import {User} from "../../../models/user.models";
 export class QuizPlayComponent {
   @Input() quiz!: Quiz;
   public user:User={firstName:'',lastName:'',id:'0',config:{fontSize:16,lineHeight:10}};
-  @Input() theme!: Theme;
+  @Input() theme!: String;
   ngOnInit(){
 
   }

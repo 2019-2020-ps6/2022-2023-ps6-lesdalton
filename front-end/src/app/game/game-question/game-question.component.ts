@@ -1,11 +1,6 @@
 import {Component, ElementRef} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {UserService} from "../../../services/user.service";
-import {ThemeService} from "../../../services/theme.service";
 import {GameServiceService} from "../../../services/game-service.service";
-import {Observable} from "rxjs";
 import {Question} from "../../../models/question.model";
-import { Component } from '@angular/core';
 import {User} from "../../../models/user.models";
 import {UserService} from "../../../services/user.service";
 import {ActivatedRoute} from "@angular/router";
@@ -25,7 +20,7 @@ export class GameQuestionComponent {
 
   user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5}};
 
-  constructor(private gameService: GameServiceService) {
+  constructor(private gameService: GameServiceService,private route:ActivatedRoute,private userService:UserService) {
     this.gameService.numberOfQuestions$.subscribe((nbreQuestions:number) => {this.numberOfQuestions=nbreQuestions}); // Obtention de numberOfQuestions$ en tant qu'Observable
     this.gameService.currentQuestionIndex$.subscribe((indexQuestionEnCours:number) => {this.currentQuestionIndex=indexQuestionEnCours}); // Obtention de currentQuestionIndex$ en tant qu'Observable
     this.gameService.currentQuestion$.subscribe((QuestionEnCours:Question) => {this.currentQuestion=QuestionEnCours});
@@ -33,11 +28,13 @@ export class GameQuestionComponent {
   }
 
   ngOnInit() {
-  }
-
-
-  ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.user = this.userService.getUserById(id);
   }
+
+  onQuestionClick() {
+    // Increment the current question index
+    this.gameService.setCurrentQuestionIndex(this.currentQuestionIndex + 1);
+  }
+
 }
