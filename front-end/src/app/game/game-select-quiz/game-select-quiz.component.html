@@ -1,0 +1,8 @@
+<h2 class="title">{{theme.name}} / Choisissez un Quiz</h2>
+
+<div class="theme-content">
+  <ul>
+    <li *ngFor="let quiz of quizForTheme">
+      <a [routerLink]="['/game', user.id, theme.name, quiz.id]" >{{quiz.name}}</a>    </li>
+  </ul>
+</div>

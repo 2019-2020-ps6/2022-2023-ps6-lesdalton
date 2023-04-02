@@ -2,17 +2,19 @@ import {Theme} from '../models/theme.models';
 
 export const THEME_LIST: Theme[] = [
     {
-
-        name: 'Sport'
-
+      id:1,
+      name: 'Histoire'
     },
     {
-
-        name: 'Histoire'
-
+      id:2,
+      name: 'SPORT'
     },
     {
-        name: 'Geographie'
-
+      id:3,
+      name: 'Geographie'
+    },
+    {
+      id:4,
+      name: 'Cinéma'
     }
 ];

@@ -41,6 +41,8 @@ import { ThemeCardComponent } from './themes/theme-card/theme-card.component';
 import { ThemesListComponent } from './themes/themes-list/themes-list.component';
 import { QuizGameComponent } from './game/quiz-game/quiz-game.component';
 import { QuizPlayComponent } from './quizzes/quiz-play/quiz-play.component';
+import { GameSelectQuizComponent } from './game/game-select-quiz/game-select-quiz.component';
+import { GameResultComponent } from './game/game-result/game-result.component';
 
 
 
@@ -74,6 +76,7 @@ import { QuizPlayComponent } from './quizzes/quiz-play/quiz-play.component';
     GameAnswerComponent,
     GameSelectPlayerComponent,
     GameSelectThemeComponent,
+    GameSelectQuizComponent,
     ConfigPopUpComponent,
     PasswordComponent,
     PasswordQuizComponent,
@@ -82,6 +85,7 @@ import { QuizPlayComponent } from './quizzes/quiz-play/quiz-play.component';
     ThemesListComponent,
     QuizGameComponent,
     QuizPlayComponent,
+    GameResultComponent,
 
   ],
   imports: [

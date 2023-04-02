@@ -1,24 +1,44 @@
 import {Quiz} from '../models/quiz.model';
 import {Handicap} from '../models/handicap.models';
-import {QUESTION_LIST} from "./question-list.mock";
 
 export const QUIZ_LIST: Quiz[] = [
   {
-    id: "1",
+    id: '1',
     name: 'Football',
-    theme: {
-      id: 1,
-      name: 'Sport'
-    },
-    question: QUESTION_LIST,
+    theme: 'Sport'
   },
   {
-    id: "2",
-    name: 'Histoire de France',
-    theme: {
-      id: 1,
-      name: 'Histoire'
-    }
-  }
+    id:'2',
+    name:"L'Histoire de France",
+    theme: 'Histoire'
 
+  },
+  {
+    id: '3',
+    name:"L' Histoire de l'Europe",
+    theme:'Histoire'
+
+  },
+  {
+    id: '4',
+    name:"La Grece antique",
+    theme: 'Histoire'
+
+  },
+  {
+    id:'5',
+    name:"Acteurs célèbres",
+    theme :'Cinéma'
+
+  },
+  {
+    id:'6',
+    name:"Les réalisateurs célèbres",
+    theme : 'Cinéma'
+  },
+  {
+    id:'7',
+    name:"Répliques cultes de films",
+    theme:'Cinéma'
+  }
 ];

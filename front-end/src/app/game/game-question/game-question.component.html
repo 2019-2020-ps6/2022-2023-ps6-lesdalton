@@ -1,9 +1,12 @@
 <div class="question-container">
-   <h1 class="title" [style.font-size.px]="user.config.fontSize*1.7">QUESTION 1/3</h1>
+   <h1 class="title">QUESTION {{currentQuestionIndex + 1}}/{{numberOfQuestions}}</h1>
 
-  <p [style.font-size.px]="user.config.fontSize">QUEL PEUPLE INVESTIT LE TERRITOIRE FRANçAIS AU 7 EME SIECLE AV. J-C</p>
+  <p *ngIf="currentQuestion">{{this.currentQuestion.text}}</p>
+  <!--<p>QUEL PEUPLE INVESTIT LE TERRITOIRE FRANçAIS AU 7 EME SIECLE AV. J-C</p>-->
 
   <app-game-answer></app-game-answer>
+
+  <p>SCORE : {{this.playerScore}}</p>
 </div>
 
 
