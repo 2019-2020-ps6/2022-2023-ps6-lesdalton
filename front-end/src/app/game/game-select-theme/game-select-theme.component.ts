@@ -5,6 +5,7 @@ import {USER} from "../../../mocks/user-list.mock";
 import {Theme} from "../../../models/theme.models";
 import {UserService} from "../../../services/user.service";
 import {ActivatedRoute} from "@angular/router";
+import {PopupService} from "../../../services/pop-up.service";
 
 @Component({
   selector: 'app-game-select-theme',
@@ -17,11 +18,13 @@ export class GameSelectThemeComponent {
   user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20}};
 
 
-  constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef) {}
+  constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef,private popupService: PopupService) {}
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.user = this.userService.getUserById(id);
   }
+
+
 
 }

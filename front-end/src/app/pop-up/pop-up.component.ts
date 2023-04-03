@@ -51,4 +51,5 @@ export class PopUpComponent {
     this.valider.emit();
   }
 
+
 }

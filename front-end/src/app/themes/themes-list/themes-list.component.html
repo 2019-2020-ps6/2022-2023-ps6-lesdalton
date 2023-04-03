@@ -1,3 +1,10 @@
 <div *ngFor="let theme of themes">
   <app-theme-card [theme]="theme"></app-theme-card>
 </div>
+<div class="open-pop-up">
+  <button class="button-card" (click)="onPopClick()">Ajuster la page</button>
+</div>
+
+<div class="pop-up" *ngIf="isPopupOpen">
+  <app-pop-up (valider)="onValider()"></app-pop-up>
+</div>
