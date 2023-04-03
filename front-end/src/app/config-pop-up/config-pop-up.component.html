@@ -1,6 +1,23 @@
 
 <div class="config">
-  <app-game-page></app-game-page>
+  <div class="question-container">
+    <h1 class="title" [style.font-size.px]="user.config.fontSize*1.5" [style.line-height.px]="user.config.lineHeight">QUESTION 2/3</h1>
+
+    <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">
+      QUEL PEUPLE INVESTIT LE TERRITOIRE FRANÇAIS AU 7 EME SIECLE AVANT J.C.</p>
+
+    <app-game-answer ></app-game-answer>
+
+    <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" >SCORE : 1</p>
+
+    <div class="open-pop-up">
+      <button class="button-card" (click)="onPopClick()">Ajuster la page</button>
+    </div>
+
+    <div class="pop-up" *ngIf="isPopupOpen">
+      <app-pop-up (valider)="onValider()"></app-pop-up>
+    </div>
+
 </div>
 
 

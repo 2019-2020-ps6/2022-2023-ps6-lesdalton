@@ -2,6 +2,7 @@ import {Component, ElementRef} from '@angular/core';
 import {User} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../services/user.service";
+import {PopupService} from "../../services/pop-up.service";
 
 @Component({
   selector: 'app-config-pop-up',
@@ -13,11 +14,14 @@ export class ConfigPopUpComponent {
   min:number=16;
   max:number=35;
 
-  constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef) {}
+  constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef,private popupService:PopupService) {}
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.user = this.userService.getUserById(id);
+    this.popupService.getIsOpen().subscribe(isOpen => {
+      this.isPopupOpen = isOpen; // mettre à jour l'état de l'ouverture du pop-up
+    });
   }
 
   value = 0;
@@ -41,4 +45,15 @@ export class ConfigPopUpComponent {
     console.log(newValue);
     button.style.fontSize = newValue + 'px';
   }
+
+  isPopupOpen = false;
+
+  onValider() {
+    this.popupService.closePopup(); // fermer le pop-up
+  }
+
+  onPopClick() {
+    this.popupService.openPopup(); // ouvrir le pop-up
+  }
+
 }
