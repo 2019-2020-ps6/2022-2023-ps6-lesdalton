@@ -22,6 +22,7 @@ import {PasswordQuizComponent} from "./password-quiz/password-quiz.component";
 import {ThemeQuizzesListComponent} from "./themes/theme-quizzes-list/theme-quizzes-list.component";
 import {QuizGameComponent} from "./game/quiz-game/quiz-game.component";
 import {ThemesListComponent} from "./themes/themes-list/themes-list.component";
+import {QuizConfigComponent} from "./quizzes/quiz-config/quiz-config.component";
 
 
 const routes: Routes = [
@@ -53,6 +54,7 @@ const routes: Routes = [
   {path:"password",component: PasswordComponent},
   {path: "password-quiz",component:PasswordQuizComponent},
   {path:"quiz-game",component: QuizGameComponent},
+  {path: "quiz-config/:id",component: QuizConfigComponent}
 
 ];
 
