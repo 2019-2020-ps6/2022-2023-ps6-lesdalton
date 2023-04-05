@@ -14,7 +14,7 @@ import {UserService} from "../../../services/user.service";
 })
 export class ThemesListComponent {
   public themes:Theme[] = THEME_LIST;
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20}};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20,letterSpacing:5}};
 
   constructor(private themeService:ThemeService,private  popupService:PopupService,private route: ActivatedRoute,private userService: UserService) {
   }

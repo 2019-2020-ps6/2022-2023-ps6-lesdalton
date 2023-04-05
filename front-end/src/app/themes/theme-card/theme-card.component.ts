@@ -13,7 +13,7 @@ import {UserService} from "../../../services/user.service";
 })
 export class ThemeCardComponent {
 
-  public user:User={firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10}};
+  public user:User={firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5}};
   @Input() theme!: Theme;
   constructor(private route:ActivatedRoute,private userService:UserService) {
   }

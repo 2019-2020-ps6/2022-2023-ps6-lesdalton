@@ -19,7 +19,7 @@ export class GameQuestionComponent {
 
 
 
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5}};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5,letterSpacing:5}};
 
   constructor(private gameService: GameServiceService,private route:ActivatedRoute,private userService:UserService,private popupService: PopupService) {
     this.gameService.numberOfQuestions$.subscribe((nbreQuestions:number) => {this.numberOfQuestions=nbreQuestions}); // Obtention de numberOfQuestions$ en tant qu'Observable

@@ -15,7 +15,7 @@ import {PopupService} from "../../../services/pop-up.service";
 export class GameSelectThemeComponent {
   themeList:Theme[] = THEME_LIST;
 
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20}};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20,letterSpacing:5}};
 
 
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef,private popupService: PopupService) {}

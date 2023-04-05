@@ -14,7 +14,7 @@ export class GameAnswerComponent {
   numberOfQuestions: number = 0; // Déclaration de numberOfQuestions$ comme un Observable
   currentQuestionIndex: number = 0;
   currentQuestion: Question | undefined;
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5}};
+  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5,letterSpacing:5}};
 
 
 

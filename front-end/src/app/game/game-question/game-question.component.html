@@ -1,11 +1,11 @@
 <div class="question-container">
-  <h1 class="title" [style.font-size.px]="user.config.fontSize*1.5" [style.line-height.px]="user.config.lineHeight">QUESTION {{currentQuestionIndex + 1}}/{{numberOfQuestions}}</h1>
+  <h1 class="title" [style.font-size.px]="user.config.fontSize*1.5" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">QUESTION {{currentQuestionIndex + 1}}/{{numberOfQuestions}}</h1>
 
-  <p (click)="onQuestionClick()" [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">{{currentQuestion?.text}}</p>
+  <p (click)="onQuestionClick()" [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">{{currentQuestion?.text}}</p>
 
   <app-game-answer ></app-game-answer>
 
-  <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" >SCORE : {{playerScore}}</p>
+  <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing"  >SCORE : {{playerScore}}</p>
 
   <div class="open-pop-up">
     <button class="button-card" (click)="onPopClick()">Ajuster la page</button>

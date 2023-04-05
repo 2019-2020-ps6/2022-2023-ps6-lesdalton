@@ -15,7 +15,7 @@ import {GameServiceService} from "../../../services/game-service.service";
 })
 export class GamePageComponent {
 
-  user: User = {config: {fontSize:16,lineHeight:12}, id:'',firstName:'',lastName:''};
+  user: User = {config: {fontSize:16,lineHeight:12,letterSpacing:5}, id:'',firstName:'',lastName:''};
   theme:Theme = {name:'' };
 
   quiz: Quiz = {id: '', name:'',theme:{name:''}};

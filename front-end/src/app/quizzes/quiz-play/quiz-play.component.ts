@@ -14,7 +14,7 @@ import {UserService} from "../../../services/user.service";
 })
 export class QuizPlayComponent {
   @Input() quiz!: Quiz;
-  public user:User={firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10}};
+  public user:User={firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5}};
   @Input() theme!: String;
   constructor(private route:ActivatedRoute,private userService:UserService) {
   }
