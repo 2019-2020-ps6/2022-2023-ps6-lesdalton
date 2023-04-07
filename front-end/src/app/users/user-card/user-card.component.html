@@ -10,7 +10,7 @@
   <label>Information supplémentaire</label><br>
   <textarea type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
   <br><br><br><br>
-  <button class="button-card" [routerLink]="['/user-config',user.id]">Configuration</button>
+  <button class="button-card" [routerLink]="['/user-config']" [queryParams]="{ user: user | json }">Configuration</button>
   <br><br><br><br>
   <div class="Enr">
     <button class="button-card" routerLink="/user-list" (click)="onSave()">Enrengister</button>

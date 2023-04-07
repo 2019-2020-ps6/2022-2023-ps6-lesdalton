@@ -1,5 +1,5 @@
 import {Component, ElementRef} from '@angular/core';
-import {User} from "../../models/user.models";
+import {user} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {PopupService} from "../../services/pop-up.service";
@@ -10,7 +10,7 @@ import {PopupService} from "../../services/pop-up.service";
   styleUrls: ['./config-pop-up.component.scss']
 })
 export class ConfigPopUpComponent {
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5,letterSpacing:5}};
+  user: user = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5,letterSpacing:5}};
   min:number=16;
   max:number=35;
 

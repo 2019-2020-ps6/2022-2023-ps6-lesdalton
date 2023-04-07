@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder,FormGroup, FormControl, Validators } from '@angular/forms';
-import { User } from 'src/models/user.models';
+import { user } from 'src/models/user.models';
 import { UserService } from 'src/services/user.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class UserFormComponent {
 
   addUser() {
     // Ajouter un nouvel utilisateur ici
-    const userToCreate: User=this.userForm.getRawValue() as User;
+    const userToCreate: user=this.userForm.getRawValue() as user;
     console.log('Add user : ',userToCreate);
     this.userService.addUser(userToCreate);
   }

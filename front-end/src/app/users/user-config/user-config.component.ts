@@ -1,5 +1,5 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {User} from "../../../models/user.models";
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {user} from "../../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../../services/user.service";
 import {HorizontalGaugeComponent} from "../../horizontal-gauge/horizontal-gauge.component";
@@ -14,7 +14,7 @@ export class UserConfigComponent {
 
 
 
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:10,lineHeight:5,letterSpacing:5}};
+  @Input() user: user = {id:'',firstName:'',lastName:'',config:{fontSize:10,lineHeight:5,letterSpacing:5}};
 
   fontSize:string = this.user.config.fontSize+'px';
   lineHeight: string=this.user.config.lineHeight+'px';
@@ -23,8 +23,7 @@ export class UserConfigComponent {
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id')!;
-    this.user = this.userService.getUserById(id);
+
   }
 
   updateValue() {
@@ -32,10 +31,10 @@ export class UserConfigComponent {
     this.lineHeight=this.user.config.lineHeight+'px';
     this.letterSpacing=this.user.config.letterSpacing+'px';
     console.log("FontSize : ", this.user.config.fontSize, "lineHeight : " ,this.user.config.lineHeight, "lettterSpacing : ",this.user.config.letterSpacing);
-    if (this.user.config.fontSize < 16) {
-      this.user.config.fontSize = 16;
-    } else if (this.user.config.fontSize > 35) {
-      this.user.config.fontSize = 35;
+    if (this.user.config.fontSize < 20) {
+      this.user.config.fontSize = 20;
+    } else if (this.user.config.fontSize > 45) {
+      this.user.config.fontSize = 45;
     }
     if (this.user.config.lineHeight< 0) {
       this.user.config.lineHeight = 0;
@@ -48,7 +47,6 @@ export class UserConfigComponent {
       this.user.config.letterSpacing=100;
     }
   }
-
   changeFontSize() {
 
   }

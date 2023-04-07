@@ -9,7 +9,6 @@
   <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing"> L'espacement :</label><br>
   <input type="range"  [(ngModel)]="user.config.letterSpacing" (input)="updateValue();"  min="0" max="13" class="gauge-input">
   <br>
-  <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Contraste :</label>
   <br><br><br>
   <button class="button-card" (click)="onValider()" ><label class="valider">Valider</label></button>
 </div>

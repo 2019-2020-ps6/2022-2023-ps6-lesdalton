@@ -1,7 +1,7 @@
 import {Component, ElementRef} from '@angular/core';
 import {GameServiceService} from "../../../services/game-service.service";
 import {Question} from "../../../models/question.model";
-import {User} from "../../../models/user.models";
+import {user} from "../../../models/user.models";
 import {UserService} from "../../../services/user.service";
 import {ActivatedRoute} from "@angular/router";
 import {PopupService} from "../../../services/pop-up.service";
@@ -19,7 +19,7 @@ export class GameQuestionComponent {
 
 
 
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5,letterSpacing:5}};
+  user: user = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5,letterSpacing:5}};
 
   constructor(private gameService: GameServiceService,private route:ActivatedRoute,private userService:UserService,private popupService: PopupService) {
     this.gameService.numberOfQuestions$.subscribe((nbreQuestions:number) => {this.numberOfQuestions=nbreQuestions}); // Obtention de numberOfQuestions$ en tant qu'Observable

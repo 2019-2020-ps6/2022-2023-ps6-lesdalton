@@ -1,7 +1,7 @@
 import {UserConfigComponent} from "../app/users/user-config/user-config.component";
 import {UserConfigModel} from "./user-config.model";
 
-export interface User {
+export interface user {
 
   picture ?: string;
   id: string;

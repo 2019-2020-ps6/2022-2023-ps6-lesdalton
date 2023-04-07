@@ -1,5 +1,5 @@
 import {Component, ElementRef, Input} from '@angular/core';
-import {User} from "../../../models/user.models";
+import {user} from "../../../models/user.models";
 import {USER} from "../../../mocks/user-list.mock";
 import {Theme} from "../../../models/theme.models";
 import {Quiz} from "../../../models/quiz.model";
@@ -21,7 +21,7 @@ export class GameSelectQuizComponent {
   QuizList:Quiz[] = QUIZ_LIST;
   quizForTheme:Quiz[] = [];
 
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20,letterSpacing:5}};
+  user: user = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20,letterSpacing:5}};
   theme:Theme = {name:'' };
 
   constructor(private route: ActivatedRoute, private userService: UserService, private themeService: ThemeService, private elementRef:ElementRef) {}

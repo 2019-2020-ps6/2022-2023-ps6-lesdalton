@@ -47,7 +47,7 @@ const routes: Routes = [
   {path: 'actions', component:ActionsComponent},
   {path: "login-new-account", component: LoginNewAccountComponent},
   {path: "user-card/:id",component: UserCardComponent},
-  {path: "user-config/:id", component: UserConfigComponent},
+  {path: "user-config", component: UserConfigComponent},
 
   {path: "config-pop-up/:id", component: ConfigPopUpComponent},
   {path:"password",component: PasswordComponent},

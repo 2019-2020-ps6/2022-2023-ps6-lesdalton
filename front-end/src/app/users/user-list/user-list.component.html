@@ -1,17 +1,20 @@
 <app-user-form></app-user-form>
+
 <br><br>
+
 <h2>Liste des patients</h2>
+
 <div class="user-list">
   <div class="user" *ngFor="let user of userList">
     <div class="card">
       <div class="user-image">
-       <img src="../../../assets/resources/profilPIc.png" >
+        <img src="../../../assets/resources/profilPIc.png">
       </div>
       <h2>{{user.firstName}}  {{user.lastName}}</h2>
       Prénom : {{user.firstName}}<br>
       Nom : {{user.lastName}}<br>
       ID : {{user.id}}<br><br>
-      <a [routerLink]="['/user-card',user.id]"><button class="button-card" (click)="updateUser(user)">Modifier</button></a>
+      <a [routerLink]="['/user-config']" [queryParams]="{ user: user | json }"><button class="button-card">Modifier</button></a>
       <button class="button-card" (click)="deleteUser(user)">Supprimer</button>
     </div>
   </div>

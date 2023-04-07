@@ -1,5 +1,5 @@
-import {Component, ElementRef, EventEmitter, Output} from '@angular/core';
-import {User} from "../../models/user.models";
+import {Component, ElementRef, EventEmitter, Input, Output} from '@angular/core';
+import {user} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {PopupService} from "../../services/pop-up.service";
@@ -10,11 +10,10 @@ import {PopupService} from "../../services/pop-up.service";
   styleUrls: ['./pop-up.component.scss']
 })
 export class PopUpComponent {
+  user: user = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5,letterSpacing:5}};
 
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5,letterSpacing:5}};
-
-  min:number=16;
-  max:number=35;
+  min:number=20;
+  max:number=45;
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef,private popUpService: PopupService) {}
 
   @Output() valider: EventEmitter<void> = new EventEmitter<void>();

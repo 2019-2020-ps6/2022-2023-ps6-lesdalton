@@ -1,7 +1,7 @@
 import {Component, ElementRef} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../../services/user.service";
-import {User} from "../../../models/user.models";
+import {user} from "../../../models/user.models";
 import {Question} from "../../../models/question.model";
 import {Quiz} from "../../../models/quiz.model";
 import {Theme} from "../../../models/theme.models";
@@ -15,7 +15,7 @@ import {GameServiceService} from "../../../services/game-service.service";
 })
 export class GamePageComponent {
 
-  user: User = {config: {fontSize:16,lineHeight:12,letterSpacing:5}, id:'',firstName:'',lastName:''};
+  user: user = {config: {fontSize:16,lineHeight:12,letterSpacing:5}, id:'',firstName:'',lastName:''};
   theme:Theme = {name:'' };
 
   quiz: Quiz = {id: '', name:'',theme:{name:''}};

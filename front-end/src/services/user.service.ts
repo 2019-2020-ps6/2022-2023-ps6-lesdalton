@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
-import { User } from '../models/user.models';
+import { user } from '../models/user.models';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import { USER } from 'src/mocks/user-list.mock';
 import { Router } from "@angular/router";
@@ -13,17 +13,17 @@ export class UserService {
   /*
    The list of users.
    */
-  private users: User[] = USER;
+  private users: user[] = USER;
 
   /*
    Observable which contains the list of users.
    */
-  public users$: BehaviorSubject<User[]> = new BehaviorSubject(USER);
+  public users$: BehaviorSubject<user[]> = new BehaviorSubject(USER);
 
   /*
    Adds a new user to the list of users.
    */
-  addUser(user: User): void {
+  addUser(user: user): void {
     this.users.push(user);
     this.users$.next(this.users);
   }
@@ -31,7 +31,7 @@ export class UserService {
   /*
    Deletes the specified user from the list of users.
    */
-  deleteUser(user: User): void {
+  deleteUser(user: user): void {
     const index = this.users.indexOf(user);
     if (index !== -1) {
       this.users.splice(index, 1);
@@ -42,7 +42,7 @@ export class UserService {
   /*
    Returns the list of users.
    */
-  getUsers(): User[] {
+  getUsers(): user[] {
     return this.users;
   }
 
@@ -50,7 +50,7 @@ export class UserService {
   /*
    Updates the specified user with the provided data.
    */
-  updateUser(user: User): void {
+  updateUser(user: user): void {
     const index = this.users.findIndex(u => u.id === user.id);
     console.log("User edited : ",this.users[index]);
     if (index !== -1) {
@@ -59,7 +59,7 @@ export class UserService {
     }
   }
 
-  getUserById(id: string): User {
+  getUserById(id: string): user {
     const user = this.users.find(u => u.id === id)!;
     return user;
   }

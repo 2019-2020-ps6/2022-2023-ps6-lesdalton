@@ -3,7 +3,7 @@ import {Theme} from "../../../models/theme.models";
 import {THEME_LIST} from "../../../mocks/theme.mocks";
 import {ThemeService} from "../../../services/theme.service";
 import {PopupService} from "../../../services/pop-up.service";
-import {User} from "../../../models/user.models";
+import {user} from "../../../models/user.models";
 import {ActivatedRoute, Router, RouterLinkActive} from "@angular/router";
 import {UserService} from "../../../services/user.service";
 
@@ -14,7 +14,7 @@ import {UserService} from "../../../services/user.service";
 })
 export class ThemesListComponent {
   public themes:Theme[] = THEME_LIST;
-  user: User = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20,letterSpacing:5}};
+  user: user = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20,letterSpacing:5}};
 
   constructor(private themeService:ThemeService,private  popupService:PopupService,private route: ActivatedRoute,private userService: UserService) {
   }

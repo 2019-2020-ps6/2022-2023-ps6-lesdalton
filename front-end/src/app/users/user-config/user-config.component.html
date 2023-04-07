@@ -19,7 +19,7 @@
       <button class="button-card"><label [style.font-size.px]="user.config.fontSize" >Notifications</label></button>
       <br><br>
       <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Taille d'écriture : </label><br>
-      <input type="range"  [(ngModel)]="user.config.fontSize" (input)="updateValue(); changeFontSize()" min="16" max="35" class="gauge-input">
+      <input type="range"  [(ngModel)]="user.config.fontSize" (input)="updateValue(); changeFontSize()" min="20" max="45" class="gauge-input">
       <br>
       <label [style.font-size.px]="user.config.fontSize" [style.letter-spacing.px]="user.config.letterSpacing"> Différence entre les lignes :</label><br>
       <input type="range"  [(ngModel)]="user.config.lineHeight" (input)="updateValue(); changeLineHeight()" min="16" max="60" class="gauge-input">
