@@ -1,1 +1,19 @@
-<p>configure-quiz works!</p>
+<div class="emailPass">
+  <label for="name">Nom</label><br>
+  <input type="text" id="name" name="name" [(ngModel)]="quiz.name">
+  <br><br>
+  <label >Thème</label><br>
+  <select [formControl]="quizForm.controls.theme" [(ngModel)]="quiz.theme.name">
+    <option>{{quiz.theme.name}}</option>
+    <option *ngFor="let theme of themeList" [value]="theme.name">{{ theme.name }}</option>
+  </select>
+  <br><br><br><br>
+</div>
+<div class="list">
+  <label>La liste des question</label>
+  <div class="ligne"></div>
+  <br>
+    <div *ngFor="let question of quiz.question">
+      <button class="button-card" >{{question.text}}</button>
+    </div>
+</div>

@@ -18,7 +18,7 @@ export class GamePageComponent {
   user: User = {config: {fontSize:16,lineHeight:12,letterSpacing:5}, id:'',firstName:'',lastName:''};
   theme:Theme = {name:'' };
 
-  quiz: Quiz = {id: '', name:'',theme:{name:''}};
+  quiz: Quiz = {id: '', name:'',theme:{name:''},question:[]};
   questionsOfQuiz: Question[] = [];
 
   constructor(
