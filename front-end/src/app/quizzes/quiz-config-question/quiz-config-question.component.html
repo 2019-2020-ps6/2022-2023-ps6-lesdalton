@@ -1,0 +1,38 @@
+<div class="question-config">
+  <form>
+    <label for="question-input">Question</label><br>
+    <input type="text" id="question-input" name="question" [(ngModel)]="question.text" required>
+    <br>
+  </form>
+</div>
+<br><br><br><br>
+<div class="card">
+  <form [formGroup]="answerForm" (ngSubmit)="addAnswer()">
+    <label for="text">Nouvelle réponse</label>
+    <br>
+    <input type="text" id="text" formControlName="text" required>
+    <br><br>
+    <input type="checkbox" id="isCorrect" formControlName="isCorrect">
+    <label for="isCorrect">Réponse juste</label>
+    <br><br>
+    <button class="button-card" type="submit">Ajouter</button>
+  </form>
+</div>
+
+<br><br><br><br>
+<div class="answer-config">
+  <div class="answer-row" *ngFor="let answer of question.answers; let i = index">
+    <div class="answer-col">
+      <input type="text" id="answer{{i}}" [(ngModel)]="answer.text" required>
+      <label for="correct{{i}}">
+        <input type="checkbox" id="correct{{i}}" [(ngModel)]="answer.isCorrect">
+        Réponse juste
+      </label>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<button type="button" class="delete-question">Supprimer la question</button>
+
+

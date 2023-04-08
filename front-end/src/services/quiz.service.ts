@@ -2,20 +2,33 @@ import { Injectable } from '@angular/core';
 import { Quiz } from 'src/models/quiz.model';
 import { BehaviorSubject } from 'rxjs';
 import {QUIZ_LIST} from "../mocks/quizzes-list.mock";
+import {Question} from "../models/question.model";
+import {QUESTION_LIST} from "../mocks/question-list.mock";
+import {Answer} from "../models/answer.models";
+import {ANSWER_LIST} from "../mocks/answer-list.mock";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizService {
+  quiz:Quiz ={id:'',name:'',theme:{name:"Sans Thème"},question:[]};
+  question: Question={text:'',id:0,answers:[]};
+
   private quizzes : Quiz[] = QUIZ_LIST;
   public quizzes$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizzes);
+
+  public questions: Question[]= QUESTION_LIST;
+
+  public answers:Answer[]=this.question.answers;
+  public answers$ : BehaviorSubject<Answer[]>=new BehaviorSubject(this.answers)
 
   constructor() {}
 
   addQuiz(quiz:Quiz):void{
     this.quizzes.push(quiz);
     this.quizzes$.next(this.quizzes);
+    this.quiz=quiz;
   }
 
 
@@ -33,7 +46,20 @@ export class QuizService {
 
   getQuizById(id: string): Quiz {
     const quiz = this.quizzes.find(u => u.id === id)!;
+    this.quiz=quiz;
     return quiz;
+  }
+
+  getQuestionById(id: number): Question {
+    const question=this.questions.find(u=>u.id===id)!;
+    this.question=question;
+    return question
+  }
+
+  addAnswer(answer: Answer){
+    this.question.answers.push(answer);
+    this.answers$.next(this.answers);
+
   }
 
 }
