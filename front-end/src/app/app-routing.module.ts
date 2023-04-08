@@ -9,7 +9,6 @@ import {UserListComponent} from "./users/user-list/user-list.component";
 import {LoginComponent} from "./login/login.component";
 import {ActionsComponent} from "./actions/actions.component";
 import {LoginNewAccountComponent} from "./login-new-account/login-new-account.component";
-import {UserCardComponent} from "./users/user-card/user-card.component";
 import {GamePageComponent} from "./game/game-page/game-page.component"
 import {GameSelectPlayerComponent} from "./game/game-select-player/game-select-player.component";
 import {GameSelectThemeComponent} from "./game/game-select-theme/game-select-theme.component";
@@ -46,7 +45,6 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'actions', component:ActionsComponent},
   {path: "login-new-account", component: LoginNewAccountComponent},
-  {path: "user-card/:id",component: UserCardComponent},
   {path: "user-config", component: UserConfigComponent},
 
   {path: "config-pop-up/:id", component: ConfigPopUpComponent},

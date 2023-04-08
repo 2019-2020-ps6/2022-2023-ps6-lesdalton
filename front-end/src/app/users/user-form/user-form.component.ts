@@ -16,7 +16,7 @@ export class UserFormComponent {
     this.userForm = this.formBuilder.group({
       firstName:[''],
       lastName: [''],
-      id: [''],
+      config:{config:{fontSize:20,lineHeight:5,letterSpacing:5}}
     });
   }
 

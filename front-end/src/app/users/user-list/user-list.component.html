@@ -13,8 +13,10 @@
       <h2>{{user.firstName}}  {{user.lastName}}</h2>
       Prénom : {{user.firstName}}<br>
       Nom : {{user.lastName}}<br>
-      ID : {{user.id}}<br><br>
-      <a [routerLink]="['/user-config']" [queryParams]="{ user: user | json }"><button class="button-card">Modifier</button></a>
+      <br>
+      <a [routerLink]="['/user-config']" [queryParams]="{ name: user.firstName }"><button class="button-card">Configurer</button>
+      </a>
+
       <button class="button-card" (click)="deleteUser(user)">Supprimer</button>
     </div>
   </div>

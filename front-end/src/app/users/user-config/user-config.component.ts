@@ -12,41 +12,37 @@ import {style} from "@angular/animations";
 })
 export class UserConfigComponent {
 
+  user!: user;
 
-
-  @Input() user: user = {id:'',firstName:'',lastName:'',config:{fontSize:10,lineHeight:5,letterSpacing:5}};
-
-  fontSize:string = this.user.config.fontSize+'px';
-  lineHeight: string=this.user.config.lineHeight+'px';
-
-  letterSpacing: string=this.user.config.letterSpacing+'px';
-  constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef) {}
+  constructor(private route: ActivatedRoute,private userService:UserService) {}
 
   ngOnInit() {
-
+    this.route.queryParams.subscribe(params => {
+      this.user = this.userService.getUserByName(params['name']);
+    });
   }
-
   updateValue() {
-    this.fontSize = this.user.config.fontSize+'px';
-    this.lineHeight=this.user.config.lineHeight+'px';
-    this.letterSpacing=this.user.config.letterSpacing+'px';
     console.log("FontSize : ", this.user.config.fontSize, "lineHeight : " ,this.user.config.lineHeight, "lettterSpacing : ",this.user.config.letterSpacing);
+
     if (this.user.config.fontSize < 20) {
       this.user.config.fontSize = 20;
     } else if (this.user.config.fontSize > 45) {
       this.user.config.fontSize = 45;
     }
+
     if (this.user.config.lineHeight< 0) {
       this.user.config.lineHeight = 0;
     } else if (this.user.config.lineHeight > 100) {
       this.user.config.lineHeight = 100;
     }
+
     if(this.user.config.letterSpacing<0){
       this.user.config.letterSpacing=0;
-    }else if(this.user.config.letterSpacing>100){
+    } else if(this.user.config.letterSpacing>100){
       this.user.config.letterSpacing=100;
     }
   }
+
   changeFontSize() {
 
   }
@@ -62,5 +58,4 @@ export class UserConfigComponent {
   onSaveConfig(){
     this.userService.updateUser(this.user);
   }
-
 }

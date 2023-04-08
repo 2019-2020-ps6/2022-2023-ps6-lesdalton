@@ -63,4 +63,9 @@ export class UserService {
     const user = this.users.find(u => u.id === id)!;
     return user;
   }
+
+  getUserByName(name: string): user {
+    const user = this.users.find(u => u.firstName === name)!;
+    return user;
+  }
 }

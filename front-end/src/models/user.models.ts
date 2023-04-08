@@ -4,7 +4,7 @@ import {UserConfigModel} from "./user-config.model";
 export interface user {
 
   picture ?: string;
-  id: string;
+  id?: string;
   firstName: string;
   lastName: string;
 
