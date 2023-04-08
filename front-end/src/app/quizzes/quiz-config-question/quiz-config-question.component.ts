@@ -52,4 +52,10 @@ export class QuizConfigQuestionComponent {
     this.quizService.addAnswer(answerToAdd);
   }
 
+  deleteAnswer(answer: Answer){
+    console.log('answer deleted : ',answer);
+    this.quizService.deleteAnswer(answer);
+  }
+
+
 }

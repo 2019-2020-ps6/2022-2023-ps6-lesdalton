@@ -22,12 +22,16 @@
 <br><br><br><br>
 <div class="answer-config">
   <div class="answer-row" *ngFor="let answer of question.answers; let i = index">
-    <div class="answer-col">
+    <div class="card">
+      <br>
       <input type="text" id="answer{{i}}" [(ngModel)]="answer.text" required>
+      <br>
       <label for="correct{{i}}">
         <input type="checkbox" id="correct{{i}}" [(ngModel)]="answer.isCorrect">
         Réponse juste
       </label>
+      <br><br>
+      <button class="button-card" (click)="deleteAnswer(answer)">Supprimer</button>
     </div>
   </div>
 </div>

@@ -61,5 +61,12 @@ export class QuizService {
     this.answers$.next(this.answers);
 
   }
+  deleteAnswer(answer: Answer){
+    const index = this.question.answers.indexOf(answer);
+    if (index !== -1) {
+      this.question.answers.splice(index, 1);
+      this.answers$.next(this.answers);
+    }
+  }
 
 }
