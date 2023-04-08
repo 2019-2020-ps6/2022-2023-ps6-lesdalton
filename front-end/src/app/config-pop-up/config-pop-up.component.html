@@ -4,9 +4,18 @@
     <h1 class="title" [style.font-size.px]="user.config.fontSize*1.5" [style.line-height.px]="user.config.lineHeight">QUESTION 2/3</h1>
 
     <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight">
-      QUEL PEUPLE INVESTIT LE TERRITOIRE FRANÇAIS AU 7 EME SIECLE AVANT J.C.</p>
+      {{question}}</p>
 
-    <app-game-answer ></app-game-answer>
+    <div >
+      <div class="answers-container">
+
+        <button class="answerButton" type="button" *ngFor="let answer of answers" [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">
+          {{ answer.text }}
+        </button>
+      </div>
+
+    </div>
+
 
     <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" >SCORE : 1</p>
 
@@ -18,6 +27,7 @@
       <app-pop-up (valider)="onValider()"></app-pop-up>
     </div>
 
+</div>
 </div>
 
 

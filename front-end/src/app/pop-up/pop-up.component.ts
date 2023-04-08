@@ -10,7 +10,7 @@ import {PopupService} from "../../services/pop-up.service";
   styleUrls: ['./pop-up.component.scss']
 })
 export class PopUpComponent {
-  user: user = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5,letterSpacing:5}};
+  user!: user;
 
   min:number=20;
   max:number=45;
@@ -20,8 +20,9 @@ export class PopUpComponent {
 
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id')!;
-    this.user = this.userService.getUserById(id);
+    this.route.queryParams.subscribe(params => {
+      this.user = this.userService.getUserByName(params['name']);
+    });
   }
 
   value = 0;

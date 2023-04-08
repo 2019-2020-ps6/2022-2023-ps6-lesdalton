@@ -3,7 +3,16 @@
 
   <p (click)="onQuestionClick()" [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">{{currentQuestion?.text}}</p>
 
-  <app-game-answer ></app-game-answer>
+  <div >
+    <div class="answers-container">
+
+      <button class="answerButton" type="button" *ngFor="let answer of currentQuestion?.answers" (click)="this.gameService.checkAnswer(answer)" [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">
+        {{ answer.text }}
+      </button>
+    </div>
+
+  </div>
+
 
   <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing"  >SCORE : {{playerScore}}</p>
 

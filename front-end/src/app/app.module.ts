@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 
-import { Routes } from '@angular/router';
 
 import { HeaderComponent } from './header/header.component';
 import { AddQuizComponent } from './quizzes/add-quiz/add-quiz.component';

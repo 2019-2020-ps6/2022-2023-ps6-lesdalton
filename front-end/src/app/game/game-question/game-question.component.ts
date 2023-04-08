@@ -21,7 +21,7 @@ export class GameQuestionComponent {
 
   user: user = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5,letterSpacing:5}};
 
-  constructor(private gameService: GameServiceService,private route:ActivatedRoute,private userService:UserService,private popupService: PopupService) {
+  constructor(public gameService: GameServiceService,private route:ActivatedRoute,private userService:UserService,private popupService: PopupService) {
     this.gameService.numberOfQuestions$.subscribe((nbreQuestions:number) => {this.numberOfQuestions=nbreQuestions}); // Obtention de numberOfQuestions$ en tant qu'Observable
     this.gameService.currentQuestionIndex$.subscribe((indexQuestionEnCours:number) => {this.currentQuestionIndex=indexQuestionEnCours}); // Obtention de currentQuestionIndex$ en tant qu'Observable
     this.gameService.currentQuestion$.subscribe((QuestionEnCours:Question) => {this.currentQuestion=QuestionEnCours});

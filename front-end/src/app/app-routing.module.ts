@@ -47,7 +47,7 @@ const routes: Routes = [
   {path: "login-new-account", component: LoginNewAccountComponent},
   {path: "user-config", component: UserConfigComponent},
 
-  {path: "config-pop-up/:id", component: ConfigPopUpComponent},
+  {path: "config-pop-up", component: ConfigPopUpComponent},
   {path:"password",component: PasswordComponent},
   {path: "password-quiz",component:PasswordQuizComponent},
   {path:"quiz-game",component: QuizGameComponent},

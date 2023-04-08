@@ -2,8 +2,7 @@ import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {user} from "../../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../../services/user.service";
-import {HorizontalGaugeComponent} from "../../horizontal-gauge/horizontal-gauge.component";
-import {style} from "@angular/animations";
+
 
 @Component({
   selector: 'app-user-config',
@@ -13,6 +12,8 @@ import {style} from "@angular/animations";
 export class UserConfigComponent {
 
   user!: user;
+  minFontSize=25;
+  maxFontSize=40;
 
   constructor(private route: ActivatedRoute,private userService:UserService) {}
 
@@ -22,12 +23,12 @@ export class UserConfigComponent {
     });
   }
   updateValue() {
-    console.log("FontSize : ", this.user.config.fontSize, "lineHeight : " ,this.user.config.lineHeight, "lettterSpacing : ",this.user.config.letterSpacing);
+    console.log("FontSize : ", this.user.config.fontSize, "lineHeight : " ,this.user.config.lineHeight, "letterSpacing : ",this.user.config.letterSpacing);
 
-    if (this.user.config.fontSize < 20) {
-      this.user.config.fontSize = 20;
-    } else if (this.user.config.fontSize > 45) {
-      this.user.config.fontSize = 45;
+    if (this.user.config.fontSize < this.minFontSize) {
+      this.user.config.fontSize = this.minFontSize;
+    } else if (this.user.config.fontSize > this.maxFontSize) {
+      this.user.config.fontSize = this.maxFontSize;
     }
 
     if (this.user.config.lineHeight< 0) {
@@ -41,18 +42,6 @@ export class UserConfigComponent {
     } else if(this.user.config.letterSpacing>100){
       this.user.config.letterSpacing=100;
     }
-  }
-
-  changeFontSize() {
-
-  }
-
-  changeLineHeight(){
-
-  }
-
-  changeLetterSpacing(){
-
   }
 
   onSaveConfig(){

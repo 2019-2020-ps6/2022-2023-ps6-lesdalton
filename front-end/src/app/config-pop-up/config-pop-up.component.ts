@@ -3,6 +3,9 @@ import {user} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {PopupService} from "../../services/pop-up.service";
+import {Question} from "../../models/question.model";
+import {QUESTION_LIST} from "../../mocks/question-list.mock";
+import {Answer} from "../../models/answer.models";
 
 @Component({
   selector: 'app-config-pop-up',
@@ -10,15 +13,19 @@ import {PopupService} from "../../services/pop-up.service";
   styleUrls: ['./config-pop-up.component.scss']
 })
 export class ConfigPopUpComponent {
-  user: user = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:5,letterSpacing:5}};
+  user!: user;
   min:number=16;
   max:number=35;
+
+  question:string=QUESTION_LIST[0].text;
+  answers:Answer[]=QUESTION_LIST[0].answers;
 
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef,private popupService:PopupService) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id')!;
-    this.user = this.userService.getUserById(id);
+    this.route.queryParams.subscribe(params => {
+      this.user = this.userService.getUserByName(params['name']);
+    });
     this.popupService.getIsOpen().subscribe(isOpen => {
       this.isPopupOpen = isOpen; // mettre à jour l'état de l'ouverture du pop-up
     });
