@@ -4,10 +4,13 @@ import {QuizService} from "../../../services/quiz.service";
 import {Quiz} from "../../../models/quiz.model";
 import {ThemeService} from "../../../services/theme.service";
 import {Theme} from "../../../models/theme.models";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {QUIZ_LIST} from "../../../mocks/quizzes-list.mock";
 import {Question} from "../../../models/question.model";
 import {QUESTION_LIST} from "../../../mocks/question-list.mock";
+import {Answer} from "../../../models/answer.models";
+
+
 
 @Component({
   selector: 'app-quiz-config',
@@ -17,10 +20,10 @@ import {QUESTION_LIST} from "../../../mocks/question-list.mock";
 export class QuizConfigComponent {
 
   quiz: Quiz = {id:'',name:'',theme:{name:"Sans Thème"},question:[]};
+  question: Question={id:1,text:'',answers:[]};
   public themeList:Theme[] = this.themeService.themes;
-  public quizzes: Quiz[] = QUIZ_LIST;
 
-  public questions: Question[]= QUESTION_LIST;
+
 
   quizForm = new FormGroup({
     name: new FormControl(),
@@ -28,10 +31,33 @@ export class QuizConfigComponent {
     id: new FormControl()
   });
 
-  constructor(private route:ActivatedRoute,private quizService:QuizService, private themeService: ThemeService) {
+  questionForm = this.formBuilder.group({
+    id: this.quiz.question.length + 1,
+    quizId: this.quiz.id,
+    text: new FormControl(),
+  });
+
+
+  constructor(public formBuilder: FormBuilder,private route:ActivatedRoute,private quizService:QuizService, private themeService: ThemeService) {
+
   }
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.quiz = this.quizService.getQuizById(id);
+
+    // écouter les changements de la liste de questions
+    this.quizService.questionsChanged.subscribe(() => {
+      this.questionForm = this.formBuilder.group({
+        id: this.quiz.question.length + 1,
+        quizId: this.quiz.id,
+        text: new FormControl(),
+      });
+    });
+  }
+
+  addQuestion(){
+    const questionToAdd: Question=this.questionForm.getRawValue() as Question;
+    console.log('question added : ',questionToAdd);
+    this.quizService.addQuestion(questionToAdd);
   }
 }

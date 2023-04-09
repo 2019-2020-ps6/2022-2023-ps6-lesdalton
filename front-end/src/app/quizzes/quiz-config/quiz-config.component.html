@@ -9,6 +9,15 @@
   </select>
   <br><br><br><br>
 </div>
+<div class="card">
+  <form [formGroup]="questionForm" (ngSubmit)="addQuestion()">
+    <label for="text">Nouvelle réponse</label>
+    <br>
+    <input type="text" id="text" formControlName="text" required>
+    <br><br>
+    <button class="button-card" type="submit">Ajouter</button>
+  </form>
+</div>
 <div class="list">
   <label>La liste des question</label>
   <div class="ligne"></div>

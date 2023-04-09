@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Quiz } from 'src/models/quiz.model';
-import { BehaviorSubject } from 'rxjs';
+import {BehaviorSubject, Subject} from 'rxjs';
 import {QUIZ_LIST} from "../mocks/quizzes-list.mock";
 import {Question} from "../models/question.model";
 import {QUESTION_LIST} from "../mocks/question-list.mock";
@@ -19,9 +19,13 @@ export class QuizService {
   public quizzes$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizzes);
 
   public questions: Question[]= QUESTION_LIST;
+  public questions$: BehaviorSubject<Question[]>=new BehaviorSubject(this.questions)
+
+  public questionsChanged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   public answers:Answer[]=this.question.answers;
   public answers$ : BehaviorSubject<Answer[]>=new BehaviorSubject(this.answers)
+  public answersChanged: BehaviorSubject<boolean>=new BehaviorSubject<boolean>(false);
 
   constructor() {}
 
@@ -67,6 +71,10 @@ export class QuizService {
       this.question.answers.splice(index, 1);
       this.answers$.next(this.answers);
     }
+  }
+  addQuestion(question: Question){
+    this.questions.push(question);
+    this.questions$.next(this.questions)
   }
 
 }
