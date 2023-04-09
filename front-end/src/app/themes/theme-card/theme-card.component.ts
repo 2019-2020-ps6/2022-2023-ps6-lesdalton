@@ -13,11 +13,12 @@ import {UserService} from "../../../services/user.service";
 })
 export class ThemeCardComponent {
 
-  public user:user={firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5}};
+  @Input() user!:user;
   @Input() theme!: Theme;
   constructor(private route:ActivatedRoute,private userService:UserService) {
   }
   ngOnInit() {
+
     const id = this.route.snapshot.paramMap.get('id')!;
     this.user = this.userService.getUserById(id);
   }

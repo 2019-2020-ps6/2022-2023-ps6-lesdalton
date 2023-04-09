@@ -17,7 +17,7 @@ export class QuizFormComponent {
   quizForm = new FormGroup({
     name: new FormControl(),
     theme: new FormControl(),
-    id: new FormControl()
+    id: new FormControl(),
   });
 
   constructor(private quizService: QuizService,private themeService: ThemeService) {}
@@ -26,7 +26,8 @@ export class QuizFormComponent {
     const quiz:Quiz = {
       name: this.quizForm.controls.name.value, // set the name property
       theme: {name:this.quizForm.controls.theme.value},// set the theme property
-      id: this.quizForm.controls.id.value
+      id: this.quizForm.controls.id.value,
+      questions:[]
     }; // create a new Quiz instance
     console.log(this.quizForm.controls.theme.value)
     this.quizService.addQuiz(quiz);

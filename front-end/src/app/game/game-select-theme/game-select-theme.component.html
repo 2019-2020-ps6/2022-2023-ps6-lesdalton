@@ -3,7 +3,7 @@
 <div class="theme-content">
   <ul>
     <li *ngFor="let theme of themeList">
-      <a [routerLink]="['/select-player', user.id,'/select-theme', theme.name]" >{{theme.name}}</a>
+      <a [routerLink]="['/select-quiz']" [queryParams]="{ theme: theme.name,user: user.firstName }">{{theme.name}}</a>
     </li>
   </ul>
 

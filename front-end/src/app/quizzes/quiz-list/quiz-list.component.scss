@@ -1,1 +1,6 @@
 @import '../../../styles/card.scss';
+
+.quiz {
+  display: flex;
+  flex-wrap: wrap;
+}

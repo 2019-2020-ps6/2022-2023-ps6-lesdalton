@@ -26,9 +26,9 @@ import {ThemesListComponent} from "./themes/themes-list/themes-list.component";
 const routes: Routes = [
   { path:'game', component:GamePageComponent},
   { path:'select-player', component:GameSelectPlayerComponent},
-  {path:'select-theme/:id', component:GameSelectThemeComponent},
-  {path:'select-quiz/:id/:name', component:GameSelectQuizComponent},
-  {path:'game/:id/:name/:quizid', component:GamePageComponent},
+  {path:'select-theme', component:GameSelectThemeComponent},
+  {path:'select-quiz', component:GameSelectQuizComponent},
+  {path:'game-page', component:GamePageComponent},
   {path:'result', component:GameResultComponent},
   { path:'select-player/:id', component:GameSelectPlayerComponent},
   { path:'select-player/:id/select-theme', component:ThemesListComponent},

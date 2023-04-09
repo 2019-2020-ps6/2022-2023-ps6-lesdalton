@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit} from '@angular/core';
 import {THEME_LIST} from "../../../mocks/theme.mocks";
 import {user} from "../../../models/user.models";
 import {USER} from "../../../mocks/user-list.mock";
@@ -14,15 +14,16 @@ import {PopupService} from "../../../services/pop-up.service";
 })
 export class GameSelectThemeComponent {
   themeList:Theme[] = THEME_LIST;
+  @Input() user!:user;
 
-  user: user = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20,letterSpacing:5}};
 
 
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef,private popupService: PopupService) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id')!;
-    this.user = this.userService.getUserById(id);
+    this.route.queryParams.subscribe(params => {
+      this.user = this.userService.getUserByName(params['name']);
+    });
   }
 
 

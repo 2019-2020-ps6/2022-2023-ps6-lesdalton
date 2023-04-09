@@ -21,23 +21,20 @@ export class GameSelectQuizComponent {
   QuizList:Quiz[] = QUIZ_LIST;
   quizForTheme:Quiz[] = [];
 
-  user: user = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20,letterSpacing:5}};
-  theme:Theme = {name:'' };
+  @Input() theme!:Theme;
+  @Input() user!:user;
+
 
   constructor(private route: ActivatedRoute, private userService: UserService, private themeService: ThemeService, private elementRef:ElementRef) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id')!;
-    const name = this.route.snapshot.paramMap.get('name')!;
-    this.user = this.userService.getUserById(id);
-    this.theme = this.themeService.getThemeByName(name);
+    this.route.queryParams.subscribe(params => {
+      this.theme = this.themeService.getThemeByName(params['theme']);
+    });
+    this.route.queryParams.subscribe(params => {
+      this.user = this.userService.getUserByName(params['user']);
+    });
     this.showQuiz(this.theme.name);
-
-    /*console.log("userInfo");
-    console.log(this.user);
-
-    console.log("themeInfo");
-    console.log(this.theme);*/
   }
 
 

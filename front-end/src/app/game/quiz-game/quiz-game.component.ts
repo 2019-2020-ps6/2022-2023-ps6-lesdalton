@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Question} from "../../../models/question.model";
-import {QUESTION_LIST} from "../../../mocks/question-list.mock";
+import {Histoire_de_France_questions} from "../../../mocks/question-list.mock";
 import {Answer} from "../../../models/answer.models";
 
 @Component({
@@ -10,9 +10,9 @@ import {Answer} from "../../../models/answer.models";
 })
 export class QuizGameComponent {
 
-  public questionList: Question[]=QUESTION_LIST;
+  public questionList: Question[]=Histoire_de_France_questions;
   currentQuestionIndex = 0;
-  currentQuestion: Question=QUESTION_LIST[this.currentQuestionIndex];
+  currentQuestion: Question=Histoire_de_France_questions[this.currentQuestionIndex];
   showAnswer = false;
   answerMessage = "";
   point=0;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Quiz } from 'src/models/quiz.model';
-import { BehaviorSubject } from 'rxjs';
+import {BehaviorSubject, Observable, of} from 'rxjs';
 import {QUIZ_LIST} from "../mocks/quizzes-list.mock";
 
 
@@ -34,6 +34,16 @@ export class QuizService {
   getQuizById(id: string): Quiz {
     const quiz = this.quizzes.find(u => u.id === id)!;
     return quiz;
+  }
+
+  getQuizByName(name: string): Quiz {
+    const quiz = this.quizzes.find(u => u.name === name)!;
+    return quiz;
+  }
+
+  getNumberOfQuestions(quiz: Quiz): Observable<number> {
+    // Return the number of questions as an Observable
+    return of(quiz.questions.length);
   }
 
 }

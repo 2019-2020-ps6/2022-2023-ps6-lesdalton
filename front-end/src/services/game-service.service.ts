@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import {Question} from "../models/question.model";
-import {QUESTION_LIST} from "../mocks/question-list.mock";
+import {Histoire_de_France_questions} from "../mocks/question-list.mock";
 import {Answer} from "../models/answer.models";
 import {Router} from "@angular/router";
+import {Quiz} from "../models/quiz.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameServiceService {
-  questionsList:Question[] = QUESTION_LIST;
+  questionsList:Question[] = Histoire_de_France_questions;
 
   public playerScore$:BehaviorSubject<number> = new BehaviorSubject<number>(0);
   public currentQuestionIndex$:BehaviorSubject<number> = new BehaviorSubject<number>(0);
-  public currentQuestion$:BehaviorSubject<Question> = new BehaviorSubject<Question>(QUESTION_LIST[this.currentQuestionIndex$.value]);
+  public currentQuestion$:BehaviorSubject<Question> = new BehaviorSubject<Question>(Histoire_de_France_questions[this.currentQuestionIndex$.value]);
   public numberOfQuestions$:BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
 
@@ -24,33 +25,17 @@ export class GameServiceService {
 
   constructor(private router: Router) { }
 
-  questionsByQuizId(id: string): Question[]{
-    let questions:Question[] = [];
-    let nId=+id;
-    //console.log("nID = " + nId);
-    for (const question of this.questionsList ){
-      //console.log("quizId = "+ question.quizId);
-      if(question.quizId==nId){
-        //console.log(question);
-        questions.push(question);
-      }
-    }
-    this.questionsOfQuiz=questions;
-    //console.log(this.questionsOfQuiz);
-    return questions;
+  quizQuestions(quiz:Quiz): Question[] {
+    return quiz.questions;
   }
 
-  startGame(quizId:string){
-    let gameQuestions:Question[] = this.questionsByQuizId(quizId);
+  startGame(quiz:Quiz){
+    let gameQuestions:Question[] = this.quizQuestions(quiz);
     this.numberOfQuestions$.next(this.questionsOfQuiz.length);
     this.currentQuestionIndex$.next(0);
 
     this.currentQuestion$.next(gameQuestions[this.currentQuestionIndex$.value]);
 
-  }
-
-  getNumberOfQuestions(quizId:string){
-    return this.questionsByQuizId(quizId).length;
   }
 
   getNumberOfQuestions$(): Observable<number> { // Méthode pour obtenir numberOfQuestions$ en tant qu'Observable
@@ -78,7 +63,7 @@ export class GameServiceService {
   getNextQuestion(){
     if(this.currentQuestionIndex$.value < this.questionsOfQuiz.length-1){
       this.currentQuestionIndex$.next(this.currentQuestionIndex$.value+1);
-      this.currentQuestion$.next(QUESTION_LIST[this.currentQuestionIndex$.value]);
+      this.currentQuestion$.next(Histoire_de_France_questions[this.currentQuestionIndex$.value]);
     }else {
       console.log("fin du quiz");
       this.router.navigateByUrl('/result');

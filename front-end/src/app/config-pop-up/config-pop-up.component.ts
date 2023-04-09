@@ -4,7 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {PopupService} from "../../services/pop-up.service";
 import {Question} from "../../models/question.model";
-import {QUESTION_LIST} from "../../mocks/question-list.mock";
+import {Histoire_de_France_questions} from "../../mocks/question-list.mock";
 import {Answer} from "../../models/answer.models";
 
 @Component({
@@ -17,8 +17,8 @@ export class ConfigPopUpComponent {
   min:number=16;
   max:number=35;
 
-  question:string=QUESTION_LIST[0].text;
-  answers:Answer[]=QUESTION_LIST[0].answers;
+  question:string=Histoire_de_France_questions[0].text;
+  answers:Answer[]=Histoire_de_France_questions[0].answers;
 
   constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef,private popupService:PopupService) {}
 

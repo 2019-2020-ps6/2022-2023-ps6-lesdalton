@@ -1,7 +1,8 @@
 <h2 class="title">QUI VEUT JOUER ?</h2>
 
 <div class="user-list">
-  <div class="user" *ngFor="let user of userList" [routerLink]="['/select-player',user.id,'select-theme']">
+  <div class="user" *ngFor="let user of userList" [routerLink]="['/select-theme']" [queryParams]="{ name: user.firstName }"
+  >
     <div class="card" >
       <div class="user-image">
         <img src="../../../assets/resources/profilPIc.png" >

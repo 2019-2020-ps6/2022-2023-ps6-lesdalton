@@ -1,5 +1,5 @@
 <div class="question-container">
-  <h1 class="title" [style.font-size.px]="user.config.fontSize*1.5" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">QUESTION {{currentQuestionIndex + 1}}/{{numberOfQuestions}}</h1>
+  <h1 class="title" [style.font-size.px]="user.config.fontSize*1.5" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">QUESTION {{currentQuestionIndex + 1}}/{{numberOfQuestions$}}</h1>
 
   <p (click)="onQuestionClick()" [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">{{currentQuestion?.text}}</p>
 

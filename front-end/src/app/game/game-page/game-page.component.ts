@@ -1,4 +1,4 @@
-import {Component, ElementRef} from '@angular/core';
+import {Component, ElementRef, Input} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UserService} from "../../../services/user.service";
 import {user} from "../../../models/user.models";
@@ -7,6 +7,7 @@ import {Quiz} from "../../../models/quiz.model";
 import {Theme} from "../../../models/theme.models";
 import {ThemeService} from "../../../services/theme.service";
 import {GameServiceService} from "../../../services/game-service.service";
+import {QuizService} from "../../../services/quiz.service";
 
 @Component({
   selector: 'app-game-page',
@@ -16,9 +17,8 @@ import {GameServiceService} from "../../../services/game-service.service";
 export class GamePageComponent {
 
   user: user = {config: {fontSize:16,lineHeight:12,letterSpacing:5}, id:'',firstName:'',lastName:''};
-  theme:Theme = {name:'' };
 
-  quiz: Quiz = {id: '', name:'',theme:{name:''}};
+  @Input() quiz!: Quiz;
   questionsOfQuiz: Question[] = [];
 
   constructor(
@@ -26,23 +26,14 @@ export class GamePageComponent {
     private userService: UserService,
     private themeService: ThemeService,
     private gameService:GameServiceService,
+    private quizService:QuizService,
     private elementRef:ElementRef) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id')!;
-    const name = this.route.snapshot.paramMap.get('name')!;
-    this.user = this.userService.getUserById(id);
-    this.theme = this.themeService.getThemeByName(name);
-
-    const quizId = this.route.snapshot.paramMap.get('quizid')!;
+    this.route.queryParams.subscribe(params => {
+      this.quiz = this.quizService.getQuizByName(params['quiz']);
+    });
     //this.questionsOfQuiz= this.gameService.questionsByQuizId(quizId);
-    this.gameService.startGame(quizId);
-
-
-
+    this.gameService.startGame(this.quiz);
   }
-
-
-
-
 }
