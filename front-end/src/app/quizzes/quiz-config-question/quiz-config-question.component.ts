@@ -20,16 +20,20 @@ export class QuizConfigQuestionComponent {
   quiz: Quiz = {id:'',name:'',theme:{name:"Sans Thème"},question:[]};
   question: Question={id:1,text:'',answers:[]};
 
-  answerForm: FormGroup;
+  answer: Answer={id:this.question.answers.length+1,text:'',isCorrect:false,questionId:this.question.id};
 
-  constructor(public formBuilder: FormBuilder,private route:ActivatedRoute,private quizService:QuizService, private themeService: ThemeService) {
-    this.answerForm = this.formBuilder.group({
-      id: this.question.answers.length + 1,
-      questionId: this.question.id,
-      text: new FormControl(),
-      isCorrect: false,
-    });
-  }
+
+  answerForm = this.formBuilder.group({
+    id: this.question.answers.length+1,
+    questionId:this.question.id,
+    text: new FormControl(),
+    isCorrect: false
+  });
+
+
+
+  constructor(public formBuilder: FormBuilder,private route:ActivatedRoute,private quizService:QuizService, private themeService: ThemeService) {}
+
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
@@ -38,12 +42,13 @@ export class QuizConfigQuestionComponent {
     const id_question=parseInt(<string>this.route.snapshot.paramMap.get('question-id'));
     this.question=this.quizService.getQuestionById(id_question)
 
+
     this.quizService.answersChanged.subscribe(() => {
       this.answerForm = this.formBuilder.group({
-        id: this.question.answers.length + 1,
+        id: this.question.answers.length+1,
         questionId: this.question.id,
         text: new FormControl(),
-        isCorrect: false
+        isCorrect: new FormControl<boolean>(false)
       });
     });
   }
@@ -52,6 +57,7 @@ export class QuizConfigQuestionComponent {
     const answerToAdd: Answer=this.answerForm.getRawValue() as Answer;
     console.log('answer added : ',answerToAdd);
     this.quizService.addAnswer(answerToAdd);
+
   }
 
   deleteAnswer(answer: Answer){

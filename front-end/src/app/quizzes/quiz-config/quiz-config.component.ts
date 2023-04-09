@@ -22,6 +22,7 @@ export class QuizConfigComponent {
   quiz: Quiz = {id:'',name:'',theme:{name:"Sans Thème"},question:[]};
   question: Question={id:1,text:'',answers:[]};
   public themeList:Theme[] = this.themeService.themes;
+  answer: Answer={id:this.question.answers.length+1,text:'',isCorrect:false,questionId:this.question.id};
 
 
 
@@ -59,5 +60,6 @@ export class QuizConfigComponent {
     const questionToAdd: Question=this.questionForm.getRawValue() as Question;
     console.log('question added : ',questionToAdd);
     this.quizService.addQuestion(questionToAdd);
+
   }
 }

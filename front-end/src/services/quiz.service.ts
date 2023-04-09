@@ -14,6 +14,7 @@ import {ANSWER_LIST} from "../mocks/answer-list.mock";
 export class QuizService {
   quiz:Quiz ={id:'',name:'',theme:{name:"Sans Thème"},question:[]};
   question: Question={text:'',id:0,answers:[]};
+  answer: Answer={id:this.question.answers.length+1,text:'',isCorrect:false,questionId:this.question.id};
 
   private quizzes : Quiz[] = QUIZ_LIST;
   public quizzes$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizzes);
@@ -74,7 +75,7 @@ export class QuizService {
   }
   addQuestion(question: Question){
     this.questions.push(question);
-    this.questions$.next(this.questions)
+    this.questions$.next(this.questions);
   }
 
 }
