@@ -6,14 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="93929443-17bd-4e0c-8b08-bd805ad3bdd0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-page/game-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-page/game-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-page/game-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-page/game-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-question/game-question.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-question/game-question.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-question/game-question.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-question/game-question.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-select-quiz/game-select-quiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-select-quiz/game-select-quiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-select-theme/game-select-theme.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-select-theme/game-select-theme.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/mocks/theme.mocks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/mocks/theme.mocks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/services/game.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/game.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-select-theme/game-select-theme.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-select-theme/game-select-theme.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/themes/themes-list/themes-list.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/themes/themes-list/themes-list.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/themes/themes-list/themes-list.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/themes/themes-list/themes-list.component.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

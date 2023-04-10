@@ -36,7 +36,6 @@ import { PasswordComponent } from './password/password.component';
 import { PasswordQuizComponent } from './password-quiz/password-quiz.component';
 import { ThemeQuizzesListComponent } from './themes/theme-quizzes-list/theme-quizzes-list.component';
 import { ThemeCardComponent } from './themes/theme-card/theme-card.component';
-import { ThemesListComponent } from './themes/themes-list/themes-list.component';
 import { QuizGameComponent } from './game/quiz-game/quiz-game.component';
 import { QuizPlayComponent } from './quizzes/quiz-play/quiz-play.component';
 import { GameSelectQuizComponent } from './game/game-select-quiz/game-select-quiz.component';
@@ -80,7 +79,6 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     PasswordQuizComponent,
     ThemeQuizzesListComponent,
     ThemeCardComponent,
-    ThemesListComponent,
     QuizGameComponent,
     QuizPlayComponent,
     GameResultComponent,

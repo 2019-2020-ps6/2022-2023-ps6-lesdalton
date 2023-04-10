@@ -1,9 +1,9 @@
 <h2 class="title">Choisissez un thème</h2>
 
 <div class="theme-content">
-  <ul>
+
     <li *ngFor="let theme of themeList">
       <a [routerLink]="['/select-quiz']" [queryParams]="{ theme: theme.name,user: user.firstName }">{{theme.name}}</a>
     </li>
-  </ul>
+
 </div>
