@@ -4,6 +4,7 @@ import { Question } from "../models/question.model";
 import { Answer } from "../models/answer.models";
 import { Router } from "@angular/router";
 import { Quiz } from "../models/quiz.model";
+import {QUIZ_LIST} from "../mocks/quizzes-list.mock";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class GameService {
   public currentQuestion$: BehaviorSubject<Question>;
   public numberOfQuestions$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  private quiz!: Quiz;
+  private quiz: Quiz=QUIZ_LIST[0];
 
   constructor(private router: Router) {
     this.currentQuestion$ = new BehaviorSubject<Question>(this.quiz.questions[this.currentQuestionIndex$.value]);

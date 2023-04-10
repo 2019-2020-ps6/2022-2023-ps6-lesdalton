@@ -28,10 +28,10 @@ export class GamePageComponent {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.quiz = this.quizService.getQuizByName(params['quiz']);
+      this.quiz = this.quizService.getQuizById(params['quiz']);
       this.user = this.usersService.getUserByName(params['user']);
-      this.gameService.startGame(this.quiz);
     });
+    this.gameService.startGame(this.quiz);
   }
 
 }

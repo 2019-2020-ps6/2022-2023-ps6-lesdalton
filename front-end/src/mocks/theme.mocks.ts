@@ -7,7 +7,7 @@ export const THEME_LIST: Theme[] = [
     },
     {
       id:2,
-      name: 'SPORT'
+      name: 'Sport'
     },
     {
       id:3,

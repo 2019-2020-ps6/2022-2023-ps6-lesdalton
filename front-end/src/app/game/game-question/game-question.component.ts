@@ -15,15 +15,19 @@ import {UsersService} from "../../../services/users.service";
   styleUrls: ['./game-question.component.scss']
 })
 export class GameQuestionComponent implements OnInit {
-  @Input() quiz!: Quiz;
-  @Input() user!: user;
+  @Input() quizName!: string;
+  @Input() username!: string;
 
   currentQuestionIndex: number = 0;
   currentQuestion: Question | undefined;
   playerScore: number = 0;
   numberOfQuestions$!: Observable<number>; // Declare numberOfQuestions$ as an Observable
+  numberOfQuestions!:number;
 
   isPopupOpen = false;
+  quiz!:Quiz;
+  user!:user;
+
 
   constructor(
     public gameService: GameService,
@@ -35,14 +39,16 @@ export class GameQuestionComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.user = params['user'];
-      this.quiz = params['quiz'];
+      this.user = this.userService.getUserByName(params['user']);
+      this.quiz = this.quizService.getQuizById(params['quiz']);
     });
-    this.gameService.startGame(this.quiz); // Initialize quiz in startGame
 
 
     // Get numberOfQuestions$ as an Observable
     this.numberOfQuestions$ = this.quizService.getNumberOfQuestions(this.quiz);
+    this.numberOfQuestions$.subscribe(
+      (numberOfQuestions) => this.numberOfQuestions = numberOfQuestions
+    );
 
     // Get currentQuestionIndex$ as an Observable
     this.gameService.currentQuestionIndex$.subscribe((index: number) => {
