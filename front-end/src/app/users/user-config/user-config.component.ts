@@ -1,7 +1,7 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {user} from "../../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
-import {UserService} from "../../../services/user.service";
+import {UsersService} from "../../../services/users.service";
 
 
 @Component({
@@ -15,7 +15,7 @@ export class UserConfigComponent {
   minFontSize=25;
   maxFontSize=40;
 
-  constructor(private route: ActivatedRoute,private userService:UserService) {}
+  constructor(private route: ActivatedRoute,private userService:UsersService) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {

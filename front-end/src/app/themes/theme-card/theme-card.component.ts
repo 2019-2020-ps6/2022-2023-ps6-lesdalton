@@ -3,7 +3,7 @@ import {Quiz} from "../../../models/quiz.model";
 import {Theme} from "../../../models/theme.models";
 import {user} from "../../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
-import {UserService} from "../../../services/user.service";
+import {UsersService} from "../../../services/users.service";
 
 
 @Component({
@@ -15,7 +15,7 @@ export class ThemeCardComponent {
 
   @Input() user!:user;
   @Input() theme!: Theme;
-  constructor(private route:ActivatedRoute,private userService:UserService) {
+  constructor(private route:ActivatedRoute,private userService:UsersService) {
   }
   ngOnInit() {
 

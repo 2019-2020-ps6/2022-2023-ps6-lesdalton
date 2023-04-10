@@ -6,7 +6,7 @@ import {Theme} from "../../../models/theme.models";
 import {ThemeService} from "../../../services/theme.service";
 import {ActivatedRoute} from "@angular/router";
 import {user} from "../../../models/user.models";
-import {UserService} from "../../../services/user.service";
+import {UsersService} from "../../../services/users.service";
 
 @Component({
   selector: 'app-theme-quizzes-list',
@@ -32,7 +32,7 @@ export class ThemeQuizzesListComponent {
   }
 
   constructor(private quizService: QuizService,private themeService:ThemeService,private route:ActivatedRoute,
-              private userService:UserService) {}
+              private userService:UsersService) {}
 
   ngOnInit() {
     this.quizService.quizzes$.subscribe((quizzes) => (this.quizzes = quizzes));

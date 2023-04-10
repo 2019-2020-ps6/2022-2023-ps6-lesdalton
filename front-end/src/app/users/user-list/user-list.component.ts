@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 
 import { user } from '../../../models/user.models';
-import { UserService } from '../../../services/user.service';
+import { UsersService } from '../../../services/users.service';
 import {Router} from "@angular/router";
 import {USER} from "../../../mocks/user-list.mock";
 
@@ -18,7 +18,7 @@ export class UserListComponent implements OnInit {
   public userList: user[] = USER;
 
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UsersService, private router: Router) {
     this.userService.users$.subscribe((users: user[]) => {
       this.userList = users;
     });

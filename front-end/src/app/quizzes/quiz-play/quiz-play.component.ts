@@ -5,7 +5,7 @@ import {QuizService} from "../../../services/quiz.service";
 import {ThemeService} from "../../../services/theme.service";
 import {user} from "../../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
-import {UserService} from "../../../services/user.service";
+import {UsersService} from "../../../services/users.service";
 
 @Component({
   selector: 'app-quiz-play',
@@ -16,7 +16,7 @@ export class QuizPlayComponent {
   @Input() quiz!: Quiz;
   public user:user={firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5}};
   @Input() theme!: String;
-  constructor(private route:ActivatedRoute,private userService:UserService) {
+  constructor(private route:ActivatedRoute,private userService:UsersService) {
   }
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;

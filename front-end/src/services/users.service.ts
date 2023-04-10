@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UsersService {
   /*
    The list of users.
    */
@@ -51,7 +51,7 @@ export class UserService {
    Updates the specified user with the provided data.
    */
   updateUser(user: user): void {
-    const index = this.users.findIndex(u => u.id === user.id);
+    const index = this.users.findIndex(u => u.firstName === user.firstName);
     console.log("User edited : ",this.users[index]);
     if (index !== -1) {
       this.users[index] = user;

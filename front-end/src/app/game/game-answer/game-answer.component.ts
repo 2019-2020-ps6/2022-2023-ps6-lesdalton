@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {Question} from "../../../models/question.model";
-import {GameServiceService} from "../../../services/game-service.service";
+import {GameService} from "../../../services/game.service";
 import {user} from "../../../models/user.models";
-import {UserService} from "../../../services/user.service";
+import {UsersService} from "../../../services/users.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -19,7 +19,7 @@ export class GameAnswerComponent {
 
 
 
-  constructor(protected gameService: GameServiceService,private userService: UserService,private route:ActivatedRoute) {
+  constructor(protected gameService: GameService, private userService: UsersService, private route:ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       this.user = this.userService.getUserByName(params['name']);
     });

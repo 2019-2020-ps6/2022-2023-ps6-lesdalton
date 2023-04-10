@@ -6,7 +6,7 @@ import {Quiz} from "../../../models/quiz.model";
 import {QUIZ_LIST} from "../../../mocks/quizzes-list.mock";
 import {THEME_LIST} from "../../../mocks/theme.mocks";
 import {ActivatedRoute} from "@angular/router";
-import {UserService} from "../../../services/user.service";
+import {UsersService} from "../../../services/users.service";
 import {ThemeService} from "../../../services/theme.service";
 
 
@@ -25,7 +25,7 @@ export class GameSelectQuizComponent {
   @Input() user!:user;
 
 
-  constructor(private route: ActivatedRoute, private userService: UserService, private themeService: ThemeService, private elementRef:ElementRef) {}
+  constructor(private route: ActivatedRoute, private userService: UsersService, private themeService: ThemeService, private elementRef:ElementRef) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {

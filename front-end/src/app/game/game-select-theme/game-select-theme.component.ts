@@ -3,7 +3,7 @@ import {THEME_LIST} from "../../../mocks/theme.mocks";
 import {user} from "../../../models/user.models";
 import {USER} from "../../../mocks/user-list.mock";
 import {Theme} from "../../../models/theme.models";
-import {UserService} from "../../../services/user.service";
+import {UsersService} from "../../../services/users.service";
 import {ActivatedRoute} from "@angular/router";
 import {PopupService} from "../../../services/pop-up.service";
 
@@ -18,7 +18,7 @@ export class GameSelectThemeComponent {
 
 
 
-  constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef,private popupService: PopupService) {}
+  constructor(private route: ActivatedRoute, private userService: UsersService, private elementRef:ElementRef, private popupService: PopupService) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {

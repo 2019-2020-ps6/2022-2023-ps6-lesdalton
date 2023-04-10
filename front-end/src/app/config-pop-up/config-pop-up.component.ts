@@ -1,7 +1,7 @@
 import {Component, ElementRef} from '@angular/core';
 import {user} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
-import {UserService} from "../../services/user.service";
+import {UsersService} from "../../services/users.service";
 import {PopupService} from "../../services/pop-up.service";
 import {Question} from "../../models/question.model";
 import {Histoire_de_France_questions} from "../../mocks/question-list.mock";
@@ -20,7 +20,7 @@ export class ConfigPopUpComponent {
   question:string=Histoire_de_France_questions[0].text;
   answers:Answer[]=Histoire_de_France_questions[0].answers;
 
-  constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef,private popupService:PopupService) {}
+  constructor(private route: ActivatedRoute, private userService: UsersService, private elementRef:ElementRef, private popupService:PopupService) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {

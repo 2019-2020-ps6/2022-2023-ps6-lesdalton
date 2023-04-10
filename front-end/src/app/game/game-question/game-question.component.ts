@@ -1,49 +1,67 @@
-import {Component, ElementRef, Input} from '@angular/core';
-import {GameServiceService} from "../../../services/game-service.service";
-import {Question} from "../../../models/question.model";
-import {user} from "../../../models/user.models";
-import {UserService} from "../../../services/user.service";
-import {ActivatedRoute} from "@angular/router";
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Question } from '../../../models/question.model';
+import { Quiz } from '../../../models/quiz.model';
 import {PopupService} from "../../../services/pop-up.service";
-import {Quiz} from "../../../models/quiz.model";
 import {QuizService} from "../../../services/quiz.service";
-import {Observable} from "rxjs";
+import {user} from "../../../models/user.models";
+import {GameService} from "../../../services/game.service";
+import {UsersService} from "../../../services/users.service";
 
 @Component({
   selector: 'app-game-question',
   templateUrl: './game-question.component.html',
   styleUrls: ['./game-question.component.scss']
 })
-export class GameQuestionComponent {
-  numberOfQuestions$!: Observable<number>; // Déclaration de numberOfQuestions$ comme un Observable
-  currentQuestionIndex:number=0;
-  currentQuestion: Question | undefined;
-  playerScore:number=0;
-
-  @Input() quiz!:Quiz;
-
-
-
+export class GameQuestionComponent implements OnInit {
+  @Input() quiz!: Quiz;
   @Input() user!: user;
 
-  constructor(public gameService: GameServiceService,private route:ActivatedRoute,private userService:UserService
-              ,private popupService: PopupService,
-              private quizService:QuizService) {
-    this.route.queryParams.subscribe(params => {
-      this.quiz = this.quizService.getQuizByName(params['quiz']);
-    });
-    this.numberOfQuestions$=this.quizService.getNumberOfQuestions(this.quiz); // Obtention de numberOfQuestions$ en tant qu'Observable
-    this.gameService.currentQuestionIndex$.subscribe((indexQuestionEnCours:number) => {this.currentQuestionIndex=indexQuestionEnCours}); // Obtention de currentQuestionIndex$ en tant qu'Observable
-    this.gameService.currentQuestion$.subscribe((QuestionEnCours:Question) => {this.currentQuestion=QuestionEnCours});
-    this.gameService.playerScore$.subscribe((score) => this.playerScore=score)
-  }
+  currentQuestionIndex: number = 0;
+  currentQuestion: Question | undefined;
+  playerScore: number = 0;
+  numberOfQuestions$!: Observable<number>; // Declare numberOfQuestions$ as an Observable
+
+  isPopupOpen = false;
+
+  constructor(
+    public gameService: GameService,
+    private route: ActivatedRoute,
+    private userService: UsersService,
+    private popupService: PopupService,
+    private quizService: QuizService
+  ) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.user = this.userService.getUserByName(params['user']);
+      this.user = params['user'];
+      this.quiz = params['quiz'];
     });
-    this.popupService.getIsOpen().subscribe(isOpen => {
-      this.isPopupOpen = isOpen; // mettre à jour l'état de l'ouverture du pop-up
+    this.gameService.startGame(this.quiz); // Initialize quiz in startGame
+
+
+    // Get numberOfQuestions$ as an Observable
+    this.numberOfQuestions$ = this.quizService.getNumberOfQuestions(this.quiz);
+
+    // Get currentQuestionIndex$ as an Observable
+    this.gameService.currentQuestionIndex$.subscribe((index: number) => {
+      this.currentQuestionIndex = index;
+    });
+
+    // Get currentQuestion$ as an Observable
+    this.gameService.currentQuestion$.subscribe((question: Question) => {
+      this.currentQuestion = question;
+    });
+
+    // Get playerScore$ as an Observable
+    this.gameService.playerScore$.subscribe((score: number) => {
+      this.playerScore = score;
+    });
+
+    // Get isOpen$ as an Observable
+    this.popupService.isOpen.subscribe((isOpen: boolean) => {
+      this.isPopupOpen = isOpen;
     });
   }
 
@@ -52,16 +70,11 @@ export class GameQuestionComponent {
     this.gameService.setCurrentQuestionIndex(this.currentQuestionIndex + 1);
   }
 
-  isPopupOpen = false;
-
   onValider() {
-    this.popupService.closePopup(); // fermer le pop-up
+    this.popupService.closePopup(); // close the popup
   }
 
   onPopClick() {
-    this.popupService.openPopup(); // ouvrir le pop-up
+    this.popupService.openPopup(); // open the popup
   }
-
-
-
 }

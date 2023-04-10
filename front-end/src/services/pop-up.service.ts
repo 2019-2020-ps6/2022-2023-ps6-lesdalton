@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class PopupService {
-  private isOpen = new BehaviorSubject<boolean>(false); // BehaviorSubject pour suivre l'état de l'ouverture du pop-up
+  isOpen = new BehaviorSubject<boolean>(false); // BehaviorSubject pour suivre l'état de l'ouverture du pop-up
 
   constructor() { }
 

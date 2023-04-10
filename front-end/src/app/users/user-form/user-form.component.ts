@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder,FormGroup, FormControl, Validators } from '@angular/forms';
 import { user } from 'src/models/user.models';
-import { UserService } from 'src/services/user.service';
+import { UsersService } from 'src/services/users.service';
 
 @Component({
   selector: 'app-user-form',
@@ -12,7 +12,7 @@ export class UserFormComponent {
   public userForm: FormGroup;
 
 
-  constructor(public formBuilder: FormBuilder, public userService: UserService) {
+  constructor(public formBuilder: FormBuilder, public userService: UsersService) {
     this.userForm = this.formBuilder.group({
       firstName:[''],
       lastName: [''],

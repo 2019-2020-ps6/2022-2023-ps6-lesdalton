@@ -1,7 +1,7 @@
 import {Component, ElementRef, EventEmitter, Input, Output} from '@angular/core';
 import {user} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
-import {UserService} from "../../services/user.service";
+import {UsersService} from "../../services/users.service";
 import {PopupService} from "../../services/pop-up.service";
 
 @Component({
@@ -14,7 +14,7 @@ export class PopUpComponent {
 
   min:number=20;
   max:number=45;
-  constructor(private route: ActivatedRoute, private userService: UserService,private elementRef:ElementRef,private popUpService: PopupService) {}
+  constructor(private route: ActivatedRoute, private userService: UsersService, private elementRef:ElementRef, private popUpService: PopupService) {}
 
   @Output() valider: EventEmitter<void> = new EventEmitter<void>();
 

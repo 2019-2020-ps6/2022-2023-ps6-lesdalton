@@ -5,7 +5,7 @@ import {ThemeService} from "../../../services/theme.service";
 import {PopupService} from "../../../services/pop-up.service";
 import {user} from "../../../models/user.models";
 import {ActivatedRoute, Router, RouterLinkActive} from "@angular/router";
-import {UserService} from "../../../services/user.service";
+import {UsersService} from "../../../services/users.service";
 
 @Component({
   selector: 'app-themes-list',
@@ -16,7 +16,7 @@ export class ThemesListComponent {
   public themes:Theme[] = THEME_LIST;
   user: user = {id:'',firstName:'',lastName:'',config:{fontSize:16,lineHeight:20,letterSpacing:5}};
 
-  constructor(private themeService:ThemeService,private  popupService:PopupService,private route: ActivatedRoute,private userService: UserService) {
+  constructor(private themeService:ThemeService,private  popupService:PopupService,private route: ActivatedRoute,private userService: UsersService) {
   }
 
   ngOnInit() {
