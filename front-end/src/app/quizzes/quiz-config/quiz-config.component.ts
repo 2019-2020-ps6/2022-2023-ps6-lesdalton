@@ -4,7 +4,7 @@ import {QuizService} from "../../../services/quiz.service";
 import {Quiz} from "../../../models/quiz.model";
 import {ThemeService} from "../../../services/theme.service";
 import {Theme} from "../../../models/theme.models";
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, ɵElement} from "@angular/forms";
 import {QUIZ_LIST} from "../../../mocks/quizzes-list.mock";
 import {Question} from "../../../models/question.model";
 import {QUESTION_LIST} from "../../../mocks/question-list.mock";
@@ -32,8 +32,8 @@ export class QuizConfigComponent {
     id: new FormControl()
   });
 
-  questionForm = this.formBuilder.group({
-    id: this.quiz.question.length + 1,
+  questionForm: FormGroup<{ [K in keyof { quizId: string | undefined; id: number; text: FormControl<any> }]: ɵElement<{ quizId: string | undefined; id: number; text: FormControl<any> }[K], null> }> = this.formBuilder.group({
+    id: new FormControl(),
     quizId: this.quiz.id,
     text: new FormControl(),
   });
@@ -49,7 +49,7 @@ export class QuizConfigComponent {
     // écouter les changements de la liste de questions
     this.quizService.questionsChanged.subscribe(() => {
       this.questionForm = this.formBuilder.group({
-        id: this.quiz.question.length + 1,
+        id: new FormControl(),
         quizId: this.quiz.id,
         text: new FormControl(),
       });

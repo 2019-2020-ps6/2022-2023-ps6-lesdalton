@@ -11,9 +11,13 @@
 </div>
 <div class="card">
   <form [formGroup]="questionForm" (ngSubmit)="addQuestion()">
-    <label for="text">Nouvelle réponse</label>
+    <label for="text">Nouvelle question</label>
     <br>
-    <input type="text" id="text" formControlName="text" required>
+    <input type="text" id="text" [formControlName]="'text'" required>
+    <br><br>
+    <label for="id">ID</label>
+    <br>
+    <input type="text" id="id" [formControlName]="'id'" required>
     <br><br>
     <button class="button-card" type="submit">Ajouter</button>
   </form>

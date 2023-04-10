@@ -24,7 +24,6 @@ export class QuizConfigQuestionComponent {
 
 
   answerForm = this.formBuilder.group({
-    id: this.question.answers.length+1,
     questionId:this.question.id,
     text: new FormControl(),
     isCorrect: false
@@ -45,7 +44,6 @@ export class QuizConfigQuestionComponent {
 
     this.quizService.answersChanged.subscribe(() => {
       this.answerForm = this.formBuilder.group({
-        id: this.question.answers.length+1,
         questionId: this.question.id,
         text: new FormControl(),
         isCorrect: new FormControl<boolean>(false)
@@ -63,5 +61,10 @@ export class QuizConfigQuestionComponent {
   deleteAnswer(answer: Answer){
     console.log('answer deleted : ',answer);
     this.quizService.deleteAnswer(answer);
+  }
+
+  deleteQuestion(question: Question){
+    console.log('question deleted : ',question);
+    this.quizService.deleteQuestion(question);
   }
 }

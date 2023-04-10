@@ -78,4 +78,12 @@ export class QuizService {
     this.questions$.next(this.questions);
   }
 
+  deleteQuestion(question: Question){
+    const index = this.questions.indexOf(question);
+    if(index!==-1){
+      this.questions.splice(index,1);
+      this.questions$.next(this.questions);
+    }
+  }
+
 }
