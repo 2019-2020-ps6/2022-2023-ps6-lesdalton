@@ -18,6 +18,7 @@ export class QuizFormComponent {
     name: new FormControl(),
     theme: new FormControl(),
     id: new FormControl(),
+    question: new FormControl()
   });
 
   constructor(private quizService: QuizService,private themeService: ThemeService) {}

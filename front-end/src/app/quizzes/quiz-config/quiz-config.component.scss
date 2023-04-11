@@ -1,0 +1,29 @@
+@import '../../../styles/card';
+
+
+.emailPass{
+  margin-left: 35%;
+  width: 200px;
+  label{
+    font-size: 27px;
+  }
+  input{
+    width: 200%;
+  }
+  select{
+    width: 200%;
+  }
+
+}
+.list{
+  font-size: 27px;
+  .ligne {
+    border-top: 1px solid black;
+  }
+  .button-card{
+    margin-left: 10%;
+    width: 90%;
+    border-radius: 10px;
+  }
+}
+

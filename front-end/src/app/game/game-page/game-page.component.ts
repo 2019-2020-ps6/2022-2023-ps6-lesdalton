@@ -18,6 +18,7 @@ export class GamePageComponent {
 
   @Input() quiz!: Quiz;
 
+
   constructor(
     private route: ActivatedRoute,
     private usersService: UsersService,

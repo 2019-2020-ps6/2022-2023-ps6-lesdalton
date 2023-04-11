@@ -20,6 +20,8 @@ import {PasswordComponent} from "./password/password.component";
 import {PasswordQuizComponent} from "./password-quiz/password-quiz.component";
 import {ThemeQuizzesListComponent} from "./themes/theme-quizzes-list/theme-quizzes-list.component";
 import {QuizGameComponent} from "./game/quiz-game/quiz-game.component";
+import {QuizConfigComponent} from "./quizzes/quiz-config/quiz-config.component";
+import {QuizConfigQuestionComponent} from "./quizzes/quiz-config-question/quiz-config-question.component";
 
 
 const routes: Routes = [
@@ -49,6 +51,8 @@ const routes: Routes = [
   {path:"password",component: PasswordComponent},
   {path: "password-quiz",component:PasswordQuizComponent},
   {path:"quiz-game",component: QuizGameComponent},
+  {path: "quiz-config/:id",component: QuizConfigComponent},
+  {path:"quiz-config/:id/:question-id",component:QuizConfigQuestionComponent}
 
 ];
 

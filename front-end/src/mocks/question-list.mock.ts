@@ -5,7 +5,7 @@ import {Question} from "../models/question.model";
 export const Histoire_de_France_questions: Question[]=[
   {
     id:1,
-    text:'QUEL PEUPLE INVESTIT LE TERRITOIRE FRANÇAIS AU 7 EME SIECLE AVANT J.C.',
+    text:'Quel peuple investit le territoire français au 7eme siecle avant J.C',
     answers: [
       {
         id :1,
