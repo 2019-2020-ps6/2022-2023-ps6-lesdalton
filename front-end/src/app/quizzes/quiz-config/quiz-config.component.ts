@@ -5,9 +5,7 @@ import {Quiz} from "../../../models/quiz.model";
 import {ThemeService} from "../../../services/theme.service";
 import {Theme} from "../../../models/theme.models";
 import {FormBuilder, FormControl, FormGroup, ɵElement} from "@angular/forms";
-import {QUIZ_LIST} from "../../../mocks/quizzes-list.mock";
 import {Question} from "../../../models/question.model";
-import {QUESTION_LIST} from "../../../mocks/question-list.mock";
 import {Answer} from "../../../models/answer.models";
 
 
@@ -19,7 +17,7 @@ import {Answer} from "../../../models/answer.models";
 })
 export class QuizConfigComponent {
 
-  quiz: Quiz = {id:'',name:'',theme:{name:"Sans Thème"},question:[]};
+  quiz: Quiz = {id:'',name:'',theme:{name:"Sans Thème"},questions:[]};
   question: Question={id:1,text:'',answers:[]};
   public themeList:Theme[] = this.themeService.themes;
   answer: Answer={id:this.question.answers.length+1,text:'',isCorrect:false,questionId:this.question.id};

@@ -3,7 +3,7 @@ import {Quiz} from 'src/models/quiz.model';
 import {BehaviorSubject, Observable, of} from 'rxjs';
 import {QUIZ_LIST} from "../mocks/quizzes-list.mock";
 import {Question} from "../models/question.model";
-import {QUESTION_LIST} from "../mocks/question-list.mock";
+
 import {Answer} from "../models/answer.models";
 import {ANSWER_LIST} from "../mocks/answer-list.mock";
 
@@ -12,14 +12,14 @@ import {ANSWER_LIST} from "../mocks/answer-list.mock";
   providedIn: 'root'
 })
 export class QuizService {
-  quiz:Quiz ={id:'',name:'',theme:{name:"Sans Thème"},question:[]};
+  quiz:Quiz ={id:'',name:'',theme:{name:"Sans Thème"},questions:[]};
   question: Question={text:'',id:0,answers:[]};
   answer: Answer={id:this.question.answers.length+1,text:'',isCorrect:false,questionId:this.question.id};
 
   private quizzes : Quiz[] = QUIZ_LIST;
   public quizzes$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizzes);
 
-  public questions: Question[]= QUESTION_LIST;
+  public questions: Question[]= this.quiz.questions;
   public questions$: BehaviorSubject<Question[]>=new BehaviorSubject(this.questions)
 
   public questionsChanged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -64,7 +64,6 @@ export class QuizService {
 
   getQuestionById(id: number): Question {
     const question=this.questions.find(u=>u.id===id)!;
-    this.question=question;
     return question
   }
 

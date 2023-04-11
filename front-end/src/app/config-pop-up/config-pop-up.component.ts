@@ -1,4 +1,5 @@
 import {Component, ElementRef} from '@angular/core';
+import {USER} from "../../mocks/user-list.mock";
 import {user} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UsersService} from "../../services/users.service";
@@ -38,19 +39,6 @@ export class ConfigPopUpComponent {
     } else if (this.value > 35) {
       this.value = 35;
     }
-  }
-
-  changeFontSize() {
-    const textElements: NodeListOf<HTMLElement> = this.elementRef.nativeElement.querySelectorAll('.resize');
-    textElements.forEach((element: HTMLElement) => {
-      const newValue =  30*(this.value/100+1);
-      console.log(newValue);
-      element.style.fontSize = newValue + 'px';
-    });
-    const button:HTMLElement = this.elementRef.nativeElement.querySelectorAll('.button-card');
-    const newValue =  30*(this.value/100+1);
-    console.log(newValue);
-    button.style.fontSize = newValue + 'px';
   }
 
   isPopupOpen = false;

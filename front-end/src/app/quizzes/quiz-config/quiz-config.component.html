@@ -26,7 +26,7 @@
   <label>La liste des question</label>
   <div class="ligne"></div>
   <br>
-    <div *ngFor="let question of quiz.question">
+    <div *ngFor="let question of quiz.questions">
       <button class="button-card" [routerLink]="['/quiz-config',quiz.id,question.id]" >{{question.text}}</button>
     </div>
 </div>
