@@ -32,13 +32,17 @@ export class QuizGameComponent {
     this.answerColor(answer)
     if (answer.isCorrect) {
       this.answerMessage = "Bonne réponse!";
-      this.point+=1;
+      this.point+=10;
 
     } else {
       this.answerMessage = "Mauvaise réponse.";
     }
     this.showAnswer = true;
+    setTimeout(() => {
+      this.nextQuestion();
+    }, 2000);
   }
+
 
   nextQuestion(): void {
     this.currentQuestionIndex++;

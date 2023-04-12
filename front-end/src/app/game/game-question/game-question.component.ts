@@ -8,6 +8,7 @@ import {QuizService} from "../../../services/quiz.service";
 import {user} from "../../../models/user.models";
 import {GameService} from "../../../services/game.service";
 import {UsersService} from "../../../services/users.service";
+import {Answer} from "../../../models/answer.models";
 
 @Component({
   selector: 'app-game-question',
@@ -25,8 +26,8 @@ export class GameQuestionComponent implements OnInit {
   numberOfQuestions!:number;
 
   isPopupOpen = false;
-  quiz!:Quiz;
-  user!:user;
+  @Input() quiz!:Quiz;
+  @Input() user!:user;
 
 
   constructor(
@@ -82,5 +83,10 @@ export class GameQuestionComponent implements OnInit {
 
   onPopClick() {
     this.popupService.openPopup(); // open the popup
+  }
+
+  public onClickAnswer(answer:Answer){
+    this.gameService.checkAnswer(answer);
+    this.currentQuestion = this.quiz.questions[this.currentQuestionIndex+1];
   }
 }

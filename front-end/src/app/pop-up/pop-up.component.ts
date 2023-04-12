@@ -10,7 +10,8 @@ import {PopupService} from "../../services/pop-up.service";
   styleUrls: ['./pop-up.component.scss']
 })
 export class PopUpComponent {
-  user!: user;
+  @Input() username!: string;
+  public user!:user;
 
   min:number=20;
   max:number=45;
@@ -21,7 +22,7 @@ export class PopUpComponent {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.user = this.userService.getUserByName(params['name']);
+      this.user = this.userService.getUserByName(params['user']);
     });
   }
 

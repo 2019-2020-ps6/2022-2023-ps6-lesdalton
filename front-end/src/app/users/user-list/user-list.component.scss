@@ -2,6 +2,7 @@
 .user-list {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 40px;
 }
 .user {
   flex-basis: 25%;
@@ -19,3 +20,49 @@ img{
   width: 120px;
   align-items: center;
 }
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 200px;
+  height: 350px;
+}
+
+.user-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.button-card {
+  background-color: #007bff;
+  width: content-box;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.button-card:hover {
+  background-color: #0069d9;
+}
+
+.button-card:active {
+  background-color: #005cbf;
+}
+

@@ -6,6 +6,7 @@ import {Quiz} from "../../../models/quiz.model";
 import {ThemeService} from "../../../services/theme.service";
 import {GameService} from "../../../services/game.service";
 import {QuizService} from "../../../services/quiz.service";
+import {Answer} from "../../../models/answer.models";
 
 @Component({
   selector: 'app-game-page',

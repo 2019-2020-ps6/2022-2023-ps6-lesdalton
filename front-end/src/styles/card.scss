@@ -17,6 +17,11 @@
   font-family: "Arial Black", serif;
   font-size: 17px;
   border-radius: 10px;
+  border: none;
+}
+
+.button-card:hover {
+  background-color: #ea7562;
 }
 
 .invalid-button-card {

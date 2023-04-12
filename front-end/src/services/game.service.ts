@@ -38,7 +38,7 @@ export class GameService {
     return this.numberOfQuestions$.asObservable();
   }
 
-  public checkAnswer(answer: Answer) {
+  public checkAnswer(answer: Answer):boolean {
     if (answer.isCorrect) {
       console.log("Bonne réponse !");
       this.playerScore$.next(this.playerScore$.value + 1);
@@ -46,6 +46,7 @@ export class GameService {
     } else {
       console.log("Mauvaise réponse !");
     }
+    return answer.isCorrect;
   }
 
   getNextQuestion(quiz: Quiz) {

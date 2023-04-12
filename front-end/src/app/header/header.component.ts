@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+    public Logo: string='./assets/resources/QuizForAll.png';
+
+
     constructor() {
     }
 

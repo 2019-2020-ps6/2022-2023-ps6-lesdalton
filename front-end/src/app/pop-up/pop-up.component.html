@@ -1,12 +1,12 @@
 <div class="rectangle">
   <button class="close" (click)="onValider()">X</button><br><br><br>
-  <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Taille d'écriture : </label><br>
+  <label>Taille d'écriture : </label><br>
   <input type="range"  [(ngModel)]="user.config.fontSize" (input)="updateValue()" min="{{min}}" max="{{max}}" class="gauge-input">
   <br><br><br>
-  <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Différence entre les lignes :</label><br>
+  <label>Différence entre les lignes :</label><br>
   <input type="range"  [(ngModel)]="user.config.lineHeight" (input)="updateValue();" min="16" max="60" class="gauge-input">
   <br>
-  <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing"> L'espacement :</label><br>
+  <label> L'espacement :</label><br>
   <input type="range"  [(ngModel)]="user.config.letterSpacing" (input)="updateValue();"  min="0" max="13" class="gauge-input">
   <br>
   <br><br><br>

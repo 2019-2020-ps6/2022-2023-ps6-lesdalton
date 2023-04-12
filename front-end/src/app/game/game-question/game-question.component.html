@@ -10,7 +10,7 @@
 
       <button class="answerButton" type="button"
               *ngFor="let answer of currentQuestion?.answers"
-              (click)="this.gameService.checkAnswer(answer)"
+              (click)="this.onClickAnswer(answer)"
               [style.font-size.px]="user.config.fontSize"
               [style.line-height.px]="user.config.lineHeight"
               [style.letter-spacing.px]="user.config.letterSpacing">
@@ -28,6 +28,6 @@
   </div>
 
   <div class="pop-up" *ngIf="isPopupOpen">
-    <app-pop-up (valider)="onValider()"></app-pop-up>
+    <app-pop-up (valider)="onValider()" [username]="user.firstName"></app-pop-up>
   </div>
 </div>

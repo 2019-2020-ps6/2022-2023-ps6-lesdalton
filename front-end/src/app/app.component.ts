@@ -10,7 +10,6 @@ export class AppComponent {
   public title: string = 'PolyQuiz';
 
   public HomePagePic: string='./assets/resources/homePagePic.png';
-  public UserPic: string='./assets/resources/profil.jpg';
 
 
 
