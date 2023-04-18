@@ -58,6 +58,7 @@ export class QuizConfigComponent {
     const questionToAdd: Question=this.questionForm.getRawValue() as Question;
     console.log('question added : ',questionToAdd);
     this.quizService.addQuestion(questionToAdd);
+    this.quizService.questionsChanged.next(true);
 
   }
 }

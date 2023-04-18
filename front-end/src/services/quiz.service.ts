@@ -1,43 +1,35 @@
-import {Injectable} from '@angular/core';
-import {Quiz} from 'src/models/quiz.model';
-import {BehaviorSubject, Observable, of} from 'rxjs';
-import {QUIZ_LIST} from "../mocks/quizzes-list.mock";
-import {Question} from "../models/question.model";
-
-import {Answer} from "../models/answer.models";
-import {ANSWER_LIST} from "../mocks/answer-list.mock";
-
+import { Injectable } from '@angular/core';
+import { Quiz } from 'src/models/quiz.model';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { QUIZ_LIST } from '../mocks/quizzes-list.mock';
+import { Question } from '../models/question.model';
+import { Answer } from '../models/answer.models';
+import { ANSWER_LIST } from '../mocks/answer-list.mock';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizService {
-  quiz:Quiz ={id:'',name:'',theme:{name:"Sans Thème"},questions:[]};
-  question: Question={text:'',id:0,answers:[]};
-  answer: Answer={id:this.question.answers.length+1,text:'',isCorrect:false,questionId:this.question.id};
+  private quizzes: Quiz[] = QUIZ_LIST;
+  public quizzes$: BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizzes);
 
-  private quizzes : Quiz[] = QUIZ_LIST;
-  public quizzes$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizzes);
-
-  public questions: Question[]= this.quiz.questions;
-  public questions$: BehaviorSubject<Question[]>=new BehaviorSubject(this.questions)
-
+  private questions: Question[] = [];
+  public questions$: BehaviorSubject<Question[]> = new BehaviorSubject(this.questions);
   public questionsChanged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  public answers:Answer[]=this.question.answers;
-  public answers$ : BehaviorSubject<Answer[]>=new BehaviorSubject(this.answers)
-  public answersChanged: BehaviorSubject<boolean>=new BehaviorSubject<boolean>(false);
+  private answers: Answer[] = [];
+  public answers$: BehaviorSubject<Answer[]> = new BehaviorSubject(this.answers);
+  public answersChanged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
 
   constructor() {}
 
-  addQuiz(quiz:Quiz):void{
+  addQuiz(quiz: Quiz): void {
     this.quizzes.push(quiz);
     this.quizzes$.next(this.quizzes);
-    this.quiz=quiz;
   }
 
-
-  deleteQuiz(quiz:Quiz){
+  deleteQuiz(quiz: Quiz): void {
     const index = this.quizzes.indexOf(quiz);
     if (index !== -1) {
       this.quizzes.splice(index, 1);
@@ -45,12 +37,15 @@ export class QuizService {
     }
   }
 
-  updateQuiz(){
+  updateQuiz(): void {
     this.quizzes$.next(this.quizzes);
   }
 
   getQuizById(id: string): Quiz {
-    return this.quizzes.find(u => u.id === id)!;
+    const quiz = this.quizzes.find(u => u.id === id)!;
+    this.questions = quiz.questions;
+    this.questions$.next(this.questions);
+    return quiz;
   }
 
   getQuizByName(name: string): Quiz {
@@ -63,23 +58,25 @@ export class QuizService {
   }
 
   getQuestionById(id: number): Question {
-    const question=this.questions.find(u=>u.id===id)!;
-    return question
+    const question = this.questions.find(u => u.id === id)!;
+    this.answers=question.answers;
+    return question;
   }
 
-  addAnswer(answer: Answer){
-    this.question.answers.push(answer);
+  addAnswer(answer: Answer): void {
+    this.answers.push(answer);
     this.answers$.next(this.answers);
-
   }
-  deleteAnswer(answer: Answer){
-    const index = this.question.answers.indexOf(answer);
+
+  deleteAnswer(answer: Answer): void {
+    const index = this.questions[this.questions.length - 1].answers.indexOf(answer);
     if (index !== -1) {
-      this.question.answers.splice(index, 1);
-      this.answers$.next(this.answers);
+      this.questions[this.questions.length - 1].answers.splice(index, 1);
+      this.answers$.next(this.questions[this.questions.length - 1].answers);
     }
   }
-  addQuestion(question: Question){
+
+  addQuestion(question: Question): void {
     this.questions.push(question);
     this.questions$.next(this.questions);
   }
