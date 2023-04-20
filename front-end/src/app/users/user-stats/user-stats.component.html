@@ -1,19 +1,20 @@
 <div>
   <h1>Statistiques des joueurs</h1>
-  <button (click)="userList = sortByTotalPoints(userList)">Trier par total des points</button>
   <table class="tableau-style">
     <thead>
     <tr>
+      <th>Classement</th>
       <th>Joueur</th>
       <th>Total de points</th>
       <th>Statistiques par thème</th>
     </tr>
     </thead>
     <tbody>
-    <ng-container *ngFor="let user of userList">
+    <ng-container *ngFor="let user of this.sortByTotalPoints(userList)">
       <tr>
-        <td>{{ user.lastName }}</td>
-        <td>{{ user.stats?.totalPoints }}</td>
+        <td>{{userList.indexOf(user)+1}}</td>
+        <td>{{ user.lastName }} {{user.firstName}}</td>
+        <td>{{ this.sumThemePoints(user.stats?.statsByTheme || []) }}</td>
         <td>
           <table>
             <thead>
