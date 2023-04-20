@@ -27,21 +27,34 @@ export class QuizConfigQuestionComponent implements OnInit {
     this.answerForm = this.formBuilder.group({
       questionId: this.question.id,
       text: '',
+      answer: this.question.answers,
       isCorrect: false
     });
+
+    if (this.question.answers.length === 0) {
+      this.question.answers.push({ id: 1, text: '', isCorrect: false ,questionId:this.question.id});
+    }
   }
+
+
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.quiz = this.quizService.getQuizById(id);
 
-    const id_question = parseInt(this.route.snapshot.paramMap.get('question-id')!);
-    this.question = this.quizService.getQuestionById(id_question);
+    const questionIdParam = this.route.snapshot.paramMap.get('question-id');
+    const id_question = questionIdParam ? parseInt(questionIdParam, 10) : undefined;
+    if (id_question) {
+      this.question = this.quizService.getQuestionById(id_question);
+    }
+
+
 
     this.quizService.answersChanged.subscribe(() => {
       this.answerForm = this.formBuilder.group({
         questionId: this.question.id,
         text: '',
+        answer: this.question.answers,
         isCorrect: false
       });
     });

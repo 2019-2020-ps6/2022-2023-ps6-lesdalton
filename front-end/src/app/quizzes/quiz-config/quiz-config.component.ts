@@ -18,7 +18,7 @@ import {Answer} from "../../../models/answer.models";
 export class QuizConfigComponent {
 
   quiz: Quiz = {id:'',name:'',theme:{name:"Sans Thème"},questions:[]};
-  question: Question={id:1,text:'',answers:[]};
+  question: Question={id:1,text:'',answers:[{id:1,text:'',isCorrect:false,questionId:1}]};
   public themeList:Theme[] = this.themeService.themes;
   answer: Answer={id:this.question.answers.length+1,text:'',isCorrect:false,questionId:this.question.id};
 
@@ -57,8 +57,12 @@ export class QuizConfigComponent {
   addQuestion(){
     const questionToAdd: Question=this.questionForm.getRawValue() as Question;
     console.log('question added : ',questionToAdd);
-    this.quizService.addQuestion(questionToAdd);
-    this.quizService.questionsChanged.next(true);
-
+    if (questionToAdd.text.trim() !== '') { // Vérifier si la question n'est pas vide
+      this.quizService.addQuestion(questionToAdd);
+      this.quizService.questionsChanged.next(true);
+      const answer: Answer={id:1, text:'question 1', isCorrect:false, questionId: questionToAdd.id};
+      questionToAdd.answers = [answer]; // Initialiser la liste d'answers avec un objet answer
+    }
   }
+
 }

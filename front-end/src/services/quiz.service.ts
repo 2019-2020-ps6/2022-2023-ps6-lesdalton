@@ -59,9 +59,10 @@ export class QuizService {
 
   getQuestionById(id: number): Question {
     const question = this.questions.find(u => u.id === id)!;
-    this.answers=question.answers;
-    return question;
+    const answers = question.answers.slice(); // copie de la liste des réponses
+    return { ...question, answers };
   }
+
 
   addAnswer(answer: Answer): void {
     this.answers.push(answer);
