@@ -41,11 +41,14 @@ export class GameService {
   public checkAnswer(answer: Answer) {
     if (answer.isCorrect) {
       console.log("Bonne réponse !");
+
+
       this.playerScore$.next(this.playerScore$.value + 1);
       console.log("SCORE : " + this.playerScore$.value);
     } else {
       console.log("Mauvaise réponse !");
     }
+
     this.getNextQuestion(this.quiz);
   }
 
