@@ -59,6 +59,7 @@ export class QuizService {
 
   getQuestionById(id: number): Question {
     const question = this.questions.find(u => u.id === id)!;
+    console.log("length",this.questions)
     const answers = question.answers;
     this.answers=question.answers;
     return { ...question, answers };

@@ -55,7 +55,7 @@ export class QuizConfigComponent {
   }
 
   addQuestion(){
-    const index=Math.random();
+    const index=Math.floor(Math.random()*100);
     const text = this.questionForm.getRawValue().text
     const questionToAdd: Question={id:index,text:text,answers:[{id:1 ,text:text,isCorrect:false,questionId:index}]};
     console.log('question added : ',questionToAdd)

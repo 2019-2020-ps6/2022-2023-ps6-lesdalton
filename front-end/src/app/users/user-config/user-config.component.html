@@ -10,13 +10,13 @@
         <br><br>
         <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Information supplémentaire</label><br>
         <textarea [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
+        <button class="button-card"><label [style.font-size.px]="user.config.fontSize" >Statistique</label></button>
       </div>
     </div>
 
     <div class="Buttons">
       <p [style.font-size.px]="user.config.fontSize*1.2" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Configuration du profil</p>
       <br>
-      <button class="button-card"><label [style.font-size.px]="user.config.fontSize" >Notifications</label></button>
       <br><br>
       <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Taille d'écriture : </label><br>
       <input type="range"  [(ngModel)]="user.config.fontSize" (input)="updateValue()" min="{{minFontSize}}" max="{{maxFontSize}}" class="gauge-input">
