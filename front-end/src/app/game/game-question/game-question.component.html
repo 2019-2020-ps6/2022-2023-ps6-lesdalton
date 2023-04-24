@@ -11,7 +11,7 @@
 
       <button class="answerButton" type="button"
               *ngFor="let answer of currentQuestion?.answers"
-              (click)="this.onClickAnswer(answer)"
+              (click)="this.onClickAnswer(answer), onPopFalseClick(answer)"
               [style.font-size.px]="user.config.fontSize"
               [style.line-height.px]="user.config.lineHeight"
               [style.letter-spacing.px]="user.config.letterSpacing">
@@ -22,7 +22,10 @@
   </div>
 
 
-  <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing"  >SCORE : {{playerScore}}</p>
+  <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">
+    SCORE : {{playerScore}}
+
+  </p>
 
   <div class="open-pop-up">
     <button class="button-card" (click)="onPopClick()">Ajuster la page</button>
@@ -31,4 +34,10 @@
   <div class="pop-up" *ngIf="isPopupOpen">
     <app-pop-up (valider)="onValider()" [username]="user.firstName"></app-pop-up>
   </div>
+
+  <div *ngIf="isPopupOpenFalse">
+    <app-popup-false></app-popup-false>
+  </div>
+
 </div>
+

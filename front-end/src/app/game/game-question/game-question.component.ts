@@ -26,6 +26,7 @@ export class GameQuestionComponent implements OnInit {
   numberOfQuestions!:number;
 
   isPopupOpen = false;
+  isPopupOpenFalse = false;
   @Input() quiz!:Quiz;
   @Input() user!:user;
 
@@ -70,6 +71,10 @@ export class GameQuestionComponent implements OnInit {
     this.popupService.isOpen.subscribe((isOpen: boolean) => {
       this.isPopupOpen = isOpen;
     });
+
+    this.popupService.isOpenFalse.subscribe((isOpen: boolean) => {
+      this.isPopupOpenFalse = isOpen;
+    });
   }
 
   onQuestionClick() {
@@ -85,8 +90,16 @@ export class GameQuestionComponent implements OnInit {
     this.popupService.openPopup(); // open the popup
   }
 
+  onPopFalseClick(answer:Answer){
+    if(!answer.isCorrect){
+      this.popupService.openPopupFalse();
+    }
+  }
+
   public onClickAnswer(answer:Answer){
     this.gameService.checkAnswer(answer);
-    this.currentQuestion = this.quiz.questions[this.currentQuestionIndex+1];
+    //this.currentQuestion = this.quiz.questions[this.currentQuestionIndex+1];
   }
+
+
 }

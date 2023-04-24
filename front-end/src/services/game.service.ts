@@ -39,7 +39,20 @@ export class GameService {
   }
 
   public checkAnswer(answer: Answer) {
+    const boutonAns = document.querySelector('button')!;
     if (answer.isCorrect) {
+      console.log("Bonne réponse !");
+      boutonAns.style.backgroundColor = 'green';
+
+
+      this.playerScore$.next(this.playerScore$.value + 1);
+      console.log("SCORE : " + this.playerScore$.value);
+    } else {
+      console.log("Mauvaise réponse !");
+      boutonAns.style.backgroundColor = 'green';
+    }
+
+    /*if (answer.isCorrect) {
       console.log("Bonne réponse !");
 
 
@@ -47,10 +60,37 @@ export class GameService {
       console.log("SCORE : " + this.playerScore$.value);
     } else {
       console.log("Mauvaise réponse !");
+    }*/
+
+
+
+    // Attendre 3 secondes avant d'exécuter getNextQuestion()
+    setTimeout(() => {
+      this.getNextQuestion(this.quiz);
+    }, 1000); // 3000 millisecondes = 3 secondes
+
+    //this.getNextQuestion(this.quiz);
+  }
+
+
+
+  showAnswer(answer: Answer){
+    //modifie le background des bonnes et mauvaises reponses pendant 2s
+    const boutonAns = document.querySelector('button')!;
+    if (answer.isCorrect) {
+      console.log("Bonne réponse !");
+      boutonAns.style.backgroundColor = 'green';
+      this.playerScore$.next(this.playerScore$.value + 1);
+      console.log("SCORE : " + this.playerScore$.value);
+    } else if(!answer.isCorrect) {
+      boutonAns.style.backgroundColor = 'red';
     }
 
-    this.getNextQuestion(this.quiz);
+
   }
+
+
+
 
   getNextQuestion(quiz: Quiz) {
     if (this.currentQuestionIndex$.value < quiz.questions.length - 1) {
