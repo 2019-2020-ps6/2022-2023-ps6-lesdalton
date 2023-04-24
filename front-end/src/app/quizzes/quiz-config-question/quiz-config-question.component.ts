@@ -42,7 +42,7 @@ export class QuizConfigQuestionComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.quiz = this.quizService.getQuizById(id);
 
-    const questionIdParam = parseInt(this.route.snapshot.paramMap.get('question-id')!, 10);
+    const questionIdParam = Number(this.route.snapshot.paramMap.get('question-id'));
     this.question = this.quizService.getQuestionById(questionIdParam);
 
 
@@ -74,5 +74,6 @@ export class QuizConfigQuestionComponent implements OnInit {
   deleteQuestion(question: Question) {
     console.log('question deleted : ', question);
     this.quizService.deleteQuestion(question);
+    this.quizService.questionsChanged.next(true);
   }
 }
