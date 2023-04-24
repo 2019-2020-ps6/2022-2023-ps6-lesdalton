@@ -42,11 +42,9 @@ export class QuizConfigQuestionComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.quiz = this.quizService.getQuizById(id);
 
-    const questionIdParam = this.route.snapshot.paramMap.get('question-id');
-    const id_question = questionIdParam ? parseInt(questionIdParam, 10) : undefined;
-    if (id_question) {
-      this.question = this.quizService.getQuestionById(id_question);
-    }
+    const questionIdParam = parseInt(this.route.snapshot.paramMap.get('question-id')!, 10);
+    this.question = this.quizService.getQuestionById(questionIdParam);
+
 
 
 
@@ -58,6 +56,7 @@ export class QuizConfigQuestionComponent implements OnInit {
         isCorrect: false
       });
     });
+
   }
 
   addAnswer() {

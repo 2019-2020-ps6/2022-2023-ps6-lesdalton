@@ -22,26 +22,25 @@
     border-radius: 18px;
   }
 }
+
 .answer-config {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
 
   .answer-row {
     display: flex;
-    flex-direction: row;
-    flex-basis: 50%;
+    flex: 0 0 calc(50% - 0.5rem);
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
   }
 
   .answer-col {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-grow: 1;
   }
 }
-
-
-
-

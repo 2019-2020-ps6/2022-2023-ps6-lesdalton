@@ -10,7 +10,7 @@
 </div>
 <br><br><br><br>
 <div class="card">
-  <form [formGroup]="answerForm" (ngSubmit)="addAnswer()">
+  <form [formGroup]="answerForm" >
     <label for="text">Nouvelle réponse</label>
     <br>
     <input type="text" id="text" [formControlName]="'text'">
@@ -18,7 +18,7 @@
     <input type="checkbox" id="isCorrect" [formControlName]="'isCorrect'">
     <label for="isCorrect">Réponse juste</label>
     <br><br>
-    <button class="button-card" type="submit">Ajouter</button>
+    <button class="button-card" type="submit" (click)="addAnswer()">Ajouter</button>
   </form>
 </div>
 <br><br><br><br>

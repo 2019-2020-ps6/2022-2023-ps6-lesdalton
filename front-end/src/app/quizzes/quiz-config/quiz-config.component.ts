@@ -55,14 +55,12 @@ export class QuizConfigComponent {
   }
 
   addQuestion(){
-    const questionToAdd: Question=this.questionForm.getRawValue() as Question;
-    console.log('question added : ',questionToAdd);
-    if (questionToAdd.text.trim() !== '') { // Vérifier si la question n'est pas vide
-      this.quizService.addQuestion(questionToAdd);
-      this.quizService.questionsChanged.next(true);
-      const answer: Answer={id:1, text:'question 1', isCorrect:false, questionId: questionToAdd.id};
-      questionToAdd.answers = [answer]; // Initialiser la liste d'answers avec un objet answer
-    }
+    const index=Math.random();
+    const text = this.questionForm.getRawValue().text
+    const questionToAdd: Question={id:index,text:text,answers:[{id:1 ,text:text,isCorrect:false,questionId:index}]};
+    console.log('question added : ',questionToAdd)
+    this.quizService.addQuestion(questionToAdd);
+    this.quizService.questionsChanged.next(true);
   }
 
 }

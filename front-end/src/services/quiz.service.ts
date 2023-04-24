@@ -59,7 +59,8 @@ export class QuizService {
 
   getQuestionById(id: number): Question {
     const question = this.questions.find(u => u.id === id)!;
-    const answers = question.answers.slice(); // copie de la liste des réponses
+    const answers = question.answers;
+    this.answers=question.answers;
     return { ...question, answers };
   }
 
@@ -69,11 +70,11 @@ export class QuizService {
     this.answers$.next(this.answers);
   }
 
-  deleteAnswer(answer: Answer): void {
-    const index = this.questions[this.questions.length - 1].answers.indexOf(answer);
+  deleteAnswer(answer: Answer){
+    const index = this.answers.indexOf(answer);
     if (index !== -1) {
-      this.questions[this.questions.length - 1].answers.splice(index, 1);
-      this.answers$.next(this.questions[this.questions.length - 1].answers);
+      this.answers.splice(index, 1);
+      this.answers$.next(this.answers);
     }
   }
 
