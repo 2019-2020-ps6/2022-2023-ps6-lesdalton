@@ -42,9 +42,6 @@ import { GameSelectQuizComponent } from './game/game-select-quiz/game-select-qui
 import { GameResultComponent } from './game/game-result/game-result.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { QuizConfigQuestionComponent } from './quizzes/quiz-config-question/quiz-config-question.component';
-import { PopupFalseComponent } from './popup-false/popup-false.component';
-import { PopupTrueComponent } from './popup-true/popup-true.component';
-
 
 
 
@@ -87,8 +84,6 @@ import { PopupTrueComponent } from './popup-true/popup-true.component';
     GameResultComponent,
     PopUpComponent,
     QuizConfigQuestionComponent,
-    PopupFalseComponent,
-    PopupTrueComponent,
 
   ],
   imports: [
