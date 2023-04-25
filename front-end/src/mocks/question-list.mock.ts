@@ -128,4 +128,3 @@ export const Histoire_de_France_questions: Question[]=[
     quizId:2,
   }
 ];
-

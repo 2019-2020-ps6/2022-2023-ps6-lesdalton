@@ -3,7 +3,8 @@
 
   <p (click)="onQuestionClick()"
      [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight"
-     [style.letter-spacing.px]="user.config.letterSpacing">{{currentQuestion?.text}}</p>
+     [style.letter-spacing.px]="user.config.letterSpacing"
+  >{{currentQuestion?.text}}</p>
 
   <div >
     <div class="answers-container">
@@ -21,7 +22,10 @@
   </div>
 
 
-  <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing"  >SCORE : {{playerScore}}</p>
+  <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">
+    SCORE : {{playerScore}}
+
+  </p>
 
   <div class="open-pop-up">
     <button class="button-card" (click)="onPopClick()">Ajuster la page</button>
@@ -31,3 +35,4 @@
     <app-pop-up (valider)="onValider()" [username]="user.firstName"></app-pop-up>
   </div>
 </div>
+
