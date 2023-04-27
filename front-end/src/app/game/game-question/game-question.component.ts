@@ -27,6 +27,7 @@ export class GameQuestionComponent implements OnInit {
 
   isPopupOpen = false;
   isPopupOpenFalse = false;
+  isAdjustButtonVisible = true;
   @Input() quiz!:Quiz;
   @Input() user!:user;
 
@@ -72,8 +73,8 @@ export class GameQuestionComponent implements OnInit {
       this.isPopupOpen = isOpen;
     });
 
-    this.popupService.isOpenFalse.subscribe((isOpen: boolean) => {
-      this.isPopupOpenFalse = isOpen;
+    this.popupService.isAdjustButtonVisible.subscribe((isOpen: boolean) => {
+      this.isAdjustButtonVisible = isOpen;
     });
   }
 
@@ -86,8 +87,18 @@ export class GameQuestionComponent implements OnInit {
     this.popupService.closePopup(); // close the popup
   }
 
+
+
   onPopClick() {
-    this.popupService.openPopup(); // open the popup
+    if (!this.isPopupOpen) {
+      this.popupService.openPopup();
+      this.popupService.closeAdjustButton();
+    }
+
+    else {
+      this.popupService.closePopup();
+      this.popupService.openAdjustButton();
+    }
   }
 
   onPopFalseClick(answer:Answer){

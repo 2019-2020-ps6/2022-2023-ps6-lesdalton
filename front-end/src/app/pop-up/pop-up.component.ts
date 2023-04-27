@@ -50,6 +50,7 @@ export class PopUpComponent {
 
   onValider() {
     this.valider.emit();
+    this.popUpService.openAdjustButton();
   }
 
 

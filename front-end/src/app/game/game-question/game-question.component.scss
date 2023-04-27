@@ -6,33 +6,53 @@
 
 .open-pop-up{
   position: absolute;
-  margin-top:5%;
-  margin-left: 80%;
-
+  top: 80%;
+  border-radius: 20px;
+  left: 80%;
 }
-.answerButton {
-  //background-color: red;
 
+.adjust{
+  font-size: 30px;
+  padding: 20px;
+  font-family: "Arial Black", serif;
+  border-radius: 20px;
+  color: white;
+  background-color: #333333;
+  border: none;
+}
+
+.answerButton {
   border: 10px solid #EF6D58;
   font-family: "Arial Black", serif;
   padding: 10px 20px;
-  margin-right: 30px;
-  margin-bottom: 30px;
   border-radius: 10px;
-  width: 40%;
+  width: 400px;
+  margin: 50px;
 }
 
 .button-card{
   background-color: #333333;
   position: fixed;
-  transform: translate(-50%,-150%);
+  top: 50%; /* Adjust the top position to center the button vertically */
+  left: 50%; /* Adjust the left position to center the button horizontally */
+  transform: translate(-50%,-50%); /* Center the button using translate */
   width: 300px;
   font-size: 30px;
 }
+
+/* Style the hover effect of the card button */
 .button-card:hover{
   background-color: #151515;
 }
 
-
+/* Style the answers grid container */
+.answers-container {
+  margin-top: 250px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center; /* Center the grid horizontally */
+  place-items: center; /* Center the grid vertically */
+}
 
 

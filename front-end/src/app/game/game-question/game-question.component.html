@@ -1,38 +1,28 @@
-<div class="question-container">
-  <h1 class="title" [style.font-size.px]="user.config.fontSize*1.5" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">QUESTION {{currentQuestionIndex + 1}}/{{numberOfQuestions}}</h1>
+<div class="parent-container">
+  <div class="question-container">
+    <p (click)="onQuestionClick()"
+       [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight"
+       [style.letter-spacing.px]="user.config.letterSpacing">{{currentQuestion?.text}}</p>
 
-  <p (click)="onQuestionClick()"
-     [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight"
-     [style.letter-spacing.px]="user.config.letterSpacing"
-  >{{currentQuestion?.text}}</p>
+    <div >
+      <div class="answers-container">
 
-  <div >
-    <div class="answers-container">
+        <button class="answerButton" type="button"
+                *ngFor="let answer of currentQuestion?.answers"
+                (click)="this.onClickAnswer(answer)"
+                [style.font-size.px]="user.config.fontSize"
+                [style.line-height.px]="user.config.lineHeight"
+                [style.letter-spacing.px]="user.config.letterSpacing">
+          {{ answer.text }}
+        </button>
+      </div>
 
-      <button class="answerButton" type="button"
-              *ngFor="let answer of currentQuestion?.answers"
-              (click)="this.onClickAnswer(answer)"
-              [style.font-size.px]="user.config.fontSize"
-              [style.line-height.px]="user.config.lineHeight"
-              [style.letter-spacing.px]="user.config.letterSpacing">
-        {{ answer.text }}
-      </button>
     </div>
-
+    <div class="pop-up" *ngIf="isPopupOpen">
+      <app-pop-up (valider)="onValider()" [username]="user.firstName"></app-pop-up>
+    </div>
   </div>
-
-
-  <p [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">
-    SCORE : {{playerScore}}
-
-  </p>
-
-  <div class="open-pop-up">
-    <button class="button-card" (click)="onPopClick()">Ajuster la page</button>
-  </div>
-
-  <div class="pop-up" *ngIf="isPopupOpen">
-    <app-pop-up (valider)="onValider()" [username]="user.firstName"></app-pop-up>
+  <div class="open-pop-up" *ngIf="isAdjustButtonVisible">
+    <button class="adjust" (click)="onPopClick()">Ajuster la page</button>
   </div>
 </div>
-
