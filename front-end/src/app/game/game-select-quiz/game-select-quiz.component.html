@@ -1,6 +1,6 @@
-<h2 class="title">{{theme.name}} / Choisissez un Quiz</h2>
+<h2  [ngStyle]="{'font-family':user.config.font}" class="title">{{theme.name}} / Choisissez un Quiz</h2>
 
-<div class="theme-content">
+<div [ngStyle]="{'font-family':user.config.font}" class="theme-content">
     <li *ngFor="let quiz of quizForTheme">
       <a [routerLink]="['/game-page']" [queryParams]="{ quiz: quiz.id,user :user.firstName }" >{{quiz.name}}</a></li>
 </div>
