@@ -22,4 +22,12 @@ export class GameResultComponent {
 
 
 
+  getResultMessage(): string {
+    if (this.playerScore === 0) {
+      return "Oups ! Vous n'avez obtenu aucune réponse correcte.";
+    } else {
+      return `Bravo ! Vous avez obtenu ${this.playerScore} réponses correctes.`;
+    }
+  }
+
 }
