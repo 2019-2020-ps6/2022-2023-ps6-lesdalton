@@ -71,7 +71,7 @@ export class UsersService {
 
   updateUserScore(userName: string, themeName: string, newScore: number) {
     const user = this.getUserByName(userName);
-    const stats = user.stats?.statsByTheme;
+    const stats = user.stats.statsByTheme;
 
     // Trouver l'objet statsByTheme correspondant au thème donné
     const theme = stats.find(t => t.themeName === themeName);

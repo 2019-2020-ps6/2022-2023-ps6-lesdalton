@@ -16,7 +16,7 @@ export const USER: User[]=[
     info: "DMLA",
     config:{font:"Arial Black",fontSize:30,lineHeight:27,letterSpacing:5},
     stats: {
-      statsByTheme: [{themeName: "Histoire", themePoints: 100}],
+      statsByTheme: [{themeName: "Sport", themePoints: 100}],
     },
   },
   {

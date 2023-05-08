@@ -26,8 +26,8 @@ export class GameResultComponent {
     this.gameService.playerScore$.subscribe((score) => this.playerScore=score)
   }
 
-  updateUserScore(userName: string, themeName: string, newScore: number){
-    this.userService.updateUserScore(userName,themeName,newScore);
+  updateUserScore(){
+    this.userService.updateUserScore(this.user.firstName,this.quiz.theme.name,this.playerScore);
   }
 
 
