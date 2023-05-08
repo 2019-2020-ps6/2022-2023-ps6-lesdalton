@@ -1,16 +1,6 @@
-@import "../../../styles/card";
+@import "../../actions/actions.component.scss";
 
-.question-container{
+h1,h2 {
   text-align: center;
+  margin-top: 100px;
 }
-.pop-up{
-  position: absolute;
-  margin-top: -25%;
-  margin-left: 60%;
-}
-.open-pop-up{
-  position: absolute;
-  margin-top:5%;
-  margin-left: 80%;
-}
-

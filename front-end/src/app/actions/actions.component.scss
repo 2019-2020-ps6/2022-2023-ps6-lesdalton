@@ -48,7 +48,6 @@ img {
   vertical-align: middle;
 }
 
-/* Transitions douces et animations subtiles */
 .transition {
   transition: all 0.3s ease-in-out;
 }
@@ -66,7 +65,6 @@ img {
   margin-bottom: 20px;
 }
 
-/* Design épuré et minimaliste */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -76,7 +74,6 @@ img {
   margin-bottom: 40px;
 }
 
-/* Police de caractères plus grande pour les personnes ayant une vision réduite */
 @media (max-width: 768px) {
   body {
     font-size: 20px;

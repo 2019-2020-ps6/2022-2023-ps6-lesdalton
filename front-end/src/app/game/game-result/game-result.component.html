@@ -1,1 +1,11 @@
-<h1> SCORE : {{this.playerScore}}</h1>
+<div>
+  <h1>Votre score :</h1>
+  <h2>
+    {{getResultMessage()}}
+  </h2>
+  <br>
+  <div class="buttons">
+    <button class="button-card" routerLink="/game">Réessayer</button>
+    <button class="button-card" routerLink="/">Choisir un autre thème</button>
+  </div>
+</div>
