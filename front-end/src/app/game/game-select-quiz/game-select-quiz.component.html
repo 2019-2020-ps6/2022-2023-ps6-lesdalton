@@ -1,6 +1,6 @@
-<h2  [ngStyle]="{'font-family':user.config.font}" class="title">{{theme.name}} / Choisissez un Quiz</h2>
+<h2 [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}"  [ngStyle]="{'font-family':user.config.font}" class="title">{{theme.name}} / Choisissez un Quiz</h2>
 
-<div [ngStyle]="{'font-family':user.config.font}" class="theme-content">
+<div [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" [ngStyle]="{'font-family':user.config.font}" class="theme-content">
     <li *ngFor="let quiz of quizForTheme">
       <a [routerLink]="['/game-page']" [queryParams]="{ quiz: quiz.id,user :user.firstName }" >{{quiz.name}}</a></li>
 </div>

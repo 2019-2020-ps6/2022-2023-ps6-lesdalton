@@ -1,4 +1,4 @@
-<div [ngStyle]="{'font-family':user.config.font}" >
+<div [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" [ngStyle]="{'font-family':user.config.font}" >
   <div class="answers-container">
 
     <button class="answerButton" type="button" *ngFor="let answer of currentQuestion?.answers"

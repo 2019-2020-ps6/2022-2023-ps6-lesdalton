@@ -5,4 +5,6 @@ export interface UserConfigModel{
   lineHeight:number;
 
   letterSpacing:number;
+
+  contrast?:string;
 }

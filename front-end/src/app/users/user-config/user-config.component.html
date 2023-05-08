@@ -1,5 +1,5 @@
 <div class="text" xmlns="http://www.w3.org/1999/html">
-  <div [ngStyle]="{'font-family':user.config.font}" class="container">
+  <div [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" [ngStyle]="{'font-family':user.config.font}" class="container">
     <div class="rectangle">
       <div class="NomPre">
         <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Prénom</label><br>
@@ -36,7 +36,13 @@
       <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing"> L'espacement :</label><br>
       <input type="range"  [(ngModel)]="user.config.letterSpacing" (input)="updateValue()" min="0" max="13" class="gauge-input">
       <br>
-      <div>
+      <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Contraste: </label><br>
+      <div [style.font-size.px]="user.config.fontSize*3/4" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing*1/2" class="radio">
+        <br>
+        <input type="radio" [(ngModel)]="user.config.contrast" value="high" checked> Haut
+        <input type="radio" [(ngModel)]="user.config.contrast" value="normal" > Moyen
+        <input type="radio" [(ngModel)]="user.config.contrast" value="low"> Faible
+        <br><br>
       </div>
     <button class="button-card" [routerLink]="['/config-pop-up']" [queryParams]="{ name: user.firstName }"><label [style.font-size.px]="user.config.fontSize">Visualiser</label></button>
     <div class="valider">

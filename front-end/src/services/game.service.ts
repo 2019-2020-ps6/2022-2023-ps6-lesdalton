@@ -112,4 +112,5 @@ export class GameService {
     this.currentQuestionIndex$.next(index);
     this.currentQuestion$.next(this.quiz.questions[index]);
   }
+
 }

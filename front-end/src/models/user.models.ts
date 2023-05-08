@@ -12,5 +12,5 @@ export interface user {
   info?: string;
   config:UserConfigModel;
 
-  stats ?: PlayerStats;
+  stats : PlayerStats;
 }

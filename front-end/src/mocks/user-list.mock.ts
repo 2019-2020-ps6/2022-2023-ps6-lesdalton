@@ -5,7 +5,7 @@ export const USER: user[]=[
     lastName: 'Yager',
     firstName: 'Jacob',
     info: "DMLA",
-    config:{font:"Arial Black",fontSize:30,lineHeight:27,letterSpacing:5},
+    config:{font:"Arial Black",fontSize:30,lineHeight:27,letterSpacing:5,contrast:"high"},
     stats: {
       statsByTheme: [{themeName: "Histoire", themePoints: 15},{themeName: "Cinéma",themePoints: 20}],
     },
