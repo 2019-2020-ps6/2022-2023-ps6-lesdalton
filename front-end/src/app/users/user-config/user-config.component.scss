@@ -1,3 +1,5 @@
+@import "../../../styles";
+
 /* Styling for the container */
 .container {
   display: flex;
@@ -98,8 +100,18 @@ label {
 .radio-group {
   display: inline-block;
 }
+.radio{
+  display: inline-block;
+}
 
 .radio-group input[type="radio"] {
   display: inline-block;
   margin-right: 10px;
 }
+
+.radio input[type="radio"] {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+
