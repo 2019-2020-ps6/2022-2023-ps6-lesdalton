@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Quiz} from "../../../models/quiz.model";
 import {Theme} from "../../../models/theme.models";
-import {user} from "../../../models/user.models";
+import {User} from "../../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UsersService} from "../../../services/users.service";
 
@@ -13,7 +13,7 @@ import {UsersService} from "../../../services/users.service";
 })
 export class ThemeCardComponent {
 
-  @Input() user!:user;
+  @Input() user!:User;
   @Input() theme!: Theme;
   constructor(private route:ActivatedRoute,private userService:UsersService) {
   }

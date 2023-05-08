@@ -2,7 +2,7 @@ import {UserConfigComponent} from "../app/users/user-config/user-config.componen
 import {UserConfigModel} from "./user-config.model";
 import {PlayerStats} from "./stats.models";
 
-export interface user {
+export interface User {
 
   picture ?: string;
   id?: string;

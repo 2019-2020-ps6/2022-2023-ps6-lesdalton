@@ -1,6 +1,6 @@
 import {Component, ElementRef} from '@angular/core';
 import {USER} from "../../mocks/user-list.mock";
-import {user} from "../../models/user.models";
+import {User} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UsersService} from "../../services/users.service";
 import {PopupService} from "../../services/pop-up.service";
@@ -14,7 +14,7 @@ import {Answer} from "../../models/answer.models";
   styleUrls: ['./config-pop-up.component.scss']
 })
 export class ConfigPopUpComponent {
-  user!: user;
+  user!: User;
   min:number=16;
   max:number=35;
 

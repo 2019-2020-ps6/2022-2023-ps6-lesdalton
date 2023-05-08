@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { user } from '../../../models/user.models';
+import { User } from '../../../models/user.models';
 
 @Component({
   selector: 'app-user',
@@ -11,11 +11,11 @@ export class UserComponent implements OnInit {
 
 
   @Input()
-  user: user | undefined;
+  user: User | undefined;
 
 
   @Output()
-  deleteUser: EventEmitter<user> = new EventEmitter<user>();
+  deleteUser: EventEmitter<User> = new EventEmitter<User>();
 
 
   constructor() {

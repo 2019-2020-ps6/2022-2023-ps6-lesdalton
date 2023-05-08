@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {UsersService} from "../../../services/users.service";
-import {user} from "../../../models/user.models";
+import {User} from "../../../models/user.models";
 import {Quiz} from "../../../models/quiz.model";
 import {ThemeService} from "../../../services/theme.service";
 import {GameService} from "../../../services/game.service";
@@ -15,7 +15,7 @@ import {Answer} from "../../../models/answer.models";
 })
 export class GamePageComponent {
 
-  @Input() user!: user;
+  @Input() user!: User;
 
   @Input() quiz!: Quiz;
 
@@ -43,5 +43,6 @@ export class GamePageComponent {
       });
     });
   }
+
 
 }

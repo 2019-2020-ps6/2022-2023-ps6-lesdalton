@@ -1,5 +1,5 @@
 import {Component, ElementRef, EventEmitter, Input, Output} from '@angular/core';
-import {user} from "../../models/user.models";
+import {User} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UsersService} from "../../services/users.service";
 import {PopupService} from "../../services/pop-up.service";
@@ -11,7 +11,7 @@ import {PopupService} from "../../services/pop-up.service";
 })
 export class PopUpComponent {
   @Input() username!: string;
-  public user!:user;
+  public user!:User;
 
   min:number=20;
   max:number=45;

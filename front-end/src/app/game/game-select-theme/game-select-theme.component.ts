@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, OnInit} from '@angular/core';
 import {THEME_LIST} from "../../../mocks/theme.mocks";
-import {user} from "../../../models/user.models";
+import {User} from "../../../models/user.models";
 import {USER} from "../../../mocks/user-list.mock";
 import {Theme} from "../../../models/theme.models";
 import {UsersService} from "../../../services/users.service";
@@ -14,7 +14,7 @@ import {PopupService} from "../../../services/pop-up.service";
 })
 export class GameSelectThemeComponent {
   themeList:Theme[] = THEME_LIST;
-  @Input() user!:user;
+  @Input() user!:User;
 
 
 

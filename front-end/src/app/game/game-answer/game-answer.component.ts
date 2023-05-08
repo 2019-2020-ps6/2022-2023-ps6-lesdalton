@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Question} from "../../../models/question.model";
 import {GameService} from "../../../services/game.service";
-import {user} from "../../../models/user.models";
+import {User} from "../../../models/user.models";
 import {UsersService} from "../../../services/users.service";
 import {ActivatedRoute} from "@angular/router";
 
@@ -14,7 +14,7 @@ export class GameAnswerComponent {
   numberOfQuestions: number = 0; // Déclaration de numberOfQuestions$ comme un Observable
   currentQuestionIndex: number = 0;
   currentQuestion: Question | undefined;
-  user!: user;
+  user!: User;
 
 
 

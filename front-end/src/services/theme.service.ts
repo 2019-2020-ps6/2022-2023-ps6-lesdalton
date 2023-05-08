@@ -2,7 +2,7 @@ import {Theme} from "../models/theme.models";
 import {ThemeFormComponent} from "../app/quizzes/theme-form/theme-form.component";
 import {THEME_LIST} from "../mocks/theme.mocks";
 import {BehaviorSubject} from "rxjs";
-import {user} from "../models/user.models";
+import {User} from "../models/user.models";
 import {USER} from "../mocks/user-list.mock";
 import {Injectable} from "@angular/core";
 @Injectable({

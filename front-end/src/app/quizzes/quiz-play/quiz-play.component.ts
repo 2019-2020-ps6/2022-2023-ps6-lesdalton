@@ -3,7 +3,7 @@ import {Quiz} from "../../../models/quiz.model";
 import {Theme} from "../../../models/theme.models";
 import {QuizService} from "../../../services/quiz.service";
 import {ThemeService} from "../../../services/theme.service";
-import {user} from "../../../models/user.models";
+import {User} from "../../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UsersService} from "../../../services/users.service";
 
@@ -14,7 +14,7 @@ import {UsersService} from "../../../services/users.service";
 })
 export class QuizPlayComponent {
   @Input() quiz!: Quiz;
-  public user:user={firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5},stats: {statsByTheme: [{themeName: "Histoire", themePoints: 15},{themeName: "Cinéma",themePoints: 20}]}};
+  public user:User={firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5},stats: {statsByTheme: [{themeName: "Histoire", themePoints: 15},{themeName: "Cinéma",themePoints: 20}]}};
   @Input() theme!: String;
   constructor(private route:ActivatedRoute,private userService:UsersService) {
   }

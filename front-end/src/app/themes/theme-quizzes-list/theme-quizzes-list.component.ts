@@ -5,7 +5,7 @@ import {QuizService} from "../../../services/quiz.service";
 import {Theme} from "../../../models/theme.models";
 import {ThemeService} from "../../../services/theme.service";
 import {ActivatedRoute} from "@angular/router";
-import {user} from "../../../models/user.models";
+import {User} from "../../../models/user.models";
 import {UsersService} from "../../../services/users.service";
 
 @Component({
@@ -16,7 +16,7 @@ import {UsersService} from "../../../services/users.service";
 export class ThemeQuizzesListComponent {
 
   public theme:Theme = {name:''};
-  public user:user = {firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5},stats: {statsByTheme: [{themeName: "Histoire", themePoints: 15},{themeName: "Cinéma",themePoints: 20}]}};
+  public user:User = {firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5},stats: {statsByTheme: [{themeName: "Histoire", themePoints: 15},{themeName: "Cinéma",themePoints: 20}]}};
 
   public quizzes: Quiz[] = QUIZ_LIST;
 

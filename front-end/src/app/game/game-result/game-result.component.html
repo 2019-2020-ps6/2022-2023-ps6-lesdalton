@@ -5,7 +5,7 @@
   </h2>
   <br>
   <div class="buttons">
-    <button class="button-card" routerLink="/game">Réessayer</button>
-    <button class="button-card" routerLink="/">Choisir un autre thème</button>
+    <button class="button-card" [routerLink]="['/game-page']" [queryParams]="{ quiz: quiz.id,user :user.firstName }" >Réessayer</button>
+    <button class="button-card" [routerLink]="['/select-theme']" [queryParams]="{ name: user.firstName }">Choisir un autre thème</button>
   </div>
 </div>

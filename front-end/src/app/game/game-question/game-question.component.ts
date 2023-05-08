@@ -5,7 +5,7 @@ import { Question } from '../../../models/question.model';
 import { Quiz } from '../../../models/quiz.model';
 import {PopupService} from "../../../services/pop-up.service";
 import {QuizService} from "../../../services/quiz.service";
-import {user} from "../../../models/user.models";
+import {User} from "../../../models/user.models";
 import {GameService} from "../../../services/game.service";
 import {UsersService} from "../../../services/users.service";
 import {Answer} from "../../../models/answer.models";
@@ -29,7 +29,7 @@ export class GameQuestionComponent implements OnInit {
   isPopupOpenFalse = false;
   isAdjustButtonVisible = true;
   @Input() quiz!:Quiz;
-  @Input() user!:user;
+  @Input() user!:User;
 
 
   constructor(

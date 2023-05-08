@@ -1,5 +1,5 @@
 import {Component, ElementRef, Input, ViewChild} from '@angular/core';
-import {user} from "../../../models/user.models";
+import {User} from "../../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UsersService} from "../../../services/users.service";
 
@@ -11,7 +11,7 @@ import {UsersService} from "../../../services/users.service";
 })
 export class UserConfigComponent {
 
-  user!: user;
+  user!: User;
   minFontSize=25;
   maxFontSize=40;
 

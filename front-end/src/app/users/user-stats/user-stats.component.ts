@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {user} from "../../../models/user.models";
+import {User} from "../../../models/user.models";
 import {USER} from "../../../mocks/user-list.mock";
 
 @Component({
@@ -9,7 +9,7 @@ import {USER} from "../../../mocks/user-list.mock";
 })
 export class UserStatsComponent {
 
-  public userList: user[] = USER;
+  public userList: User[] = USER;
   filterType: string = 'total';
 
 

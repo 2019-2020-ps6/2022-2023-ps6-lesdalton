@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 
-import { user } from '../../../models/user.models';
+import { User } from '../../../models/user.models';
 import { UsersService } from '../../../services/users.service';
 import {Router} from "@angular/router";
 import {USER} from "../../../mocks/user-list.mock";
@@ -15,11 +15,11 @@ export class UserListComponent implements OnInit {
 
 
 
-  public userList: user[] = USER;
+  public userList: User[] = USER;
 
 
   constructor(private userService: UsersService, private router: Router) {
-    this.userService.users$.subscribe((users: user[]) => {
+    this.userService.users$.subscribe((users: User[]) => {
       this.userList = users;
     });
   }
@@ -27,12 +27,12 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteUser(user: user): void {
+  deleteUser(user: User): void {
     console.log('User deleted : ',user);
     this.userService.deleteUser(user);
   }
 
-  updateUser(user: user){
+  updateUser(user: User){
     this.userService.updateUser(user)
   }
 
