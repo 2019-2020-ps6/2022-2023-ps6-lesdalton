@@ -101,16 +101,8 @@ export class GameQuestionComponent implements OnInit {
     }
   }
 
-  onPopFalseClick(answer:Answer){
-    if(!answer.isCorrect){
-      this.popupService.openPopupFalse();
-    }
-  }
-
   public onClickAnswer(answer:Answer){
     this.gameService.checkAnswer(answer);
     //this.currentQuestion = this.quiz.questions[this.currentQuestionIndex+1];
   }
-
-
 }
