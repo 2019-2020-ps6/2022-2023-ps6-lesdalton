@@ -14,7 +14,7 @@ import {UsersService} from "../../../services/users.service";
 })
 export class QuizPlayComponent {
   @Input() quiz!: Quiz;
-  public user:user={firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5}};
+  public user:user={firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5},stats: {statsByTheme: [{themeName: "Histoire", themePoints: 15},{themeName: "Cinéma",themePoints: 20}]}};
   @Input() theme!: String;
   constructor(private route:ActivatedRoute,private userService:UsersService) {
   }

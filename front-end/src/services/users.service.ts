@@ -68,4 +68,22 @@ export class UsersService {
     const user = this.users.find(u => u.firstName === name)!;
     return user;
   }
+
+  updateUserScore(userName: string, themeName: string, newScore: number) {
+    const user = this.getUserByName(userName);
+    const stats = user.stats?.statsByTheme;
+
+    // Trouver l'objet statsByTheme correspondant au thème donné
+    const theme = stats.find(t => t.themeName === themeName);
+
+    // Si l'objet statsByTheme n'existe pas encore pour ce thème, le créer
+    if (!theme) {
+      stats.push({themeName: themeName, themePoints: newScore});
+    } else {
+      // Si l'objet statsByTheme existe déjà pour ce thème, mettre à jour le score
+      theme.themePoints += newScore;
+    }
+  }
+
+
 }

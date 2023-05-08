@@ -16,7 +16,7 @@ import {UsersService} from "../../../services/users.service";
 export class ThemeQuizzesListComponent {
 
   public theme:Theme = {name:''};
-  public user:user = {firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5}};
+  public user:user = {firstName:'',lastName:'',id:'',config:{fontSize:16,lineHeight:10,letterSpacing:5},stats: {statsByTheme: [{themeName: "Histoire", themePoints: 15},{themeName: "Cinéma",themePoints: 20}]}};
 
   public quizzes: Quiz[] = QUIZ_LIST;
 
