@@ -94,3 +94,12 @@ label {
   align-items: center;
   flex-direction: column;
 }
+
+.radio-group {
+  display: inline-block;
+}
+
+.radio-group input[type="radio"] {
+  display: inline-block;
+  margin-right: 10px;
+}

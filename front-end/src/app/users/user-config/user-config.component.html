@@ -1,5 +1,5 @@
-<div class="text">
-  <div class="container">
+<div class="text" xmlns="http://www.w3.org/1999/html">
+  <div [ngStyle]="{'font-family':user.config.font}" class="container">
     <div class="rectangle">
       <div class="NomPre">
         <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Prénom</label><br>
@@ -14,9 +14,18 @@
       </div>
     </div>
 
-    <div class="Buttons">
-      <p [style.font-size.px]="user.config.fontSize*1.2" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Configuration du profil</p>
+    <div [ngStyle]="{'font-family':user.config.font}" class="Buttons">
+      <p  [style.font-size.px]="user.config.fontSize*1.2" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Configuration du profil</p>
       <br>
+      <br><br>
+      <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Police d'écriture : </label><br>
+      <div [style.font-size.px]="user.config.fontSize*3/4" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing*1/2" class="radio-group">
+        <br>
+        <input type="radio" [(ngModel)]="user.config.font" value="Arial Black" checked> Arial
+        <input type="radio" [(ngModel)]="user.config.font" value="Helvetica Black"> Helvetica
+        <input type="radio" [(ngModel)]="user.config.font" value="Verdana"> Verdana
+        <br><br>
+      </div>
       <br><br>
       <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Taille d'écriture : </label><br>
       <input type="range"  [(ngModel)]="user.config.fontSize" (input)="updateValue()" min="{{minFontSize}}" max="{{maxFontSize}}" class="gauge-input">

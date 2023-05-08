@@ -1,6 +1,6 @@
-<h2 class="title">Choisissez un thème</h2>
+<h2 [ngStyle]="{'font-family':user.config.font}" class="title">Choisissez un thème</h2>
 
-<div class="theme-content">
+<div [ngStyle]="{'font-family':user.config.font}" class="theme-content">
 
     <li *ngFor="let theme of themeList">
       <a [routerLink]="['/select-quiz']" [queryParams]="{ theme: theme.name,user: user.firstName }">{{theme.name}}</a>
