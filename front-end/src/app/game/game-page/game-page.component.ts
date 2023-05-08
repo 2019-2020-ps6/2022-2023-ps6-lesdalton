@@ -7,6 +7,7 @@ import {ThemeService} from "../../../services/theme.service";
 import {GameService} from "../../../services/game.service";
 import {QuizService} from "../../../services/quiz.service";
 import {Answer} from "../../../models/answer.models";
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-game-page',
@@ -37,12 +38,9 @@ export class GamePageComponent {
     this.gameService.startGame(this.quiz);
     this.gameService.gameFinished.subscribe((result) => {
       console.log(`Game over! Score: ${result.score}, Quiz ID: ${result.quizId}`);
-      this.gameService.startGame(this.quiz);
       this.route.queryParams.subscribe(() => {
         this.router.navigate(['/result'], { queryParams: { player: this.user.firstName, quiz: result.quizId } });
       });
     });
   }
-
-
 }

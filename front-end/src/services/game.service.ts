@@ -28,6 +28,7 @@ export class GameService {
   }
 
   startGame(quiz: Quiz) {
+    this.playerScore$ = new BehaviorSubject<number>(0);
     this.quiz = quiz;
     let gameQuestions: Question[] = this.quizQuestions(quiz);
     this.numberOfQuestions$.next(quiz.questions.length);
@@ -87,8 +88,6 @@ export class GameService {
     } else if(!answer.isCorrect) {
       boutonAns.style.backgroundColor = 'red';
     }
-
-
   }
 
 
@@ -112,5 +111,4 @@ export class GameService {
     this.currentQuestionIndex$.next(index);
     this.currentQuestion$.next(this.quiz.questions[index]);
   }
-
 }
