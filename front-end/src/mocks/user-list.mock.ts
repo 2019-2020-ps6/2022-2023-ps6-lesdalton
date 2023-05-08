@@ -5,7 +5,7 @@ export const USER: user[]=[
     lastName: 'Yager',
     firstName: 'Jacob',
     info: "DMLA",
-    config:{fontSize:30,lineHeight:27,letterSpacing:5},
+    config:{font:"Arial Black",fontSize:30,lineHeight:27,letterSpacing:5},
     stats: {
       statsByTheme: [{themeName: "Histoire", themePoints: 15},{themeName: "Cinéma",themePoints: 20}],
     },
@@ -14,7 +14,7 @@ export const USER: user[]=[
     lastName: 'Dmla',
     firstName: 'Eric',
     info: "DMLA",
-    config:{fontSize:30,lineHeight:27,letterSpacing:5},
+    config:{font:"Arial Black",fontSize:30,lineHeight:27,letterSpacing:5},
     stats: {
       statsByTheme: [{themeName: "Histoire", themePoints: 100}],
     },
@@ -23,7 +23,7 @@ export const USER: user[]=[
     lastName: 'Almd',
     firstName: 'Steve',
     info: "DMLA",
-    config:{fontSize:30,lineHeight:27,letterSpacing:5},
+    config:{font:"Arial Black",fontSize:30,lineHeight:27,letterSpacing:5},
     stats: {
       statsByTheme: [{themeName: "Histoire", themePoints: 30},{themeName: "Cinéma", themePoints: 35}],
     },
