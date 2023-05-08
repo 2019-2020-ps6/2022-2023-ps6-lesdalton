@@ -30,7 +30,7 @@ export class QuizConfigComponent {
     id: new FormControl()
   });
 
-  questionForm: FormGroup<{ [K in keyof { quizId: string | undefined; id: number; text: FormControl<any> }]: ɵElement<{ quizId: string | undefined; id: number; text: FormControl<any> }[K], null> }> = this.formBuilder.group({
+  questionForm: FormGroup<{ [K in keyof { quizId: string | undefined; id: number; text: FormControl<any> }]: ɵElement<{ quizId: string; id: number; text: FormControl<any> }[K], null> }> = this.formBuilder.group({
     id: new FormControl(),
     quizId: this.quiz.id,
     text: new FormControl(),

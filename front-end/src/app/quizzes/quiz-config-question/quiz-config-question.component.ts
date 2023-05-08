@@ -14,7 +14,7 @@ import { Answer} from "../../../models/answer.models";
 })
 export class QuizConfigQuestionComponent implements OnInit {
 
-  quiz: Quiz = {id: '', name: '', theme: {name: "Sans Thème"}, questions: []};
+  quiz: Quiz = {id: '0', name: '', theme: {name: "Sans Thème"}, questions: []};
   question: Question = {id: 1, text: '', answers: []};
   answerForm: FormGroup;
 

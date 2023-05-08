@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Question } from "../models/question.model";
 import { Answer } from "../models/answer.models";
@@ -14,6 +14,8 @@ export class GameService {
   public currentQuestionIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   public currentQuestion$: BehaviorSubject<Question>;
   public numberOfQuestions$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  public gameFinished: EventEmitter<{ score: number, quizId: string }> = new EventEmitter<{ score: number, quizId: string }>();
+
 
   private quiz: Quiz=QUIZ_LIST[0];
 
@@ -98,7 +100,7 @@ export class GameService {
       this.currentQuestion$.next(this.quiz.questions[this.currentQuestionIndex$.value]);
     } else {
       console.log("Fin du quiz");
-      this.router.navigateByUrl('/result');
+      this.gameFinished.emit({ score: this.playerScore$.value, quizId: this.quiz.id });
     }
   }
 
