@@ -1,12 +1,11 @@
-import {Component, ElementRef} from '@angular/core';
-import {USER} from "../../mocks/user-list.mock";
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {User} from "../../models/user.models";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {UsersService} from "../../services/users.service";
-import {PopupService} from "../../services/pop-up.service";
 import {Question} from "../../models/question.model";
 import {Histoire_de_France_questions} from "../../mocks/question-list.mock";
-import {Answer} from "../../models/answer.models";
+import {PopupService} from "../../services/pop-up.service";
+
 
 @Component({
   selector: 'app-config-pop-up',
@@ -14,41 +13,67 @@ import {Answer} from "../../models/answer.models";
   styleUrls: ['./config-pop-up.component.scss']
 })
 export class ConfigPopUpComponent {
+
   user!: User;
-  min:number=16;
-  max:number=35;
+  minFontSize=25;
+  maxFontSize=40;
+  currentQuestion:Question = Histoire_de_France_questions[0];
+  isPopUpOpen!: boolean;
+  isAdjustButtonVisible!: boolean;
 
-  question:string=Histoire_de_France_questions[0].text;
-  answers:Answer[]=Histoire_de_France_questions[0].answers;
-
-  constructor(private route: ActivatedRoute, private userService: UsersService, private elementRef:ElementRef, private popupService:PopupService) {}
+  constructor(private route: ActivatedRoute,
+              private userService:UsersService,
+              private popUpService:PopupService,
+              private router: Router) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.user = this.userService.getUserByName(params['name']);
+      this.user = this.userService.getUserByName(params['user']);
     });
-    this.popupService.getIsOpen().subscribe(isOpen => {
-      this.isPopupOpen = isOpen; // mettre à jour l'état de l'ouverture du pop-up
+    this.popUpService.isOpen.subscribe((isOpen: boolean) => {
+      this.isPopUpOpen = isOpen;
+    });
+
+    this.popUpService.isAdjustButtonVisible.subscribe((isOpen: boolean) => {
+      this.isAdjustButtonVisible = isOpen;
     });
   }
-
-  value = 0;
   updateValue() {
-    if (this.value < 16) {
-      this.value = 16;
-    } else if (this.value > 35) {
-      this.value = 35;
+    console.log("FontSize : ", this.user.config.fontSize, "lineHeight : " ,this.user.config.lineHeight, "letterSpacing : ",this.user.config.letterSpacing);
+
+    if (this.user.config.fontSize < this.minFontSize) {
+      this.user.config.fontSize = this.minFontSize;
+    } else if (this.user.config.fontSize > this.maxFontSize) {
+      this.user.config.fontSize = this.maxFontSize;
+    }
+
+    if (this.user.config.lineHeight< 0) {
+      this.user.config.lineHeight = 0;
+    } else if (this.user.config.lineHeight > 100) {
+      this.user.config.lineHeight = 100;
+    }
+
+    if(this.user.config.letterSpacing<0){
+      this.user.config.letterSpacing=0;
+    } else if(this.user.config.letterSpacing>100){
+      this.user.config.letterSpacing=100;
     }
   }
 
-  isPopupOpen = false;
+  onPopClick() {
+    if (!this.isPopUpOpen) {
+      this.popUpService.openPopup();
+      this.popUpService.closeAdjustButton();
+    }
+
+    else {
+      this.popUpService.closePopup();
+      this.popUpService.openAdjustButton();
+    }
+  }
 
   onValider() {
-    this.popupService.closePopup(); // fermer le pop-up
+    this.popUpService.closePopup(); // close the popup
+    this.router.navigate(['/user-config'], { queryParams: { user: this.user.firstName } });
   }
-
-  onPopClick() {
-    this.popupService.openPopup(); // ouvrir le pop-up
-  }
-
 }

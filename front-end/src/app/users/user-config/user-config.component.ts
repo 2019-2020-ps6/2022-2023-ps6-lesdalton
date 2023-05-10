@@ -19,7 +19,7 @@ export class UserConfigComponent {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.user = this.userService.getUserByName(params['name']);
+      this.user = this.userService.getUserByName(params['user']);
     });
   }
   updateValue() {
