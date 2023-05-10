@@ -17,14 +17,6 @@
   <label> L'espacement :</label><br>
   <input type="range"  [(ngModel)]="user.config.letterSpacing" (input)="updateValue();"  min="0" max="13" class="gauge-input">
   <br>
-  <label>Contraste: </label><br>
-  <div class="radio">
-    <br>
-    <input type="radio" [(ngModel)]="user.config.contrast" value="high" checked> Haut
-    <input type="radio" [(ngModel)]="user.config.contrast" value="normal" > Moyen
-    <input type="radio" [(ngModel)]="user.config.contrast" value="low"> Faible
-    <br><br>
-  </div>
   <br><br><br>
   <button class="button-card" (click)="onValider()"><label class="valider">Valider</label></button>
 </div>

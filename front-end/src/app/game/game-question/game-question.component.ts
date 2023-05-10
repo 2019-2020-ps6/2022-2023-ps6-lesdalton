@@ -20,14 +20,14 @@ export class GameQuestionComponent implements OnInit {
   @Input() username!: string;
 
   currentQuestionIndex: number = 0;
-  currentQuestion: Question | undefined;
+  currentQuestion!: Question;
   playerScore: number = 0;
   numberOfQuestions$!: Observable<number>; // Declare numberOfQuestions$ as an Observable
   numberOfQuestions!:number;
 
   isPopupOpen = false;
-  isPopupOpenFalse = false;
   isAdjustButtonVisible = true;
+
   @Input() quiz!:Quiz;
   @Input() user!:User;
 
@@ -102,6 +102,11 @@ export class GameQuestionComponent implements OnInit {
   }
 
   public onClickAnswer(answer:Answer){
+    for (let answer of this.currentQuestion.answers) {
+      if (answer.isCorrect) {
+        answer.buttonColor = 'green';
+      }
+    }
     this.gameService.checkAnswer(answer);
     //this.currentQuestion = this.quiz.questions[this.currentQuestionIndex+1];
   }
