@@ -43,6 +43,7 @@ import { GameResultComponent } from './game/game-result/game-result.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { QuizConfigQuestionComponent } from './quizzes/quiz-config-question/quiz-config-question.component';
 import { UserStatsComponent } from './users/user-stats/user-stats.component';
+import { PresentationComponent } from './presentation/presentation.component';
 
 
 
@@ -86,6 +87,7 @@ import { UserStatsComponent } from './users/user-stats/user-stats.component';
     PopUpComponent,
     QuizConfigQuestionComponent,
     UserStatsComponent,
+    PresentationComponent,
 
   ],
   imports: [
