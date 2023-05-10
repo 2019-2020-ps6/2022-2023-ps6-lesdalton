@@ -6,4 +6,6 @@ export interface Answer {
   image?: string;
   questionId: number;
 
+  buttonColor?: string;
+
 }

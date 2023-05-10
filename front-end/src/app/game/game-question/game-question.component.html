@@ -13,7 +13,7 @@
                 [style.font-size.px]="user.config.fontSize"
                 [style.line-height.px]="user.config.lineHeight"
                 [style.letter-spacing.px]="user.config.letterSpacing"
-                [ngStyle]="{'font-family':user.config.font}">
+                [ngStyle]="{'font-family':user.config.font,'background-color': answer?.buttonColor}">
           {{ answer.text }}
         </button>
       </div>

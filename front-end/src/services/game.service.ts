@@ -42,17 +42,14 @@ export class GameService {
   }
 
   public checkAnswer(answer: Answer) {
-    const boutonAns = document.querySelector('button')!;
     if (answer.isCorrect) {
       console.log("Bonne réponse !");
-      boutonAns.style.backgroundColor = 'green';
 
 
       this.playerScore$.next(this.playerScore$.value + 1);
       console.log("SCORE : " + this.playerScore$.value);
     } else {
       console.log("Mauvaise réponse !");
-      boutonAns.style.backgroundColor = 'green';
     }
 
     /*if (answer.isCorrect) {
