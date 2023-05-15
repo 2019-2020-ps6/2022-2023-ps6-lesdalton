@@ -51,6 +51,12 @@ router.put('/:userId', (req, res) => {
   }
 })
 
+
+///////////////////////////////////
+//
+//    SUPPRIMER UN USER
+//
+///////////////////////////////////
 router.delete('/:userId', (req, res) => {
   try {
     User.delete(req.params.userId)
