@@ -1,6 +1,9 @@
 @import "../../../styles";
 .theme-content {
-  display: flex;
+  margin-left: 20%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 100px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
