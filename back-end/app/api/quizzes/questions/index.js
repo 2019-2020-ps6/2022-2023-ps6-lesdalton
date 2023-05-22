@@ -40,6 +40,7 @@ router.post('/', (req, res) => {
     res.status(201).json(question)
   } catch (err) {
     manageAllErrors(res, err)
+    console.log(err)
   }
 })
 

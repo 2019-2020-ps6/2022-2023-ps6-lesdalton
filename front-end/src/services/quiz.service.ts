@@ -5,12 +5,14 @@ import { QUIZ_LIST } from '../mocks/quizzes-list.mock';
 import { Question } from '../models/question.model';
 import { Answer } from '../models/answer.models';
 import { ANSWER_LIST } from '../mocks/answer-list.mock';
+import {HttpClient} from "@angular/common/http";
+import {httpOptionsBase, serverUrl} from "../configs/server.config";
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizService {
-  private quizzes: Quiz[] = QUIZ_LIST;
+  private quizzes: Quiz[] = [];
   public quizzes$: BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizzes);
 
   private questions: Question[] = [];
@@ -21,13 +23,31 @@ export class QuizService {
   public answers$: BehaviorSubject<Answer[]> = new BehaviorSubject(this.answers);
   public answersChanged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+  private quizUrl = serverUrl + '/quizzes';
 
-  constructor() {}
+
+  constructor(private http:HttpClient) {
+    this.retrieveQuizzes();
+  }
+
+  retrieveQuizzes(): void{
+    this.http.get<Quiz[]>(this.quizUrl).
+    subscribe(quizList=>{
+      this.quizzes=quizList;
+      this.quizzes$.next(this.quizzes);
+    });
+  }
 
   addQuiz(quiz: Quiz): void {
     this.quizzes.push(quiz);
     this.quizzes$.next(this.quizzes);
+
+    this.http.post(this.quizUrl, quiz)
+      .subscribe(() => {
+        this.retrieveQuizzes();
+      });
   }
+
 
   deleteQuiz(quiz: Quiz): void {
     const index = this.quizzes.indexOf(quiz);
