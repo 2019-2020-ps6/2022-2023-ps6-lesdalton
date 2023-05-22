@@ -34,6 +34,12 @@ router.get('/:userId', (req, res) => {
   }
 })
 
+
+///////////////////////////////////
+//
+//    CREER UN USER
+//
+///////////////////////////////////
 router.post('/', (req, res) => {
   try {
     const user = User.create({ ...req.body })
@@ -43,6 +49,12 @@ router.post('/', (req, res) => {
   }
 })
 
+
+///////////////////////////////////
+//
+//    UPDATE UN USER
+//
+///////////////////////////////////
 router.put('/:userId', (req, res) => {
   try {
     res.status(200).json(User.update(req.params.userId, req.body))
