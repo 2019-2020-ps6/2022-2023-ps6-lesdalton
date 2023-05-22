@@ -4,6 +4,8 @@ import { User } from '../../../models/user.models';
 import { UsersService } from '../../../services/users.service';
 import {Router} from "@angular/router";
 import {USER} from "../../../mocks/user-list.mock";
+import {HttpClient} from "@angular/common/http";
+import {serverUrl} from "../../../configs/server.config";
 
 
 @Component({
@@ -12,16 +14,10 @@ import {USER} from "../../../mocks/user-list.mock";
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
+  public userList: User[] = [];
 
-
-
-  public userList: User[] = USER;
-
-
-  constructor(private userService: UsersService, private router: Router) {
-    this.userService.users$.subscribe((users: User[]) => {
-      this.userList = users;
-    });
+  constructor(private userService: UsersService, private router: Router,private http: HttpClient) {
+    this.userService.users$.subscribe((users) => (this.userList =users));
   }
 
   ngOnInit(): void {

@@ -1,5 +1,4 @@
 import {Quiz} from '../models/quiz.model';
-import {Handicap} from '../models/handicap.models';
 import {Histoire_de_France_questions} from "./question-list.mock";
 
 export const QUIZ_LIST: Quiz[] = [

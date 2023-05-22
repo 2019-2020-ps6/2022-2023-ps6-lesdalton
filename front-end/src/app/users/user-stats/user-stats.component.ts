@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import {User} from "../../../models/user.models";
 import {USER} from "../../../mocks/user-list.mock";
+import {serverUrl} from "../../../configs/server.config";
+import {UsersService} from "../../../services/users.service";
+import {Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-user-stats',
@@ -9,7 +13,12 @@ import {USER} from "../../../mocks/user-list.mock";
 })
 export class UserStatsComponent {
 
-  public userList: User[] = USER;
+  public userList: User[] = [];
+
+
+  constructor(private userService: UsersService, private router: Router,private http: HttpClient) {
+    this.userService.users$.subscribe((users) => (this.userList =users));
+  }
   filterType: string = 'total';
 
 
