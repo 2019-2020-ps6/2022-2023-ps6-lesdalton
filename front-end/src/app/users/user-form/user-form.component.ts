@@ -12,14 +12,15 @@ export class UserFormComponent {
   public userForm: FormGroup;
 
 
+
+
   constructor(public formBuilder: FormBuilder, public userService: UsersService) {
     this.userForm = this.formBuilder.group({
-      id:Math.floor(Math.random()*100),
       firstName:[''],
       lastName: [''],
       config:{config:{fontSize:20,lineHeight:5,letterSpacing:5}},
       stats: {
-        statsByTheme: [],
+        statsByTheme: [{themeName:"",themePoints:0}],
       }
     });
   }

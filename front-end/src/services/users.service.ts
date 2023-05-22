@@ -13,12 +13,32 @@ export class UsersService {
   /*
    The list of users.
    */
-  private users: User[] = USER;
-
+  private users: User[] = [];
   /*
    Observable which contains the list of users.
    */
-  public users$: BehaviorSubject<User[]> = new BehaviorSubject(USER);
+  public users$: BehaviorSubject<User[]> = new BehaviorSubject(this.users);
+  private userUrl=serverUrl+'/users';
+
+  private httpOptions = httpOptionsBase;
+
+
+  constructor(private http: HttpClient) {
+    this.loadUsers();
+  }
+
+  loadUsers(): void {
+    this.http.get<User[]>(this.userUrl).subscribe(
+      users => {
+        this.users = users;
+        this.users$.next(this.users);
+      },
+      error => {
+        console.error('Erreur lors du chargement des utilisateurs :', error);
+      }
+    );
+  }
+
 
   /*
    Adds a new user to the list of users.
@@ -26,6 +46,8 @@ export class UsersService {
   addUser(user: User): void {
     this.users.push(user);
     this.users$.next(this.users);
+    this.http.post(this.userUrl, user, httpOptionsBase);
+
   }
 
   /*
