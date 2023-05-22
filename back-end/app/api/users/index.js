@@ -5,6 +5,12 @@ const manageAllErrors = require('../../utils/routes/error-management')
 
 const router = new Router()
 
+
+///////////////////////////////////
+//
+//    AFFICHER TOUS LES USERS
+//
+///////////////////////////////////
 router.get('/', (req, res) => {
   try {
     res.status(200).json(User.get())
@@ -13,6 +19,13 @@ router.get('/', (req, res) => {
   }
 })
 
+
+
+///////////////////////////////////
+//
+//    AFFICHER UN USER
+//
+///////////////////////////////////
 router.get('/:userId', (req, res) => {
   try {
     res.status(200).json(User.getById(req.params.userId))
@@ -21,6 +34,12 @@ router.get('/:userId', (req, res) => {
   }
 })
 
+
+///////////////////////////////////
+//
+//    CREER UN USER
+//
+///////////////////////////////////
 router.post('/', (req, res) => {
   try {
     const user = User.create({ ...req.body })
@@ -30,6 +49,12 @@ router.post('/', (req, res) => {
   }
 })
 
+
+///////////////////////////////////
+//
+//    UPDATE UN USER
+//
+///////////////////////////////////
 router.put('/:userId', (req, res) => {
   try {
     res.status(200).json(User.update(req.params.userId, req.body))
@@ -38,6 +63,12 @@ router.put('/:userId', (req, res) => {
   }
 })
 
+
+///////////////////////////////////
+//
+//    SUPPRIMER UN USER
+//
+///////////////////////////////////
 router.delete('/:userId', (req, res) => {
   try {
     User.delete(req.params.userId)
