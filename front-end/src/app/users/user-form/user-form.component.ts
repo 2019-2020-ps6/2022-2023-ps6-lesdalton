@@ -16,14 +16,20 @@ export class UserFormComponent {
 
   constructor(public formBuilder: FormBuilder, public userService: UsersService) {
     this.userForm = this.formBuilder.group({
-      firstName:[''],
-      lastName: [''],
-      config:{config:{fontSize:20,lineHeight:5,letterSpacing:5}},
-      stats: {
-        statsByTheme: [{themeName:"",themePoints:0}],
-      }
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      config: this.formBuilder.group({
+        fontSize: [35, Validators.required],
+        lineHeight: [40, Validators.required],
+        letterSpacing: [5, Validators.required],
+        contrast: ['high']
+      }),
+      stats: this.formBuilder.group({
+        statsByTheme: this.formBuilder.array([])
+      })
     });
   }
+
 
   addUser() {
     // Ajouter un nouvel utilisateur ici

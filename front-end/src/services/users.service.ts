@@ -46,9 +46,22 @@ export class UsersService {
   addUser(user: User): void {
     this.users.push(user);
     this.users$.next(this.users);
-    this.http.post(this.userUrl, user, httpOptionsBase);
+    this.http.post(this.userUrl, user, httpOptionsBase).subscribe(
+      response => {
+        console.log('Utilisateur ajouté avec succès :', response);
+      },
+      error => {
+        console.error('Erreur lors de l\'ajout de l\'utilisateur :', error);
 
+        // Afficher les détails de l'erreur de validation
+        if (error.error && error.error.details) {
+          console.log('Détails de l\'erreur de validation :', error.error.details);
+        }
+      }
+    );
   }
+
+
 
   /*
    Deletes the specified user from the list of users.
@@ -58,8 +71,18 @@ export class UsersService {
     if (index !== -1) {
       this.users.splice(index, 1);
       this.users$.next(this.users);
+
+      this.http.delete(`${this.userUrl}/${user.id}`).subscribe(
+        () => {
+          console.log('Utilisateur supprimé avec succès');
+        },
+        error => {
+          console.error('Erreur lors de la suppression de l\'utilisateur :', error);
+        }
+      );
     }
   }
+
 
   /*
    Returns the list of users.
