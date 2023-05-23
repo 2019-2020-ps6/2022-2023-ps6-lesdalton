@@ -19,6 +19,7 @@ module.exports = new BaseModel('User', {
     statsByTheme: Joi.array().items({
       themeName: Joi.string(),
       themePoints: Joi.number(),
+
     }),
   },
 })
