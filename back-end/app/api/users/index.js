@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
     res.status(200).json(User.get())
   } catch (err) {
     manageAllErrors(res, err)
+    console.log(err)
   }
 })
 
@@ -31,6 +32,7 @@ router.get('/:userId', (req, res) => {
     res.status(200).json(User.getById(req.params.userId))
   } catch (err) {
     manageAllErrors(res, err)
+    console.log(err)
   }
 })
 
@@ -46,6 +48,7 @@ router.post('/', (req, res) => {
     res.status(201).json(user)
   } catch (err) {
     manageAllErrors(res, err)
+    console.log(err)
   }
 })
 

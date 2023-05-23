@@ -13,12 +13,32 @@ export class UsersService {
   /*
    The list of users.
    */
-  private users: User[] = USER;
-
+  private users: User[] = [];
   /*
    Observable which contains the list of users.
    */
-  public users$: BehaviorSubject<User[]> = new BehaviorSubject(USER);
+  public users$: BehaviorSubject<User[]> = new BehaviorSubject(this.users);
+  private userUrl=serverUrl+'/users';
+
+  private httpOptions = httpOptionsBase;
+
+
+  constructor(private http: HttpClient) {
+    this.loadUsers();
+  }
+
+  loadUsers(): void {
+    this.http.get<User[]>(this.userUrl).subscribe(
+      users => {
+        this.users = users;
+        this.users$.next(this.users);
+      },
+      error => {
+        console.error('Erreur lors du chargement des utilisateurs :', error);
+      }
+    );
+  }
+
 
   /*
    Adds a new user to the list of users.
@@ -26,7 +46,22 @@ export class UsersService {
   addUser(user: User): void {
     this.users.push(user);
     this.users$.next(this.users);
+    this.http.post(this.userUrl, user, httpOptionsBase).subscribe(
+      response => {
+        console.log('Utilisateur ajouté avec succès :', response);
+      },
+      error => {
+        console.error('Erreur lors de l\'ajout de l\'utilisateur :', error);
+
+        // Afficher les détails de l'erreur de validation
+        if (error.error && error.error.details) {
+          console.log('Détails de l\'erreur de validation :', error.error.details);
+        }
+      }
+    );
   }
+
+
 
   /*
    Deletes the specified user from the list of users.
@@ -36,8 +71,18 @@ export class UsersService {
     if (index !== -1) {
       this.users.splice(index, 1);
       this.users$.next(this.users);
+
+      this.http.delete(`${this.userUrl}/${user.id}`).subscribe(
+        () => {
+          console.log('Utilisateur supprimé avec succès');
+        },
+        error => {
+          console.error('Erreur lors de la suppression de l\'utilisateur :', error);
+        }
+      );
     }
   }
+
 
   /*
    Returns the list of users.
