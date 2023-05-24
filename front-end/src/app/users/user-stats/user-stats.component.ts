@@ -35,6 +35,7 @@ export class UserStatsComponent {
     return userList.sort((a, b) => this.sumThemePoints(b.stats.statsByTheme) - this.sumThemePoints(a.stats.statsByTheme));
   }
 
+
   sortByThemePoints(userList: any[]): any[]{
     return userList
     /*return userList.sort((a,b)=>{
