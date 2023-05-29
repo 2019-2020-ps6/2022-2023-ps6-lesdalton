@@ -3,7 +3,7 @@ import {User} from "../../../models/user.models";
 import {USER} from "../../../mocks/user-list.mock";
 import {serverUrl} from "../../../configs/server.config";
 import {UsersService} from "../../../services/users.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -14,10 +14,15 @@ import {HttpClient} from "@angular/common/http";
 export class UserStatsComponent {
 
   public userList: User[] = [];
+  user!: User;
 
 
-  constructor(private userService: UsersService, private router: Router,private http: HttpClient) {
-    this.userService.users$.subscribe((users) => (this.userList =users));
+  constructor(private route: ActivatedRoute,private userService:UsersService) {}
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.user = this.userService.getUserByName(params['user']);
+    });
   }
   filterType: string = 'total';
 
@@ -29,10 +34,6 @@ export class UserStatsComponent {
       sum += theme.themePoints;
     }
     return sum;
-  }
-  sortByTotalPoints(userList: any[]): any[] {
-
-    return userList.sort((a, b) => this.sumThemePoints(b.stats.statsByTheme) - this.sumThemePoints(a.stats.statsByTheme));
   }
 
 

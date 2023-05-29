@@ -1,18 +1,15 @@
 <div>
-  <h1>Statistiques des joueurs</h1>
+  <h1>Statistiques de {{ user.lastName }} {{user.firstName}}</h1>
   <table class="tableau-style">
     <thead>
     <tr>
-      <th>Classement</th>
       <th>Joueur</th>
       <th>Total de points</th>
       <th>Statistiques par thème</th>
     </tr>
     </thead>
     <tbody>
-    <ng-container *ngFor="let user of this.sortByTotalPoints(userList)">
       <tr>
-        <td>{{userList.indexOf(user)+1}}</td>
         <td>{{ user.lastName }} {{user.firstName}}</td>
         <td>{{ this.sumThemePoints(user.stats?.statsByTheme || []) }}</td>
         <td>
@@ -34,7 +31,6 @@
           </table>
         </td>
       </tr>
-    </ng-container>
     </tbody>
   </table>
 </div>

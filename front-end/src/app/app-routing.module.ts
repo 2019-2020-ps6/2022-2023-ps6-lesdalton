@@ -23,6 +23,7 @@ import {QuizGameComponent} from "./game/quiz-game/quiz-game.component";
 import {QuizConfigComponent} from "./quizzes/quiz-config/quiz-config.component";
 import {QuizConfigQuestionComponent} from "./quizzes/quiz-config-question/quiz-config-question.component";
 import {PresentationComponent} from "./presentation/presentation.component";
+import {UserStatsComponent} from "./users/user-stats/user-stats.component";
 
 
 const routes: Routes = [
@@ -47,6 +48,7 @@ const routes: Routes = [
   {path: 'actions', component:ActionsComponent},
   {path: "login-new-account", component: LoginNewAccountComponent},
   {path: "user-config", component: UserConfigComponent},
+  {path: "user-stats",component: UserStatsComponent},
 
   {path: "config-pop-up", component: ConfigPopUpComponent},
   {path:"password",component: PasswordComponent},
