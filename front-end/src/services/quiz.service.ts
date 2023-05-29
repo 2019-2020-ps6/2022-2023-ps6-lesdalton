@@ -100,6 +100,7 @@ export class QuizService {
   }
 
   addQuestion(question: Question): void {
+
     this.questions.push(question);
     this.questions$.next(this.questions);
   }

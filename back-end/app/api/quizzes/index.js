@@ -9,14 +9,9 @@ const router = new Router()
 
 router.use('/:quizId/questions', QuestionsRouter)
 
-// /////////////////////////////////
-//
-//    AFFICHER TOUS LES QUIZZES
-//
-// /////////////////////////////////
 router.get('/', (req, res) => {
   try {
-    const quizzes = Quiz.get();
+    const quizzes = Quiz.get()
     res.status(200).json(quizzes)
   } catch (err) {
     manageAllErrors(res, err)
