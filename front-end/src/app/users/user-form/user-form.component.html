@@ -1,9 +1,14 @@
 <div class="card">
   <h2>Ajouter un patient</h2>
   <form class="user-form" [formGroup]="userForm" >
+    <label for="picture">
+      Image de profil <br>
+      <input type="file" id="picture" [formControlName]="'picture'" (change)="onFileChange($event)">
+    </label>
+    <br><br>
     <label for="firstName" >
       Prénom <br>
-      <input class="input-custom" type="text" id="firstName" [formControlName]="'firstName'"   >
+      <input class="input-custom" type="text" id="firstName" [formControlName]="'firstName'">
     </label>
     <br>
     <label for="lastName">

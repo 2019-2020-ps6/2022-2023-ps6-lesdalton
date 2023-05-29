@@ -16,6 +16,7 @@ export class UserFormComponent {
 
   constructor(public formBuilder: FormBuilder, public userService: UsersService) {
     this.userForm = this.formBuilder.group({
+      picture:['../../../assets/resources/profilPIc.png'],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       config: this.formBuilder.group({
@@ -37,4 +38,22 @@ export class UserFormComponent {
     console.log('Add user : ',userToCreate);
     this.userService.addUser(userToCreate);
   }
+
+  onFileChange(event: any): void {
+    if (event.target.files && event.target.files.length) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const pictureData = reader.result as string;
+        this.userForm.patchValue({
+          picture: pictureData
+        });
+      };
+
+      reader.readAsDataURL(file);
+    }
+  }
+
+
 }

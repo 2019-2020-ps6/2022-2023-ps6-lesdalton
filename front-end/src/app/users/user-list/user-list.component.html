@@ -8,7 +8,7 @@
   <div class="user" *ngFor="let user of userList">
     <div class="card">
       <div class="user-image">
-        <img src="../../../assets/resources/profilPIc.png">
+        <img [src]="user.picture ">
       </div>
       <h2>{{user.firstName}}  {{user.lastName}}</h2>
       Prénom : {{user.firstName}}<br>

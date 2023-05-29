@@ -2,6 +2,11 @@
   <div [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" [ngStyle]="{'font-family':user.config.font}" class="container">
     <div class="rectangle" [style.height.px]="user.config.fontSize*30">
       <div class="NomPre">
+        <div class="user-image">
+          <img [src]="user.picture">
+          <input type="file" (change)="onFileChange($event, user)" [(ngModel)]="user.picture">
+        </div>
+        <br><br>
         <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Prénom</label><br>
         <input [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
         <br><br>

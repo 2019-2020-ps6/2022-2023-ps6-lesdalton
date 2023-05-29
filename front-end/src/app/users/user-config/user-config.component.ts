@@ -47,4 +47,21 @@ export class UserConfigComponent {
   onSaveConfig(){
     this.userService.updateUser(this.user);
   }
+
+  onFileChange(event: any, user: User): void {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e: any) => {
+      // Obtenez l'URL de l'image sélectionnée
+      const imageSrc = e.target.result as string;
+
+      // Mettez à jour la propriété picture de l'utilisateur avec l'URL de l'image
+      this.user.picture = imageSrc;
+    };
+
+    // Lisez le contenu de l'image en tant que données URL
+    reader.readAsDataURL(file);
+    this.userService.updateUser(user);
+  }
 }
