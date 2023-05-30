@@ -42,7 +42,18 @@ export class QuizConfigComponent {
   }
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
-    this.quiz = this.quizService.getQuizById(id);
+    this.quizService.getQuizById(id).subscribe(
+      response => {
+        // Handle the quiz data received in the response
+        console.log(response);
+        // Assign the quiz data to this.quiz
+        this.quiz = response;
+      },
+      error => {
+        // Handle any errors that occur during the HTTP request
+        console.error(error);
+      }
+    );
 
     // écouter les changements de la liste de questions
     this.quizService.questionsChanged.subscribe(() => {

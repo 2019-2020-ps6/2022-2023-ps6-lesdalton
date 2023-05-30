@@ -7,6 +7,7 @@ import { Answer } from '../models/answer.models';
 import { ANSWER_LIST } from '../mocks/answer-list.mock';
 import {HttpClient} from "@angular/common/http";
 import {httpOptionsBase, serverUrl} from "../configs/server.config";
+import {User} from "../models/user.models";
 
 @Injectable({
   providedIn: 'root'
@@ -57,15 +58,26 @@ export class QuizService {
     }
   }
 
-  updateQuiz(): void {
-    this.quizzes$.next(this.quizzes);
+  updateQuiz(quiz: Quiz): void {
+    const index = this.quizzes.findIndex(u => u.id === quiz.id);
+    console.log("Quiz edited:", this.quizzes[index]);
+    if (index !== -1) {
+      this.quizzes[index] = quiz;
+      this.quizzes$.next(this.quizzes);
+
+      this.http.put(`${this.quizUrl}/${quiz.id}`, quiz, httpOptionsBase).subscribe(
+        () => {
+          console.log('Quiz mis à jour avec succès');
+        },
+        error => {
+          console.error('Erreur lors de la mise à jour du quiz :', error);
+        }
+      );
+    }
   }
 
-  getQuizById(id: string): Quiz {
-    const quiz = this.quizzes.find(u => u.id === id)!;
-    this.questions = quiz.questions;
-    this.questions$.next(this.questions);
-    return quiz;
+  getQuizById(id: string): Observable<Quiz> {
+    return this.http.get<Quiz>(this.quizUrl +'/'+ id);
   }
 
   getQuizByName(name: string): Quiz {
