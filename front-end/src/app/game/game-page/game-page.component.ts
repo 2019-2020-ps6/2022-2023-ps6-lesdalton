@@ -32,7 +32,18 @@ export class GamePageComponent {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      this.quiz = this.quizService.getQuizById(params['quiz']);
+      this.quizService.getQuizById(params['quiz']).subscribe(
+        response => {
+          // Handle the quiz data received in the response
+          console.log(response);
+          // Assign the quiz data to this.quiz
+          this.quiz = response;
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
       this.user = this.usersService.getUserByName(params['user']);
     });
     this.gameService.startGame(this.quiz);

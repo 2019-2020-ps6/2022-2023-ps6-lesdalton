@@ -28,7 +28,4 @@ export class GameSelectThemeComponent {
       this.themeService.themes$.subscribe((themes) => (this.themeList =themes));
     });
   }
-
-
-
 }

@@ -40,7 +40,18 @@ export class QuizConfigQuestionComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')!;
-    this.quiz = this.quizService.getQuizById(id);
+    this.quizService.getQuizById(id).subscribe(
+      response => {
+        // Handle the quiz data received in the response
+        console.log(response);
+        // Assign the quiz data to this.quiz
+        this.quiz = response;
+      },
+      error => {
+        // Handle any errors that occur during the HTTP request
+        console.error(error);
+      }
+    );
 
     const questionIdParam = Number(this.route.snapshot.paramMap.get('question-id'));
     this.question = this.quizService.getQuestionById(questionIdParam);
