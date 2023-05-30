@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {USER} from "../../../mocks/user-list.mock";
 import {User} from "../../../models/user.models";
 import {UsersService} from "../../../services/users.service";
 import {Router} from "@angular/router";

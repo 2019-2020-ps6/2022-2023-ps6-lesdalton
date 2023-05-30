@@ -3,6 +3,7 @@ import {User} from "../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UsersService} from "../../services/users.service";
 import {PopupService} from "../../services/pop-up.service";
+import {UserConfigModel} from "../../models/user-config.model";
 
 @Component({
   selector: 'app-pop-up',
@@ -10,8 +11,15 @@ import {PopupService} from "../../services/pop-up.service";
   styleUrls: ['./pop-up.component.scss']
 })
 export class PopUpComponent {
-  @Input() username!: string;
-  public user!:User;
+  user: User = {
+    firstName: "",
+    lastName: "",
+    id: "",
+    stats: {
+      statsByTheme: []
+    },
+    config: {} as UserConfigModel // Assign an empty UserConfigModel object
+  };
 
   min:number=20;
   max:number=45;
@@ -21,8 +29,21 @@ export class PopUpComponent {
 
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.user = this.userService.getUserByName(params['user']);
+    const id = this.route.snapshot.queryParamMap.get('user')!;
+
+    this.route.queryParams.subscribe(() => {
+      this.userService.getUserById(id).subscribe(
+        response => {
+          // Handle the user data received in the response
+          console.log(response);
+          // Assign the user data to this.user
+          this.user = response;
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
     });
   }
 

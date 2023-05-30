@@ -1,6 +1,5 @@
 import {Component, ElementRef, Input, OnInit} from '@angular/core';
 import {User} from "../../../models/user.models";
-import {USER} from "../../../mocks/user-list.mock";
 import {Theme} from "../../../models/theme.models";
 import {UsersService} from "../../../services/users.service";
 import {ActivatedRoute} from "@angular/router";

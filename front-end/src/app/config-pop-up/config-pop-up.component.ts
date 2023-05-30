@@ -5,6 +5,7 @@ import {UsersService} from "../../services/users.service";
 import {Question} from "../../models/question.model";
 import {Histoire_de_France_questions} from "../../mocks/question-list.mock";
 import {PopupService} from "../../services/pop-up.service";
+import {UserConfigModel} from "../../models/user-config.model";
 
 
 @Component({
@@ -14,7 +15,16 @@ import {PopupService} from "../../services/pop-up.service";
 })
 export class ConfigPopUpComponent {
 
-  user!: User;
+  user: User = {
+    firstName: "",
+    lastName: "",
+    id: "",
+    stats: {
+      statsByTheme: []
+    },
+    config: {} as UserConfigModel // Assign an empty UserConfigModel object
+  };
+
   minFontSize=25;
   maxFontSize=40;
   currentQuestion:Question = Histoire_de_France_questions[0];
@@ -27,8 +37,21 @@ export class ConfigPopUpComponent {
               private router: Router) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.user = this.userService.getUserByName(params['user']);
+    const id = this.route.snapshot.queryParamMap.get('user')!;
+
+    this.route.queryParams.subscribe(() => {
+      this.userService.getUserById(id).subscribe(
+        response => {
+          // Handle the user data received in the response
+          // Assign the user data to this.user
+          this.user = response;
+          console.log(this.user);
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
     });
     this.popUpService.isOpen.subscribe((isOpen: boolean) => {
       this.isPopUpOpen = isOpen;
@@ -74,6 +97,6 @@ export class ConfigPopUpComponent {
 
   onValider() {
     this.popUpService.closePopup(); // close the popup
-    this.router.navigate(['/user-config'], { queryParams: { user: this.user.firstName } });
+    this.router.navigate(['/user-config'], { queryParams: { user: this.user.id } });
   }
 }

@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
 import { User} from "../models/user.models";
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
-import { USER } from 'src/mocks/user-list.mock';
 import { Router } from "@angular/router";
 import {Quiz} from "../models/quiz.model";
 

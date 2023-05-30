@@ -3,7 +3,6 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import { User } from '../../../models/user.models';
 import { UsersService } from '../../../services/users.service';
 import {Router} from "@angular/router";
-import {USER} from "../../../mocks/user-list.mock";
 import {HttpClient} from "@angular/common/http";
 import {serverUrl} from "../../../configs/server.config";
 

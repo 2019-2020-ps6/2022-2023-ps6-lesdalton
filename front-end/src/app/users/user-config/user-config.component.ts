@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {User} from "../../../models/user.models";
 import {ActivatedRoute} from "@angular/router";
 import {UsersService} from "../../../services/users.service";
+import {UserConfigModel} from "../../../models/user-config.model";
 
 
 @Component({
@@ -11,15 +12,36 @@ import {UsersService} from "../../../services/users.service";
 })
 export class UserConfigComponent {
 
-  user!: User;
+  user: User = {
+    firstName: "",
+    lastName: "",
+    id: "",
+    stats: {
+      statsByTheme: []
+    },
+    config: {} as UserConfigModel // Assign an empty UserConfigModel object
+  };
   minFontSize=25;
   maxFontSize=40;
 
   constructor(private route: ActivatedRoute,private userService:UsersService) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.user = this.userService.getUserByName(params['user']);
+    const id = this.route.snapshot.queryParamMap.get('user')!;
+
+    this.route.queryParams.subscribe(() => {
+      this.userService.getUserById(id).subscribe(
+        response => {
+          // Handle the user data received in the response
+          console.log(response);
+          // Assign the user data to this.user
+          this.user = response;
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
     });
   }
   updateValue() {

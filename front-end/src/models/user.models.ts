@@ -5,7 +5,7 @@ import {PlayerStats} from "./stats.models";
 export interface User {
 
   picture ?: string;
-  id?: string;
+  id: string;
   firstName: string;
   lastName: string;
 

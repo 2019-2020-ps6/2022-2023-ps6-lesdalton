@@ -1,6 +1,5 @@
 import {Component, ElementRef, Input} from '@angular/core';
 import {User} from "../../../models/user.models";
-import {USER} from "../../../mocks/user-list.mock";
 import {Theme} from "../../../models/theme.models";
 import {Quiz} from "../../../models/quiz.model";
 import {QUIZ_LIST} from "../../../mocks/quizzes-list.mock";

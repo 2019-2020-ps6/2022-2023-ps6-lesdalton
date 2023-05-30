@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import {User} from "../../../models/user.models";
-import {USER} from "../../../mocks/user-list.mock";
-import {serverUrl} from "../../../configs/server.config";
 import {UsersService} from "../../../services/users.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-user-stats',

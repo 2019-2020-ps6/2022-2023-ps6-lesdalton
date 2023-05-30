@@ -9,6 +9,7 @@ import {User} from "../../../models/user.models";
 import {GameService} from "../../../services/game.service";
 import {UsersService} from "../../../services/users.service";
 import {Answer} from "../../../models/answer.models";
+import {UserConfigModel} from "../../../models/user-config.model";
 
 @Component({
   selector: 'app-game-question',
@@ -29,7 +30,15 @@ export class GameQuestionComponent implements OnInit {
   isAdjustButtonVisible = true;
 
   @Input() quiz!:Quiz;
-  @Input() user!:User;
+  user: User = {
+    firstName: "",
+    lastName: "",
+    id: "",
+    stats: {
+      statsByTheme: []
+    },
+    config: {} as UserConfigModel // Assign an empty UserConfigModel object
+  };
 
 
   constructor(
@@ -41,8 +50,23 @@ export class GameQuestionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    const id = this.route.snapshot.queryParamMap.get('user')!;
+
+    this.route.queryParams.subscribe(() => {
+      this.userService.getUserById(id).subscribe(
+        response => {
+          // Handle the user data received in the response
+          // Assign the user data to this.user
+          this.user = response;
+          console.log(this.user);
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
+    });
     this.route.queryParams.subscribe(params => {
-      this.user = this.userService.getUserByName(params['user']);
       this.quizService.getQuizById(params['quiz']).subscribe(
         response => {
           // Handle the quiz data received in the response
