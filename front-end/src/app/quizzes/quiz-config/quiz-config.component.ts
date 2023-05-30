@@ -65,6 +65,10 @@ export class QuizConfigComponent {
     });
   }
 
+  onSave() {
+    this.quizService.updateQuiz(this.quiz);
+  }
+
   addQuestion(){
     const index=Math.floor(Math.random()*100);
     const text = this.questionForm.getRawValue().text

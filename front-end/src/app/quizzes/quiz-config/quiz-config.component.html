@@ -18,6 +18,7 @@
     <button class="button-card" type="submit">Ajouter</button>
   </form>
 </div>
+<button class="button-card" id="valider" (click)="onSave()" [routerLink]="['/add-quiz']">Valider</button>
 <div class="list">
   <label>La liste des question</label>
   <div class="ligne"></div>
@@ -26,3 +27,4 @@
       <button class="button-card" [routerLink]="['/quiz-config',quiz.id,question.id]" >{{question.text}}</button>
     </div>
 </div>
+
