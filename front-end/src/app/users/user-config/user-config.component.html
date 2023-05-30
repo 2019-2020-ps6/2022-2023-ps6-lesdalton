@@ -1,5 +1,5 @@
 <div class="text" xmlns="http://www.w3.org/1999/html">
-  <div [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" [ngStyle]="{'font-family':user.config.font}" class="container">
+  <div [style.text-transform]="user.config.type" [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" [ngStyle]="{'font-family':user.config.font}" class="container">
     <div class="rectangle" [style.height.px]="user.config.fontSize*30">
       <div class="NomPre">
         <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Prénom</label><br>
@@ -17,6 +17,12 @@
     <div [ngStyle]="{'font-family':user.config.font}" class="Buttons" [style.height.px]="user.config.fontSize*30">
       <p  [style.font-size.px]="user.config.fontSize*1.2" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Configuration du profil</p>
       <br>
+      <br><br>
+      <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Majuscule : </label><br>
+      <div [style.font-size.px]="user.config.fontSize*3/4" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing*1/2" class="radio-group">
+        <br>
+        <input type="radio" [(ngModel)]="user.config.type" value="lowercase" checked> Non
+        <input type="radio" [(ngModel)]="user.config.type" value="uppercase"> Oui
       <br><br>
       <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Police d'écriture : </label><br>
       <div [style.font-size.px]="user.config.fontSize*3/4" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing*1/2" class="radio-group">

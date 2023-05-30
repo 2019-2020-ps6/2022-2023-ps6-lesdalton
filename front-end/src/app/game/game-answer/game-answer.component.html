@@ -1,9 +1,9 @@
-<div [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" [ngStyle]="{'font-family':user.config.font}" >
+<div [style.text-transform]="user.config.type"  [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" [ngStyle]="{'font-family':user.config.font}" >
   <div class="answers-container">
 
     <button class="answerButton" type="button" *ngFor="let answer of currentQuestion?.answers"
             (click)="this.gameService.checkAnswer(answer)"
-            [style.font-size.px]="user.config.fontSize"
+            [style.text-transform]="user.config.type"  [style.font-size.px]="user.config.fontSize"
             [style.line-height.px]="user.config.lineHeight"
             [style.letter-spacing.px]="user.config.letterSpacing"
             [ngStyle]="{'font-family':user.config.font}">
