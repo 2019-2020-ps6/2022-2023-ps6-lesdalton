@@ -31,6 +31,19 @@ export class GameAnswerComponent {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id')!;
-    this.user = this.userService.getUserById(id);
+    this.route.queryParams.subscribe(() => {
+      this.userService.getUserById(id).subscribe(
+        response => {
+          // Handle the quiz data received in the response
+          console.log(response);
+          // Assign the quiz data to this.quiz
+          this.user = response;
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
+    });
   }
 }

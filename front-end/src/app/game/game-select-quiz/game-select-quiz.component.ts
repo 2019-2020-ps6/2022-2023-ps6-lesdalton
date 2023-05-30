@@ -31,12 +31,21 @@ export class GameSelectQuizComponent {
               private elementRef:ElementRef) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.theme = this.themeService.getThemeByName(params['theme']);
-    });
-    this.route.queryParams.subscribe(params => {
-      this.user = this.userService.getUserByName(params['user']);
-    });
+    const user = this.route.snapshot.queryParamMap.get('user')!;
+    const theme = this.route.snapshot.queryParamMap.get('theme')!;
+    this.theme = this.themeService.getThemeByName(theme);
+    this.userService.getUserById(user).subscribe(
+      response => {
+        // Handle the user data received in the response
+        console.log(response);
+        // Assign the user data to this.user
+        this.user = response;
+      },
+      error => {
+        // Handle any errors that occur during the HTTP request
+        console.error(error);
+      }
+    );
     this.quizSevice.quizzes$.subscribe((quizzes) => (this.quizList =quizzes));
     this.showQuiz(this.theme.name);
   }

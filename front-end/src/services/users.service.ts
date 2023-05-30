@@ -5,6 +5,7 @@ import { User} from "../models/user.models";
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import { USER } from 'src/mocks/user-list.mock';
 import { Router } from "@angular/router";
+import {Quiz} from "../models/quiz.model";
 
 @Injectable({
   providedIn: 'root'
@@ -114,9 +115,8 @@ export class UsersService {
   }
 
 
-  getUserById(id: string): User {
-    const user = this.users.find(u => u.id === id)!;
-    return user;
+  getUserById(id: string): Observable<User> {
+    return  this.http.get<User>(this.userUrl +'/'+ id);
   }
 
   getUserByName(name: string): User {

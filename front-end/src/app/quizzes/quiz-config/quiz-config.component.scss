@@ -35,3 +35,22 @@
   margin-top: 7%;
 }
 
+#question {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#question:hover {
+  background-color: #2980b9;
+  cursor: pointer;
+}
+
+#question:active {
+  background-color: #1f6690;
+}
+

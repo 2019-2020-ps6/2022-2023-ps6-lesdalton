@@ -24,7 +24,7 @@
   <div class="ligne"></div>
   <br>
     <div *ngFor="let question of quiz.questions">
-      <button class="button-card" [routerLink]="['/quiz-config',quiz.id,question.id]" >{{question.text}}</button>
+      <button class="button-card" id="question" [routerLink]="['/quiz-config',quiz.id,question.id]" >{{question.text}}</button>
     </div>
 </div>
 

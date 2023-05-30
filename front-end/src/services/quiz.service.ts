@@ -87,6 +87,7 @@ export class QuizService {
   }
 
   getQuizById(id: string): Observable<Quiz> {
+    console.log(this.http.get<Quiz>(this.quizUrl +'/'+ id));
     return  this.http.get<Quiz>(this.quizUrl +'/'+ id);
   }
 

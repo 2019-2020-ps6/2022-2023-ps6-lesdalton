@@ -17,7 +17,7 @@ import {Answer} from "../../../models/answer.models";
 })
 export class QuizConfigComponent {
 
-  quiz: Quiz = {id:'',name:'',theme:{name:"Sans Thème"},questions:[]};
+  quiz: Quiz = {id:'',name:'',theme:{name:"Sans Thème"},questions:[]}!;
   question: Question={id:1,text:'',answers:[{id:1,text:'',isCorrect:false,questionId:1}]};
   public themeList:Theme[] = this.themeService.themes;
   answer: Answer={id:this.question.answers.length+1,text:'',isCorrect:false,questionId:this.question.id};

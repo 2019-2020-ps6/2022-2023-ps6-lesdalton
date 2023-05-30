@@ -23,9 +23,26 @@ export class GameSelectThemeComponent {
               private themeService:ThemeService) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.user = this.userService.getUserByName(params['name']);
-      this.themeService.themes$.subscribe((themes) => (this.themeList =themes));
+    const id = this.route.snapshot.queryParamMap.get('user')!;
+
+    this.route.queryParams.subscribe(() => {
+      this.userService.getUserById(id).subscribe(
+        response => {
+          // Handle the user data received in the response
+          console.log(response);
+          // Assign the user data to this.user
+          this.user = response;
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
+    });
+
+    this.themeService.themes$.subscribe((themes) => {
+      this.themeList = themes;
     });
   }
+
 }

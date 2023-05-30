@@ -19,6 +19,8 @@ export class GamePageComponent {
   @Input() user!: User;
 
   @Input() quiz!: Quiz;
+  noQuestions = false;
+
 
 
   constructor(
@@ -31,21 +33,33 @@ export class GamePageComponent {
     ) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.quizService.getQuizById(params['quiz']).subscribe(
-        response => {
-          // Handle the quiz data received in the response
-          console.log(response);
-          // Assign the quiz data to this.quiz
-          this.quiz = response;
-        },
-        error => {
-          // Handle any errors that occur during the HTTP request
-          console.error(error);
-        }
-      );
-      this.user = this.usersService.getUserByName(params['user']);
-    });
+    const user = this.route.snapshot.queryParamMap.get('user')!;
+    const quiz = this.route.snapshot.queryParamMap.get('quiz')!;
+
+    this.usersService.getUserById(user).subscribe(
+      response => {
+        // Handle the user data received in the response
+        console.log(response);
+        // Assign the user data to this.user
+        this.user = response;
+      },
+      error => {
+        // Handle any errors that occur during the HTTP request
+        console.error(error);
+      }
+    );
+    this.quizService.getQuizById(quiz).subscribe(
+      response => {
+        // Handle the user data received in the response
+        console.log(response);
+        // Assign the user data to this.user
+        this.quiz = response;
+      },
+      error => {
+        // Handle any errors that occur during the HTTP request
+        console.error(error);
+      }
+    );
     this.gameService.startGame(this.quiz);
     this.gameService.gameFinished.subscribe((result) => {
       console.log(`Game over! Score: ${result.score}, Quiz ID: ${result.quizId}`);
@@ -53,5 +67,8 @@ export class GamePageComponent {
         this.router.navigate(['/result'], { queryParams: { player: this.user.firstName, quiz: result.quizId } });
       });
     });
+    if(this.quiz.questions.length==0){
+      this.noQuestions=true;
+    }
   }
 }
