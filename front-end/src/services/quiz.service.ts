@@ -25,6 +25,7 @@ export class QuizService {
   public answersChanged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   private quizUrl = serverUrl + '/quizzes';
+  private quiz: any;
 
 
   constructor(private http:HttpClient) {
@@ -77,7 +78,7 @@ export class QuizService {
   }
 
   getQuizById(id: string): Observable<Quiz> {
-    return this.http.get<Quiz>(this.quizUrl +'/'+ id);
+    return  this.http.get<Quiz>(this.quizUrl +'/'+ id);
   }
 
   getQuizByName(name: string): Quiz {
@@ -111,10 +112,20 @@ export class QuizService {
     }
   }
 
-  addQuestion(question: Question): void {
-
-    this.questions.push(question);
+  addQuestion(quiz : Quiz,question: Question): void {
+    this.quiz=quiz;
+    this.quiz.questions.push(question);
     this.questions$.next(this.questions);
+
+    this.http.put(`${this.quizUrl}/${quiz.id}`, quiz, httpOptionsBase).subscribe(
+      () => {
+        console.log('Quiz mis à jour avec succès');
+      },
+      error => {
+        console.error('Erreur lors de la mise à jour du quiz :', error);
+      }
+    );
+
   }
 
   deleteQuestion(question: Question){
