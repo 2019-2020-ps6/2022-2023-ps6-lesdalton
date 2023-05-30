@@ -1,7 +1,7 @@
 <div class="parent-container">
   <div class="question-container">
     <p (click)="onQuestionClick()"
-       [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight"
+       [style.text-transform]="user.config.type"  [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight"
        [style.letter-spacing.px]="user.config.letterSpacing"
        [ngStyle]="{'font-family':user.config.font}"
        [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}">
@@ -14,7 +14,7 @@
         <button class="answerButton" type="button"
                 *ngFor="let answer of currentQuestion?.answers"
                 (click)="this.onClickAnswer(answer)"
-                [style.font-size.px]="user.config.fontSize"
+                [style.text-transform]="user.config.type"  [style.font-size.px]="user.config.fontSize"
                 [style.line-height.px]="user.config.lineHeight"
                 [style.letter-spacing.px]="user.config.letterSpacing"
                 [ngStyle]="{'font-family':user.config.font,'background-color': answer?.buttonColor}">

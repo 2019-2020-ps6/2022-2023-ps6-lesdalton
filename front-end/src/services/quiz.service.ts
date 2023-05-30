@@ -26,6 +26,7 @@ export class QuizService {
 
   private quizUrl = serverUrl + '/quizzes';
   private quiz: any;
+  private question: any;
 
 
   constructor(private http:HttpClient) {
@@ -100,19 +101,34 @@ export class QuizService {
     return of(quiz.questions.length);
   }
 
-  getQuestionById(id: number): Question {
-    const question = this.questions.find(u => u.id === id)!;
-    console.log("length",this.questions)
-    const answers = question.answers;
-    this.answers=question.answers;
-    return { ...question, answers };
+  getQuestionById(quizId: string, questionId: string): Observable<Question> {
+    return this.http.get<Question>(`${this.quizUrl}/${quizId}/questions/${questionId}`);
+  }
+
+  getAnswersByQuizAndQuestionId(quizId: string, questionId: string): Observable<Answer[]> {
+    return this.http.get<Answer[]>(`${this.quizUrl}/${quizId}/questions/${questionId}/answers`);
   }
 
 
-  addAnswer(answer: Answer): void {
-    this.answers.push(answer);
+
+
+
+  addAnswer(quiz: Quiz,answer: Answer): void {
+    this.quiz=quiz;
+    this.question=this.quiz.question;
+    this.quiz.question.answers.push(answer);
     this.answers$.next(this.answers);
+
+    this.http.put(`${this.quizUrl}/${quiz.id}`, quiz, httpOptionsBase).subscribe(
+      () => {
+        console.log('Quiz mis à jour avec succès');
+      },
+      error => {
+        console.error('Erreur lors de la mise à jour du quiz :', error);
+      }
+    );
   }
+
 
   deleteAnswer(answer: Answer){
     const index = this.answers.indexOf(answer);
@@ -128,6 +144,15 @@ export class QuizService {
     this.questions$.next(this.questions);
 
     this.http.put(`${this.quizUrl}/${quiz.id}`, quiz, httpOptionsBase).subscribe(
+      () => {
+        console.log('Quiz mis à jour avec succès');
+      },
+      error => {
+        console.error('Erreur lors de la mise à jour du quiz :', error);
+      }
+    );
+
+    this.http.post(`${this.quizUrl}/${quiz.id}/questions`, quiz, httpOptionsBase).subscribe(
       () => {
         console.log('Quiz mis à jour avec succès');
       },
