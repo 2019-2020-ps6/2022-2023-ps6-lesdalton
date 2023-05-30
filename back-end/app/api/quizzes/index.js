@@ -56,6 +56,8 @@ router.put('/:quizId', (req, res) => {
   }
 })
 
+
+
 router.delete('/:quizId', (req, res) => {
   try {
     Quiz.delete(req.params.quizId)
