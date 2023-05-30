@@ -4,10 +4,10 @@ import {USER} from "../../../mocks/user-list.mock";
 import {Theme} from "../../../models/theme.models";
 import {Quiz} from "../../../models/quiz.model";
 import {QUIZ_LIST} from "../../../mocks/quizzes-list.mock";
-import {THEME_LIST} from "../../../mocks/theme.mocks";
 import {ActivatedRoute} from "@angular/router";
 import {UsersService} from "../../../services/users.service";
 import {ThemeService} from "../../../services/theme.service";
+import {QuizService} from "../../../services/quiz.service";
 
 
 @Component({
@@ -18,14 +18,17 @@ import {ThemeService} from "../../../services/theme.service";
 
 
 export class GameSelectQuizComponent {
-  QuizList:Quiz[] = QUIZ_LIST;
+  quizList:Quiz[] = [];
   quizForTheme:Quiz[] = [];
 
   @Input() theme!:Theme;
   @Input() user!:User;
 
 
-  constructor(private route: ActivatedRoute, private userService: UsersService, private themeService: ThemeService, private elementRef:ElementRef) {}
+  constructor(private route: ActivatedRoute, private userService: UsersService,
+              private themeService: ThemeService,
+              private quizSevice:QuizService,
+              private elementRef:ElementRef) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -34,12 +37,13 @@ export class GameSelectQuizComponent {
     this.route.queryParams.subscribe(params => {
       this.user = this.userService.getUserByName(params['user']);
     });
+    this.quizSevice.quizzes$.subscribe((quizzes) => (this.quizList =quizzes));
     this.showQuiz(this.theme.name);
   }
 
 
   showQuiz(theme: string){
-    for (const quiz of this.QuizList ){
+    for (const quiz of this.quizList ){
       if(quiz.theme.name==theme){
         this.quizForTheme.push(quiz);
       }

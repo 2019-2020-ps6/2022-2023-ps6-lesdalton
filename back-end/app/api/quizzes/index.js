@@ -3,20 +3,15 @@ const { Router } = require('express')
 const { Quiz } = require('../../models')
 const manageAllErrors = require('../../utils/routes/error-management')
 const QuestionsRouter = require('./questions')
-const { buildQuizz, buildQuizzes } = require('./manager')
+const { buildQuizz } = require('./manager')
 
 const router = new Router()
 
 router.use('/:quizId/questions', QuestionsRouter)
 
-///////////////////////////////////
-//
-//    AFFICHER TOUS LES QUIZZES
-//
-///////////////////////////////////
 router.get('/', (req, res) => {
   try {
-    const quizzes = buildQuizzes()
+    const quizzes = Quiz.get()
     res.status(200).json(quizzes)
   } catch (err) {
     manageAllErrors(res, err)
@@ -24,11 +19,11 @@ router.get('/', (req, res) => {
 })
 
 
-///////////////////////////////////
+// /////////////////////////////////
 //
 //    AFFICHER UN QUIZ
 //
-///////////////////////////////////
+// /////////////////////////////////
 router.get('/:quizId', (req, res) => {
   try {
     const quizz = buildQuizz(req.params.quizId)
@@ -39,11 +34,11 @@ router.get('/:quizId', (req, res) => {
 })
 
 
-///////////////////////////////////
+// /////////////////////////////////
 //
 //    CREER UN QUIZ
 //
-///////////////////////////////////
+// /////////////////////////////////
 router.post('/', (req, res) => {
   try {
     const quiz = Quiz.create({ ...req.body })

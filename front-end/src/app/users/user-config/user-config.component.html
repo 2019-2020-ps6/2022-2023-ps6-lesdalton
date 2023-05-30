@@ -10,7 +10,7 @@
         <br><br>
         <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Information supplémentaire</label><br>
         <textarea [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
-        <button class="button-card"><label [style.font-size.px]="user.config.fontSize" >Statistique</label></button>
+        <button [routerLink]="['/user-stats']" [queryParams]="{ user: user.firstName }" class="button-card"><label [style.font-size.px]="user.config.fontSize" >Statistique</label></button>
       </div>
     </div>
 

@@ -12,7 +12,7 @@ import {ThemeService} from "../../../services/theme.service";
 })
 export class QuizFormComponent {
 
-  public themeList:Theme[] = this.themeService.themes;
+  public themeList:Theme[] = [];
 
   quizForm = new FormGroup({
     name: new FormControl(),
@@ -20,7 +20,9 @@ export class QuizFormComponent {
     question: new FormControl()
   });
 
-  constructor(private quizService: QuizService,private themeService: ThemeService) {}
+  constructor(private quizService: QuizService,private themeService: ThemeService) {
+    this.themeService.themes$.subscribe((themes) => (this.themeList =themes));
+  }
 
   onSubmit() {
     const quiz:Quiz = {

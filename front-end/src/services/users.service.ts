@@ -46,9 +46,22 @@ export class UsersService {
   addUser(user: User): void {
     this.users.push(user);
     this.users$.next(this.users);
-    this.http.post(this.userUrl, user, httpOptionsBase);
+    this.http.post(this.userUrl, user, httpOptionsBase).subscribe(
+      response => {
+        console.log('Utilisateur ajouté avec succès :', response);
+      },
+      error => {
+        console.error('Erreur lors de l\'ajout de l\'utilisateur :', error);
 
+        // Afficher les détails de l'erreur de validation
+        if (error.error && error.error.details) {
+          console.log('Détails de l\'erreur de validation :', error.error.details);
+        }
+      }
+    );
   }
+
+
 
   /*
    Deletes the specified user from the list of users.
@@ -58,8 +71,18 @@ export class UsersService {
     if (index !== -1) {
       this.users.splice(index, 1);
       this.users$.next(this.users);
+
+      this.http.delete(`${this.userUrl}/${user.id}`).subscribe(
+        () => {
+          console.log('Utilisateur supprimé avec succès');
+        },
+        error => {
+          console.error('Erreur lors de la suppression de l\'utilisateur :', error);
+        }
+      );
     }
   }
+
 
   /*
    Returns the list of users.
@@ -74,12 +97,22 @@ export class UsersService {
    */
   updateUser(user: User): void {
     const index = this.users.findIndex(u => u.firstName === user.firstName);
-    console.log("User edited : ",this.users[index]);
+    console.log("User edited:", this.users[index]);
     if (index !== -1) {
       this.users[index] = user;
       this.users$.next(this.users);
+
+      this.http.put(`${this.userUrl}/${user.id}`, user, httpOptionsBase).subscribe(
+        () => {
+          console.log('Utilisateur mis à jour avec succès');
+        },
+        error => {
+          console.error('Erreur lors de la mise à jour de l\'utilisateur :', error);
+        }
+      );
     }
   }
+
 
   getUserById(id: string): User {
     const user = this.users.find(u => u.id === id)!;
@@ -100,12 +133,24 @@ export class UsersService {
 
     // Si l'objet statsByTheme n'existe pas encore pour ce thème, le créer
     if (!theme) {
-      stats.push({themeName: themeName, themePoints: newScore});
+      stats.push({ themeName: themeName, themePoints: newScore });
     } else {
       // Si l'objet statsByTheme existe déjà pour ce thème, mettre à jour le score
       theme.themePoints += newScore;
     }
+
+    // Mettre à jour les statistiques de l'utilisateur côté serveur en utilisant une requête PUT
+    const userUrl = `${this.userUrl}/${user.id}`;
+    this.http.put(userUrl, user, httpOptionsBase).subscribe(
+      () => {
+        console.log('Statistiques de l\'utilisateur mises à jour avec succès');
+      },
+      error => {
+        console.error('Erreur lors de la mise à jour des statistiques de l\'utilisateur :', error);
+      }
+    );
   }
+
 
 
 }
