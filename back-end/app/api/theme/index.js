@@ -47,6 +47,12 @@ router.get('/:themeId', (req, res) => {
   }
 })
 
+
+// /////////////////////////////////
+//
+//    SUPPRIMER UN THEME
+//
+// /////////////////////////////////
 router.delete('/:themeId', (req, res) => {
   try {
     Theme.delete(req.params.themeId)
