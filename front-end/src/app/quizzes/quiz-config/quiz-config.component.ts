@@ -65,12 +65,16 @@ export class QuizConfigComponent {
     });
   }
 
+  onSave() {
+    this.quizService.updateQuiz(this.quiz);
+  }
+
   addQuestion(){
     const index=Math.floor(Math.random()*100);
     const text = this.questionForm.getRawValue().text
     const questionToAdd: Question={id:index,text:text,answers:[{id:1 ,text:text,isCorrect:false,questionId:index}]};
     console.log('question added : ',questionToAdd)
-    this.quizService.addQuestion(questionToAdd);
+    this.quizService.addQuestion(this.quiz,questionToAdd);
     this.quizService.questionsChanged.next(true);
   }
 
