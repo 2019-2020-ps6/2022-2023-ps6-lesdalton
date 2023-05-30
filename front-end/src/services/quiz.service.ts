@@ -56,6 +56,15 @@ export class QuizService {
     if (index !== -1) {
       this.quizzes.splice(index, 1);
       this.quizzes$.next(this.quizzes);
+
+      this.http.delete(`${this.quizUrl}/${quiz.id}`).subscribe(
+        () => {
+          console.log('quiz supprimé avec succès');
+        },
+        error => {
+          console.error('Erreur lors de la suppression du quiz :', error);
+        }
+      );
     }
   }
 
