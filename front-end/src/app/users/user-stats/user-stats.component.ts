@@ -17,8 +17,21 @@ export class UserStatsComponent {
   constructor(private route: ActivatedRoute,private userService:UsersService) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.user = this.userService.getUserByName(params['user']);
+    const id = this.route.snapshot.queryParamMap.get('user')!;
+
+    this.route.queryParams.subscribe(() => {
+      this.userService.getUserById(id).subscribe(
+        response => {
+          // Handle the user data received in the response
+          console.log(response);
+          // Assign the user data to this.user
+          this.user = response;
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
     });
   }
   filterType: string = 'total';

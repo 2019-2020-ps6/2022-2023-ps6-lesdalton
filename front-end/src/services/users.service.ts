@@ -96,7 +96,7 @@ export class UsersService {
    Updates the specified user with the provided data.
    */
   updateUser(user: User): void {
-    const index = this.users.findIndex(u => u.firstName === user.firstName);
+    const index = this.users.findIndex(u => u.id === user.id);
     console.log("User edited:", this.users[index]);
     if (index !== -1) {
       this.users[index] = user;
