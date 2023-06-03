@@ -31,7 +31,22 @@ export class PopUpComponent {
 
 
   ngOnInit() {
+    /*const id = this.route.snapshot.queryParamMap.get('user')!;
 
+    this.route.queryParams.subscribe(() => {
+      this.userService.getUserById(id).subscribe(
+        response => {
+          // Handle the user data received in the response
+          console.log(response);
+          // Assign the user data to this.user
+          this.user = response;
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
+    });*/
   }
 
   value = 0;
@@ -57,6 +72,7 @@ export class PopUpComponent {
   }
 
   onValider() {
+    this.userService.updateUser(this.user);
     this.valider.emit();
     this.popUpService.openAdjustButton();
   }

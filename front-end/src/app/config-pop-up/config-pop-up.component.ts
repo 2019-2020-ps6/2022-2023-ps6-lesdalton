@@ -6,6 +6,7 @@ import {Question} from "../../models/question.model";
 import {Histoire_de_France_questions} from "../../mocks/question-list.mock";
 import {PopupService} from "../../services/pop-up.service";
 import {UserConfigModel} from "../../models/user-config.model";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -39,7 +40,22 @@ export class ConfigPopUpComponent {
               private router: Router) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.queryParamMap.get('user')!;
+    this.route.queryParams.subscribe(params => {
+      let id = params['user'];
+      this.userService.getUserById(id).subscribe(
+        response => {
+          // Handle the user data received in the response
+          console.log(response);
+          // Assign the user data to this.user
+          this.user = response;
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
+    });
+    /*const id = this.route.snapshot.queryParamMap.get('user')!;
 
     this.route.queryParams.subscribe(() => {
       this.userService.getUserById(id).subscribe(
@@ -54,7 +70,7 @@ export class ConfigPopUpComponent {
           console.error(error);
         }
       );
-    });
+    });*/
     this.popUpService.isOpen.subscribe((isOpen: boolean) => {
       this.isPopUpOpen = isOpen;
     });
@@ -99,6 +115,7 @@ export class ConfigPopUpComponent {
 
   onValider() {
     this.popUpService.closePopup(); // close the popup
+    this.userService.updateUser(this.user);
     this.router.navigate(['/user-config'], { queryParams: { user: this.user.id } });
   }
 }

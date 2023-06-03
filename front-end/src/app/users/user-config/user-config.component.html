@@ -33,7 +33,10 @@
         <br><br>
       </div>
       <br><br>
-      <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Taille d'écriture : </label><br>
+      <label
+        [style.font-size.px]="user.config.fontSize"
+        [style.line-height.px]="user.config.lineHeight"
+        [style.letter-spacing.px]="user.config.letterSpacing">Taille d'écriture :{{user.config.fontSize}} </label><br>
       <input type="range"  [(ngModel)]="user.config.fontSize" (input)="updateValue()" min="{{minFontSize}}" max="{{maxFontSize}}" class="gauge-input">
       <br>
       <label [style.font-size.px]="user.config.fontSize" [style.letter-spacing.px]="user.config.letterSpacing"> Différence entre les lignes :</label><br>
