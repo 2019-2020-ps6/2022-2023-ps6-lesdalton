@@ -1,55 +1,51 @@
 <div class="text" xmlns="http://www.w3.org/1999/html">
-  <div [style.text-transform]="user.config.type" [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" [ngStyle]="{'font-family':user.config.font}" class="container">
-    <div class="rectangle" [style.height.px]="user.config.fontSize*30">
+  <div [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" class="container">
+    <div class="rectangle" [style.height.px]="user.config.fontSize * 30">
       <div class="NomPre">
-        <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Prénom</label><br>
-        <input [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
+        <label>{{user.firstName}}</label><br>
+        <input type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
         <br><br>
-        <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Nom</label><br>
-        <input [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" type="lastName" id="lastName" name="lastName" [(ngModel)]="user.lastName">
+        <label>Nom</label><br>
+        <input type="lastName" id="lastName" name="lastName" [(ngModel)]="user.lastName">
         <br><br>
-        <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Information supplémentaire</label><br>
-        <textarea [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
-        <button [routerLink]="['/user-stats']" [queryParams]="{ user: user.id }" class="button-card"><label [style.font-size.px]="user.config.fontSize" >Statistique</label></button>
+        <label>Information supplémentaire</label><br>
+        <textarea type="info" id="info" name="info" [(ngModel)]="user.info"></textarea>
+        <button [routerLink]="['/user-stats']" [queryParams]="{ user: user.id }" class="button-card">Statistique</button>
       </div>
     </div>
 
-    <div [ngStyle]="{'font-family':user.config.font}" class="Buttons" [style.height.px]="user.config.fontSize*30">
-      <p  [style.font-size.px]="user.config.fontSize*1.2" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Configuration du profil</p>
+    <div class="Buttons" [style.height.px]="user.config.fontSize * 30">
+      <p>{{'Configuration du profil'}}</p>
       <br>
       <br><br>
-      <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Majuscule : </label><br>
-      <div [style.font-size.px]="user.config.fontSize*3/4" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing*1/2" class="radio-group">
+      <label>Majuscule : </label><br>
+      <div class="radio-group">
         <br>
         <input type="radio" [(ngModel)]="user.config.type" value="lowercase" checked> Non
         <input type="radio" [(ngModel)]="user.config.type" value="uppercase"> Oui
-      <br><br>
-      <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing">Police d'écriture : </label><br>
-      <div [style.font-size.px]="user.config.fontSize*3/4" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing*1/2" class="radio-group">
-        <br>
-        <input type="radio" [(ngModel)]="user.config.font" value="Arial Black" checked> Arial
-        <input type="radio" [(ngModel)]="user.config.font" value="Helvetica Black"> Helvetica
-        <input type="radio" [(ngModel)]="user.config.font" value="Verdana"> Verdana
         <br><br>
+        <label>Police d'écriture : </label><br>
+        <div class="radio-group">
+          <br>
+          <input type="radio" [(ngModel)]="user.config.font" value="Arial Black" checked> Arial
+          <input type="radio" [(ngModel)]="user.config.font" value="Helvetica Black"> Helvetica
+          <input type="radio" [(ngModel)]="user.config.font" value="Verdana"> Verdana
+          <br><br>
+        </div>
+        <br><br>
+        <label>Taille d'écriture : {{user.config.fontSize}}</label><br>
+        <input type="range" [(ngModel)]="user.config.fontSize" (input)="updateValue()" min="{{minFontSize}}" max="{{maxFontSize}}" class="gauge-input">
+        <br>
+        <label>Différence entre les lignes :</label><br>
+        <input type="range" [(ngModel)]="user.config.lineHeight" (input)="updateValue()" min="16" max="60" class="gauge-input">
+        <br>
+        <label>L'espacement :</label><br>
+        <input type="range" [(ngModel)]="user.config.letterSpacing" (input)="updateValue()" min="0" max="13" class="gauge-input">
+        <br>
+        <button class="button-card" (click)="onSaveConfig()" [routerLink]="['/config-pop-up']" [queryParams]="{ user: user.id }">Visualiser</button>
+        <div class="valider">
+          <button class="button-card" [routerLink]="['/user-list']" (click)="onSaveConfig()">Valider</button>
+        </div>
       </div>
-      <br><br>
-      <label
-        [style.font-size.px]="user.config.fontSize"
-        [style.line-height.px]="user.config.lineHeight"
-        [style.letter-spacing.px]="user.config.letterSpacing">Taille d'écriture :{{user.config.fontSize}} </label><br>
-      <input type="range"  [(ngModel)]="user.config.fontSize" (input)="updateValue()" min="{{minFontSize}}" max="{{maxFontSize}}" class="gauge-input">
-      <br>
-      <label [style.font-size.px]="user.config.fontSize" [style.letter-spacing.px]="user.config.letterSpacing"> Différence entre les lignes :</label><br>
-      <input type="range"  [(ngModel)]="user.config.lineHeight" (input)="updateValue()" min="16" max="60" class="gauge-input">
-      <br>
-      <label [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing"> L'espacement :</label><br>
-      <input type="range"  [(ngModel)]="user.config.letterSpacing" (input)="updateValue()" min="0" max="13" class="gauge-input">
-      <br>
-    <button class="button-card" (click)="onSaveConfig()" [routerLink]="['/config-pop-up']" [queryParams]="{ user: user.id }"><label [style.font-size.px]="user.config.fontSize">Visualiser</label></button>
-    <div class="valider">
-      <button class="button-card" [routerLink]="['/user-list']" (click)="onSaveConfig()"><label [style.font-size.px]="user.config.fontSize">Valider</label></button>
     </div>
   </div>
-</div>
-</div>
-</div>
