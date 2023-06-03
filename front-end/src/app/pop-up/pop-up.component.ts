@@ -11,7 +11,7 @@ import {UserConfigModel} from "../../models/user-config.model";
   styleUrls: ['./pop-up.component.scss']
 })
 export class PopUpComponent {
-  user: User = {
+   @Input() user: User = {
     firstName: "",
     lastName: "",
     id: "",
@@ -26,25 +26,12 @@ export class PopUpComponent {
   constructor(private route: ActivatedRoute, private userService: UsersService, private elementRef:ElementRef, private popUpService: PopupService) {}
 
   @Output() valider: EventEmitter<void> = new EventEmitter<void>();
+  @Output() fermer: EventEmitter<void> = new EventEmitter<void>();
+
 
 
   ngOnInit() {
-    const id = this.route.snapshot.queryParamMap.get('user')!;
 
-    this.route.queryParams.subscribe(() => {
-      this.userService.getUserById(id).subscribe(
-        response => {
-          // Handle the user data received in the response
-          console.log(response);
-          // Assign the user data to this.user
-          this.user = response;
-        },
-        error => {
-          // Handle any errors that occur during the HTTP request
-          console.error(error);
-        }
-      );
-    });
   }
 
   value = 0;
@@ -74,5 +61,9 @@ export class PopUpComponent {
     this.popUpService.openAdjustButton();
   }
 
+  onClose(){
+    this.fermer.emit();
+    this.popUpService.closePopup();
+  }
 
 }

@@ -15,7 +15,9 @@ import {UserConfigModel} from "../../models/user-config.model";
 })
 export class ConfigPopUpComponent {
 
-  user: User = {
+
+
+  @Input() user: User = {
     firstName: "",
     lastName: "",
     id: "",

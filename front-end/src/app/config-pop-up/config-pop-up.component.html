@@ -23,7 +23,7 @@
 
     </div>
     <div class="pop-up" *ngIf="isPopUpOpen">
-      <app-pop-up (valider)="onValider()"></app-pop-up>
+      <app-pop-up [user]="user" (fermer)="onPopClick()" (valider)="onValider()"></app-pop-up>
     </div>
   </div>
   <div class="open-pop-up" *ngIf="isAdjustButtonVisible">

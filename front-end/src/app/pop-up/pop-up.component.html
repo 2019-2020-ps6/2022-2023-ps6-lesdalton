@@ -1,5 +1,5 @@
 <div class="rectangle">
-  <button class="close" (click)="onValider()">X</button><br><br><br>
+  <button class="close" (click)="onClose()">X</button><br><br><br>
   <label >Police d'écriture : </label><br>
   <div class="radio-group">
     <br>
@@ -8,7 +8,7 @@
     <input type="radio" [(ngModel)]="user.config.font" value="Verdana"> Verdana
     <br><br>
   </div>
-  <label>Taille d'écriture {{user.firstName}} : </label><br>
+  <label>Taille d'écriture : </label><br>
   <input type="range"  [(ngModel)]="user.config.fontSize" (input)="updateValue()" min="{{min}}" max="{{max}}" class="gauge-input">
   <br>
   <label>Différence entre les lignes :</label><br>
