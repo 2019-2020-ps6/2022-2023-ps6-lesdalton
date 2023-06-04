@@ -51,10 +51,24 @@ export class PopUpComponent {
 
   value = 0;
   updateValue() {
-    if (this.value < 16) {
-      this.value = 16;
-    } else if (this.value > 35) {
-      this.value = 35;
+    console.log("FontSize : ", this.user.config.fontSize, "lineHeight : " ,this.user.config.lineHeight, "letterSpacing : ",this.user.config.letterSpacing);
+
+    if (this.user.config.fontSize < 20) {
+      this.user.config.fontSize = 20;
+    } else if (this.user.config.fontSize > 45) {
+      this.user.config.fontSize = 45;
+    }
+
+    if (this.user.config.lineHeight< 0) {
+      this.user.config.lineHeight = 0;
+    } else if (this.user.config.lineHeight > 100) {
+      this.user.config.lineHeight = 100;
+    }
+
+    if(this.user.config.letterSpacing<0){
+      this.user.config.letterSpacing=0;
+    } else if(this.user.config.letterSpacing>100){
+      this.user.config.letterSpacing=100;
     }
   }
 
