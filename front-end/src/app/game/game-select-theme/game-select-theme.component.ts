@@ -5,6 +5,7 @@ import {UsersService} from "../../../services/users.service";
 import {ActivatedRoute} from "@angular/router";
 import {PopupService} from "../../../services/pop-up.service";
 import {ThemeService} from "../../../services/theme.service";
+import {UserConfigModel} from "../../../models/user-config.model";
 
 @Component({
   selector: 'app-game-select-theme',
@@ -13,7 +14,15 @@ import {ThemeService} from "../../../services/theme.service";
 })
 export class GameSelectThemeComponent {
   themeList:Theme[] = [];
-  @Input() user!:User;
+  @Input() user: User = {
+    firstName: "",
+    lastName: "",
+    id: "",
+    stats: {
+      statsByTheme: []
+    },
+    config: {} as UserConfigModel // Assign an empty UserConfigModel object
+  };
 
 
 

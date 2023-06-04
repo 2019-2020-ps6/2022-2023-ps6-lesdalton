@@ -7,6 +7,7 @@ import {ActivatedRoute} from "@angular/router";
 import {UsersService} from "../../../services/users.service";
 import {ThemeService} from "../../../services/theme.service";
 import {QuizService} from "../../../services/quiz.service";
+import {UserConfigModel} from "../../../models/user-config.model";
 
 
 @Component({
@@ -21,7 +22,15 @@ export class GameSelectQuizComponent {
   quizForTheme:Quiz[] = [];
 
   @Input() theme!:Theme;
-  @Input() user!:User;
+  @Input() user: User = {
+    firstName: "",
+    lastName: "",
+    id: "",
+    stats: {
+      statsByTheme: []
+    },
+    config: {} as UserConfigModel // Assign an empty UserConfigModel object
+  };
 
 
   constructor(private route: ActivatedRoute, private userService: UsersService,
@@ -45,14 +54,14 @@ export class GameSelectQuizComponent {
         console.error(error);
       }
     );
-    this.quizSevice.quizzes$.subscribe((quizzes) => (this.quizList =quizzes));
+    this.quizSevice.quizzes$.subscribe((quizzes) => (this.quizList = quizzes));
     this.showQuiz(this.theme.name);
   }
 
 
   showQuiz(theme: string){
     for (const quiz of this.quizList ){
-      if(quiz.theme.name==theme){
+      if(quiz.theme.name===theme){
         this.quizForTheme.push(quiz);
       }
     }
