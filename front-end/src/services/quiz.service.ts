@@ -113,13 +113,13 @@ export class QuizService {
 
 
 
-  addAnswer(quiz: Quiz,answer: Answer): void {
+  addAnswer(quiz: Quiz,question:Question,answer: Answer): void {
     this.quiz=quiz;
-    this.question=this.quiz.question;
-    this.quiz.question.answers.push(answer);
-    this.answers$.next(this.answers);
+    this.question=this.quiz.questions.find((q: { id: number; }) => q.id===question.id);
+    console.log(question);
+    this.question.answers.push(answer);
 
-    this.http.put(`${this.quizUrl}/${quiz.id}`, quiz, httpOptionsBase).subscribe(
+    this.http.put(`${this.quizUrl}/${quiz.id}`, this.quiz, httpOptionsBase).subscribe(
       () => {
         console.log('Quiz mis à jour avec succès');
       },

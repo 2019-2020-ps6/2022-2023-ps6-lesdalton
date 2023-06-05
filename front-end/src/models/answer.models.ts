@@ -4,7 +4,7 @@ export interface Answer {
   text: string;
   isCorrect: boolean;
   image?: string;
-  questionId: number;
+  questionId?: number;
 
   buttonColor?: string;
 

@@ -86,9 +86,12 @@ export class QuizConfigQuestionComponent implements OnInit {
   }
 
   addAnswer() {
-    const answerToAdd: Answer = this.answerForm.getRawValue() as Answer;
+    let index = Date.now();
+    const text = this.answerForm.getRawValue().text
+    //const questionToAdd: Question={id:index,text:text,answers:[]};
+    const answerToAdd: Answer={isCorrect: false, id:index,text:text};
     console.log('answer added : ', answerToAdd);
-    this.quizService.addAnswer(this.quiz,answerToAdd);
+    this.quizService.addAnswer(this.quiz,this.question,answerToAdd);
     this.quizService.answersChanged.next(true);
   }
 
