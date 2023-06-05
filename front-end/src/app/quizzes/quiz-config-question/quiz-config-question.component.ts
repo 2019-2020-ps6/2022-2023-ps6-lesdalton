@@ -40,7 +40,7 @@ export class QuizConfigQuestionComponent implements OnInit {
 
   ngOnInit(): void {
     const quizId = this.route.snapshot.paramMap.get('id')!;
-    const questionId = this.route.snapshot.paramMap.get('question-id')
+    const questionId = this.route.snapshot.paramMap.get('question-id')!;
 
     this.route.queryParams.subscribe(() => {
       this.quizService.getQuizById(quizId).subscribe(
@@ -56,6 +56,22 @@ export class QuizConfigQuestionComponent implements OnInit {
         }
       );
     });
+
+    this.route.queryParams.subscribe(() => {
+      this.quizService.getQuestionById(quizId,questionId).subscribe(
+        response => {
+          // Handle the user data received in the response
+          console.log(response);
+          // Assign the user data to this.user
+          this.question = response;
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
+    });
+
 
     this.quizService.answersChanged.subscribe(() => {
       this.answerForm = this.formBuilder.group({
