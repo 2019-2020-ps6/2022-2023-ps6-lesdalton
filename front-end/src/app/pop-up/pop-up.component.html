@@ -1,11 +1,16 @@
 <div class="rectangle">
   <button class="close" (click)="onClose()">X</button><br><br><br>
+  <label>Majuscule : </label><br>
+  <div class="radio-group1">
+    <input type="radio" name="maj" [(ngModel)]="user.config.type" value="lowercase" checked> Non
+    <input type="radio" name="maj" [(ngModel)]="user.config.type" value="uppercase"> Oui
+    <br><br>
   <label >Police d'écriture : </label><br>
   <div class="radio-group">
     <br>
-    <input type="radio" [(ngModel)]="user.config.font" value="Arial Black" checked> Arial
-    <input type="radio" [(ngModel)]="user.config.font" value="Helvetica Black"> Helvetica
-    <input type="radio" [(ngModel)]="user.config.font" value="Verdana"> Verdana
+    <input type="radio" name="font"  [(ngModel)]="user.config.font" value="Arial Black" checked> Arial
+    <input type="radio" name="font"  [(ngModel)]="user.config.font" value="Helvetica Black"> Helvetica
+    <input type="radio" name="font"  [(ngModel)]="user.config.font" value="Verdana"> Verdana
     <br><br>
   </div>
   <label>Taille d'écriture : </label><br>
