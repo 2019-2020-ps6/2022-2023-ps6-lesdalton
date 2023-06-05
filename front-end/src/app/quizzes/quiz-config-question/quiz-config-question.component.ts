@@ -17,6 +17,7 @@ export class QuizConfigQuestionComponent implements OnInit {
   quiz: Quiz = {id: '0', name: '', theme: {name: "Sans Thème"}, questions: []};
   question: Question = {id: 1, text: '', answers: []};
   answerForm: FormGroup;
+  selectedValue: string|undefined;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -99,5 +100,9 @@ export class QuizConfigQuestionComponent implements OnInit {
     console.log('question deleted : ', question);
     this.quizService.deleteQuestion(question);
     this.quizService.questionsChanged.next(true);
+  }
+
+  nbAnswer(){
+
   }
 }

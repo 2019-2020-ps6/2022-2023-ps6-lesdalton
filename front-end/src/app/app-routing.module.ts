@@ -58,6 +58,8 @@ const routes: Routes = [
   {path:"quiz-config/:id/:question-id",component:QuizConfigQuestionComponent},
   {path:"qui-sommes-nous",component:PresentationComponent},
 
+  {path:"quiz-config/:id/question-config",component:QuizConfigQuestionComponent},
+
 ];
 
 @NgModule({

@@ -77,5 +77,4 @@ export class QuizConfigComponent {
     this.quizService.addQuestion(this.quiz,questionToAdd);
     this.quizService.questionsChanged.next(true);
   }
-
 }
