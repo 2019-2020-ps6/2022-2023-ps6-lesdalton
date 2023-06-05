@@ -64,6 +64,7 @@ export class QuizConfigQuestionComponent implements OnInit {
           console.log(response);
           // Assign the user data to this.user
           this.question = response;
+          console.log(this.question);
         },
         error => {
           // Handle any errors that occur during the HTTP request
