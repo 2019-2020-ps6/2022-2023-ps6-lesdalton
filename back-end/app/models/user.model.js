@@ -14,6 +14,7 @@ module.exports = new BaseModel('User', {
     lineHeight: Joi.number().required(),
     letterSpacing: Joi.number().required(),
     contrast: Joi.string(),
+    type: Joi.string(),
   },
   stats: {
     statsByTheme: Joi.array().items({
