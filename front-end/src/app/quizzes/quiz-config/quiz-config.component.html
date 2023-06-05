@@ -12,16 +12,16 @@
 </div>
 <div class="card">
 
-  <button class="button-card" [routerLink]="'/quiz-config/' + quiz.id + '/question-config'">Ajouter une question</button>
+  <!--<button class="button-card" [routerLink]="'/quiz-config/' + quiz.id + '/question-config'">Ajouter une question</button>-->
 
 
-  <!--<form [formGroup]="questionForm" (ngSubmit)="addQuestion()">
+  <form [formGroup]="questionForm" (ngSubmit)="addQuestion()">
     <label for="text">Nouvelle question</label>
     <br>
     <input type="text" id="text" [formControlName]="'text'" required>
     <br><br>
     <button class="button-card" type="submit">Ajouter</button>
-  </form>-->
+  </form>
 </div>
 <button class="button-card" id="valider" (click)="onSave()" [routerLink]="['/add-quiz']">Valider</button>
 <div class="list">

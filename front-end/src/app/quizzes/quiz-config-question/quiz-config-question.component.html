@@ -2,16 +2,16 @@
 <div class="question-config">
   <form>
     <label for="question-input">Question</label><br>
-    <input type="text" id="question-input" name="question">
+    <input type="text" id="question-input" name="question" [(ngModel)]="question.text">
     <br>
   </form>
 
-  <select name="nbReponse" id="nbReponse" (click)="nbAnswer()">
+  <!--<select name="nbReponse" id="nbReponse" (click)="nbAnswer()">
     <option value="">--Choisissez le nbre de propositions de reponses--</option>
     <option value="deux">2</option>
     <option value="trois">3</option>
     <option value="quatre">4</option>
-  </select>
+  </select>-->
 </div>
 <br><br><br><br>
 <div class="card">
@@ -19,10 +19,8 @@
 </div>
 <br><br><br><br>
 
-<div *ngIf="selectedValue =='deux' ">
-  <!-- Affichage des formes en fonction de la valeur sélectionnée -->
-</div>
-<!--<div class="answer-config" *ngIf="question">
+
+<div class="answer-config" *ngIf="question">
   <div class="answer-row" *ngFor="let answer of question.answers; let i = index">
     <div class="card">
       <br>
