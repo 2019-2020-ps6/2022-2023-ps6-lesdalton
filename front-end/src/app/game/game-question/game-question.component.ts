@@ -17,8 +17,8 @@ import {UserConfigModel} from "../../../models/user-config.model";
   styleUrls: ['./game-question.component.scss']
 })
 export class GameQuestionComponent implements OnInit {
-  @Input() quizName!: string;
-  @Input() username!: string;
+  @Input() quizId!: string;
+  @Input() userId!: string;
 
   currentQuestionIndex: number = 0;
   currentQuestion!: Question;
@@ -50,10 +50,11 @@ export class GameQuestionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.queryParamMap.get('user')!;
+    const userId = this.route.snapshot.queryParamMap.get('user')!;
+    const quizId = this.route.snapshot.queryParamMap.get('quiz')!;
 
     this.route.queryParams.subscribe(() => {
-      this.userService.getUserById(id).subscribe(
+      this.userService.getUserById(userId).subscribe(
         response => {
           // Handle the user data received in the response
           // Assign the user data to this.user
@@ -67,7 +68,7 @@ export class GameQuestionComponent implements OnInit {
       );
     });
     this.route.queryParams.subscribe(params => {
-      this.quizService.getQuizById(params['quiz']).subscribe(
+      this.quizService.getQuizById(quizId).subscribe(
         response => {
           // Handle the quiz data received in the response
           console.log(response);

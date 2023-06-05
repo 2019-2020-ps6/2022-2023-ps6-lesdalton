@@ -1,12 +1,16 @@
 <section class="game">
   <div class="resize">
-    <app-game-question [quizName]="quiz.name" [username]="user.firstName">
-      <button class="config" type="button">
-        AJUSTER LA PAGE
-      </button>
-    </app-game-question>
-    <div *ngIf="noQuestions" class="no-questions-message">
-      There are no questions in this quiz.
-    </div>
+    <ng-container *ngIf="!noQuestions">
+      <app-game-question [quizId]="quiz.id" [userId]="user.id">
+        <button class="config" type="button">
+          AJUSTER LA PAGE
+        </button>
+      </app-game-question>
+    </ng-container>
+    <ng-container *ngIf="noQuestions">
+      <div class="no-questions-message">
+        Ce quiz ne contient aucune question.
+      </div>
+    </ng-container>
   </div>
 </section>

@@ -3,17 +3,16 @@ const { Router } = require('express')
 const { Answer, Quiz, Question } = require('../../../models')
 const manageAllErrors = require('../../../utils/routes/error-management')
 const AnswersRouter = require('./answers')
-const { filterQuestionsFromQuizz, getQuestionFromQuiz } = require('./manager')
+const { getQuestionFromQuiz } = require('./manager')
 
 const router = new Router({ mergeParams: true })
 
 router.get('/', (req, res) => {
   try {
-    // Check if quizId exists, if not it will throw a NotFoundError
-    Quiz.getById(req.params.quizId)
-    res.status(200).json(filterQuestionsFromQuizz(req.params.quizId))
+    res.status(200).json(Quiz.getById(req.params.quizId).questions)
   } catch (err) {
     manageAllErrors(res, err)
+    console.log(err)
   }
 })
 

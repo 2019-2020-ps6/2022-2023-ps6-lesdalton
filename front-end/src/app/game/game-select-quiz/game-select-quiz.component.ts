@@ -21,7 +21,7 @@ export class GameSelectQuizComponent {
   quizList:Quiz[] = [];
   quizForTheme:Quiz[] = [];
 
-  @Input() theme!:Theme;
+  @Input() theme:Theme={name:""};
   @Input() user: User = {
     firstName: "",
     lastName: "",
@@ -54,6 +54,8 @@ export class GameSelectQuizComponent {
         console.error(error);
       }
     );
+    this.theme = this.themeService.getThemeByName(theme);
+    console.log(this.theme);
     this.quizSevice.quizzes$.subscribe((quizzes) => (this.quizList = quizzes));
     this.showQuiz(this.theme.name);
   }
@@ -61,7 +63,7 @@ export class GameSelectQuizComponent {
 
   showQuiz(theme: string){
     for (const quiz of this.quizList ){
-      if(quiz.theme.name===theme){
+      if(quiz.theme.name===this.theme.name){
         this.quizForTheme.push(quiz);
       }
     }

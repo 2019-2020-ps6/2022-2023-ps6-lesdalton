@@ -5,5 +5,4 @@
     <li [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}"  *ngFor="let theme of themeList">
       <a [routerLink]="['/select-quiz']" [queryParams]="{ theme: theme.name,user: user.id }">{{theme.name}}</a>
     </li>
-
 </div>
