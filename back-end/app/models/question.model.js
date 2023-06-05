@@ -4,5 +4,5 @@ const Answer = require('./answer.model.js')
 
 module.exports = new BaseModel('Question', {
   text: Joi.string().required(),
-  answers: Joi.array(Answer.schema),
+  answers: Joi.array().items(Answer.schema),
 })
