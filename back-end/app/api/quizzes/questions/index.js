@@ -1,5 +1,4 @@
 const { Router } = require('express')
-
 const { Answer, Quiz, Question } = require('../../../models')
 const manageAllErrors = require('../../../utils/routes/error-management')
 const AnswersRouter = require('./answers')
@@ -18,7 +17,8 @@ router.get('/', (req, res) => {
 
 router.get('/:questionId', (req, res) => {
   try {
-    const question = getQuestionFromQuiz(req.params.quizId, req.params.questionId)
+    const questions = res.status(200).json(Quiz.getById(req.params.quizId).questions)
+    const question = questions.getById(req.params.questionId)
     res.status(200).json(question)
   } catch (err) {
     manageAllErrors(res, err)
