@@ -8,6 +8,9 @@ import {GameService} from "../../../services/game.service";
 import {QuizService} from "../../../services/quiz.service";
 import {Answer} from "../../../models/answer.models";
 import {BehaviorSubject} from "rxjs";
+import {UserConfigModel} from "../../../models/user-config.model";
+import {Theme} from "../../../models/theme.models";
+import {Question} from "../../../models/question.model";
 
 @Component({
   selector: 'app-game-page',
@@ -16,9 +19,23 @@ import {BehaviorSubject} from "rxjs";
 })
 export class GamePageComponent {
 
-  @Input() user!: User;
+  @Input() user: User = {
+    firstName: "",
+    lastName: "",
+    id: "",
+    stats: {
+      statsByTheme: []
+    },
+    config: {} as UserConfigModel // Assign an empty UserConfigModel object
+  };
 
-  @Input() quiz!: Quiz;
+
+  @Input() quiz: Quiz={
+    id: "",
+    name:"",
+    theme:{name:""},
+    questions:[],
+  };
   noQuestions = false;
 
 

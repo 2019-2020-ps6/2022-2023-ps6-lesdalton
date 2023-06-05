@@ -1,6 +1,6 @@
 const { Router } = require('express')
 
-const { Quiz, User} = require('../../models')
+const { Quiz, User } = require('../../models')
 const manageAllErrors = require('../../utils/routes/error-management')
 const QuestionsRouter = require('./questions')
 const { buildQuizz } = require('./manager')
@@ -55,7 +55,6 @@ router.put('/:quizId', (req, res) => {
     manageAllErrors(res, err)
   }
 })
-
 
 
 router.delete('/:quizId', (req, res) => {
