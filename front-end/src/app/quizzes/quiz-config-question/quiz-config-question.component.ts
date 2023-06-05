@@ -16,6 +16,7 @@ export class QuizConfigQuestionComponent implements OnInit {
 
   quiz: Quiz = {id: '0', name: '', theme: {name: "Sans Thème"}, questions: []};
   question: Question = {id: 1, text: '', answers: []};
+  answers:Answer[]=[];
   answerForm: FormGroup;
 
   constructor(
@@ -64,6 +65,7 @@ export class QuizConfigQuestionComponent implements OnInit {
           console.log(response);
           // Assign the user data to this.user
           this.question = response;
+          this.answers = this.question.answers;
           console.log(this.question);
         },
         error => {
@@ -88,16 +90,18 @@ export class QuizConfigQuestionComponent implements OnInit {
   addAnswer() {
     let index = Date.now();
     const text = this.answerForm.getRawValue().text
-    //const questionToAdd: Question={id:index,text:text,answers:[]};
-    const answerToAdd: Answer={isCorrect: false, id:index,text:text};
+    const answerToAdd: Answer={isCorrect: this.answerForm.getRawValue().isCorrect, id:index,text:text};
+    this.quizService.addAnswer(this.quiz,this.question,answerToAdd).subscribe(
+      rep=>this.answers=rep
+    );
+
     console.log('answer added : ', answerToAdd);
-    this.quizService.addAnswer(this.quiz,this.question,answerToAdd);
     this.quizService.answersChanged.next(true);
   }
 
   deleteAnswer(answer: Answer) {
     console.log('answer deleted : ', answer);
-    this.quizService.deleteAnswer(answer);
+    this.quizService.deleteAnswer(this.quiz,this.question,answer).subscribe(rep=>this.answers=rep);
   }
 
   deleteQuestion(question: Question) {

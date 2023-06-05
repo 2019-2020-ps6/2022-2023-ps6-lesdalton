@@ -44,7 +44,6 @@ export class QuizService {
   addQuiz(quiz: Quiz): void {
     this.quizzes.push(quiz);
     this.quizzes$.next(this.quizzes);
-
     this.http.post(this.quizUrl, quiz)
       .subscribe(() => {
         this.retrieveQuizzes();
@@ -113,30 +112,48 @@ export class QuizService {
 
 
 
-  addAnswer(quiz: Quiz,question:Question,answer: Answer): void {
+  addAnswer(quiz: Quiz,question:Question,answer: Answer): Observable<Answer[]> {
     this.quiz=quiz;
     this.question=this.quiz.questions.find((q: { id: number; }) => q.id===question.id);
     console.log(question);
     this.question.answers.push(answer);
+    this.answers$.next(this.question.answers);
+
 
     this.http.put(`${this.quizUrl}/${quiz.id}`, this.quiz, httpOptionsBase).subscribe(
       () => {
-        console.log('Quiz mis à jour avec succès');
+        console.log('Quiz mis à jour avec succès',this.quiz);
       },
       error => {
         console.error('Erreur lors de la mise à jour du quiz :', error);
       }
     );
+    return this.answers$;
   }
 
 
-  deleteAnswer(answer: Answer){
-    const index = this.answers.indexOf(answer);
+  deleteAnswer(quiz: Quiz, question: Question, answer: Answer) {
+    const index = question.answers.indexOf(answer);
     if (index !== -1) {
-      this.answers.splice(index, 1);
-      this.answers$.next(this.answers);
+      question.answers.splice(index, 1);
+      const questionIndex = quiz.questions.findIndex(q => q.id === question.id);
+      if (questionIndex !== -1) {
+        quiz.questions[questionIndex] = question;
+        this.answers$.next(question.answers);
+
+        this.http.put(`${this.quizUrl}/${quiz.id}`, quiz, httpOptionsBase).subscribe(
+          () => {
+            console.log('Réponse supprimée avec succès');
+          },
+          error => {
+            console.error('Erreur lors de la suppression de la réponse du quiz:', error);
+          }
+        );
+      }
     }
+    return this.answers$;
   }
+
 
   addQuestion(quiz: Quiz, question: Question): void {
     // Ajouter la question à la liste des questions du quiz

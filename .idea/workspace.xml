@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-config-question/quiz-config-question.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-config-question/quiz-config-question.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-config-question/quiz-config-question.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-config-question/quiz-config-question.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/models/answer.models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/models/answer.models.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/services/quiz.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/quiz.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

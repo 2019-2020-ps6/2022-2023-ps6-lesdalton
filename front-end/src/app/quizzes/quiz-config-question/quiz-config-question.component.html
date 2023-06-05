@@ -21,7 +21,7 @@
 </div>
 <br><br><br><br>
 <div class="answer-config" *ngIf="question">
-  <div class="answer-row" *ngFor="let answer of question.answers; let i = index">
+  <div class="answer-row" *ngFor="let answer of this.answers; let i = index">
     <div class="card">
       <br>
       <input type="text" id="answer{{i}}" [(ngModel)]="answer.text" >
