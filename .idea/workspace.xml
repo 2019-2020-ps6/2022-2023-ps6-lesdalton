@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/app/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/app/api/quizzes/questions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/api/quizzes/questions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-config-question/quiz-config-question.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizzes/quiz-config-question/quiz-config-question.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

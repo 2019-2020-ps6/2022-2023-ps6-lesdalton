@@ -17,7 +17,9 @@ router.get('/', (req, res) => {
 
 router.get('/:questionId', (req, res) => {
   try {
-    res.status(200).json(Quiz.getById(req.params.quizId).questions.find((i) => i.id=req.params.questionId))
+    let id = req.params.questionId
+    if (typeof id === 'string') id = parseInt(id, 10)
+    res.status(200).json(Quiz.getById(req.params.quizId).questions.find((item) => item.id === id))
   } catch (err) {
     manageAllErrors(res, err)
   }
