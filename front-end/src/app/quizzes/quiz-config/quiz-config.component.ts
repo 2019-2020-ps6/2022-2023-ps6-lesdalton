@@ -4,7 +4,7 @@ import {QuizService} from "../../../services/quiz.service";
 import {Quiz} from "../../../models/quiz.model";
 import {ThemeService} from "../../../services/theme.service";
 import {Theme} from "../../../models/theme.models";
-import {FormBuilder, FormControl, FormGroup, ɵElement} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators, ɵElement} from "@angular/forms";
 import {Question} from "../../../models/question.model";
 import {Answer} from "../../../models/answer.models";
 
@@ -30,14 +30,14 @@ export class QuizConfigComponent {
     id: new FormControl()
   });
 
-  questionForm: FormGroup<{ [K in keyof { quizId: string | undefined; id: number; text: FormControl<any> }]: ɵElement<{ quizId: string; id: number; text: FormControl<any> }[K], null> }> = this.formBuilder.group({
-    id: new FormControl(),
-    quizId: this.quiz.id,
-    text: new FormControl(),
-  });
+  questionForm: FormGroup;
 
 
   constructor(public formBuilder: FormBuilder,private route:ActivatedRoute,private quizService:QuizService, private themeService: ThemeService) {
+    this.questionForm = this.formBuilder.group({
+      text:['', Validators.required],
+      answers : this.formBuilder.array([]),
+    });
 
   }
   ngOnInit() {
@@ -55,14 +55,6 @@ export class QuizConfigComponent {
       }
     );
 
-    // écouter les changements de la liste de questions
-    this.quizService.questionsChanged.subscribe(() => {
-      this.questionForm = this.formBuilder.group({
-        id: new FormControl(),
-        quizId: this.quiz.id,
-        text: new FormControl(),
-      });
-    });
   }
 
   onSave() {
@@ -70,7 +62,7 @@ export class QuizConfigComponent {
   }
 
   addQuestion(){
-    const index=Math.floor(Math.random()*100);
+    const index=Date.now();
     const text = this.questionForm.getRawValue().text
     const questionToAdd: Question={id:index,text:text,answers:[{id:1 ,text:text,isCorrect:false,questionId:index}]};
     console.log('question added : ',questionToAdd)

@@ -40,37 +40,22 @@ export class QuizConfigQuestionComponent implements OnInit {
 
   ngOnInit(): void {
     const quizId = this.route.snapshot.paramMap.get('id')!;
-    const questionId = this.route.snapshot.paramMap.get('question-id')!;
+    const questionId = this.route.snapshot.paramMap.get('question-id')
 
-    this.quizService.getQuestionById(quizId, questionId).subscribe(
-      response => {
-        // Handle the question data received in the response
-        console.log(response);
-        // Assign the question data to this.question
-        this.question = response;
-
-        // Use getAnswersByQuizAndQuestionId to get the answers
-        this.quizService.getAnswersByQuizAndQuestionId(quizId, questionId).subscribe(
-          answers => {
-            // Update the answers of the question
-            this.question.answers = answers;
-            // Update the answerForm with the retrieved question data
-            this.answerForm.patchValue({
-              questionId: this.question.id,
-              text: '',
-              answer: this.question.answers,
-              isCorrect: false
-            });
-          },
-          error => {
-            console.error(error);
-          }
-        );
-      },
-      error => {
-        console.error(error);
-      }
-    );
+    this.route.queryParams.subscribe(() => {
+      this.quizService.getQuizById(quizId).subscribe(
+        response => {
+          // Handle the user data received in the response
+          console.log(response);
+          // Assign the user data to this.user
+          this.quiz = response;
+        },
+        error => {
+          // Handle any errors that occur during the HTTP request
+          console.error(error);
+        }
+      );
+    });
 
     this.quizService.answersChanged.subscribe(() => {
       this.answerForm = this.formBuilder.group({

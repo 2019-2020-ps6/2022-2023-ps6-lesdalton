@@ -138,10 +138,12 @@ export class QuizService {
     }
   }
 
-  addQuestion(quiz : Quiz,question: Question): void {
-    this.quiz=quiz;
+  addQuestion(quiz: Quiz, question: Question): void {
+    // Ajouter la question à la liste des questions du quiz
+    this.quiz=quiz
     this.quiz.questions.push(question);
     this.questions$.next(this.questions);
+
 
     this.http.put(`${this.quizUrl}/${quiz.id}`, quiz, httpOptionsBase).subscribe(
       () => {
@@ -152,16 +154,8 @@ export class QuizService {
       }
     );
 
-    this.http.post(`${this.quizUrl}/${quiz.id}/questions`, quiz, httpOptionsBase).subscribe(
-      () => {
-        console.log('Quiz mis à jour avec succès');
-      },
-      error => {
-        console.error('Erreur lors de la mise à jour du quiz :', error);
-      }
-    );
-
   }
+
 
   deleteQuestion(question: Question){
     const index = this.questions.indexOf(question);
