@@ -29,16 +29,12 @@ export class GameQuestionComponent implements OnInit {
   isPopupOpen = false;
   isAdjustButtonVisible = true;
 
-  @Input() quiz!:Quiz;
-  user: User = {
-    firstName: "",
-    lastName: "",
-    id: "",
-    stats: {
-      statsByTheme: []
-    },
-    config: {} as UserConfigModel // Assign an empty UserConfigModel object
-  };
+  isLoading: boolean = true; // Ajoutez une propriété isLoading pour indiquer si les données sont en cours de chargement
+
+
+  @Input() quiz!: Quiz;
+  @Input() user!: User;
+
 
 
   constructor(
@@ -60,10 +56,12 @@ export class GameQuestionComponent implements OnInit {
           // Assign the user data to this.user
           this.user = response;
           console.log(this.user);
+          this.checkDataLoaded();
         },
         error => {
           // Handle any errors that occur during the HTTP request
           console.error(error);
+          this.checkDataLoaded();
         }
       );
     });
@@ -74,13 +72,18 @@ export class GameQuestionComponent implements OnInit {
           console.log(response);
           // Assign the quiz data to this.quiz
           this.quiz = response;
+          console.log(this.quiz.questions.length)
+          this.checkDataLoaded();
         },
         error => {
           // Handle any errors that occur during the HTTP request
           console.error(error);
+          this.checkDataLoaded();
         }
       );
     });
+
+    console.log(this.quiz.questions.length)
 
 
     // Get numberOfQuestions$ as an Observable
@@ -112,6 +115,8 @@ export class GameQuestionComponent implements OnInit {
     this.popupService.isAdjustButtonVisible.subscribe((isOpen: boolean) => {
       this.isAdjustButtonVisible = isOpen;
     });
+
+
   }
 
   onQuestionClick() {
@@ -145,5 +150,12 @@ export class GameQuestionComponent implements OnInit {
     }
     this.gameService.checkAnswer(answer);
     //this.currentQuestion = this.quiz.questions[this.currentQuestionIndex+1];
+  }
+
+  checkDataLoaded() {
+    // Vérifiez si toutes les données sont chargées (this.user et this.quiz) et mettez isLoading à false
+    if (this.user && this.quiz) {
+      this.isLoading = false;
+    }
   }
 }

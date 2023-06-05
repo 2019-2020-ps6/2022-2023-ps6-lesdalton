@@ -38,6 +38,8 @@ export class GamePageComponent {
   };
   noQuestions = false;
 
+  isLoading: boolean = true; // Ajoutez une propriété isLoading pour indiquer si les données sont en cours de chargement
+
 
 
   constructor(
@@ -59,10 +61,12 @@ export class GamePageComponent {
         console.log(response);
         // Assign the user data to this.user
         this.user = response;
+        this.checkDataLoaded();
       },
       error => {
         // Handle any errors that occur during the HTTP request
         console.error(error);
+        this.checkDataLoaded();
       }
     );
     this.quizService.getQuizById(quiz).subscribe(
@@ -71,21 +75,33 @@ export class GamePageComponent {
         console.log(response);
         // Assign the user data to this.user
         this.quiz = response;
+        console.log(this.quiz.questions.length)
+        if(this.quiz.questions.length==0){
+          this.noQuestions=true;
+        }
+        this.checkDataLoaded();
       },
       error => {
         // Handle any errors that occur during the HTTP request
         console.error(error);
+        this.checkDataLoaded();
       }
     );
-    this.gameService.startGame(this.quiz);
-    this.gameService.gameFinished.subscribe((result) => {
-      console.log(`Game over! Score: ${result.score}, Quiz ID: ${result.quizId}`);
-      this.route.queryParams.subscribe(() => {
-        this.router.navigate(['/result'], { queryParams: { player: this.user.firstName, quiz: result.quizId } });
+    console.log(this.quiz.questions.length)
+  }
+  checkDataLoaded() {
+    // Verifier si toutes les données sont chargées (this.user et this.quiz) et mettez isLoading à false
+    if (this.user && this.quiz) {
+      this.isLoading = false;
+      this.gameService.startGame(this.quiz);
+      this.gameService.gameFinished.subscribe((result) => {
+        console.log(`Game over! Score: ${result.score}, Quiz ID: ${result.quizId}`);
+        this.route.queryParams.subscribe(() => {
+          this.router.navigate(['/result'], { queryParams: { player: this.user.firstName, quiz: result.quizId } });
+        });
       });
-    });
-    if(this.quiz.questions.length==0){
-      this.noQuestions=true;
     }
   }
+
+
 }

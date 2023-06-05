@@ -1,8 +1,8 @@
 <section class="game">
   <div class="resize">
     <ng-container *ngIf="!noQuestions">
-      <app-game-question [quizId]="quiz.id" [userId]="user.id">
-        <button class="config" type="button">
+      <app-game-question [quiz]="quiz" [user]="user">
+      <button class="config" type="button">
           AJUSTER LA PAGE
         </button>
       </app-game-question>
