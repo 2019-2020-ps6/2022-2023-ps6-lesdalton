@@ -9,3 +9,4 @@ export interface Answer {
   buttonColor?: string;
 
 }
+

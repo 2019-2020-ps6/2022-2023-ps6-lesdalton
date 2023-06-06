@@ -52,18 +52,6 @@ export class GameService {
       console.log("Mauvaise réponse !");
     }
 
-    /*if (answer.isCorrect) {
-      console.log("Bonne réponse !");
-
-
-      this.playerScore$.next(this.playerScore$.value + 1);
-      console.log("SCORE : " + this.playerScore$.value);
-    } else {
-      console.log("Mauvaise réponse !");
-    }*/
-
-
-
     // Attendre 3 secondes avant d'exécuter getNextQuestion()
     setTimeout(() => {
       this.getNextQuestion(this.quiz);

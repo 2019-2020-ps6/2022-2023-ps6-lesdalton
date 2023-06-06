@@ -14,6 +14,7 @@
 
         <button class="answerButton" type="button"
                 *ngFor="let answer of currentQuestion?.answers"
+                [style.text-transform]="user.config.type"
                 [style.font-size.px]="user.config.fontSize"
                 [style.line-height.px]="user.config.lineHeight"
                 [style.letter-spacing.px]="user.config.letterSpacing"
