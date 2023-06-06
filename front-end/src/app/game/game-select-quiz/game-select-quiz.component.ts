@@ -48,16 +48,22 @@ export class GameSelectQuizComponent {
         console.log(response);
         // Assign the user data to this.user
         this.user = response;
+        if(this.user && this.theme){
+          this.showQuiz(this.theme.name);
+        }
       },
       error => {
         // Handle any errors that occur during the HTTP request
         console.error(error);
+        if(this.user && this.theme){
+          this.showQuiz(this.theme.name);
+        }
       }
     );
     this.theme = this.themeService.getThemeByName(theme);
     console.log(this.theme);
     this.quizSevice.quizzes$.subscribe((quizzes) => (this.quizList = quizzes));
-    this.showQuiz(this.theme.name);
+
   }
 
 

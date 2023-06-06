@@ -2,7 +2,7 @@
   <div [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" class="container">
     <div class="rectangle" [style.height.px]="user.config.fontSize * 30">
       <div class="NomPre">
-        <label>{{user.firstName}}</label><br>
+        <label>Prénom</label><br>
         <input type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
         <br><br>
         <label>Nom</label><br>
