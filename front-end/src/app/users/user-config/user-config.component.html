@@ -33,7 +33,7 @@
           <br><br>
         </div>
         <br><br>
-        <label>Taille d'écriture : {{user.config.fontSize}}</label><br>
+        <label>Taille d'écriture</label><br>
         <input type="range" [(ngModel)]="user.config.fontSize" (input)="updateValue()" min="{{minFontSize}}" max="{{maxFontSize}}" class="gauge-input">
         <br>
         <label>Différence entre les lignes :</label><br>
@@ -49,3 +49,4 @@
       </div>
     </div>
   </div>
+</div>
