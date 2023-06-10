@@ -1,9 +1,22 @@
-/* eslint-disable no-console */
-const originalConsoleLog = console.log
-console.log = function consoleLog(...args) {
-  const newArguments = [`[${new Date().toISOString()}]`, ...args]
-  return originalConsoleLog.apply(this, newArguments)
-}
-console.info = console.log
+const fs = require('fs');
+const path = require('path');
 
-module.exports = console
+class Logger {
+  constructor(logFilePath) {
+    this.logFilePath = logFilePath;
+  }
+
+  log(message) {
+    const logMessage = `[${new Date().toISOString()}] ${message}\n`;
+    fs.appendFile(this.logFilePath, logMessage, (err) => {
+      if (err) {
+        console.error('Error writing to log file:', err);
+      }
+    });
+  }
+}
+
+const logFilePath = path.join(__dirname, 'app.log');
+const logger = new Logger(logFilePath);
+
+module.exports = logger;
