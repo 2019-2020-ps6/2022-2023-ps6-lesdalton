@@ -37,7 +37,7 @@ export class ThemeQuizzesListComponent {
   ngOnInit() {
     this.quizService.quizzes$.subscribe((quizzes) => (this.quizzes = quizzes));
     const name = this.route.snapshot.paramMap.get('theme-name')!;
-    this.theme = this.themeService.getThemeByName(name);
+    this.theme = this.themeService.getThemeByName(name)
     const id = this.route.snapshot.paramMap.get('user')!;
     this.route.queryParams.subscribe(params => {
       this.userService.getUserById(id).subscribe(
