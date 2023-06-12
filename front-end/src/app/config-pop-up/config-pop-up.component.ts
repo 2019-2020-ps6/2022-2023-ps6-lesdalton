@@ -55,22 +55,6 @@ export class ConfigPopUpComponent {
         }
       );
     });
-    /*const id = this.route.snapshot.queryParamMap.get('user')!;
-
-    this.route.queryParams.subscribe(() => {
-      this.userService.getUserById(id).subscribe(
-        response => {
-          // Handle the user data received in the response
-          // Assign the user data to this.user
-          this.user = response;
-          console.log(this.user);
-        },
-        error => {
-          // Handle any errors that occur during the HTTP request
-          console.error(error);
-        }
-      );
-    });*/
     this.popUpService.isOpen.subscribe((isOpen: boolean) => {
       this.isPopUpOpen = isOpen;
     });
