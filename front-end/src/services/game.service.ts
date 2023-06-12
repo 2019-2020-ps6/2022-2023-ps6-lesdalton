@@ -62,6 +62,7 @@ export class GameService {
 
 
 
+
   showAnswer(answer: Answer){
     //modifie le background des bonnes et mauvaises reponses pendant 2s
     const boutonAns = document.querySelector('button')!;

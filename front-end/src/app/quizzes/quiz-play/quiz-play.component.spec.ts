@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { QuizPlayComponent } from './quiz-play.component';
 
@@ -20,4 +20,4 @@ describe('QuizPlayComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+});*/

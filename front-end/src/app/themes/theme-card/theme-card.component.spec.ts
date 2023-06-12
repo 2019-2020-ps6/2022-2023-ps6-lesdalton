@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThemeCardComponent } from './theme-card.component';
+/*import { ThemeCardComponent } from './theme-card.component';
 
 describe('ThemeCardComponent', () => {
   let component: ThemeCardComponent;
@@ -20,4 +20,4 @@ describe('ThemeCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+});*/

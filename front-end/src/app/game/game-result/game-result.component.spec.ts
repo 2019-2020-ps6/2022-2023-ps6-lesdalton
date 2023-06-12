@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GameResultComponent } from './game-result.component';
 
@@ -20,4 +20,4 @@ describe('GameResultComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+});*/

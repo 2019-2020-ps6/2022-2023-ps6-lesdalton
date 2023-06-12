@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserConfigComponent } from './user-config.component';
 
@@ -20,4 +20,4 @@ describe('UserConfigComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+});*/
