@@ -10,9 +10,18 @@ import { UserFormFixture } from 'src/app/users/user-form/user-form.fixture';
 test.describe('Quiz Feature', () => {
 
     test('User Creation', async ({ page }) => {
-        await page.goto(testUrl +'/user-list');
 
-        //create all fixtures
+      await page.goto(testUrl +'/actions');
+      const button = await page.locator('button.button-card[routerLink="/password"]');
+      await button.click();
+      await expect(page).toHaveURL("http://localhost:4200/password");
+      const input = await page.locator('input#password');
+      await input.fill('1234');
+      const buttonValider = await page.locator('button.button-card[type="submit"]');
+      await buttonValider.click();
+
+
+      //create all fixtures
         const userFormFixture = new UserFormFixture(page);
         const userFixture = new UserFixture(page);
 
