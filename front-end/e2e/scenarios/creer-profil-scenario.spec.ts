@@ -26,16 +26,17 @@ test.describe('Quiz Feature', () => {
 
         await test.step(`Create user`, async () => {
             const inputFirstName = await userFormFixture.getInput('firstName');
-            await inputFirstName.type('Yao');
+            await inputFirstName.type('Alpha');
 
             const inputLastName = await userFormFixture.getInput('lastName');
-            await inputLastName.type('cest_le_vieux_père');
+            await inputLastName.type('Roméo');
 
             await userFormFixture.clickCreateButton();
 
-            /*const indexUser = await userFixture.getIndexOfTitle('Quiz E2E');
-            expect(await userFixture.getContentTitleQuiz(indexQuiz)).toEqual(' Quiz E2E ');*/
+            /*const indexUser = await userFixture.getIndexOfFN('Yao');
+            expect(await userFixture.getContentFirstName(indexUser)).toEqual('Yew');*/
         });
+
 
     });
 

@@ -17,4 +17,18 @@ export class UserFormFixture extends E2EComponentFixture {
   clickCreateButton() {
     return this.getCreateButton().click();
   }
+
+  getValidateButton() {
+    return this.page.getByRole('button', { name: 'Créer' });
+  }
+
+  clickValidateButton() {
+    return this.getValidateButton().click();
+  }
+
+
+  getMaj() {
+    return this.page.waitForSelector('app-user-config input[name="maj"]');
+  }
+
 }
