@@ -2,24 +2,26 @@ import { test, expect } from "@playwright/test";
 import { testUrl } from 'e2e/e2e.config';
 import { User } from "../../src/models/user.models";
 
-test('Add quiz', async ({ page }) => {
-  await page.goto(testUrl + '/actions');
+test('Add theme', async ({ page }) => {
+  await page.goto(testUrl +'/actions');
 
-  // Passer de actions vers select-player
   const button = await page.locator('button.button-card[routerLink="/password-quiz"]');
   await button.click();
+  await expect(page).toHaveURL("http://localhost:4200/password-quiz");
+  const input = await page.locator('input#password');
+  await input.fill('1234');
+  const buttonValider = await page.locator('button.button-card[type="submit"]');
+  await buttonValider.click();
 
-  // Add an input to the card
-  await page.evaluate(() => {
-    const card = document.querySelector('div.card');
-    if (card) {
-      const input = document.createElement('input');
-      input.type = 'text';
-      input.setAttribute('formControl', 'themeForm.controls.inputName');
-      input.required = true;
-      card.appendChild(input);
-    }
-  });
+  await expect(page).toHaveURL("http://localhost:4200/add-quiz");
 
-  // Perform further actions or assertions on the modified page
+  // Remplir l'input du thème avec "Géographie"
+  const inputTheme = await page.locator('app-theme-form input[type="text"]');
+  await inputTheme.fill("Géographie");
+
+// Cliquer sur le bouton "Créer"
+  const buttonTheme = await page.locator('app-theme-form button[type="submit"]');
+  await buttonTheme.click();
+
+
 });
