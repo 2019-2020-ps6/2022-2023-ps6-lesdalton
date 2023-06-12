@@ -9,8 +9,8 @@ export class UserFixture extends E2EComponentFixture {
     return allTitles[index];
   }
 
-  async getContentTitleUser(index) {
-    const title = await this.getTitleUser(index);
+  async getContentTitleQuiz(index) {
+    const title = await this.getTitleQuiz(index);
     return title.textContent();
   }
 
