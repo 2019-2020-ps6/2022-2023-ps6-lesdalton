@@ -5,7 +5,7 @@ import {User} from "../../src/models/user.models";
 
 
 
-test('Test de navigation de page à page', async ({ page }) => {
+test('Play Quiz', async ({ page }) => {
   await page.goto(testUrl+'/actions');
 
   // Passer de actions vers select-player
@@ -19,12 +19,15 @@ test('Test de navigation de page à page', async ({ page }) => {
 
 
   // Passer de select-player vers select-theme
-  const userDiv = await page.locator('div.user');
+  const userDiv = await page.locator('div.user').first();
   await userDiv.click();
   const description2 = await page.getByText('Choisissez un thème')
   expect(description2).toBeVisible();
 
   // Passer de select-theme select-quiz
-
-
+  const firstListItem = await page.locator('app-game-select-theme li').first();
+  const link = await firstListItem.locator('a');
+  await link.click();
+  const description3= await page.getByText(' Choisissez un Quiz')
+  expect(description3).toBeVisible();
 });

@@ -5,7 +5,7 @@ import {User} from "../../src/models/user.models";
 
 
 
-test('Test de navigation de page à page', async ({ page }) => {
+test('Creation de Quiz', async ({ page }) => {
   await page.goto(testUrl+'/actions');
 
   // Passer de actions vers select-player
