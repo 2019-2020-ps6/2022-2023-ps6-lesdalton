@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/app/api/themes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/api/themes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-select-player/game-select-player.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-select-player/game-select-player.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/game/game-select-quiz/game-select-quiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/game/game-select-quiz/game-select-quiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-form/user-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-form/user-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-list/user-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-list/user-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-list/user-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-list/user-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +71,20 @@
       <recent name="C:\Users\Abdel\OneDrive\Bureau\SI3\PS6\2022-2023-ps6-lesdalton\front-end\src\app\quizzes\quiz" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Karma.Initial test display">
+    <configuration name="Initial test display" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
+      <config-file value="" />
+      <karma-package-dir value="$PROJECT_DIR$/front-end/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file-path value="$PROJECT_DIR$/front-end/e2e/scenarios/initial-test-scenario.spec.ts" />
+      <test-names>
+        <test-name value="Initial test display" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Test de navigation de page à page" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
       <config-file value="" />
       <karma-package-dir value="$PROJECT_DIR$/front-end/node_modules/@angular/cli" />
@@ -85,6 +100,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Karma.Initial test display" />
         <item itemvalue="Karma.Test de navigation de page à page" />
       </list>
     </recent_temporary>

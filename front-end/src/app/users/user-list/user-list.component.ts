@@ -16,10 +16,10 @@ export class UserListComponent implements OnInit {
   public userList: User[] = [];
 
   constructor(private userService: UsersService, private router: Router,private http: HttpClient) {
-    this.userService.users$.subscribe((users) => (this.userList =users));
   }
 
   ngOnInit(): void {
+    this.userService.users$.subscribe((users) => (this.userList =users));
   }
 
   deleteUser(user: User): void {

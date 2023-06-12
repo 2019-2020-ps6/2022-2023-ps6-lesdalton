@@ -47,11 +47,11 @@ export class UsersService {
    Adds a new user to the list of users.
    */
   addUser(user: User): void {
-    this.users.push(user);
-    this.users$.next(this.users);
-    this.http.post(this.userUrl, user, httpOptionsBase).subscribe(
+    this.http.post<User>(this.userUrl, user, httpOptionsBase).subscribe(
       response => {
         console.log('Utilisateur ajouté avec succès :', response);
+        this.users.push(response);
+        this.users$.next(this.users);
       },
       error => {
         console.error('Erreur lors de l\'ajout de l\'utilisateur :', error);

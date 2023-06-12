@@ -36,5 +36,6 @@ export class UserFormComponent {
     const userToCreate: User=this.userForm.getRawValue() as User;
     console.log('Add user : ',userToCreate);
     this.userService.addUser(userToCreate);
+    console.log(this.userService.users$)
   }
 }
