@@ -17,7 +17,11 @@ test('Add quiz', async ({ page }) => {
 
   // Remplir l'input du thème avec "Géographie"
   const inputQuiz = await page.locator('app-quiz-form input[type="text"]');
-  await inputQuiz.fill("Géographie");
+  await inputQuiz.fill("Europe");
+
+  const select = await page.locator('app-quiz-form select').first();
+  await select.selectOption({ index: 0 });
+
 
 // Cliquer sur le bouton "Créer"
   const buttonQuiz = await page.locator('app-quiz-form button[type="submit"]');
