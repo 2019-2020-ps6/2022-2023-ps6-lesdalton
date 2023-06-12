@@ -1,28 +1,19 @@
-/*import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AddQuizComponent } from 'src/app/quizzes/add-quiz/add-quiz.component';
+import { test, expect } from "@playwright/test";
+import { testUrl } from 'e2e/e2e.config';
+import {User} from "../../src/models/user.models";
 
-describe('AddQuizComponent', () => {
-  let component: AddQuizComponent;
-  let fixture: ComponentFixture<AddQuizComponent>;
 
-  /*beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AddQuizComponent],
-    }).compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AddQuizComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });*/
 
-  /*it('should create the component', () => {
-    expect(component).toBeTruthy();
-  });
+test('Creation de Quiz', async ({ page }) => {
+  await page.goto(testUrl+'/actions');
 
-  it('should initialize component', () => {
-    expect(component.ngOnInit).toBeTruthy();
-  });
+  // Passer de actions vers select-player
+
+  const button = await page.locator('button.button-card[routerLink="/password-quiz"]');
+  await button.click();
+
+
+
+
 });
-*/

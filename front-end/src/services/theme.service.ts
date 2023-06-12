@@ -1,6 +1,6 @@
 import {Theme} from "../models/theme.models";
 import {ThemeFormComponent} from "../app/quizzes/theme-form/theme-form.component";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable, of} from "rxjs";
 import {User} from "../models/user.models";
 import {Injectable} from "@angular/core";
 import {Quiz} from "../models/quiz.model";
@@ -44,9 +44,9 @@ export class ThemeService{
     );
   }
 
-
   getThemeByName(name: string): Theme {
     const theme = this.themes.find(u => u.name === name)!;
+    console.log("kkk"+this.themes$.value.length)
     return theme;
   }
 }

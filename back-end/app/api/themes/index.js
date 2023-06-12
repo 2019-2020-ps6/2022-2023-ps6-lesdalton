@@ -1,6 +1,6 @@
 const { Router } = require('express')
 
-const { Theme, User } = require('../../models')
+const { Theme } = require('../../models')
 const manageAllErrors = require('../../utils/routes/error-management')
 
 const router = new Router()

@@ -8,6 +8,7 @@ import  { Quiz } from '../../../models/quiz.model'
 })
 
 export class QuizComponent implements OnInit{
+ 
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
