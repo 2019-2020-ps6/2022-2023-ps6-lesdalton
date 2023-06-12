@@ -46,22 +46,20 @@ export class GameQuestionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const userId = this.route.snapshot.queryParamMap.get('user')!;
     const quizId = this.route.snapshot.queryParamMap.get('quiz')!;
 
-    this.route.queryParams.subscribe(() => {
-      this.userService.getUserById(userId).subscribe(
+    this.route.queryParams.subscribe(params => {
+      let id = params['user'];
+      this.userService.getUserById(id).subscribe(
         response => {
           // Handle the user data received in the response
+          console.log(response);
           // Assign the user data to this.user
           this.user = response;
-          console.log(this.user);
-          this.checkDataLoaded();
         },
         error => {
           // Handle any errors that occur during the HTTP request
           console.error(error);
-          this.checkDataLoaded();
         }
       );
     });
