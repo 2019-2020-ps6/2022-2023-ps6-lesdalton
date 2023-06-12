@@ -56,7 +56,6 @@ export class GameService {
     setTimeout(() => {
       this.getNextQuestion(this.quiz);
     }, 1000); // 3000 millisecondes = 3 secondes
-
     //this.getNextQuestion(this.quiz);
   }
 
@@ -79,10 +78,12 @@ export class GameService {
 
 
   getNextQuestion(quiz: Quiz) {
-    if (this.currentQuestionIndex$.value < quiz.questions.length - 1) {
+    const questions:Question[] = quiz.questions.filter((question) => question.answers.length > 0);
+    if (this.currentQuestionIndex$.value < questions.length - 1) {
       this.currentQuestionIndex$.next(this.currentQuestionIndex$.value + 1);
       this.currentQuestion$.next(this.quiz.questions[this.currentQuestionIndex$.value]);
-    } else {
+    }
+    else {
       console.log("Fin du quiz");
       this.gameFinished.emit({ score: this.playerScore$.value, quizId: this.quiz.id });
     }
