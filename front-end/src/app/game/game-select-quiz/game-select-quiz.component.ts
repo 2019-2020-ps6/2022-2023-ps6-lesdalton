@@ -35,9 +35,7 @@ export class GameSelectQuizComponent {
 
   constructor(private route: ActivatedRoute, private userService: UsersService,
               private themeService: ThemeService,
-              private quizSevice:QuizService,
-              private elementRef:ElementRef) {}
-
+              private quizSevice:QuizService) {}
   ngOnInit() {
     const user = this.route.snapshot.queryParamMap.get('user')!;
     const theme = this.route.snapshot.queryParamMap.get('theme')!;
@@ -46,7 +44,6 @@ export class GameSelectQuizComponent {
     this.themeService.themes$.subscribe(themes => {
       this.theme = themes.find(u => u.name === theme)!;
       console.log(this.theme + ' theme yes');
-
 
       this.userService.getUserById(user).subscribe(
         response => {
@@ -61,9 +58,6 @@ export class GameSelectQuizComponent {
         error => {
           // Handle any errors that occur during the HTTP request
           console.error(error);
-          if (this.user && this.theme) {
-            this.showQuiz();
-          }
         }
       );
     });
@@ -73,11 +67,14 @@ export class GameSelectQuizComponent {
 
 
 
-  showQuiz(){
-    for (const quiz of this.quizList ){
-      if(quiz.theme.name===this.theme.name){
+
+  showQuiz() {
+    this.quizForTheme = []; // Clear the array before adding quizzes
+    for (const quiz of this.quizList) {
+      if (quiz.theme.name === this.theme.name) {
         this.quizForTheme.push(quiz);
       }
     }
   }
+
 }
