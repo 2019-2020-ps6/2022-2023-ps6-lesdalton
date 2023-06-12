@@ -2,15 +2,15 @@ import { E2EComponentFixture } from "e2e/e2e-component.fixture";
 
 export class AppFixture extends E2EComponentFixture {
   getTitle() {
-    return this.page.getByRole('heading', { name: 'Hello World!' });
+    return this.page.getByText('Quiz For All', { exact:true });
   }
 
   getDescription() {
-    return this.page.getByText('Start your first app!', { exact: true });
+    return this.page.getByText('est là pour', { exact: true });
   }
 
   getShowButton() {
-    return this.page.getByRole('button', { name: 'Show success!' });
+    return this.page.getByRole('button', { name: 'Se connecter' });
   }
 
   clickOnShowButton() {
