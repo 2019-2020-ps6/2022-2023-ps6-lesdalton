@@ -7,7 +7,7 @@ import { UserFormFixture } from 'src/app/users/user-form/user-form.fixture';
 
 
 // test.describe is a hook that creates a test group and lets you define lifecycle stages such as beforeEach.
-test.describe('Quiz Feature', () => {
+test.describe('Creer un profil joueur', () => {
 
     test('User Creation', async ({ page }) => {
         await page.goto(testUrl +'/user-list');
