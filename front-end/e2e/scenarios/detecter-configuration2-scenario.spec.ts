@@ -57,7 +57,7 @@ test("Launch the Selectors hub test page", async () => {
     await expect(btn).toHaveCSS('background-color',color);
     // validate font-size
 
-  const text = await page.locator("a[href='https://www.youtube.com/c/SelectorsHub?sub_confirmation=1'%5D >> nth=0");
+  const text = await page.locator("a[href='http://localhost:4200/'%5D >> nth=0");
   const textprop = await text.evaluate((element) =>
     window.getComputedStyle(element).getPropertyValue("font-size")
   );
