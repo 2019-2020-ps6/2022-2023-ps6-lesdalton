@@ -14,13 +14,6 @@ test.describe('Home page display', () => {
     // Search by text content. Partial and exact text.
     const description1 = await page.getByText('Quiz For All');
 
-    // For exact text: see the function declaration
-    const description2 = await appComponentFixture.getDescription();
-
-    // Using page.locator
-    const description3 = await page.locator(
-      'div.description:has-text("Start your first app!")'
-    );
 
     expect(title).toBeVisible();
     expect(description1).toBeVisible();
