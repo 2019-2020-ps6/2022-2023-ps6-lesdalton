@@ -38,4 +38,20 @@ test("Launch the Selectors hub test page", async () => {
   const context = await browser.newContext();
   const page = await context.newPage();
 
- 
+  await page.goto("http://localhost:4200/add-quiz");
+  await page.waitForSelector(".dropbtn", {
+    state: "visible",
+  });
+  
+    // validate background-color
+    
+    const btn = await page.locator(".dropbtn");
+    await page.waitForTimeout(2000);
+  
+    const color = await btn.evaluate((element) =>
+      window.getComputedStyle(element).getPropertyValue("background-color")
+    );
+  
+    await console.log(`${color}`);
+  
+    await expect(btn).toHaveCSS('background-color',color);
