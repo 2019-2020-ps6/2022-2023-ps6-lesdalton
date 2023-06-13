@@ -14,13 +14,6 @@ test.describe('Home page display', () => {
     // Search by text content. Partial and exact text.
     const description1 = await page.getByText('Quiz For All');
 
-    // For exact text: see the function declaration
-    const description2 = await appComponentFixture.getDescription();
-
-    // Using page.locator
-    const description3 = await page.locator(
-      'div.description:has-text("Start your first app!")'
-    );
 
     expect(title).toBeVisible();
     expect(description1).toBeVisible();
@@ -36,14 +29,14 @@ test.describe('Home page display', () => {
     expect(success).not.toBeVisible();
 
     // Triggers events
-    const showSuccessButton = await appComponentFixture.getShowButton();
+    const showSuccessButton = await appComponentFixture.getConnectButton();
     await showSuccessButton.click();
     success = await appComponentFixture.getSuccessMessage();
 
     // Success message should be visible now!
 
     // Another way to click on a button is to expose a function doing the click directly and avoid the two lines 35 and 36.
-    await appComponentFixture.clickOnShowButton();
+    await appComponentFixture.clickOnConnectButton();
     success = await appComponentFixture.getSuccessMessage();
     // Success message shouldn't be visible again.
     expect(success).not.toBeVisible();

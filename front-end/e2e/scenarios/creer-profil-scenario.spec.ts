@@ -23,7 +23,6 @@ test.describe('Creer un profil joueur', () => {
 
       //create all fixtures
         const userFormFixture = new UserFormFixture(page);
-        const userFixture = new UserFixture(page);
 
         await expect(page).toHaveURL("http://localhost:4200/user-list");
 

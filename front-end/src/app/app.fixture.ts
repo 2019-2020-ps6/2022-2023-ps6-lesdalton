@@ -9,12 +9,12 @@ export class AppFixture extends E2EComponentFixture {
     return this.page.getByText('est là pour', { exact: true });
   }
 
-  getShowButton() {
+  getConnectButton() {
     return this.page.getByRole('button', { name: 'Se connecter' });
   }
 
-  clickOnShowButton() {
-    return this.getShowButton().click();
+  clickOnConnectButton() {
+    return this.getConnectButton().click();
   }
 
   getSuccessMessage() {
