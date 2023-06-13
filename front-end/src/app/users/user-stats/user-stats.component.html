@@ -10,23 +10,23 @@
     </thead>
     <tbody>
       <tr>
-        <td>{{ user.lastName }} {{user.firstName}}</td>
-        <td>{{ this.sumThemePoints(user.stats?.statsByTheme || []) }}</td>
+        <td>{{ user.lastName }} {{ user.firstName }}</td>
+        <td>{{ this.sumThemePoints(user.stats.statsByTheme || []) }}</td>
         <td>
           <table>
             <thead>
-            <tr>
-              <th>Thème</th>
-              <th>Points</th>
-            </tr>
+              <tr>
+                <th>Thème</th>
+                <th>Points</th>
+              </tr>
             </thead>
             <tbody>
-            <ng-container *ngFor="let theme of user.stats?.statsByTheme">
-              <tr>
-                <td>{{ theme.themeName }}</td>
-                <td>{{ theme.themePoints }}</td>
-              </tr>
-            </ng-container>
+              <ng-container *ngFor="let theme of user.stats.statsByTheme || []">
+                <tr>
+                  <td>{{ theme.themeName }}</td>
+                  <td>{{ theme.themePoints }}</td>
+                </tr>
+              </ng-container>
             </tbody>
           </table>
         </td>
