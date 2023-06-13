@@ -1,49 +1,66 @@
 import { test, expect } from "@playwright/test";
 import { testUrl } from 'e2e/e2e.config';
 import {User} from "../../src/models/user.models";
+import {ActionsFixture} from "../../src/app/actions/actions.fixture";
+import {GameSelectPlayerFixture} from "../../src/app/game/game-select-player/game-select-player.fixture";
+import {GameSelectThemeFixture} from "../../src/app/game/game-select-theme/game-select-theme.fixture";
+import {GameSelectQuizFixture} from "../../src/app/game/game-select-quiz/game-select-quiz.fixture";
+import {GameQuestionFixture} from "../../src/app/game/game-question/game-question.fixture";
+import {GameResultComponent} from "../../src/app/game/game-result/game-result.component";
+import {GameResultFixture} from "../../src/app/game/game-result/game-result.fixture";
 
 
 
 
 test('Play Quiz', async ({ page }) => {
-  await page.goto(testUrl+'/actions');
+  await test.step(`Select a player`, async () => {
+    await page.goto(testUrl+'/actions');
 
-  // Passer de actions vers select-player
+    const actionsFixture = new ActionsFixture(page);
+    const gameSelectPlayerFixture = new GameSelectPlayerFixture(page);
 
-  const button = await page.locator('button.button-card[routerLink="/select-player"]');
-  await button.click();
+    const playQuizButton = actionsFixture.getPlayQuizButton();
+    await playQuizButton.click();
+    const description1 = gameSelectPlayerFixture.getDescription();
+    await expect(description1).toBeVisible();
+    const user = await gameSelectPlayerFixture.getPlayer();
+    await user.click();
+  })
 
+  await test.step(`Play the quiz`, async () => {
+    const gameSelectThemeFixture = new GameSelectThemeFixture(page);
+    const gameSelectQuizFixture = new GameSelectQuizFixture(page);
 
-  const description1 = await page.getByText('QUI VEUT JOUER ?');
-  await expect(description1).toBeVisible();
+    const description2 = await gameSelectThemeFixture.getDescription()
+    await expect(description2).toBeVisible();
 
+    // Passer de select-theme select-quiz
+    const link = await gameSelectThemeFixture.getTheme()
+    await link.click();
 
-  // Passer de select-player vers select-theme
-  const userDiv = await page.locator('div.user').first();
-  await userDiv.click();
-  const description2 = await page.getByText('Choisissez un thème')
-  await expect(description2).toBeVisible();
+    const description3 = await gameSelectQuizFixture.getDescription()
+    await expect(description3).toBeVisible;
 
-  // Passer de select-theme select-quiz
-  const link = await page.locator('app-game-select-theme a').first();
-  await link.click();
-  const description3= await page.getByText(' Choisissez un Quiz')
-  await expect(description3).toBeVisible;
+    // Selectionner un quiz
+    const quiz = await gameSelectQuizFixture.getQuiz()
+    await page.waitForTimeout(1000)
+    await quiz.click();
 
-  // Selectionner un quiz
-  const quiz = await page.locator('app-game-select-quiz a').first();
-  await quiz.click();
+    const gameQuestionFixture = new GameQuestionFixture(page)
+    const gameResultFixture = new GameResultFixture(page)
 
-  const answer = await page.locator('app-game-question button').first();
-  const result = await page.getByText('Votre score :')
+    const answer = await gameQuestionFixture.getAnswer()
+    const result = await gameResultFixture.getDescription()
 
-  while(await answer.isVisible()){
-    await answer.click();
-  }
-  const ressayerButton = page.getByText('Réessayer')
+    await expect(answer).toBeVisible;
 
-  await expect(result).toBeVisible();
-  await ressayerButton.click();
-  await expect(answer).toBeVisible();
+    while (await answer.isVisible()) {
+      await answer.click();
+    }
+    const ressayerButton = gameResultFixture.getRessayerButton()
+
+    await expect(result).toBeVisible();
+    await ressayerButton.click();
+  })
 
 });
