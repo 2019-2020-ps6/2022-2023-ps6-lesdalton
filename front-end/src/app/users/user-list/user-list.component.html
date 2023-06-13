@@ -17,7 +17,7 @@
       <a [routerLink]="['/user-config']" id="config-btn" [queryParams]="{ user: user.id }"><button class="button-card">Configurer</button>
       </a>
 
-      <button class="button-card" (click)="deleteUser(user)">Supprimer</button>
+      <button class="button-card" id="del-btn" (click)="deleteUser(user)">Supprimer</button>
     </div>
   </div>
 </div>
