@@ -5,32 +5,46 @@ import { UserFixture } from 'src/app/users/user/user.fixture';
 import { UserFormFixture } from 'src/app/users/user-form/user-form.fixture';
 
 // test.describe is a hook that creates a test group and lets you define lifecycle stages such as beforeEach.
-test.describe('Creer un compte', () => {
-  test('account Creation', async ({ page }) => {
-    await page.goto(testUrl + '/login-new-account');
-    const button = await page.locator('button.button-card[routerLink="/login-new-account"]');
+test.describe('Configurer un profil', () => {
+  test('Config User', async ({ page }) => {
+    await page.goto(testUrl + '/actions');
+    await page.goto(testUrl + '/actions');
+    const button = await page.locator('button.button-card[routerLink="/password"]');
     await button.click();
-    await expect(page).toHaveURL('http://localhost:4200/login-new-account');
+    await expect(page).toHaveURL('http://localhost:4200/password');
+    const input = await page.locator('input#password');
+    await input.fill('1234');
+    const buttonValider = await page.locator('button.button-card[type="submit"]');
+    await buttonValider.click();
 
-    // Auto-completed test code
-    const card = await page.locator('.card');
-    const firstNameInput = await card.locator('#firstName');
-    const lastNameInput = await card.locator('#lastName');
-    const emailInput = await card.locator('#email');
-    const passwordInput = await card.locator('#password');
-    const confirmPasswordInput = await card.locator('#confirmPassword');
-    const submitButton = await card.locator('.button-card');
+    // Create all fixtures
+    const userFormFixture = new UserFormFixture(page);
+    const userFixture = new UserFixture(page);
 
-    await firstNameInput.type('John');
-    await lastNameInput.type('Doe');
-    await emailInput.type('johndoe@example.com');
-    await passwordInput.type('password');
-    await confirmPasswordInput.type('password');
-    await submitButton.click();
+    await expect(page).toHaveURL('http://localhost:4200/user-list');
 
-    // Add your assertions for successful account creation here
-    await page.waitForNavigation();
-    await expect(page).toHaveURL('http://localhost:4200/login');
-    // Add more assertions as needed
+    await test.step('Configure user', async () => {
+      // Select the configuration button
+      const configButtonSelector = '.user-list .card button.button-card';
+      await page.waitForSelector(configButtonSelector);
+
+      // Click on the configuration button
+      const configButton = await page.$(configButtonSelector);
+      if (configButton) {
+        await configButton.click();
+      }
+
+      // Fill in the form inputs
+      await userFormFixture.fillFirstName('John');
+      await userFormFixture.fillLastName('Doe');
+
+      // Submit the form
+      await userFormFixture.clickCreateButton();
+
+      // Add your assertions for successful form submission here
+      // For example:
+      // await expect(page).toHaveURL('http://localhost:4200/success-page');
+      // Add more assertions as needed
+    });
   });
 });
