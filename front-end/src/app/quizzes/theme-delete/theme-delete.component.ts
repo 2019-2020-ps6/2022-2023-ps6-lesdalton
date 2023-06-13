@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Theme} from "../../../models/theme.models";
 import {FormControl, FormGroup} from "@angular/forms";
 import {ThemeService} from "../../../services/theme.service";
+import {Quiz} from "../../../models/quiz.model";
 
 @Component({
   selector: 'app-theme-delete',
@@ -23,8 +24,9 @@ export class ThemeDeleteComponent {
     question: new FormControl()
   });
   constructor(private themeService:ThemeService) {
-    this.themeService.themes$.subscribe((themes) => (this.themeList =themes));
+    this.themeService.themesUnused$.subscribe((themes) => (this.themeList =themes));
   }
+
 
   onSubmit(){
     this.themeService.addTheme(this.themeForm.controls.name.value);

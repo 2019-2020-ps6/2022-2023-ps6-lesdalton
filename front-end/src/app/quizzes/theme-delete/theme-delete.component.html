@@ -1,7 +1,9 @@
 <div class="card">
   <h2>Supprimer un thème</h2>
-  <select [formControl]="quizForm.controls.theme" (change)="onThemeSelectionChange(quizForm.controls.theme.value)">
-    <option *ngFor="let theme of themeList" [value]="theme.name" >{{ theme.name }} </option>
-  </select>
+
+    <select [formControl]="quizForm.controls.theme" (change)="onThemeSelectionChange(quizForm.controls.theme.value)">
+      <option *ngFor="let theme of themeList" [value]="theme.name" >{{ theme.name }} </option>
+    </select>
+
   <button class="button-card" (click)="deleteTheme(quizForm.controls.theme.value)">Supprimer</button>
 </div>
