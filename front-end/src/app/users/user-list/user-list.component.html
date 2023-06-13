@@ -14,7 +14,7 @@
       Prénom : {{user.firstName}}<br>
       Nom : {{user.lastName}}<br>
       <br>
-      <a [routerLink]="['/user-config']" [queryParams]="{ user: user.id }"><button class="button-card">Configurer</button>
+      <a [routerLink]="['/user-config']" id="config-btn" [queryParams]="{ user: user.id }"><button class="button-card">Configurer</button>
       </a>
 
       <button class="button-card" (click)="deleteUser(user)">Supprimer</button>
