@@ -30,7 +30,18 @@ export class QuizFormComponent {
       theme: {name:this.quizForm.controls.theme.value},// set the theme property
       id: Math.floor(Math.random()*100).toString(),
       questions:[]
-    }; // create a new Quiz instance
+    };
+
+    // Check if the selected theme is in the unused themes list
+    const unusedThemes = this.themeService.themesUnused$.value;
+    const themeIndex = unusedThemes.findIndex(theme => theme.name === quiz.theme.name);
+    if (themeIndex !== -1) {
+      // Remove the used theme from the unused themes list
+      unusedThemes.splice(themeIndex, 1);
+      this.themeService.themesUnused$.next(unusedThemes);
+    }
+
+    // create a new Quiz instance
     console.log(this.quizForm.controls.theme.value)
     this.quizService.addQuiz(quiz);
     this.quizForm.reset();
