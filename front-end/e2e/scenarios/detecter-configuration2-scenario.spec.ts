@@ -61,3 +61,10 @@ test("Launch the Selectors hub test page", async () => {
   const textprop = await text.evaluate((element) =>
     window.getComputedStyle(element).getPropertyValue("font-size")
   );
+  await console.log(`${textprop}`);
+
+await expect(text).toHaveCSS('font-size',textprop);
+
+  
+  
+});
