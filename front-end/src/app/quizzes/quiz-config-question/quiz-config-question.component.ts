@@ -104,9 +104,9 @@ export class QuizConfigQuestionComponent implements OnInit {
     this.quizService.deleteAnswer(this.quiz,this.question,answer).subscribe(rep=>this.answers=rep);
   }
 
-  deleteQuestion(question: Question) {
+  deleteQuestion(quiz: Quiz,question: Question) {
     console.log('question deleted : ', question);
-    this.quizService.deleteQuestion(question);
+    this.quizService.deleteQuestion(quiz,question);
     this.quizService.questionsChanged.next(true);
   }
 }
