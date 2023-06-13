@@ -50,6 +50,7 @@
 </div>
 <div class="container">
   <button id="valider" [routerLink]="['/quiz-config',quiz.id]">Valider</button>
+  <button (click)="deleteQuestion(question)" [routerLink]="['/quiz-config',quiz.id]">Supprimer</button>
 </div>
 <br>
 <br>
