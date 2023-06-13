@@ -4,10 +4,11 @@
     Nom du thème:
     <input type="text" [formControl]="themeForm.controls.name" required>
   </label>
-
+  <!--<select [formControl]="quizForm.controls.theme" (change)="onThemeSelectionChange(themeForm.controls.name.value)">
+    <option *ngFor="let theme of themeList" [value]="theme.name" >{{ theme.name }} </option>
+  </select>
+  {{themeForm.controls.name}}
+  <button class="button-card" (click)="deleteTheme(themeForm.controls.name.value)">Supprimer</button>-->
   <button type="submit" [ngClass]="{'button-card': themeForm.controls.name.valid, 'invalid-button-card': themeForm.controls.name.invalid}" (click)="onSubmit()" [disabled]="!themeForm.controls.name.value">
     Créer</button>
 </div>
-
-
-

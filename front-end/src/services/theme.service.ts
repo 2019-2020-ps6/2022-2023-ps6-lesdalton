@@ -12,6 +12,7 @@ import {httpOptionsBase, serverUrl} from "../configs/server.config";
 export class ThemeService{
   themes:Theme[]=[];
   public themes$: BehaviorSubject<Theme[]> = new BehaviorSubject(this.themes);
+  public themeChanged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private themeUrl = serverUrl + '/themes';
 
 
@@ -49,4 +50,25 @@ export class ThemeService{
     console.log("kkk"+this.themes$.value.length)
     return theme;
   }
+
+  deleteTheme(themeName: string): void {
+    const themeIndex = this.themes.findIndex(t => t.name === themeName);
+    if (themeIndex !== -1) {
+      const deletedTheme = this.themes[themeIndex];
+      this.themes.splice(themeIndex, 1);
+
+      this.http.delete(`${this.themeUrl}/${deletedTheme.id}`).subscribe(
+        () => {
+          this.themes$.next(this.themes);
+          this.themeChanged.next(true);
+          console.log('Thème supprimé avec succès');
+        },
+        error => {
+          console.error('Erreur lors de la suppression du thème :', error);
+        }
+      );
+    }
+  }
+
+
 }
