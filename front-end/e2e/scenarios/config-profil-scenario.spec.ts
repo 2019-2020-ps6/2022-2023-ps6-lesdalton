@@ -30,8 +30,10 @@ test.describe('Configurer un profil', () => {
 
         await test.step(`Configure user`, async () => {
 
-            //await userFixture.clickButtonOfUser('Alpha Roméo', 'Configurer');
-            const configButtonSelector = '.user-list .card:has(h2:has-text("Alpha Roméo")) button.button-card';
+
+            //const configButtonSelector = '.user-list .card:has(h2:has-text("Alpha Roméo")) button.button-card';
+            const configButtonSelector = '.user-list .card button.button-card';
+
             await page.waitForSelector(configButtonSelector);
 
             // Sélectionner le bouton de configuration
