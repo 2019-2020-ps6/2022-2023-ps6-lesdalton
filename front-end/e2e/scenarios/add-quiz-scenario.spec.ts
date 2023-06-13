@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { testUrl } from 'e2e/e2e.config';
 import { User } from "../../src/models/user.models";
 
-test('Add theme', async ({ page }) => {
+test('Add quiz', async ({ page }) => {
   await page.goto(testUrl +'/actions');
 
   const button = await page.locator('button.button-card[routerLink="/password-quiz"]');
@@ -16,12 +16,16 @@ test('Add theme', async ({ page }) => {
   await expect(page).toHaveURL("http://localhost:4200/add-quiz");
 
   // Remplir l'input du thème avec "Géographie"
-  const inputTheme = await page.locator('app-theme-form input[type="text"]');
-  await inputTheme.fill("Géographie");
+  const inputQuiz = await page.locator('app-quiz-form input[type="text"]');
+  await inputQuiz.fill("Europe");
+
+  const select = await page.locator('app-quiz-form select').first();
+  await select.selectOption({ index: 0 });
+
 
 // Cliquer sur le bouton "Créer"
-  const buttonTheme = await page.locator('app-theme-form button[type="submit"]');
-  await buttonTheme.click();
+  const buttonQuiz = await page.locator('app-quiz-form button[type="submit"]');
+  await buttonQuiz.click();
 
 
 });
