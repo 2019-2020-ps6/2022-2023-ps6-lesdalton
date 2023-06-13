@@ -31,11 +31,12 @@ test.describe('Supprimer un profil', () => {
         await test.step(`Supprimer user`, async () => {
 
 
-            //const configButtonSelector = '.user-list .card:has(h2:has-text("Alpha Roméo")) button.button-card';
-            const deleteButtonSelector = '.user-list .card button.button-card:nth-child(2)';
+            //const deleteButtonSelector = '.user-list .card:has(h2:has-text("Alpha Roméo")) #del-btn';
+            const deleteButtonSelector = '.user-list .card #del-btn';
             
 
             await page.waitForSelector(deleteButtonSelector);
+           
 
             // Sélectionner le bouton de configuration
             const deleteButton = await page.$(deleteButtonSelector);
@@ -45,7 +46,7 @@ test.describe('Supprimer un profil', () => {
                 await deleteButton.click();
             }
 
-            await userFormFixture.clickValidateButton();
+            //await userFormFixture.clickValidateButton();
 
         });
 
