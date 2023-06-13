@@ -6,28 +6,28 @@
       [style.letter-spacing.px]="user.config.letterSpacing"
       [ngStyle]="{'font-family':user.config.font}"
       [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}">
-      {{currentQuestion?.text}}
+      {{ currentQuestion.text }}
     </p>
 
-    <div >
+    <div>
       <div class="answers-container">
-
         <button class="answerButton" type="button"
-                *ngFor="let answer of currentQuestion?.answers"
-                [style.text-transform]="user.config.type"
-                [style.font-size.px]="user.config.fontSize"
-                [style.line-height.px]="user.config.lineHeight"
-                [style.letter-spacing.px]="user.config.letterSpacing"
-                [ngStyle]="{'font-family':user.config.font,'background-color': answer?.buttonColor}">
+          *ngFor="let answer of currentQuestion.answers"
+          [style.text-transform]="user.config.type"
+          [style.font-size.px]="user.config.fontSize"
+          [style.line-height.px]="user.config.lineHeight"
+          [style.letter-spacing.px]="user.config.letterSpacing"
+          [ngStyle]="{'font-family':user.config.font,'background-color': answer.buttonColor}">
           {{ answer.text }}
         </button>
       </div>
-
     </div>
+
     <div class="pop-up" *ngIf="isPopUpOpen">
       <app-pop-up [user]="user" (fermer)="onPopClick()" (valider)="onValider()"></app-pop-up>
     </div>
   </div>
+
   <div class="open-pop-up" *ngIf="isAdjustButtonVisible">
     <button class="adjust" (click)="onPopClick()">Ajuster la page</button>
   </div>

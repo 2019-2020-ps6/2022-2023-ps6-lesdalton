@@ -1,32 +1,31 @@
 <div class="parent-container">
   <div class="question-container">
     <p (click)="onQuestionClick()"
-       [style.text-transform]="user.config.type"  [style.font-size.px]="user.config.fontSize" [style.line-height.px]="user.config.lineHeight"
-       [style.letter-spacing.px]="user.config.letterSpacing"
-       [ngStyle]="{'font-family':user.config.font}"
-       [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}">
-      {{currentQuestion?.text}}
+      [style.text-transform]="user.config.type" [style.font-size.px]="user.config.fontSize"
+      [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing"
+      [ngStyle]="{'font-family':user.config.font}"
+      [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}">
+      {{ currentQuestion.text }}
     </p>
 
-    <div >
+    <div>
       <div class="answers-container">
-
         <button class="answerButton" type="button"
-                *ngFor="let answer of currentQuestion?.answers"
-                (click)="this.onClickAnswer(answer)"
-                [style.text-transform]="user.config.type"  [style.font-size.px]="user.config.fontSize"
-                [style.line-height.px]="user.config.lineHeight"
-                [style.letter-spacing.px]="user.config.letterSpacing"
-                [ngStyle]="{'font-family':user.config.font,'background-color': answer?.buttonColor}">
+          *ngFor="let answer of currentQuestion.answers"
+          (click)="this.onClickAnswer(answer)"
+          [style.text-transform]="user.config.type" [style.font-size.px]="user.config.fontSize"
+          [style.line-height.px]="user.config.lineHeight" [style.letter-spacing.px]="user.config.letterSpacing"
+          [ngStyle]="{'font-family':user.config.font,'background-color': answer.buttonColor}">
           {{ answer.text }}
         </button>
       </div>
-
     </div>
+
     <div class="pop-up" *ngIf="isPopupOpen">
       <app-pop-up [user]="user" (valider)="onValider()"></app-pop-up>
     </div>
   </div>
+
   <div class="open-pop-up" *ngIf="isAdjustButtonVisible">
     <button class="adjust" (click)="onPopClick()">Ajuster la page</button>
   </div>
