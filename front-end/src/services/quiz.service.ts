@@ -174,11 +174,20 @@ export class QuizService {
   }
 
 
-  deleteQuestion(question: Question){
-    const index = this.questions.indexOf(question);
+  deleteQuestion(quiz:Quiz,question: Question){
+    this.quiz = quiz;
+    const index = quiz.questions.indexOf(question);
     if(index!==-1){
-      this.questions.splice(index,1);
-      this.questions$.next(this.questions);
+      quiz.questions.splice(index,1);
+      this.questions$.next(quiz.questions);
+      this.http.put(`${this.quizUrl}/${quiz.id}`, quiz, httpOptionsBase).subscribe(
+        () => {
+          console.log('Question supprimée avec succès');
+        },
+        error => {
+          console.error('Erreur lors de la suppression de la question du quiz:', error);
+        }
+      );
     }
   }
 
