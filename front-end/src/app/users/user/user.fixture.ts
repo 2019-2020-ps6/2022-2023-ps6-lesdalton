@@ -45,7 +45,7 @@ export class UserFixture extends E2EComponentFixture {
     const indexOfCard = await this.getIndexOfFN(firstName);
 
     if (indexOfCard >= buttons.length) {
-      throw new Error(`Wrong Quiz Name`);
+      throw new Error(`Wrong User Name`);
     }
 
     await buttons[indexOfCard].click();

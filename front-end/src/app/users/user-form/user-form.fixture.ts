@@ -18,8 +18,34 @@ export class UserFormFixture extends E2EComponentFixture {
     return this.getCreateButton().click();
   }
 
+  getVisualizeButton() {
+    return this.page.getByRole('button', { name: 'Visualiser' });
+  }
+
+  clickVisualizeButton() {
+    return this.getVisualizeButton().click();
+  }
+
+
+
+
+
+
+  getAjusterButton() {
+    return this.page.getByRole('button', { name: 'Ajuster la page' });
+  }
+
+  clickAjusterButton() {
+    return this.getAjusterButton().click();
+  }
+
+
+
+
+
+
   getValidateButton() {
-    return this.page.getByRole('button', { name: 'Créer' });
+    return this.page.getByRole('button', { name: 'Valider' });
   }
 
   clickValidateButton() {

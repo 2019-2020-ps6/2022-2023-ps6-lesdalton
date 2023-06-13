@@ -3,6 +3,7 @@ import { testUrl } from 'e2e/e2e.config';
 import { AppFixture } from 'src/app/app.fixture';
 import { UserFixture } from 'src/app/users/user/user.fixture';
 import { UserFormFixture } from 'src/app/users/user-form/user-form.fixture';
+import { text } from 'stream/consumers';
 
 
 
@@ -19,22 +20,29 @@ test.describe('Configurer un profil', () => {
         await expect(page).toHaveURL("http://localhost:4200/user-list");
 
         await test.step(`Configure user`, async () => {
-            await userFixture.clickButtonOfUser('Alpha', 'Configurer');
+
+            //await userFixture.clickButtonOfUser('Alpha Roméo', 'Configurer');
+            const configButtonSelector = '.user-list .card:has(h2:has-text("Alpha Roméo")) button.button-card';
+            await page.waitForSelector(configButtonSelector);
+
+            // Sélectionner le bouton de configuration
+            const configButton = await page.$(configButtonSelector);
+
+            // Effectuer un clic sur le bouton de configuration
+            if (configButton) {
+                await configButton.click();
+            }
 
             // Sélectionner le bouton radio "Non"
             await page.click('input[value="lowercase"]');
 
-            // Vérifier si le bouton radio "Non" est sélectionné
-            /*const nonRadioChecked = await page.$eval('input[value="lowercase"]', (el) => el.checked);
-            expect(nonRadioChecked).toBeTruthy;*/
-
-            // Sélectionner le bouton radio "Helvetica"
             await page.click('input[value="Helvetica Black"]');
 
-            // Vérifier si le bouton radio "Helvetica" est sélectionné
-            /*const helveticaRadioChecked = await page.$eval('input[value="Helvetica Black"]', (el) => el.checked);
-            expect(helveticaRadioChecked).toBeTruthy;*/
+            await userFormFixture.clickVisualizeButton();
 
+            await userFormFixture.clickAjusterButton();
+
+            await userFormFixture.clickValidateButton();
 
             await userFormFixture.clickValidateButton();
 
