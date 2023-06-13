@@ -174,21 +174,23 @@ export class QuizService {
   }
 
 
-  deleteQuestion(quiz:Quiz,question: Question){
-    this.quiz = quiz;
-    const index = quiz.questions.indexOf(question);
-    if(index!==-1){
-      quiz.questions.splice(index,1);
-      this.questions$.next(quiz.questions);
+  deleteQuestion(quiz: Quiz, question: Question) {
+    const questionIndex = quiz.questions.findIndex(q => q.id === question.id);
+    if (questionIndex !== -1) {
+      quiz.questions.splice(questionIndex, 1);
+
       this.http.put(`${this.quizUrl}/${quiz.id}`, quiz, httpOptionsBase).subscribe(
         () => {
+          this.questions$.next(quiz.questions);
+          this.questionsChanged.next(true);
           console.log('Question supprimée avec succès');
         },
         error => {
-          console.error('Erreur lors de la suppression de la question du quiz:', error);
+          console.error('Erreur lors de la suppression de la question du quiz :', error);
         }
       );
     }
   }
+
 
 }

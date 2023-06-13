@@ -24,16 +24,29 @@
   <div class="answer-row" *ngFor="let answer of this.answers; let i = index">
     <div class="card">
       <br>
-      <input type="text" id="answer{{i}}" [(ngModel)]="answer.text" >
-      <br>
-      <label for="correct{{i}}">
-        <input type="checkbox" id="correct{{i}}" [(ngModel)]="answer.isCorrect">
-        Réponse juste
-      </label>
-      <br><br>
-      <button class="button-card" (click)="deleteAnswer(answer)">Supprimer</button>
+      <div *ngIf="answer.isCorrect">
+        <label class="answer">{{answer.text}}</label>
+        <br><br>
+        <label for="correct{{i}}">
+          &#9989; Réponse correcte
+        </label>
+        <br><br>
+        <button class="button-card" (click)="deleteAnswer(answer)">Supprimer</button>
+      </div>
+      <div *ngIf="!answer.isCorrect">
+        <label class="answer">{{answer.text}}</label>
+        <br><br>
+        <label for="correct{{i}}">
+          &#10060; Réponse incorrecte
+        </label>
+        <br><br>
+        <button class="button-card" (click)="deleteAnswer(answer)">Supprimer</button>
+      </div>
     </div>
   </div>
+</div>
+<div class="container">
+  <button id="Supprimer" (click)="deleteQuestion(quiz,question)" [routerLink]="['/quiz-config',quiz.id]">Supprimer</button>
 </div>
 <div class="container">
   <button id="valider" [routerLink]="['/quiz-config',quiz.id]">Valider</button>

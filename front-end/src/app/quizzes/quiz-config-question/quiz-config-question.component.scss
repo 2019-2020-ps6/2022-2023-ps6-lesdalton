@@ -43,6 +43,10 @@
     flex-direction: row;
     flex-grow: 1;
   }
+  .card{
+    width: 300px;
+    text-align: center;
+  }
 }
 
 #valider {
@@ -67,9 +71,37 @@
   background-color: #3e8e41; /* Active Green */
 }
 
+#Supprimer {
+  background-color: #fa0000; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 25px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#Supprimer:hover {
+  background-color: #d70000; /* Darker Green */
+}
+
+#Supprimer:active {
+  background-color: #e30000; /* Active Green */
+}
+
 .container {
   display: grid;
   justify-content: end;
+}
+
+.answer{
+  font-size: xx-large;
+
+
 }
 
 
