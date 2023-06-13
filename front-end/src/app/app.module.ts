@@ -44,6 +44,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
 import { QuizConfigQuestionComponent } from './quizzes/quiz-config-question/quiz-config-question.component';
 import { UserStatsComponent } from './users/user-stats/user-stats.component';
 import { PresentationComponent } from './presentation/presentation.component';
+import { ThemeDeleteComponent } from './quizzes/theme-delete/theme-delete.component';
 
 
 
@@ -88,6 +89,7 @@ import { PresentationComponent } from './presentation/presentation.component';
     QuizConfigQuestionComponent,
     UserStatsComponent,
     PresentationComponent,
+    ThemeDeleteComponent,
 
   ],
   imports: [
