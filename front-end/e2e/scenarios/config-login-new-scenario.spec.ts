@@ -16,18 +16,21 @@ test.describe('Creer un compte', () => {
     const card = await page.locator('.card');
     const firstNameInput = await card.locator('#firstName');
     const lastNameInput = await card.locator('#lastName');
+    const emailInput = await card.locator('#email');
+    const passwordInput = await card.locator('#password');
+    const confirmPasswordInput = await card.locator('#confirmPassword');
     const submitButton = await card.locator('.button-card');
 
     await firstNameInput.type('John');
     await lastNameInput.type('Doe');
+    await emailInput.type('johndoe@example.com');
+    await passwordInput.type('password');
+    await confirmPasswordInput.type('password');
     await submitButton.click();
 
     // Add your assertions for successful account creation here
+    await page.waitForNavigation();
+    await expect(page).toHaveURL('http://localhost:4200/login');
+    // Add more assertions as needed
   });
 });
-
-
-
-
-
-
