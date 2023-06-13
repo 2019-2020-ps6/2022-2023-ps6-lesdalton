@@ -42,7 +42,7 @@ test('Play Quiz', async ({ page }) => {
   }
   const ressayerButton = page.getByText('Réessayer')
 
-  await expect(ressayerButton).toBeVisible();
+  await expect(result).toBeVisible();
   await ressayerButton.click();
   await expect(answer).toBeVisible();
 

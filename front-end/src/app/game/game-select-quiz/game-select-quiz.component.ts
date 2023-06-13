@@ -20,6 +20,7 @@ import {UserConfigModel} from "../../../models/user-config.model";
 export class GameSelectQuizComponent {
   quizList:Quiz[] = [];
   quizForTheme:Quiz[] = [];
+  noQuizzes:boolean = false;
 
   @Input() theme:Theme={name:""};
   @Input() user: User = {
@@ -71,9 +72,12 @@ export class GameSelectQuizComponent {
   showQuiz() {
     this.quizForTheme = []; // Clear the array before adding quizzes
     for (const quiz of this.quizList) {
-      if (quiz.theme.name === this.theme.name) {
+      if (quiz.theme.name === this.theme.name && quiz.questions.length>0) {
         this.quizForTheme.push(quiz);
       }
+    }
+    if(this.quizForTheme.length===0){
+      this.noQuizzes = true
     }
   }
 }
