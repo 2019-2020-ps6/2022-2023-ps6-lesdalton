@@ -61,8 +61,8 @@ export class UserConfigComponent {
 
     if(this.user.config.letterSpacing<0){
       this.user.config.letterSpacing=0;
-    } else if(this.user.config.letterSpacing>100){
-      this.user.config.letterSpacing=100;
+    } else if(this.user.config.letterSpacing>13){
+      this.user.config.letterSpacing=13;
     }
   }
 

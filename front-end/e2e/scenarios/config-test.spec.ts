@@ -2,6 +2,12 @@ import {expect, test} from "@playwright/test";
 import {testUrl} from "../e2e.config";
 import {UserFormFixture} from "../../src/app/users/user-form/user-form.fixture";
 import {UserFixture} from "../../src/app/users/user/user.fixture";
+import {ActionsFixture} from "../../src/app/actions/actions.fixture";
+import {GameSelectPlayerFixture} from "../../src/app/game/game-select-player/game-select-player.fixture";
+import {GameSelectThemeFixture} from "../../src/app/game/game-select-theme/game-select-theme.fixture";
+import {GameSelectQuizFixture} from "../../src/app/game/game-select-quiz/game-select-quiz.fixture";
+import {GameQuestionFixture} from "../../src/app/game/game-question/game-question.fixture";
+import {GameResultFixture} from "../../src/app/game/game-result/game-result.fixture";
 
 test.describe('Configuration test', () => {
   test('Configurer un profil', async ({ page }) => {
@@ -43,38 +49,66 @@ test.describe('Configuration test', () => {
 
       await page.click('input[value="Helvetica Black"]');
 
-      //const fontSize = await page.locator('input[type="range"][ngModel="user.config.fontSize"]');
-      //await fontSize.fill('40');
-      //const lineHeight = await page.locator('input[type="range"][ngModel="user.config.lineHeight"]');
-      //await lineHeight.fill('40');
-      //const letterSpacing = await page.locator('input[type="range"][ngModel="user.config.letterSpacing"]');
-      //await letterSpacing.fill('40');
+      const fontSize = await page.locator('input#font-size');
+      await expect(fontSize).toBeVisible();
+      await fontSize.fill('30');
 
-      await page.evaluate(() => {
-        const fontSizeInput = (document.querySelector('input.gauge-input[ngModel="user.config.fontSize"]') as HTMLInputElement);
-        if (fontSizeInput) {
-          fontSizeInput.value = '40';
-          fontSizeInput.dispatchEvent(new Event('input'));
-          fontSizeInput.dispatchEvent(new Event('change'));
-        }
-        const lineHeightInput = (document.querySelector('input.gauge-input[ngModel="user.config.lineHeight"]') as HTMLInputElement);
-        if (lineHeightInput) {
-          lineHeightInput.value = '35';
-          lineHeightInput.dispatchEvent(new Event('input'));
-          lineHeightInput.dispatchEvent(new Event('change'));
-        }
+      const lineHeight = await page.locator('input#line-height');
+      await lineHeight.fill('50');
 
-        const letterSpacingInput = (document.querySelector('input.gauge-input[ngModel="user.config.letterSpacing"]') as HTMLInputElement);
-        if (letterSpacingInput) {
-          letterSpacingInput.value = '5';
-          letterSpacingInput.dispatchEvent(new Event('input'));
-          letterSpacingInput.dispatchEvent(new Event('change'));
-        }
-
-      });
+      const letterSpacing = await page.locator('input#letter-spacing');
+      await expect(letterSpacing).toBeVisible();
+      await letterSpacing.fill('8');
 
       await userFormFixture.clickValidateButton();
       await expect(page).toHaveURL("http://localhost:4200/user-list");
+
+      const HomeButton = await page.locator('header a').first();
+      await HomeButton.click();
+      await expect(page).toHaveURL("http://localhost:4200/actions" );
+
+    });
+      await test.step(`Select a player`, async () => {
+        const actionsFixture = new ActionsFixture(page);
+        const gameSelectPlayerFixture = new GameSelectPlayerFixture(page);
+
+        const playQuizButton = actionsFixture.getPlayQuizButton();
+        await playQuizButton.click();
+        const description1 = gameSelectPlayerFixture.getDescription();
+        await expect(description1).toBeVisible();
+        const user = await gameSelectPlayerFixture.getPlayer();
+        await user.click();
+      })
+
+      await test.step(`Play the quiz`, async () => {
+        const gameSelectThemeFixture = new GameSelectThemeFixture(page);
+        const gameSelectQuizFixture = new GameSelectQuizFixture(page);
+
+        const description2 = await gameSelectThemeFixture.getDescription()
+        await expect(description2).toBeVisible();
+
+        // Passer de select-theme select-quiz
+        const link = await gameSelectThemeFixture.getTheme()
+        await link.click();
+
+        const description3 = await gameSelectQuizFixture.getDescription()
+        await expect(description3).toBeVisible;
+
+        // Selectionner un quiz
+        const quiz = await gameSelectQuizFixture.getQuiz()
+        await page.waitForTimeout(1000)
+        await quiz.click();
+
+        const gameQuestionFixture = new GameQuestionFixture(page)
+        const gameResultFixture = new GameResultFixture(page)
+
+        const answer = await gameQuestionFixture.getAnswer()
+        const result = await gameResultFixture.getDescription()
+
+        await expect(answer).toBeVisible;
+
+
+
 
     });
 

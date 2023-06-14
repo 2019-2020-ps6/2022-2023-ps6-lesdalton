@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/e2e/scenarios/config-test.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/e2e/scenarios/config-test.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/users/user-config/user-config.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/users.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +133,7 @@
       <workItem from="1685945038834" duration="7278000" />
       <workItem from="1686555418108" duration="1107000" />
       <workItem from="1686636164861" duration="3584000" />
+      <workItem from="1686729378617" duration="1983000" />
     </task>
     <servers />
   </component>

@@ -34,13 +34,13 @@
         </div>
         <br><br>
         <label>Taille d'écriture</label><br>
-        <input type="range" [(ngModel)]="user.config.fontSize" (input)="updateValue()" min="{{minFontSize}}" max="{{maxFontSize}}" class="gauge-input">
+        <input id="font-size" type="range" [(ngModel)]="user.config.fontSize" (input)="updateValue()" min="{{minFontSize}}" max="{{maxFontSize}}" class="gauge-input">
         <br>
         <label>Différence entre les lignes :</label><br>
-        <input type="range" [(ngModel)]="user.config.lineHeight" (input)="updateValue()" min="16" max="60" class="gauge-input">
+        <input id="line-height" type="range" [(ngModel)]="user.config.lineHeight" (input)="updateValue()" min="16" max="60" class="gauge-input">
         <br>
         <label>L'espacement :</label><br>
-        <input type="range" [(ngModel)]="user.config.letterSpacing" (input)="updateValue()" min="0" max="13" class="gauge-input">
+        <input id="letter-spacing" type="range" [(ngModel)]="user.config.letterSpacing" (input)="updateValue()" min="0" max="13" class="gauge-input">
         <br>
         <button class="button-card" (click)="onSaveConfig()" [routerLink]="['/config-pop-up']" [queryParams]="{ user: user.id }">Visualiser</button>
         <div class="valider">

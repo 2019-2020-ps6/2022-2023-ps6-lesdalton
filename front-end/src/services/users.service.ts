@@ -20,7 +20,6 @@ export class UsersService {
   public users$: BehaviorSubject<User[]> = new BehaviorSubject(this.users);
   private userUrl=serverUrl+'/users';
 
-  private httpOptions = httpOptionsBase;
 
 
   constructor(private http: HttpClient) {
