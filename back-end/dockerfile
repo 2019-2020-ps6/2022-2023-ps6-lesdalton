@@ -1,0 +1,15 @@
+FROM node:16.16.0-alpine
+
+WORKDIR /app
+
+RUN apk add --no-cache curl
+RUN npm install
+
+COPY --chown=node:node package.json /app/package.json
+COPY --chown=node:node package-lock.json /app/package-lock.json
+
+USER node
+
+EXPOSE 3000
+
+CMD [ "npm", "run", "start" ]
