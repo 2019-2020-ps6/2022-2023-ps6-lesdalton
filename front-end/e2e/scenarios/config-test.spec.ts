@@ -100,19 +100,26 @@ test.describe('Configuration test', () => {
         await quiz.click();
 
         const gameQuestionFixture = new GameQuestionFixture(page)
-        const gameResultFixture = new GameResultFixture(page)
 
         const answer = await gameQuestionFixture.getAnswer()
-        const result = await gameResultFixture.getDescription()
+        const question = await gameQuestionFixture.getQuestion()
 
         await expect(answer).toBeVisible;
+        await expect(question).toBeVisible;
 
+        await expect(answer).toHaveCSS('text-transform','lowercase');
+        await expect(answer).toHaveCSS('font-family',"\"Helvetica Black\"");
+        await expect(answer).toHaveCSS('font-size','30px');
+        await expect(answer).toHaveCSS('line-height','50px');
+        await expect(answer).toHaveCSS('letter-spacing','8px');
 
-
+        await expect(question).toHaveCSS('text-transform','lowercase');
+        await expect(question).toHaveCSS('font-family',"\"Helvetica Black\"");
+        await expect(question).toHaveCSS('font-size','30px');
+        await expect(question).toHaveCSS('line-height','50px');
+        await expect(question).toHaveCSS('letter-spacing','8px');
 
     });
-
-
   });
 
 
