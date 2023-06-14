@@ -1,6 +1,6 @@
 <div class="text" xmlns="http://www.w3.org/1999/html">
   <div [ngClass]="{'high-contrast': user.config.contrast === 'high', 'low-contrast': user.config.contrast === 'low', 'normal-contrast':user.config.contrast==='normal'}" class="container">
-    <div class="rectangle" [style.height.px]="user.config.fontSize * 30">
+    <div class="rectangle" [style.height.px]="700">
       <div class="NomPre">
         <label>Prénom</label><br>
         <input type="firstName" id="firstName" name="firstName" [(ngModel)]="user.firstName">
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="Buttons" [style.height.px]="user.config.fontSize * 30">
+    <div class="Buttons" [style.height.px]="700">
       <p>{{'Configuration du profil'}}</p>
       <br>
       <br><br>
