@@ -1,28 +1,29 @@
-# Étape de construction : construction de l'application Node.js
-FROM node:14 as build
+# Utilisez une image Node.js comme image de base
+FROM node:16.16.0-alpine as build
+
+# Définissez le répertoire de travail à l'intérieur du conteneur
 WORKDIR /app
 
-# Copier les fichiers de package.json et package-lock.json
+# Copiez package.json et package-lock.json dans le répertoire de travail
 COPY package*.json ./
 
-# Installer les dépendances
-RUN npm ci --only=production
+# Installez les dépendances
+RUN npm install --no-cache
 
-# Copier le reste des fichiers de l'application
+# Copiez le reste du code de l'application dans le répertoire de travail
 COPY . .
 
-# Construire l'application
-RUN npm run build
+# Build de l'application
+RUN npm run build:production
 
-# Étape d'hébergement : utiliser Nginx pour héberger le site statique
-FROM nginx:latest
-COPY --from=build /app/build /usr/share/nginx/html
+# Utilisez une image Nginx pour le déploiement
+FROM nginx:1.21.0
 
-# Copier la configuration Nginx personnalisée
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copiez les fichiers de build de l'application dans le répertoire par défaut de Nginx
+COPY --from=build /app/dist/front-end /usr/share/nginx/html
 
-# Exposer le port 80 pour accéder au site
+# Exposez le port 80 pour accéder à l'application
 EXPOSE 80
 
-# Démarrer Nginx
+# Démarrez Nginx lors du lancement du conteneur
 CMD ["nginx", "-g", "daemon off;"]
