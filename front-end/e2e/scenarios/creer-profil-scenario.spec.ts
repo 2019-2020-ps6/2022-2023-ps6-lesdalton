@@ -14,7 +14,7 @@ test.describe('Creer un profil joueur', () => {
       await page.goto(testUrl +'/actions');
       const button = await page.locator('button.button-card[routerLink="/password"]');
       await button.click();
-      await expect(page).toHaveURL("http://localhost:4200/password");
+      await expect(page).toHaveURL(testUrl+"/password");
       const input = await page.locator('input#password');
       await input.fill('1234');
       const buttonValider = await page.locator('button.button-card[type="submit"]');
@@ -24,7 +24,7 @@ test.describe('Creer un profil joueur', () => {
       //create all fixtures
         const userFormFixture = new UserFormFixture(page);
 
-        await expect(page).toHaveURL("http://localhost:4200/user-list");
+        await expect(page).toHaveURL(testUrl+"/user-list");
 
         await test.step(`User form visible`, async () => {
             const userForm = await userFormFixture.getUserForm();

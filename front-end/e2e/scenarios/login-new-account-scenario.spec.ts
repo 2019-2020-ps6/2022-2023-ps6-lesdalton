@@ -37,7 +37,7 @@ test('Add acount', async ({ page }) => {
   const link2= await page.locator('a[routerLink="/actions"] button.button-card');
   await link2.click();
 
-  await expect(page).toHaveURL("http://localhost:4200/actions");
+  await expect(page).toHaveURL(testUrl+"/actions");
 
 
 })
