@@ -15,6 +15,6 @@ COPY --chown=pwuser:pwuser . .
 COPY playwright.config.ts .
 
 # Exécutez les tests en utilisant la configuration
-CMD ["npx", "playwright", "test", "--config=./playwright.config.ts"]
+CMD ["npm", "run", "test:e2e", "--config=./playwright.config.ts"]
 
 COPY --chown=pwuser:pwuser ./test-results /app/test-results
