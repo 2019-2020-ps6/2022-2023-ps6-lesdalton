@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +46,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Abdel/OneDrive/Bureau/SI3/PS6/2022-2023-ps6-lesdalton/back-end/app/models&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;docker&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/saadbeidouri/Documents/Projets/PS6/2022-2023-ps6-lesdalton&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -133,11 +132,29 @@
       <workItem from="1686555418108" duration="1107000" />
       <workItem from="1686636164861" duration="3584000" />
       <workItem from="1686729378617" duration="1983000" />
+      <workItem from="1686768142811" duration="528000" />
+      <workItem from="1686773467705" duration="87000" />
+      <workItem from="1686775177994" duration="103000" />
+      <workItem from="1686778364514" duration="217000" />
+      <workItem from="1686808852392" duration="2911000" />
+      <workItem from="1686812117371" duration="115000" />
+      <workItem from="1686812240311" duration="1374000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

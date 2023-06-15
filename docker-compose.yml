@@ -4,7 +4,17 @@ services:
     build: ./front-end
     ports:
       - 8080:80
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
   back:
     build: ./back-end
     ports:
       - 8000:9428
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
