@@ -34,7 +34,7 @@ services:
       restart_policy:
         condition: on-failure
     volumes:
-      - backend-volume:/back-end
+      - backend-volume:/app/database
 
 
 volumes:
