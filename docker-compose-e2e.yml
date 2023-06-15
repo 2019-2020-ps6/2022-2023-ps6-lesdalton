@@ -1,0 +1,58 @@
+version: "3.8"
+services:
+  front:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+      args:
+        ENVIRONMENT: production
+    ports:
+      - 8080:80
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+      restart_policy:
+        condition: on-failure
+
+  back:
+    build: ./back-end
+    environment:
+      PORT: 9999
+    ports:
+      - 8000:9999
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "{http://localhost}:8000" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - backend-volume:/app/database
+  e2e:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile-e2e
+      args:
+        ENVIRONMENT: e2e
+    environment:
+      URL: http://localhost:8080
+    depends_on:
+      - front
+      - back
+
+volumes:
+  backend-volume:
+    driver: local

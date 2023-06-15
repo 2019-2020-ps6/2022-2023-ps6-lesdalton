@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/playwright:v1.34.3-jammy
+
+ARG ENVIRONMENT
+
+USER pwuser
+
+WORKDIR /app
+
+RUN ls -lht ..
+COPY --chown=pwuser:pwuser ./ ./
+RUN ls -lht
+
+RUN ls -lht
+
+RUN npm install --no-cache
+
+RUN npm run test:$ENVIRONMENT

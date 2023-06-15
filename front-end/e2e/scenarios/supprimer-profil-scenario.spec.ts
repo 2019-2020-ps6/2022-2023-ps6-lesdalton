@@ -12,11 +12,11 @@ test.describe('Supprimer un profil', () => {
 
     test('Config User', async ({ page }) => {
         await page.goto(testUrl + '/actions');
-        
+
         await page.goto(testUrl + '/actions');
         const button = await page.locator('button.button-card[routerLink="/password"]');
         await button.click();
-        await expect(page).toHaveURL("http://localhost:4200/password");
+        await expect(page).toHaveURL(testUrl+'/password');
         const input = await page.locator('input#password');
         await input.fill('1234');
         const buttonValider = await page.locator('button.button-card[type="submit"]');
@@ -26,17 +26,17 @@ test.describe('Supprimer un profil', () => {
         const userFormFixture = new UserFormFixture(page);
         const userFixture = new UserFixture(page);
 
-        await expect(page).toHaveURL("http://localhost:4200/user-list");
+        await expect(page).toHaveURL(testUrl+'/user-list');
 
         await test.step(`Supprimer user`, async () => {
 
 
             //const deleteButtonSelector = '.user-list .card:has(h2:has-text("Alpha Roméo")) #del-btn';
             const deleteButtonSelector = '.user-list .card #del-btn';
-            
+
 
             await page.waitForSelector(deleteButtonSelector);
-           
+
 
             // Sélectionner le bouton de configuration
             const deleteButton = await page.$(deleteButtonSelector);

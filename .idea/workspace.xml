@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/e2e/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose-e2e.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/e2e/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/Dockerfile-e2e" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/e2e/e2e.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/e2e/e2e.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/e2e/scenarios/add-quiz-scenario.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/e2e/scenarios/add-quiz-scenario.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -2,7 +2,6 @@
 FROM node:16.16.0-alpine as build
 
 ARG ENVIRONMENT
-
 # Définissez le répertoire de travail à l'intérieur du conteneur
 WORKDIR /app
 
