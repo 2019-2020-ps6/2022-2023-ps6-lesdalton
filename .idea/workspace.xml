@@ -7,6 +7,7 @@
     <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/default.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +139,8 @@
       <workItem from="1686778364514" duration="217000" />
       <workItem from="1686808852392" duration="2911000" />
       <workItem from="1686812117371" duration="115000" />
-      <workItem from="1686812240311" duration="1374000" />
+      <workItem from="1686812240311" duration="3517000" />
+      <workItem from="1686815809885" duration="3217000" />
     </task>
     <servers />
   </component>
