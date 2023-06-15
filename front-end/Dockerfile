@@ -1,6 +1,8 @@
 # Utilisez une image Node.js comme image de base
 FROM node:16.16.0-alpine as build
 
+ARG ENVIRONMENT
+
 # Définissez le répertoire de travail à l'intérieur du conteneur
 WORKDIR /app
 
@@ -14,7 +16,7 @@ RUN npm install --no-cache
 COPY . .
 
 # Build de l'application
-RUN npm run build:production
+RUN npm run build:$ENVIRONMENT
 
 # Utilisez une image Nginx pour le déploiement
 FROM nginx:1.21.0
