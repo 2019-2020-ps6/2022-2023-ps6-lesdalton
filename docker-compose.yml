@@ -47,3 +47,28 @@ volumes:
     driver: local
 
 
+
+
+healthcheck:
+      test: [ "CMD", "curl", "-f", "{http://localhost}:8000" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - backend-volume:/app/database
+
+
+volumes:
+  backend-volume:
+    driver: local
+
+
+
+
