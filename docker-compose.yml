@@ -4,8 +4,10 @@ services:
     build: ./front-end
     ports:
       - 8080:80
+    volumes:
+      - frontend_data:/app/dist/front-end
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8080" ]
+      test: [ "CMD", "curl", "-f", "http://localhost" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -13,8 +15,10 @@ services:
     build: ./back-end
     ports:
       - 8000:9428
+    volumes:
+      - backend_data:/app/database
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8000" ]
+      test: [ "CMD", "curl", "-f", "http://localhost" ]
       interval: 30s
       timeout: 10s
       retries: 3
