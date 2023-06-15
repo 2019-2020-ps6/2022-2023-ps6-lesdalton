@@ -22,6 +22,8 @@ FROM nginx:1.21.0
 # Copiez les fichiers de build de l'application dans le répertoire par défaut de Nginx
 COPY --from=build /app/dist/front-end /usr/share/nginx/html
 
+COPY --from=build /app/default.conf /etc/nginx/conf.d/default.conf
+
 # Exposez le port 80 pour accéder à l'application
 EXPOSE 80
 
