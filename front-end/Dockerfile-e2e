@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:v1.34.3-jammy
+FROM mcr.microsoft.com/playwright:v1.35.0-jammy
 
 ARG ENVIRONMENT
 
@@ -11,6 +11,10 @@ RUN npm install --no-cache
 
 COPY --chown=pwuser:pwuser . .
 
-RUN npm run test:$ENVIRONMENT
+# Copiez le fichier de configuration dans le conteneur
+COPY playwright.config.ts .
+
+# Exécutez les tests en utilisant la configuration
+CMD ["npx", "playwright", "test", "--config=./playwright.config.ts"]
 
 COPY --chown=pwuser:pwuser ./test-results /app/test-results
