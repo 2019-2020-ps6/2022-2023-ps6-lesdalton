@@ -16,6 +16,7 @@ services:
           memory: 256M
       restart_policy:
         condition: on-failure
+
   back:
     build: ./back-end
     ports:
@@ -32,4 +33,12 @@ services:
           memory: 256M
       restart_policy:
         condition: on-failure
+    volumes:
+      - backend-volume:/back-end
+
+
+volumes:
+  backend-volume:
+    driver: local
+
 
