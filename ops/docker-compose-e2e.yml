@@ -47,7 +47,7 @@ services:
       restart_policy:
         condition: on-failure
     volumes:
-      - backend-volume:/var/lib
+      - backend-volume:/app/database
     networks:
       - ps6-network
 
@@ -58,18 +58,19 @@ services:
       dockerfile: Dockerfile-e2e
     depends_on:
       - front
+      - back
     volumes:
-      - e2e-volume:/home/pwuser/
+      - e2e-volume-test-results:/app/test-results
+      - e2e-volume-test-report:/app/playwright-reports
     networks:
       - ps6-network
     environment:
       - URL=http://front:80
 
 volumes:
+  e2e-volume-test-report:
+  e2e-volume-test-results:
   backend-volume:
-    driver: local
-  e2e-volume:
-    driver: local
 
 networks:
   ps6-network:
