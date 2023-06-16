@@ -12,9 +12,9 @@ RUN npm install --no-cache
 COPY --chown=pwuser:pwuser . .
 
 # Copiez le fichier de configuration dans le conteneur
-COPY playwright.config.ts .
+COPY playwright.config.e2e.ts .
 
 # Exécutez les tests en utilisant la configuration
-CMD ["npm", "run", "test:e2e", "--config=./playwright.config.ts"]
+CMD ["npm", "run", "test:e2e", "--config=./playwright.config.e2e.ts"]
 
 COPY --chown=pwuser:pwuser ./test-results /app/test-results

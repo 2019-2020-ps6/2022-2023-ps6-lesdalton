@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/ops/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/ops/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-e2e.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ops/docker-compose-e2e.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ops/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/Dockerfile-e2e" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/Dockerfile-e2e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/environment/environment.e2e.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/environment/environment.e2e.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/playwright.config.e2e.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/playwright.config.e2e.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ops/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ops/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ops/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +63,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Abdel\\OneDrive\\Bureau\\SI3\\PS6\\2022-2023-ps6-lesdalton\\front-end\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/saadbeidouri/Documents/Projets/PS6/2022-2023-ps6-lesdalton/front-end/node_modules/typescript/lib&quot;,
     &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -67,6 +74,8 @@
       <recent name="C:\Users\Abdel\OneDrive\Bureau\SI3\PS6\2022-2023-ps6-lesdalton\back-end\app\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/ops" />
       <recent name="C:\Users\Abdel\OneDrive\Bureau\SI3\PS6\2022-2023-ps6-lesdalton\front-end\e2e" />
       <recent name="C:\Users\Abdel\OneDrive\Bureau\SI3\PS6\2022-2023-ps6-lesdalton\front-end\src\app\quizzes\quiz" />
     </key>
@@ -143,6 +152,7 @@
       <workItem from="1686812117371" duration="115000" />
       <workItem from="1686812240311" duration="3517000" />
       <workItem from="1686815809885" duration="4715000" />
+      <workItem from="1686895413745" duration="830000" />
     </task>
     <servers />
   </component>

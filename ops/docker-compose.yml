@@ -2,7 +2,7 @@ version: "3.8"
 services:
   front:
     build:
-      context: ./front-end
+      context: ../front-end
       args:
         ENVIRONMENT: production
     ports:
@@ -16,19 +16,18 @@ services:
       resources:
         limits:
           cpus: "0.5"
-          cpus: "0.5"
           memory: 256M
       restart_policy:
         condition: on-failure
 
   back:
-    build: ./back-end
+    build: ../back-end
     environment:
       PORT: 9999
     ports:
       - 8000:9999
     healthcheck:
-      test: [ "CMD", "curl", "-f", "{http://localhost}:8000" ]
+      test: [ "CMD", "curl", "-f", "http://localhost:8000" ]
       interval: 30s
       timeout: 10s
       retries: 3

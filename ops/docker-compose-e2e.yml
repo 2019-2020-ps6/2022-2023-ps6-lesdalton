@@ -2,8 +2,8 @@ version: "3.8"
 services:
   front:
     build:
-      context: ./front-end
-      dockerfile: Dockerfile
+      context: ../front-end
+      dockerfile: ../front-end/Dockerfile
       args:
         ENVIRONMENT: production
     ports:
@@ -22,7 +22,7 @@ services:
         condition: on-failure
 
   back:
-    build: ./back-end
+    build: ../back-end
     environment:
       PORT: 9999
     ports:
@@ -43,16 +43,21 @@ services:
       - backend-volume:/app/database
   e2e:
     build:
-      context: ./front-end
+      context: ../front-end
       dockerfile: Dockerfile-e2e
       args:
         ENVIRONMENT: e2e
     environment:
-      URL: http://localhost:8080
+      URL: http://localhost
     depends_on:
       - front
       - back
+    volumes:
+      - e2e-volume:/app
 
 volumes:
   backend-volume:
     driver: local
+  e2e-volume:
+    driver: local
+
