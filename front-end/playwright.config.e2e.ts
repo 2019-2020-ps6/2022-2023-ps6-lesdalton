@@ -1,7 +1,7 @@
 import { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-  reporter: [['json', { outputFile: 'playwright-report/results.json' }]],
+  reporter: [['json', { outputFile: 'playwright-report/results.json'}]],
   testDir: './e2e',
   use: {
     headless: true,

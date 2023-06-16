@@ -1,11 +1,12 @@
-FROM mcr.microsoft.com/playwright:v1.35.0-jammy
+FROM mcr.microsoft.com/playwright:v1.34.0-jammy
+# Changement de l'utilisateur par défaut pour pwuser
+USER pwuser
 
 # Définition du répertoire de travail et attribution des permissions
 WORKDIR /app
-RUN chown -R pwuser:pwuser /app
+#RUN chown -R pwuser:pwuser /app
 
-# Changement de l'utilisateur par défaut pour pwuser
-USER pwuser
+
 
 # Copie des fichiers et exécution des tests
 COPY --chown=pwuser:pwuser package.json package-lock.json ./
@@ -18,5 +19,3 @@ RUN chmod -R 777 /app/test-results
 
 # Exécution des tests en utilisant la configuration
 ENTRYPOINT ["npx", "playwright", "test", "--config=./playwright.config.e2e.ts"]
-
-COPY --chown=pwuser:pwuser ./test-results /home/pwuser
