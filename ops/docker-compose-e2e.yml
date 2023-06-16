@@ -24,8 +24,6 @@ services:
         condition: on-failure
     networks:
       - ps6-network
-
-
   back:
     build:
       context: ../back-end
