@@ -1,0 +1,16 @@
+[
+  {
+    "firstName": "Alpha",
+    "lastName": "Roméo",
+    "config": {
+      "fontSize": 35,
+      "lineHeight": 40,
+      "letterSpacing": 5,
+      "contrast": "high"
+    },
+    "stats": {
+      "statsByTheme": []
+    },
+    "id": 1686734127792
+  }
+]
