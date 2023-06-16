@@ -3,7 +3,7 @@ services:
   front:
     build:
       context: ../front-end
-      dockerfile: ../front-end/Dockerfile
+      dockerfile: Dockerfile
       args:
         ENVIRONMENT: production
     ports:
@@ -13,6 +13,8 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+    depends_on:
+      - back
     deploy:
       resources:
         limits:
@@ -20,6 +22,9 @@ services:
           memory: 256M
       restart_policy:
         condition: on-failure
+    networks:
+      - ps6-network
+
 
   back:
     build: ../back-end
@@ -28,7 +33,7 @@ services:
     ports:
       - 8000:9999
     healthcheck:
-      test: [ "CMD", "curl", "-f", "{http://localhost}:8000" ]
+      test: [ "CMD", "curl", "-f", "http://localhost:8000" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -41,6 +46,8 @@ services:
         condition: on-failure
     volumes:
       - backend-volume:/app/database
+    networks:
+      - ps6-network
   e2e:
     build:
       context: ../front-end
@@ -48,7 +55,7 @@ services:
       args:
         ENVIRONMENT: e2e
     environment:
-      URL: http://localhost
+      URL: http://localhost:8080
     depends_on:
       - front
       - back
@@ -61,3 +68,5 @@ volumes:
   e2e-volume:
     driver: local
 
+networks:
+  ps6-network:
