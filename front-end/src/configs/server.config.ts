@@ -1,5 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
-import {environment} from "../environment/environments.prod";
+import {environment} from "../environments/environment";
 
 export const httpOptionsBase = {
   headers: new HttpHeaders({
