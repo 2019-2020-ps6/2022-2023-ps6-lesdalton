@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ops/run.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/configs/server.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/configs/server.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/environment/environment.e2e.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/environments/environment.e2e.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/environment/environments.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/environments/environment.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ops/docker-compose-e2e.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ops/docker-compose-e2e.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ops/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ops/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,7 @@
       <recent name="C:\Users\Abdel\OneDrive\Bureau\SI3\PS6\2022-2023-ps6-lesdalton\front-end\src\app\quizzes\quiz" />
     </key>
   </component>
-  <component name="RunManager" selected="Karma.Initial test display">
+  <component name="RunManager" selected="Shell Script.run.sh">
     <configuration name="Initial test display" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
       <config-file value="" />
       <karma-package-dir value="$PROJECT_DIR$/front-end/node_modules/@angular/cli" />
@@ -104,8 +104,24 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="run.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ops/run.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/ops" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Shell Script.run.sh" />
         <item itemvalue="Karma.Initial test display" />
         <item itemvalue="Karma.Test de navigation de page à page" />
       </list>

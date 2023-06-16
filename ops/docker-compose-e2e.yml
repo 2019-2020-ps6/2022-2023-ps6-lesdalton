@@ -29,9 +29,9 @@ services:
       context: ../back-end
       dockerfile: Dockerfile
     environment:
-      PORT: 9999
+      PORT: 9428
     ports:
-      - 8000:9999
+      - 8000:9428
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8000" ]
       interval: 30s
