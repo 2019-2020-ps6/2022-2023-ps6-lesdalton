@@ -48,19 +48,20 @@ services:
       - backend-volume:/app/database
     networks:
       - ps6-network
+
+
   e2e:
     build:
       context: ../front-end
       dockerfile: Dockerfile-e2e
-      args:
-        ENVIRONMENT: e2e
-    environment:
-      URL: http://localhost:8080
     depends_on:
       - front
-      - back
     volumes:
-      - e2e-volume:/app
+      - e2e-volume:/home/pwuser/
+    networks:
+      - ps6-network
+    environment:
+      - URL=http://front:80
 
 volumes:
   backend-volume:
@@ -70,3 +71,4 @@ volumes:
 
 networks:
   ps6-network:
+
