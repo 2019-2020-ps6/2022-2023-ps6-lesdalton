@@ -9,12 +9,14 @@ WORKDIR /app
 COPY --chown=pwuser:pwuser package.json package-lock.json ./
 RUN npm install --no-cache
 
+RUN chown -R pwuser:pwuser /app
+
 COPY --chown=pwuser:pwuser . .
 
 # Copiez le fichier de configuration dans le conteneur
 COPY playwright.config.e2e.ts .
 
 # Exécutez les tests en utilisant la configuration
-CMD ["npm", "run", "test:e2e", "--config=./playwright.config.e2e.ts"]
+ENTRYPOINT ["npm", "run", "test:e2e", "--config=./playwright.config.e2e.ts"]
 
 COPY --chown=pwuser:pwuser ./test-results /app/test-results
