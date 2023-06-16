@@ -27,7 +27,9 @@ services:
 
 
   back:
-    build: ../back-end
+    build:
+      context: ../back-end
+      dockerfile: Dockerfile
     environment:
       PORT: 9999
     ports:
@@ -45,7 +47,7 @@ services:
       restart_policy:
         condition: on-failure
     volumes:
-      - backend-volume:/app/database
+      - backend-volume:/var/lib
     networks:
       - ps6-network
 

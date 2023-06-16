@@ -18,3 +18,5 @@ RUN chmod -R 777 /app/test-results
 
 # Exécution des tests en utilisant la configuration
 ENTRYPOINT ["npx", "playwright", "test", "--config=./playwright.config.e2e.ts"]
+
+COPY --chown=pwuser:pwuser ./test-results /home/pwuser
