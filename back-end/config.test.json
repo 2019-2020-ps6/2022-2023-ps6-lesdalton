@@ -15,7 +15,8 @@
         "EDITOR": "vim",
         "SHLVL": "1",
         "HOME": "/Users/maciej",
-        "LOGNAME": "maciej"
+        "LOGNAME": "maciej",
+        "_": "/usr/local/bin/node"
     }
       
     }
