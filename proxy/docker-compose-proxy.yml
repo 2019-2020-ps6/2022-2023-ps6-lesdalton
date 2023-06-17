@@ -1,0 +1,70 @@
+version: "3.8"
+services:
+  front:
+    build:
+      context: ../front-end
+      dockerfile: Dockerfile
+      args:
+        ENVIRONMENT: proxy
+    ports:
+      - 8080:80
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - back
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+      restart_policy:
+        condition: on-failure
+    networks:
+      - ps6-network
+  back:
+    build:
+      context: ../back-end
+      dockerfile: Dockerfile
+    environment:
+      PORT: 9428
+    ports:
+      - 8000:9428
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - backend-volume:/app/database
+    networks:
+      - ps6-network
+
+  proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile-proxy
+    ports:
+      - 80:80
+    depends_on:
+      - back
+      - front
+    networks:
+      - ps6-network
+
+
+
+volumes:
+  backend-volume:
+
+networks:
+  ps6-network:
