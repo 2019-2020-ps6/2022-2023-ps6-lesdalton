@@ -29,7 +29,7 @@ Si la vérification prend plus de 10 secondes, elle sera considérée comme éch
 
 
 --------
-retries: 3
+# retries: 3
 --------
 ---> Description :
 * Cela indique le nombre de tentatives de vérification en cas d'échec.
