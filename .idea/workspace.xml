@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ops/Healthcheck front.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/Dockerfile-e2e" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/Dockerfile-e2e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/e2e/scenarios/add-quiz-scenario.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/e2e/scenarios/add-quiz-scenario.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/e2e/scenarios/add-theme-scenario.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/e2e/scenarios/add-theme-scenario.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/e2e/scenarios/creer-profil-scenario.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/e2e/scenarios/creer-profil-scenario.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/e2e/scenarios/login-new-account-scenario.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/e2e/scenarios/login-new-account-scenario.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/actions/actions.fixture.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/actions/actions.fixture.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ops/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ops/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ops/run-e2e.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ops/run-e2e.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ops/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ops/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ops/Healthcheck back.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ops/Healthcheck back.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ops/Healthcheck front.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ops/Healthcheck front.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/Dockerfile-proxy" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/Dockerfile-proxy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxy/proxy.conf" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/proxy.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
