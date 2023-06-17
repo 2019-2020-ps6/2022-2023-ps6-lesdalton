@@ -3,6 +3,7 @@ services:
   front:
     build:
       context: ../front-end
+      dockerfile: Dockerfile
       args:
         ENVIRONMENT: production
     ports:

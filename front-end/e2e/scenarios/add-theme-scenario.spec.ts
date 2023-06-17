@@ -1,27 +1,31 @@
 import { test, expect } from "@playwright/test";
 import { testUrl } from 'e2e/e2e.config';
 import { User } from "../../src/models/user.models";
+import {ActionsFixture} from "../../src/app/actions/actions.fixture";
+import {PasswordQuizFixture} from "../../src/app/password-quiz/password-quiz.fixture";
+import {ThemeFormFixture} from "../../src/app/quizzes/theme-form/theme-form.fixture";
 
 test('Add theme', async ({ page }) => {
   await page.goto(testUrl +'/actions');
 
-  const button = await page.locator('button.button-card[routerLink="/password-quiz"]');
-  await button.click();
-  await expect(page).toHaveURL(testUrl+'/password-quiz')
-  const input = await page.locator('input#password');
-  await input.fill('1234');
-  const buttonValider = await page.locator('button.button-card[type="submit"]');
-  await buttonValider.click();
+  await test.step('Click "Modifier un quiz" button', async () => {
+    const actionFixture = new ActionsFixture(page);
+    await actionFixture.ClickOnModifierUnQuiz();
+    await expect(page).toHaveURL(testUrl+'/password-quiz');
+  });
 
-  await expect(page).toHaveURL(testUrl+'/add-quiz');
 
-  // Remplir l'input du thème avec "Géographie"
-  const inputTheme = await page.locator('app-theme-form input[type="text"]');
-  await inputTheme.fill("Géographie");
+  await test.step('Fill the input and click on Valider', async () =>{
+    const passwordQuizFixture = new PasswordQuizFixture(page);
+    await passwordQuizFixture.fillInput();
+    await passwordQuizFixture.ClickOnValider();
+    await expect(page).toHaveURL(testUrl+'/add-quiz');
+  });
 
-// Cliquer sur le bouton "Créer"
-  const buttonTheme = await page.locator('app-theme-form button[type="submit"]');
-  await buttonTheme.click();
-
+  await test.step('Fill the input and click on Creer for theme', async ()=>{
+    const themeFormFixture = new ThemeFormFixture(page);
+    await themeFormFixture.fillInputTheme("Géographie");
+    await themeFormFixture.clickOnCreer();
+  });
 
 });

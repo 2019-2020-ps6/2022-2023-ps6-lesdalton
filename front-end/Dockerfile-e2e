@@ -6,8 +6,6 @@ USER pwuser
 WORKDIR /app
 #RUN chown -R pwuser:pwuser /app
 
-
-
 # Copie des fichiers et exécution des tests
 COPY --chown=pwuser:pwuser package.json package-lock.json ./
 RUN npm install --no-cache

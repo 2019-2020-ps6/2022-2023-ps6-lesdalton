@@ -41,8 +41,6 @@ test.describe('Creer un profil joueur', () => {
 
             await userFormFixture.clickCreateButton();
 
-            /*const indexUser = await userFixture.getIndexOfFN('Yao');
-            expect(await userFixture.getContentFirstName(indexUser)).toEqual('Yew');*/
         });
 
 
