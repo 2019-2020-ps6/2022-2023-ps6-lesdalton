@@ -6,8 +6,6 @@ services:
       dockerfile: Dockerfile
       args:
         ENVIRONMENT: proxy
-    ports:
-      - 8080:80
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8080" ]
       interval: 30s
