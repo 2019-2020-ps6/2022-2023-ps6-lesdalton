@@ -1,1 +1,1 @@
-docker-compose -f ./ops/docker-compose-e2e.yml up --build
+docker-compose -f ./ops/docker-compose-e2e.yml up --build --abort-on-container-exit
