@@ -108,11 +108,10 @@
       Il est construit à partir du répertoire "../front-end" en utilisant le fichier Dockerfile-e2e.
       Ce service dépend des services "front" et "back" pour son fonctionnement.
       Des volumes sont configurés pour stocker les résultats des tests et les rapports générés.
-      L'URL de l'application est configurée via la variable d'environnement "URL", qui est définie comme "http://front:80".
     * Réseau
 
       Les services "front", "back" et "proxy" sont connectés au réseau "ps6-network", ce qui permet aux services de communiquer entre eux.
-   * **Pour docker-compose-e2e.yml :**
+   * **Pour docker-compose-proxy.yml :**
 
       * Service "front"
 
