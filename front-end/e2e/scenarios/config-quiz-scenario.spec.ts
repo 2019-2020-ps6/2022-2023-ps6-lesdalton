@@ -9,13 +9,13 @@ test.describe('Quiz Feature', () => {
 
     const button = await page.locator('button.button-card[routerLink="/password-quiz"]');
     await button.click();
-    await expect(page).toHaveURL("http://localhost:4200/password-quiz");
+    await expect(page).toHaveURL(testUrl+'/password-quiz');
     const input = await page.locator('input#password');
     await input.fill('1234');
     const buttonValider = await page.locator('button.button-card[type="submit"]');
     await buttonValider.click();
 
-    await expect(page).toHaveURL("http://localhost:4200/add-quiz");
+    await expect(page).toHaveURL(testUrl+"/add-quiz");
 
     await test.step('Click "Configurer" button', async () => {
       const quizCardFixture = new QuizCardFixture(page);
@@ -49,7 +49,7 @@ test.describe('Quiz Feature', () => {
       await valider2.click();
     });
 
-    await expect(page).toHaveURL("http://localhost:4200/add-quiz");
+    await expect(page).toHaveURL(testUrl+"/add-quiz");
 
   });
 });

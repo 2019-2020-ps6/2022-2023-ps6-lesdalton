@@ -1,6 +1,15 @@
 import { E2EComponentFixture } from "e2e/e2e-component.fixture";
 
 export class UserFormFixture extends E2EComponentFixture {
+  static getInput(arg0: string) {
+      throw new Error("Method not implemented.");
+  }
+  fillLastName(arg0: string) {
+      throw new Error('Method not implemented.');
+  }
+  fillFirstName(arg0: string) {
+      throw new Error('Method not implemented.');
+  }
   getUserForm() {
     return this.page.waitForSelector('app-user-form');
   }

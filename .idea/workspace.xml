@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="" />
+    <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +46,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Abdel/OneDrive/Bureau/SI3/PS6/2022-2023-ps6-lesdalton/back-end/app/models&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Abdel/OneDrive/Bureau/SI3/PS6/2022-2023-ps6-lesdalton/back-end&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -58,13 +62,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Abdel\OneDrive\Bureau\SI3\PS6\2022-2023-ps6-lesdalton\back-end" />
+      <recent name="C:\Users\Abdel\OneDrive\Bureau\SI3\PS6\2022-2023-ps6-lesdalton" />
       <recent name="C:\Users\Abdel\OneDrive\Bureau\SI3\PS6\2022-2023-ps6-lesdalton\back-end\app\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/ops" />
+      <recent name="C:\Users\Abdel\OneDrive\Bureau\SI3\PS6\2022-2023-ps6-lesdalton\front-end\e2e" />
       <recent name="C:\Users\Abdel\OneDrive\Bureau\SI3\PS6\2022-2023-ps6-lesdalton\front-end\src\app\quizzes\quiz" />
     </key>
   </component>
-  <component name="RunManager" selected="Karma.Initial test display">
+  <component name="RunManager" selected="Shell Script.run.sh">
     <configuration name="Initial test display" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
       <config-file value="" />
       <karma-package-dir value="$PROJECT_DIR$/front-end/node_modules/@angular/cli" />
@@ -91,8 +100,24 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="run.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/ops/run.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/ops" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Shell Script.run.sh" />
         <item itemvalue="Karma.Initial test display" />
         <item itemvalue="Karma.Test de navigation de page à page" />
       </list>
@@ -128,11 +153,35 @@
       <workItem from="1686555418108" duration="1107000" />
       <workItem from="1686636164861" duration="3584000" />
       <workItem from="1686729378617" duration="1983000" />
+      <workItem from="1686768142811" duration="528000" />
+      <workItem from="1686773467705" duration="87000" />
+      <workItem from="1686775177994" duration="103000" />
+      <workItem from="1686778364514" duration="217000" />
+      <workItem from="1686808852392" duration="2911000" />
+      <workItem from="1686812117371" duration="115000" />
+      <workItem from="1686812240311" duration="3517000" />
+      <workItem from="1686815809885" duration="4715000" />
+      <workItem from="1686895413745" duration="5879000" />
+      <workItem from="1686920890566" duration="1963000" />
+      <workItem from="1686922931350" duration="484000" />
+      <workItem from="1686923590588" duration="2365000" />
+      <workItem from="1687079694669" duration="3347000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

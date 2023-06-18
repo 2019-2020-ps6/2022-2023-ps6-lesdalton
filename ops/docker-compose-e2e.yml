@@ -1,0 +1,75 @@
+version: "3.8"
+services:
+  front:
+    build:
+      context: ../front-end
+      dockerfile: Dockerfile
+      args:
+        ENVIRONMENT: e2e
+    ports:
+      - 8080:80
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - back
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+      restart_policy:
+        condition: on-failure
+    networks:
+      - ps6-network
+  back:
+    build:
+      context: ../back-end
+      dockerfile: Dockerfile
+    environment:
+      PORT: 9428
+    ports:
+      - 8000:9428
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8000" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - backend-volume:/app/database
+    networks:
+      - ps6-network
+
+
+  e2e:
+    build:
+      context: ../front-end
+      dockerfile: Dockerfile-e2e
+    depends_on:
+      - front
+      - back
+    volumes:
+      - e2e-volume-test-results:/app/test-results
+      - e2e-volume-test-report:/app/playwright-reports
+    networks:
+      - ps6-network
+    environment:
+      - URL=http://front:80
+
+volumes:
+  e2e-volume-test-report:
+  e2e-volume-test-results:
+  backend-volume:
+
+networks:
+  ps6-network:
+

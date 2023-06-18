@@ -20,4 +20,9 @@ export class ActionsFixture extends E2EComponentFixture {
   getSuccessMessage() {
     return this.page.getByText('Wow!');
   }
+
+  ClickOnModifierUnQuiz(){
+    const button=this.page.locator('button.button-card[routerLink="/password-quiz"]');
+    return button.click();
+  }
 }
