@@ -3,7 +3,6 @@
   ### Étape 2 : Done
   ### Étape 3 : Done
   ### Étape 4 : Commencée mais avec un problème de chargement des images
------------
 # Les healthchecks:
 
 ##    Healthcheck for service "Front":
