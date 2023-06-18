@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c1d2e00-2e2f-4e19-b20c-7def70765205" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy/proxy.conf" beforeDir="false" afterPath="$PROJECT_DIR$/proxy/proxy.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +165,7 @@
       <workItem from="1686920890566" duration="1963000" />
       <workItem from="1686922931350" duration="484000" />
       <workItem from="1686923590588" duration="2365000" />
-      <workItem from="1687079694669" duration="1297000" />
+      <workItem from="1687079694669" duration="3347000" />
     </task>
     <servers />
   </component>
